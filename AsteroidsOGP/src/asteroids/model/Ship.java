@@ -294,9 +294,9 @@ public class Ship {
         if (isValidAngle(this.getHeading() + angle)) {
             this.setHeading(this.getHeading() + angle);
         } else if (angle + this.getHeading() >= 2 * Math.PI) {
-            this.turn(angle + this.getHeading() - 2 * Math.PI);
+            this.turn(angle - 2 * Math.PI);
         } else if (0 > angle + this.getHeading()) {
-            this.turn(angle + this.getHeading() + 2 * Math.PI);
+            this.turn(angle + 2 * Math.PI);
         }
     }
 

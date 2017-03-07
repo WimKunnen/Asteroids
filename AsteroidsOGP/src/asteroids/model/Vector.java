@@ -32,9 +32,9 @@ public class Vector {
         this.y = 0;
     }
 
-    public final double x;
+    private final double x;
 
-    public final double y;
+    private final double y;
 
     public double getX(){
         return this.x;

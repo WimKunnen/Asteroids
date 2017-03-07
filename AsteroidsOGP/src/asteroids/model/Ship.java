@@ -44,7 +44,7 @@ public class Ship {
      */
     public Ship(double x, double y, double velocityX, double velocityY, double radius, double heading)
             throws IllegalArgumentException{
-                if(x == Double.NaN || y == Double.NaN)
+                if(Double.isNaN(x) ||  Double.isNaN(y))
                     throw new IllegalArgumentException();
                 else
                     setPosition(new Vector(x, y));

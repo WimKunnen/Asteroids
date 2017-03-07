@@ -6,7 +6,7 @@ package asteroids.model;
  * @invar   The size of a vector will always be nonnegative.
  *          | vectorLength >= 0
  *
- * @author wim Kunnen and Maarten Doclo.
+ * @author Wim Kunnen and Maarten Doclo.
  */
 public class Vector {
 
@@ -75,7 +75,8 @@ public class Vector {
     }
 
     /**
-     * Returns a vector of length one in the direction of the given vector.
+     * Returns a vector of length one in the direction of the original vector.
+     * If the original vector's length is zero the original vector is returned.
      *
      */
     public Vector normalize() {
@@ -86,11 +87,11 @@ public class Vector {
     }
 
     /**
-     * Returns a vector of length factor in the direction of the given vector if the factor is greater than zero.
+     * Rescales a vector with the given factor if factor is greater than zero.
      * Else, the original Vector is returned.
      *
      * if (this.vectorLengthSquared >= 0)
-     *  then new == Vector(this.getX() / factor, this.getY()/factor)
+     *  then new == Vector(this.getX() * factor, this.getY() * factor)
      * else
      *  new == this
      */

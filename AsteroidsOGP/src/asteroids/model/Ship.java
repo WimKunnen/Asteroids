@@ -4,6 +4,7 @@ import be.kuleuven.cs.som.annotate.*;
 
 /**
  * A class of spaceships for the game Asteroids.
+ * The class involves a position, velocity, orientation, maximum velocity and a radius.
  *
  * @author Wim Kunnen and Maarten Doclo
  * 

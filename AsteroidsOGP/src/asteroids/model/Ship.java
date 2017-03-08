@@ -9,6 +9,7 @@ import be.kuleuven.cs.som.annotate.*;
  * 
  * @invar   The heading of a ship will always be a number between zero and 2 * PI.
  * 		    | isValidAngle()
+ *
  * @invar   The velocity of a ship is always smaller than or equal to the speed of light.
  * 		    |getVelocity <= speedOfLight
  */
@@ -134,7 +135,7 @@ public class Ship {
      *
      */
     @Basic @Immutable
-    public double getMaximumVelocitySquared(){
+    private double getMaximumVelocitySquared(){
         return this.maximumVelocitySquared;
     }
 
@@ -215,6 +216,7 @@ public class Ship {
      *          |isValidAngle(angle)
      */
     private void setHeading(double angle) {
+        assert isValidAngle(angle);
         this.heading = angle;
     }
 
@@ -248,7 +250,7 @@ public class Ship {
      * Returns true if and only if the given radius is larger than the minimum radius.
      *
      */
-    public boolean isValidRadius(double radius){return radius >= this.minimumRadius;}
+    public boolean isValidRadius(double radius){return (radius >= this.minimumRadius || Double.isNaN(radius));}
 
     //Move
     //TODO Implement defensive style!
@@ -293,9 +295,9 @@ public class Ship {
     public void turn(double angle) {
         if (isValidAngle(this.getHeading() + angle)) {
             this.setHeading(this.getHeading() + angle);
-        } else if (angle + this.getHeading() >= 2 * Math.PI) {
+        } else if (this.getHeading() + angle >= 2 * Math.PI) {
             this.turn(angle - 2 * Math.PI);
-        } else if (0 > angle + this.getHeading()) {
+        } else if (0 > this.getHeading() + angle) {
             this.turn(angle + 2 * Math.PI);
         }
     }
@@ -340,7 +342,7 @@ public class Ship {
     public double getDistanceBetween(Ship other) throws IllegalArgumentException{
         if(other != null){
             return Math.sqrt((this.getPosition().getX() - other.getPosition().getX()) * (this.getPosition().getX() - other.getPosition().getX())
-                    - (this.getPosition().getY() - other.getPosition().getY()) * (this.getPosition().getY() - other.getPosition().getY()))
+                    + (this.getPosition().getY() - other.getPosition().getY()) * (this.getPosition().getY() - other.getPosition().getY()))
                     - (this.getRadius() + other.getRadius());
         }else{
             throw new IllegalArgumentException("Not an existing ship!");
@@ -384,7 +386,7 @@ public class Ship {
                     - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);
 
 
-            return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0);
+            return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other));
 
         }catch (NullPointerException e){
             throw new IllegalArgumentException("The other ship does not exist!");

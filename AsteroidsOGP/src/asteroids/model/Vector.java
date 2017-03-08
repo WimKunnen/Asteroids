@@ -1,7 +1,10 @@
 package asteroids.model;
 
+import be.kuleuven.cs.som.annotate.Basic;
+import be.kuleuven.cs.som.annotate.Immutable;
+
 /**
- * A class of two dimensional vectors.
+ * A class of two dimensional vectors used to create an adaptation of the Atari game 'Asteroids'.
  *
  * @invar   The size of a vector will always be nonnegative.
  *          | vectorLength >= 0
@@ -36,10 +39,20 @@ public class Vector {
 
     private final double y;
 
+    /**
+     * Returns the x component of the vector.
+     *
+     */
+    @Basic @Immutable
     public double getX(){
         return this.x;
     }
 
+    /**
+     * Returns the y component of the vector.
+     *
+     */
+    @Basic @Immutable
     public double getY(){
         return this.y;
     }
@@ -48,6 +61,7 @@ public class Vector {
      * Returns the scalar product of two vectors.
      *
      */
+    @Basic
     public double scalarProduct(Vector other){
         return this.getX() * other.getX() + this.getY() * other.getY();
     }
@@ -55,6 +69,7 @@ public class Vector {
     /**
      * Returns the square of the length of the vector.
      */
+    @Basic
     public double vectorLengthSquared(){
         return this.getX() * this.getX() + this.getY() * this.getY();
     }
@@ -62,6 +77,7 @@ public class Vector {
     /**
      * Returns the length of the vector.
      */
+    @Basic
     public double vectorLength(){
         return Math.sqrt(this.vectorLengthSquared());
     }
@@ -70,6 +86,7 @@ public class Vector {
      * Returns the sum of two vectors.
      *
      */
+    @Basic
     public Vector sum(Vector other){
         return new Vector(this.getX() + other.getX(), this.getY() + other.getY());
     }
@@ -79,6 +96,7 @@ public class Vector {
      * If the original vector's length is zero the original vector is returned.
      *
      */
+    @Basic
     public Vector normalize() {
         if(this.vectorLengthSquared() > 0)
             return new Vector(this.getX() / this.vectorLength(), this.getY() / this.vectorLength());
@@ -95,6 +113,7 @@ public class Vector {
      * else
      *  new == this
      */
+    @Basic
     public Vector resizeVector(double factor){
 
         if(this.vectorLengthSquared() >= 0)

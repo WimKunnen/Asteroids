@@ -43,6 +43,7 @@ public class Ship {
      *          The given radius is not a valid radius for any ship.
      *          | (!isValidRadius(radius)
      */
+    @Model
     public Ship(double x, double y, double velocityX, double velocityY, double radius, double heading)
             throws IllegalArgumentException{
                 if(Double.isNaN(x) ||  Double.isNaN(y))
@@ -63,6 +64,7 @@ public class Ship {
     /**
      * Default initializer for the Ship class.
      */
+    @Model
     public Ship(){
 
         setPosition(new Vector());
@@ -103,11 +105,13 @@ public class Ship {
      * @post    The position is set to the new position.
      *          |new.getPosition == newPosition
      */
+    @Basic
     private void setPosition(Vector newPosition){this.position = newPosition;}
 
     /**
      * Returns the position vector of the ship.
      */
+    @Basic
     public Vector getPosition(){return position;}
 
     //Velocity:
@@ -150,6 +154,7 @@ public class Ship {
      *          Else, the new maximum velocity is set at 0.
      *          Thus the square of the maximum velocity changes accordingly.
      */
+    @Basic
     public void setMaximumVelocity(double velocity){
         if(velocity <= speedOfLight && 0 <= velocity) {
             this.maximumVelocity = velocity;
@@ -185,11 +190,13 @@ public class Ship {
      *          the new total velocity is set at the maximum velocity, but the new direction of the velocity remains unaltered.
      *
      */
+    @Basic
     private void setVelocity(Vector velocity){
         this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocitySquared()
                 ? velocity.normalize().resizeVector(maximumVelocity) :  velocity;
     }
 
+    @Basic
     public Vector getVelocity(){
         return this.velocity;
     }
@@ -215,6 +222,7 @@ public class Ship {
      * @pre     The angle must be a valid angle.
      *          |isValidAngle(angle)
      */
+    @Basic
     private void setHeading(double angle) {
         assert isValidAngle(angle);
         this.heading = angle;
@@ -229,6 +237,7 @@ public class Ship {
      * @return  True if and only if the angle is between 0 and 4*PI.
      *          | result == ((this.getHeading() + angle < 4 * Math.PI) && (0 <= this.getHeading() + angle))
      */
+    @Basic
     public boolean isValidAngle(double angle){return ((angle < 2 * Math.PI) && (0 <= angle));}
 
 
@@ -250,6 +259,7 @@ public class Ship {
      * Returns true if and only if the given radius is larger than the minimum radius.
      *
      */
+    @Basic
     public boolean isValidRadius(double radius){return (radius >= this.minimumRadius || Double.isNaN(radius));}
 
     //Move
@@ -265,6 +275,7 @@ public class Ship {
      *          The given time difference is smaller than zero.
      *          | !isValidTimeDifference
      */
+    @Basic
     public void move(double timeDifference) throws IllegalArgumentException{
         if(isValidTimeDifference(timeDifference)){
             setPosition(this.position.sum(velocity.resizeVector(timeDifference)));
@@ -277,6 +288,7 @@ public class Ship {
      * Returns true if and only if the given time difference is nonnegative.
      *
      */
+    @Basic
     private boolean isValidTimeDifference(double timeDifference){return timeDifference >= 0;}
 
     //TODO check nominal style!
@@ -292,6 +304,7 @@ public class Ship {
      *
      * @post    If the new angle is greater than 2 * PI or smaller than 0, it is changed to an angle between 0 and 2 * PI.
      */
+    @Basic
     public void turn(double angle) {
         if (isValidAngle(this.getHeading() + angle)) {
             this.setHeading(this.getHeading() + angle);
@@ -315,6 +328,7 @@ public class Ship {
      *          |                    addedVelocitySize * sin(this.getHeading()))
      *          If the given velocity is smaller than zero, the velocity is unchanged.
      */
+    @Basic
     public void thrust(double addedVelocitySize){
         Vector addedVelocity = new Vector(addedVelocitySize * Math.cos(this.getHeading()),
                 addedVelocitySize * Math.sin(this.getHeading()));
@@ -339,6 +353,7 @@ public class Ship {
      *          The other ship does not exist.
      *          | other == null
      */
+    @Basic
     public double getDistanceBetween(Ship other) throws IllegalArgumentException{
         if(other != null){
             return Math.sqrt((this.getPosition().getX() - other.getPosition().getX()) * (this.getPosition().getX() - other.getPosition().getX())
@@ -359,6 +374,7 @@ public class Ship {
      *          The other ship does not exist.
      *          | other == null
      */
+    @Basic
     public boolean overlap(Ship other) throws IllegalArgumentException{
         if (other != null) {
             return this.getDistanceBetween(other) < 0;
@@ -377,6 +393,7 @@ public class Ship {
      *          The other ship does not exist.
      *          | other == null
      */
+    @Basic
     public boolean willCollide(Ship other) throws IllegalArgumentException{
         try {
             Vector deltaV = this.deltaV(other);
@@ -405,6 +422,7 @@ public class Ship {
      *        | The other ship does not exist
      *        | other == null
      */
+    @Basic
     public double getTimeToCollision(Ship other) throws NullPointerException{
         try {
             Vector deltaV = this.deltaV(other);
@@ -433,6 +451,7 @@ public class Ship {
      *          |The other ship does not exist
      *          | other == null
      */
+    @Basic
     public Vector getCollisionPosition(Ship other) throws IllegalArgumentException {
         try {
             Vector deltaV = this.deltaV(other);
@@ -469,6 +488,7 @@ public class Ship {
      * Returns the difference of the velocity vectors of two ships.
      *
      */
+    @Basic
     private Vector deltaV(Ship other){
         return new Vector(other.getVelocity().getX() - this.getVelocity().getX(),
                 other.getVelocity().getY() - this.getVelocity().getY());
@@ -478,6 +498,7 @@ public class Ship {
      * Returns the vectorial difference of the centers of the two ships.
      *
      */
+    @Basic
     private Vector deltaR(Ship other){
         return new Vector(other.getPosition().getX() - this.getPosition().getX(),
                 other.getPosition().getY() - this.getPosition().getY());
@@ -487,6 +508,7 @@ public class Ship {
      * Returns the sum of the radii of the ships.
      *
      */
+    @Basic
     private double sigma(Ship other){
         return this.getRadius() + other.getRadius();
     }
@@ -495,6 +517,7 @@ public class Ship {
      * Returns the constant d.
      *
      */
+    @Basic
     private double d(Vector deltaV, Vector deltaR, double sigma){
         return deltaV.scalarProduct(deltaR) * deltaV.scalarProduct(deltaR)
                 - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);

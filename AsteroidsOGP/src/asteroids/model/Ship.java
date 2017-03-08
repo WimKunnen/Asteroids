@@ -43,7 +43,6 @@ public class Ship {
      *          The given radius is not a valid radius for any ship.
      *          | (!isValidRadius(radius)
      */
-    @Model
     public Ship(double x, double y, double velocityX, double velocityY, double radius, double heading)
             throws IllegalArgumentException{
                 if(Double.isNaN(x) ||  Double.isNaN(y))
@@ -64,7 +63,6 @@ public class Ship {
     /**
      * Default initializer for the Ship class.
      */
-    @Model
     public Ship(){
 
         setPosition(new Vector());
@@ -106,6 +104,7 @@ public class Ship {
      *          |new.getPosition == newPosition
      */
     @Basic
+    @Model
     private void setPosition(Vector newPosition){this.position = newPosition;}
 
     /**
@@ -183,7 +182,7 @@ public class Ship {
      * @param   velocity
      *          The new velocity vector.
      *
-     * @Post    If the square of the new total velocity does not exceed the square of the maximum velocity,
+     * @post    If the square of the new total velocity does not exceed the square of the maximum velocity,
      *          the new velocity is equal the the given velocity.
      *          | new.getVelocityX() == velocity
      *          If the square of the new total velocity does exceed the square of the maximum velocity,
@@ -191,6 +190,7 @@ public class Ship {
      *
      */
     @Basic
+    @Model
     private void setVelocity(Vector velocity){
         this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocitySquared()
                 ? velocity.normalize().resizeVector(maximumVelocity) :  velocity;
@@ -223,6 +223,7 @@ public class Ship {
      *          |isValidAngle(angle)
      */
     @Basic
+    @Model
     private void setHeading(double angle) {
         assert isValidAngle(angle);
         this.heading = angle;

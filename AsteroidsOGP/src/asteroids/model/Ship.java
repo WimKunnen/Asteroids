@@ -76,24 +76,11 @@ public class Ship {
 
     //Position:
     //TODO check defensive style!
-
-    private Vector position = new Vector(this.getCoordX(), this.getCoordY());
-
     private double coordX;
 
     private double coordY;
 
-    /**
-     * Returns the coordinate of the ship along the X-axis.
-     */
-    @Basic
-    private double getCoordX(){return coordX;}
-
-    /**
-     * Returns the coordinate of the ship along the Y-axis.
-     */
-    @Basic
-    private double getCoordY(){return coordY;}
+    private Vector position = new Vector(coordX, coordY);
 
     /**
      * Changes the current position vector to a new position vector.

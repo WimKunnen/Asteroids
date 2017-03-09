@@ -29,7 +29,10 @@ public class TestShip {
 	
 	@Before
 	public void setUp() {
+		ship1 = new Ship(1.5,15.0,10.0,20.0,30.0, Math.PI);
+		ship1.setMaximumVelocity(100000.0);
 		ship2 = new Ship(0.0,0.0,10.0,10.0,30.0,0.0);
+		ship2.setMaximumVelocity(300010);
 		ship3 = new Ship(100.0,0.0,0.0,0.0,30,0.0);
 		ship4 = new Ship(30.0,0.0,10.0,0.0,10.0,0.0);
 	}
@@ -38,7 +41,9 @@ public class TestShip {
 	public void setMaximumVelocity_Legal() {
 		ship1 = new Ship(1.5,15.0,10.0,20.0,30.0, Math.PI);
 		ship1.setMaximumVelocity(100000.0);
+	public void testInitializeShip() {
 		assertEquals(100000.0,ship1.getMaximumVelocity(),EPSILON);
+		assertEquals(300000.0, ship2.getMaximumVelocity(),EPSILON);
 		assertEquals(1.5,ship1.getPosition().getX(),EPSILON);
 		assertEquals(15.0,ship1.getPosition().getY(),EPSILON);
 		assertEquals(10.0,ship1.getVelocity().getX(),EPSILON);

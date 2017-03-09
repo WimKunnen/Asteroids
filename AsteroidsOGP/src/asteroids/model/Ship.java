@@ -475,8 +475,7 @@ public class Ship {
                 double newCoordYother = other.getPosition().getY() + deltaT * other.getVelocity().getY();
                 Vector newPositionOther = new Vector(newCoordXother, newCoordYother);
 
-                Vector pointingVector = new Vector(newCoordXother - newCoordXthis, newCoordYother - newCoordYthis);
-                pointingVector = pointingVector.normalize();
+                Vector pointingVector = newPositionOther.sum(newPositionThis.resizeVector(-1)).normalize();
 
                 return newPositionThis.sum(pointingVector.resizeVector(this.getRadius()));
             }
@@ -492,8 +491,7 @@ public class Ship {
      */
     @Basic
     private Vector deltaV(Ship other){
-        return new Vector(other.getVelocity().getX() - this.getVelocity().getX(),
-                other.getVelocity().getY() - this.getVelocity().getY());
+        return other.velocity.sum(this.velocity.resizeVector(-1));
     }
 
     /**
@@ -502,8 +500,7 @@ public class Ship {
      */
     @Basic
     private Vector deltaR(Ship other){
-        return new Vector(other.getPosition().getX() - this.getPosition().getX(),
-                other.getPosition().getY() - this.getPosition().getY());
+        return other.position.sum(this.position.resizeVector(-1));
     }
 
     /**

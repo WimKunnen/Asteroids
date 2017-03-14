@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AsteroidsGithub.iml" filepath="$PROJECT_DIR$/.idea/AsteroidsGithub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AsteroidsOGP/AsteroidsOGP.iml" filepath="$PROJECT_DIR$/AsteroidsOGP/AsteroidsOGP.iml" />
     </modules>
   </component>
 </project>

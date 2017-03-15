@@ -143,7 +143,7 @@ public abstract class Entity {
         return this.world;
     }
 
-    private void setWorld(World newWorld){
+    protected void setWorld(World newWorld){
         this.world = newWorld;
     }
 

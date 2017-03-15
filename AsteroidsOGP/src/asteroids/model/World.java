@@ -24,6 +24,11 @@ public class World {
 
     }
 
+    public World(){
+        this.height = 800;
+        this.width = 800;
+    }
+
     private final double width;
     public double getWidth(){return this.width;}
 

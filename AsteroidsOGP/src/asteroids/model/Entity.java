@@ -3,6 +3,7 @@ package asteroids.model;
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
 
+
 /**
  * A class of entities for the game Asteroids.
  * Possible entities are currently ships and bullets.
@@ -52,22 +53,32 @@ public abstract class Entity {
      * @throws   IllegalArgumentException
      *           Throws an exception if either x or y is equal to NaN.
      *           | (Double.isNaN(x) ||  Double.isNaN(y))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
+     *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
-    public Entity(double x, double y, double velocityX, double velocityY, double radius, double heading)
+    public Entity(double x, double y, double velocityX, double velocityY, double radius, double minimumRadius, double heading, World world)
             throws IllegalArgumentException{
-        if(Double.isNaN(x) ||  Double.isNaN(y))
-            throw new IllegalArgumentException();
-        else
-            setPosition(new Vector(x, y));
-
+        this.setMinimumRadius(minimumRadius);
         if(isValidRadius(radius)){
-            this.radius = radius;
+            this.setRadius(radius);
         }else{
             throw new IllegalArgumentException();
         }
+
+        if(Double.isNaN(x) ||  Double.isNaN(y))
+            throw new IllegalArgumentException();
+        else if(this.getWorld() != null && (x + this.getRadius() > this.getWorld().getWidth()
+                || y + this.getRadius() > this.getWorld().getHeight()))
+            throw new IllegalArgumentException();
+        else
+            this.setPosition(new Vector(x, y));
+
         this.setMaximumVelocity(speedOfLight);
         this.setVelocity(new Vector(velocityX,velocityY));
         this.setHeading(heading);
+        this.setWorld(world);
     }
 
     /**
@@ -91,10 +102,11 @@ public abstract class Entity {
     public Entity(){
 
         this.setPosition(new Vector());
-        this.radius = minimumRadius;
+        this.setRadius(this.getMinimumRadius());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
         this.setHeading(0);
+        this.setWorld(null);
 
     }
     //Position:
@@ -111,7 +123,7 @@ public abstract class Entity {
      */
 
     @Model
-    private void setPosition(Vector newPosition){
+    protected void setPosition(Vector newPosition){
         this.position = newPosition;
     }
 
@@ -121,6 +133,18 @@ public abstract class Entity {
     @Basic
     public Vector getPosition(){
         return position;
+    }
+
+    // The entities world
+
+    protected World world = new World();
+
+    public World getWorld(){
+        return this.world;
+    }
+
+    private void setWorld(World newWorld){
+        this.world = newWorld;
     }
 
     //Move
@@ -300,13 +324,19 @@ public abstract class Entity {
     /**
      * Variable registering the minimum radius of all entities.
      */
-    private static double minimumRadius = 10;
+    private double minimumRadius = 10;
 
+    protected double getMinimumRadius(){
+        return this.minimumRadius;
+    }
 
+    protected void setMinimumRadius(double newMinimumRadius){
+        this.minimumRadius = newMinimumRadius;
+    }
     /**
      * Variable registering the radius of this entity.
      */
-    private final double radius;
+    private double radius;
 
     /**
      * Returns the radius of the entity.
@@ -315,6 +345,10 @@ public abstract class Entity {
     @Immutable
     public double getRadius(){
         return this.radius;
+    }
+
+    public void setRadius(double newRadius){
+        this.radius = newRadius;
     }
 
     /**
@@ -392,7 +426,7 @@ public abstract class Entity {
         double sigma = this.sigma(other);
         double d = d(deltaV, deltaR, sigma);
 
-        return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other));
+        return  !((deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() != other.getWorld());
     }
 
 
@@ -489,5 +523,19 @@ public abstract class Entity {
     private double d(Vector deltaV, Vector deltaR, double sigma){
         return deltaV.scalarProduct(deltaR) * deltaV.scalarProduct(deltaR)
                 - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);
+    }
+
+    // Mass
+    protected double density;
+    protected double getDensity(){
+        return this.density;
+    }
+    protected void setDensity(double newDensity){
+        this.density = newDensity;
+    }
+
+    protected double massOfEntity = 4.0/3 * Math.pow(this.getRadius(), 3) * this.density;
+    protected double getMassOfEntity(){
+        return this.massOfEntity;
     }
 }

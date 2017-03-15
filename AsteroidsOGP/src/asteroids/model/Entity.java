@@ -490,4 +490,12 @@ public abstract class Entity {
         return deltaV.scalarProduct(deltaR) * deltaV.scalarProduct(deltaR)
                 - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);
     }
+
+    //World
+    public World world;
+
+    public World getWorld(){return this.world;}
+
+    public void setWorld(World world) {this.world = world;}
+
 }

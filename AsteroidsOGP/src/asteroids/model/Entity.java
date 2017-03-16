@@ -458,6 +458,89 @@ public abstract class Entity {
         }
     }
 
+    public double getTimeToCollisionWithBoundary() {
+        double time = Double.POSITIVE_INFINITY;
+        if (this.world == null)
+            return time;
+        if (getVelocity().getX() > 0) {
+            double timeToCollisionX = (this.world.getWidth() - getRadius() - getPosition().getX()) / getVelocity().getX();
+            if (timeToCollisionX < time)
+                time = timeToCollisionX;
+        }
+        if (getVelocity().getX() < 0) {
+            double timeToCollisionX = Math.abs((getPosition().getX() - getRadius()) / getVelocity().getX());
+            if (timeToCollisionX < time)
+                time = timeToCollisionX;
+        }
+        if (getVelocity().getY() > 0) {
+            double timeToCollisionY = (world.getHeight() - getRadius() - getPosition().getY()) / getVelocity().getY();
+            if (timeToCollisionY < time)
+                time = timeToCollisionY;
+        }
+        if (getVelocity().getY() < 0){
+            double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
+            if (timeToCollisionY < time)
+                time = timeToCollisionY;
+        }
+        return time;
+
+    }
+
+    /**
+     * Return at which side of the world the first collision with a boundary would happen: Right ("R"), Left("L"),
+     * Top("T"), Bottom("B") or no boundary("X").
+     *
+     */
+    public String getBoundaryOfCollision(){
+        double time = Double.POSITIVE_INFINITY;
+        String boundary = "X";
+        if (this.world == null)
+            return boundary;
+        if (getVelocity().getX() > 0) {
+            double timeToCollisionX = (this.world.getWidth() - getRadius() - getPosition().getX()) / getVelocity().getX();
+            if (timeToCollisionX < time) {
+                time = timeToCollisionX;
+                boundary = "R";
+            }
+
+        }
+        if (getVelocity().getX() < 0) {
+            double timeToCollisionX = Math.abs((getPosition().getX() - getRadius()) / getVelocity().getX());
+            if (timeToCollisionX < time) {
+                time = timeToCollisionX;
+                boundary = "L";
+            }
+        }
+        if (getVelocity().getY() > 0) {
+            double timeToCollisionY = (world.getHeight() - getRadius() - getPosition().getY()) / getVelocity().getY();
+            if (timeToCollisionY < time) {
+                time = timeToCollisionY;
+                boundary = "T";
+            }
+        }
+        if (getVelocity().getY() < 0){
+            double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
+            if (timeToCollisionY < time) {
+                time = timeToCollisionY;
+                boundary = "B";
+            }
+        }
+        return boundary;
+    }
+
+    public Vector getCollisionPositionWithBoundary() {
+        double time = getTimeToCollisionWithBoundary();
+        String boundary = getBoundaryOfCollision();
+        Vector radiusVector;
+        if (boundary == "X") {return null;}
+        if (boundary == "R") {radiusVector = new Vector(getRadius(),0);}
+        else if (boundary == "L") {radiusVector = new Vector(-getRadius(),0);}
+        else if (boundary == "T") {radiusVector = new Vector(0, getRadius());}
+        else {radiusVector = new Vector(0, -getRadius());}
+
+        return this.getPosition().sum(getVelocity().resizeVector(time)).sum(radiusVector);
+    }
+
     /**
      * If the entities will collide, the position of the hull where the entities hit is returned.
      * | if (willCollide()) then

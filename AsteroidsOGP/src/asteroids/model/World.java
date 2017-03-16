@@ -1,6 +1,6 @@
 package asteroids.model;
 
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by maarten on 14/03/2017.
@@ -42,6 +42,12 @@ public class World {
     public final static double lowerBound = 0;
     public static double upperBound = Double.MAX_VALUE;
 
+    public Set<Entity> getAllEntities() {
+        Set<Entity> allEntities = new HashSet<>();
+        allEntities.addAll(getAllBullets());
+        allEntities.addAll(getAllShips());
+        return allEntities;
+    }
     public Set<Ship> getAllShips() {return this.allShips;}
     public Set<Bullet> getAllBullets() {return this.allBullets;}
 
@@ -63,13 +69,17 @@ public class World {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         else{
-            entity.setWorld(null);
-            if (!allShips.contains(entity) && !allBullets.contains(entity))
-                throw new IllegalArgumentException();
-            if (entity instanceof Ship)
+            if (entity instanceof Ship) {
+                if (!allShips.contains(entity))
+                    throw new IllegalArgumentException();
                 allShips.remove(entity);
-            if (entity instanceof Bullet)
+            }
+            if (entity instanceof Bullet){
+                if (!allBullets.contains(entity))
+                    throw new IllegalArgumentException();
                 allBullets.remove(entity);
+            }
+            entity.setWorld(null);
         }
     }
 
@@ -78,5 +88,33 @@ public class World {
     }
 
 
-    public void evolve(double timeDifference) {}
+    public void evolve(double timeDifference) {
+        if (timeDifference <= getTimeToFirstcollision()){
+            for (Entity entity : getAllEntities()) {
+                entity.move(timeDifference);
+                if (entity instanceof Ship)
+                    if (((Ship) entity).getThrusterState())
+                        ((Ship) entity).thrust(timeDifference);
+            }
+
+        }
+        else{
+            evolve(getTimeToFirstcollision());
+        }
+    }
+    public double getTimeToFirstcollision(){ //Control collision with world boundaries!
+        double timeToFirstCollision = Double.POSITIVE_INFINITY;
+        List<Entity> allEntities = new ArrayList<>();
+        allEntities.addAll(getAllBullets());
+        allEntities.addAll(getAllShips());
+        for (int i = 0; i < allEntities.size(); i++){
+            for (int k = i+1; k < allEntities.size(); k++){
+                double newTime = allEntities.get(i).getTimeToCollision(allEntities.get(k));
+                if (newTime < timeToFirstCollision)
+                    timeToFirstCollision = newTime;
+
+            }
+        }
+        return timeToFirstCollision;
+    }
 }

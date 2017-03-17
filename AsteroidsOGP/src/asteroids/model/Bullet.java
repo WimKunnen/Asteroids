@@ -39,4 +39,12 @@ public class Bullet extends Entity {
         this.setDensity(7.8 * Math.pow(10, 12));
     }
 
+    public final int maxNbBounces = 3;
+
+    public int nbOfBounces = 0;
+
+    public void riseNbOfBounces() {
+        this.nbOfBounces += 1;
+    }
+
 }

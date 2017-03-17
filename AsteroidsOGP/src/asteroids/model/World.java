@@ -1,5 +1,7 @@
 package asteroids.model;
 
+import be.kuleuven.cs.som.annotate.*;
+
 import java.util.*;
 
 /**
@@ -30,9 +32,11 @@ public class World {
     }
 
     private final double width;
+    @Basic @Immutable
     public double getWidth(){return this.width;}
 
     private final double height;
+    @Basic @Immutable
     public double getHeight() {return this.height;}
 
     public Set<Ship> allShips;
@@ -89,7 +93,7 @@ public class World {
 
 
     public void evolve(double timeDifference) {
-        if (timeDifference <= getTimeToFirstcollision()){
+        if (timeDifference <= getTimeToFirstCollision()){
             for (Entity entity : getAllEntities()) {
                 entity.move(timeDifference);
                 if (entity instanceof Ship)
@@ -99,10 +103,52 @@ public class World {
 
         }
         else{
-            evolve(getTimeToFirstcollision());
+            evolve(getTimeToFirstCollision());
+            if (getTimeToFirstBoundaryCollision() < getTimeToFirstEntityCollision()){
+                String boundary = firstEntityToCollideBoundary.getBoundaryOfCollision();
+                if (boundary.equals("L") || boundary.equals("R")) {
+                    firstEntityToCollideBoundary.negateVelocityX();
+                    if (firstEntityToCollideBoundary instanceof Bullet){
+                        ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
+                    }
+                }
+                if (boundary.equals("T") || boundary.equals("B")) {
+                    firstEntityToCollideBoundary.negateVelocityY();
+                    if (firstEntityToCollideBoundary instanceof Bullet){
+                        ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
+                    }
+                }
+            }
+
+            else if (getTimeToFirstBoundaryCollision() > getTimeToFirstEntityCollision()){
+                resolveCollision(firstEntityPairToCollide);
+            }
+
+
         }
     }
-    public double getTimeToFirstcollision(){ //Control collision with world boundaries!
+
+    public void resolveCollision(List<Entity> entityPair) {
+        Entity entity1 = entityPair.get(0);
+        Entity entity2 = entityPair.get(1);
+        if (entity1 instanceof Ship && entity2 instanceof Ship){
+            Ship ship1 = (Ship)entityPair.get(0);
+            Ship ship2 = (Ship)entityPair.get(1);
+            List<Ship> shipPair = new ArrayList<>();
+            shipPair.add(ship1);shipPair.add(ship2);
+            entity1.setVelocity(new Vector(entity1.getVelocity().getX() +
+                    Jx(shipPair)/ship1.getTotalMass(),
+                    entity1.getVelocity().getY() + Jy(shipPair)/ship1.getTotalMass()));
+            entity2.setVelocity(new Vector(entity2.getVelocity().getX() -
+                    Jx(shipPair)/ship2.getTotalMass(),
+                    entity2.getVelocity().getY() - Jy(shipPair)/ship2.getTotalMass()));
+        }
+    }
+
+    public Entity firstEntityToCollideBoundary;
+    public List<Entity> firstEntityPairToCollide;
+
+    public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
         allEntities.addAll(getAllBullets());
@@ -110,11 +156,58 @@ public class World {
         for (int i = 0; i < allEntities.size(); i++){
             for (int k = i+1; k < allEntities.size(); k++){
                 double newTime = allEntities.get(i).getTimeToCollision(allEntities.get(k));
-                if (newTime < timeToFirstCollision)
+                if (newTime < timeToFirstCollision) {
                     timeToFirstCollision = newTime;
+                    firstEntityPairToCollide.clear();
+                    firstEntityPairToCollide.add(allEntities.get(i));
+                    firstEntityPairToCollide.add(allEntities.get(k));
+                }
+            }
+        }
+
+        return timeToFirstCollision;
+    }
+
+    public double getTimeToFirstBoundaryCollision() {
+        double timeToFirstCollision = Double.POSITIVE_INFINITY;
+        List<Entity> allEntities = new ArrayList<>();
+        allEntities.addAll(getAllBullets());
+        allEntities.addAll(getAllShips());
+        for (int i = 0; i < allEntities.size(); i++) {
+            double newTime = allEntities.get(i).getTimeToCollisionWithBoundary();
+            if (newTime < timeToFirstCollision) {
+                timeToFirstCollision = newTime;
+                firstEntityToCollideBoundary = allEntities.get(i);
 
             }
         }
         return timeToFirstCollision;
+    }
+
+    public double getTimeToFirstCollision() {
+        double time = getTimeToFirstBoundaryCollision();
+        double entityTime = getTimeToFirstEntityCollision();
+        if (entityTime < time)
+            time = entityTime;
+        return time;
+    }
+
+    public double J(List<Ship> shipPair) {
+        Ship ship1 = shipPair.get(0);
+        Ship ship2 = shipPair.get(1);
+        return 2*ship1.getTotalMass()*ship2.getTotalMass()*
+                ship1.deltaV(ship2).scalarProduct(ship1.deltaR(ship2))
+                / ship1.sigma(ship2) / (ship1.getTotalMass()+ship2.getTotalMass());
+    }
+    public double Jx(List<Ship> shipPair) {
+        Ship ship1 = shipPair.get(0);
+        Ship ship2 = shipPair.get(1);
+        return J(shipPair)/ship1.sigma(ship2) * ship1.deltaR(ship2).getX();
+    }
+
+    public double Jy(List<Ship> shipPair) {
+        Ship ship1 = shipPair.get(0);
+        Ship ship2 = shipPair.get(1);
+        return J(shipPair)/ship1.sigma(ship2) * ship1.deltaR(ship2).getY();
     }
 }

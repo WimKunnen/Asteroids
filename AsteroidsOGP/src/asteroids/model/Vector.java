@@ -137,4 +137,5 @@ public class Vector {
     public double[] getValues(){
         return new double[]{this.getX(),this.getY()};
     }
+
 }

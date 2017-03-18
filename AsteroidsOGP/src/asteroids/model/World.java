@@ -39,6 +39,15 @@ public class World {
     @Basic @Immutable
     public double getHeight() {return this.height;}
 
+    public boolean isTerminated = false;
+
+    public void terminate(){
+        this.isTerminated = true;
+        for (Entity entity : getAllEntities()){
+            removeEntity(entity);
+        }
+    }
+
     public Set<Ship> allShips;
     public Set<Bullet> allBullets;
 
@@ -93,7 +102,7 @@ public class World {
 
 
     public void evolve(double timeDifference) {
-        if (timeDifference <= getTimeToFirstCollision()){
+        if (timeDifference <= getTimeToFirstCollision()){ //No collision in the given time.
             for (Entity entity : getAllEntities()) {
                 entity.move(timeDifference);
                 if (entity instanceof Ship)
@@ -104,29 +113,37 @@ public class World {
         }
         else{
             evolve(getTimeToFirstCollision());
-            if (getTimeToFirstBoundaryCollision() < getTimeToFirstEntityCollision()){
+
+            if (getTimeToFirstBoundaryCollision() < getTimeToFirstEntityCollision()){ //Boundary collision
                 String boundary = firstEntityToCollideBoundary.getBoundaryOfCollision();
                 if (boundary.equals("L") || boundary.equals("R")) {
                     firstEntityToCollideBoundary.negateVelocityX();
                     if (firstEntityToCollideBoundary instanceof Bullet){
                         ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
+                        if (((Bullet) firstEntityToCollideBoundary).nbOfBounces >= ((Bullet) firstEntityToCollideBoundary).maxNbBounces +1 )
+                            (firstEntityToCollideBoundary).terminate();
                     }
                 }
                 if (boundary.equals("T") || boundary.equals("B")) {
                     firstEntityToCollideBoundary.negateVelocityY();
                     if (firstEntityToCollideBoundary instanceof Bullet){
                         ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
+                        if (((Bullet) firstEntityToCollideBoundary).nbOfBounces >= ((Bullet) firstEntityToCollideBoundary).maxNbBounces +1 )
+                            (firstEntityToCollideBoundary).terminate();
                     }
                 }
             }
 
-            else if (getTimeToFirstBoundaryCollision() > getTimeToFirstEntityCollision()){
+            else if (getTimeToFirstBoundaryCollision() > getTimeToFirstEntityCollision()){ //Entity collision
                 resolveCollision(firstEntityPairToCollide);
             }
+
+            evolve(timeDifference - getTimeToFirstCollision());
 
 
         }
     }
+
 
     public void resolveCollision(List<Entity> entityPair) {
         Entity entity1 = entityPair.get(0);
@@ -142,6 +159,27 @@ public class World {
             entity2.setVelocity(new Vector(entity2.getVelocity().getX() -
                     Jx(shipPair)/ship2.getTotalMass(),
                     entity2.getVelocity().getY() - Jy(shipPair)/ship2.getTotalMass()));
+        }
+
+        else if (entity1 instanceof Bullet && entity2 instanceof Ship)
+            resolveBulletShipCollision((Ship) entity2,(Bullet) entity1);
+        else if (entity1 instanceof Ship && entity2 instanceof Bullet)
+            resolveBulletShipCollision((Ship) entity1,(Bullet) entity2);
+        else if (entity1 instanceof Bullet && entity2 instanceof Bullet){
+            entity1.terminate();
+            entity2.terminate();
+        }
+
+
+    }
+
+    public void resolveBulletShipCollision(Ship ship,Bullet bullet){
+        if (bullet.getShip() == ship){
+            bullet.loadOnShip(ship,ship.getPosition());
+        }
+        else{
+            ship.terminate();
+            bullet.terminate();
         }
     }
 

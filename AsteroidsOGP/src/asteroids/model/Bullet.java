@@ -25,6 +25,10 @@ public class Bullet extends Entity {
      *
      * @param   heading
      *          The initial heading of the new bullet.
+     *
+     * @invar   A bullet cannot be held by a world and a ship at the same time.
+     *          | getWorld() == null || getShip == null
+     *
      */
     public Bullet(double x, double y, double velocityX, double velocityY, double radius, double heading, World world){
         super(x, y, velocityX, velocityY, radius,1, heading, world);
@@ -39,12 +43,27 @@ public class Bullet extends Entity {
         this.setDensity(7.8 * Math.pow(10, 12));
     }
 
-    public final int maxNbBounces = 3;
+    public final int maxNbBounces = 2;
 
     public int nbOfBounces = 0;
 
     public void riseNbOfBounces() {
         this.nbOfBounces += 1;
     }
+
+    public Ship ship;
+
+    public void loadOnShip(Ship ship){
+        this.ship = ship;
+    }
+
+    public void loadOnShip(Ship ship, Vector vector){
+        this.ship = ship;
+        setPosition(vector);
+    }
+
+    public Ship getShip(){return ship;}
+
+
 
 }

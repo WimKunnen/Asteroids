@@ -540,10 +540,10 @@ public abstract class Entity {
         double time = getTimeToCollisionWithBoundary();
         String boundary = getBoundaryOfCollision();
         Vector radiusVector;
-        if (boundary == "X") {return null;}
-        if (boundary == "R") {radiusVector = new Vector(getRadius(),0);}
-        else if (boundary == "L") {radiusVector = new Vector(-getRadius(),0);}
-        else if (boundary == "T") {radiusVector = new Vector(0, getRadius());}
+        if (boundary.equals("X")) {return null;}
+        else if (boundary.equals("R")) {radiusVector = new Vector(getRadius(),0);}
+        else if (boundary.equals("L")) {radiusVector = new Vector(-getRadius(),0);}
+        else if (boundary.equals("T")) {radiusVector = new Vector(0, getRadius());}
         else {radiusVector = new Vector(0, -getRadius());}
 
         return this.getPosition().sum(getVelocity().resizeVector(time)).sum(radiusVector);
@@ -628,5 +628,14 @@ public abstract class Entity {
     protected double massOfEntity = 4.0/3 * Math.pow(this.getRadius(), 3) * this.density;
     protected double getMassOfEntity(){
         return this.massOfEntity;
+    }
+
+    // Termination
+    public boolean isTerminated = false;
+
+    public void terminate(){
+        isTerminated = true;
+        if (getWorld() != null)
+            getWorld().removeEntity(this);
     }
 }

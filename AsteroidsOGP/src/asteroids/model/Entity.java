@@ -2,6 +2,7 @@ package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
+import asteroids.model.Bullet;
 
 
 /**
@@ -637,5 +638,24 @@ public abstract class Entity {
         isTerminated = true;
         if (getWorld() != null)
             getWorld().removeEntity(this);
+    }
+
+    //Interaction with world
+    public boolean fitsInBoundaries(World world){
+        return !(getPosition().getX() + this.getRadius() > world.getWidth()
+                || getPosition().getX() - this.getRadius() < 0
+                || getPosition().getY() + this.getRadius() > world.getHeight()
+                || getPosition().getY() - this.getRadius() < 0);
+    }
+
+    public boolean noOverlapsInNewWorld(World world){
+        for (Entity entity : world.getAllEntities()){
+            if (this.overlap(entity)){
+                if (!(entity instanceof Ship && this instanceof Bullet && ((Ship) entity).getBullets().contains(this) //If they are not a bullet and its ship
+                        || (entity instanceof Bullet && this instanceof Ship && ((Ship) this).getBullets().contains(entity))))
+                        { return false;}
+                }
+        }
+        return true;
     }
 }

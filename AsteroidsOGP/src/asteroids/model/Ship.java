@@ -176,7 +176,7 @@ public class Ship extends Entity{
     public ArrayList<Bullet> getBullets(){
         return this.bullets;
     }
-    private void reload(Bullet bullet){
+    public void reload(Bullet bullet){
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
     }
@@ -188,7 +188,7 @@ public class Ship extends Entity{
         bullet.setVelocity(bulletVelocity);
         double averageRadius = (this.getRadius() + bullet.getRadius()) / 2;
         double offset = this.getRadius() + bullet.getRadius() + averageRadius;
-        Vector relativePositionBullet = pointingVector.normalize().resizeVector(offset);
+        Vector relativePositionBullet = pointingVector.normalize().resizeVector(offset); //normalize is unnecessary?
         Vector absolutePositionBullet = this.getPosition().sum(relativePositionBullet);
         bullet.setPosition(absolutePositionBullet);
 

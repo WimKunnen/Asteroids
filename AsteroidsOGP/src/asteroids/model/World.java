@@ -5,7 +5,8 @@ import be.kuleuven.cs.som.annotate.*;
 import java.util.*;
 
 /**
- * Created by maarten on 14/03/2017.
+ *
+ * @author Maarten Doclo and Wim Kunnen
  */
 public class World {
 
@@ -176,6 +177,7 @@ public class World {
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
         if (bullet.getShip() == ship){
             bullet.loadOnShip(ship,ship.getPosition());
+            ship.reload(bullet);
         }
         else{
             ship.terminate();

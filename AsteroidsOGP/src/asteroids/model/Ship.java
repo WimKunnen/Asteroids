@@ -219,7 +219,7 @@ public class Ship extends Entity{
         return this.bullets;
     }
 
-    private void reloadSingleBullet(Bullet bullet){
+    public void reloadSingleBullet(Bullet bullet){
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
         bullet.setSource(this);

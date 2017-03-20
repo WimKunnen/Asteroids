@@ -23,14 +23,8 @@ public class Bullet extends Entity {
      * @param   velocityY
      *          The initial velocity of the new bullet along the y-axis.
      *
-     * @param   radius
-     *          The initial radius of the new bullet.
-     *
-     * @param   heading
-     *          The initial heading of the new bullet.
-     *
      * @invar   A bullet cannot be held by a world and a ship at the same time.
-     *          | getWorld() == null || getShip == null
+     *          | getWorld() == null || getSource() == null
      *
      */
     public Bullet(double x, double y, double velocityX, double velocityY, World world) throws IllegalArgumentException{
@@ -59,7 +53,7 @@ public class Bullet extends Entity {
      */
     private double minimumRadius = 10;
 
-    public final int maxNbBounces = 2;
+
     protected double getMinimumRadius(){
         return this.minimumRadius;
     }

@@ -97,11 +97,11 @@ public abstract class Entity {
     }
 
     // Termination
-    public boolean isTerminated = false;
-    public void terminate(){
-        this.isTerminated = true;
-        this.setWorld(null);
-    }
+//    public boolean isTerminated = false;
+//    public void terminate(){
+//        this.isTerminated = true;
+//        this.setWorld(null);
+//    }
 
     //Position:
     private Vector position;

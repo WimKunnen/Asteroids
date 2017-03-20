@@ -121,7 +121,7 @@ public class World {
                     firstEntityToCollideBoundary.negateVelocityX();
                     if (firstEntityToCollideBoundary instanceof Bullet){
                         ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
-                        if (((Bullet) firstEntityToCollideBoundary).nbOfBounces >= ((Bullet) firstEntityToCollideBoundary).maxNbBounces +1 )
+                        if (((Bullet) firstEntityToCollideBoundary).getNbOfBounces() >= ((Bullet) firstEntityToCollideBoundary).getMaxNbBounces() )
                             (firstEntityToCollideBoundary).terminate();
                     }
                 }
@@ -129,7 +129,7 @@ public class World {
                     firstEntityToCollideBoundary.negateVelocityY();
                     if (firstEntityToCollideBoundary instanceof Bullet){
                         ((Bullet) firstEntityToCollideBoundary).riseNbOfBounces();
-                        if (((Bullet) firstEntityToCollideBoundary).nbOfBounces >= ((Bullet) firstEntityToCollideBoundary).maxNbBounces +1 )
+                        if (((Bullet) firstEntityToCollideBoundary).getNbOfBounces() >= ((Bullet) firstEntityToCollideBoundary).getMaxNbBounces() )
                             (firstEntityToCollideBoundary).terminate();
                     }
                 }
@@ -177,7 +177,7 @@ public class World {
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
         if (bullet.getShip() == ship){
             bullet.loadOnShip(ship,ship.getPosition());
-            ship.reload(bullet);
+            ship.reloadSingleBullet(bullet);
         }
         else{
             ship.terminate();

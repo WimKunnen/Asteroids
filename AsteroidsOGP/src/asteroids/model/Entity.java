@@ -26,12 +26,6 @@ public abstract class Entity {
      * @param   velocityY
      *          The initial velocity of the new entity along the y-axis.
      *
-     * @param   radius
-     *          The initial radius of the new entity.
-     *
-     * @param   heading
-     *          The initial heading of the new entity.
-     *
      * @post    The new x coordinate is equal to x.
      *          | new.getPosition().getX() == x
      *
@@ -59,14 +53,8 @@ public abstract class Entity {
      *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
      *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
-    public Entity(double x, double y, double velocityX, double velocityY, double radius, double minimumRadius, double heading, World world)
+    public Entity(double x, double y, double velocityX, double velocityY, World world)
             throws IllegalArgumentException{
-        this.setMinimumRadius(minimumRadius);
-        if(isValidRadius(radius)){
-            this.setRadius(radius);
-        }else{
-            throw new IllegalArgumentException();
-        }
 
         if(Double.isNaN(x) ||  Double.isNaN(y))
             throw new IllegalArgumentException();
@@ -78,7 +66,6 @@ public abstract class Entity {
 
         this.setMaximumVelocity(speedOfLight);
         this.setVelocity(new Vector(velocityX,velocityY));
-        this.setHeading(heading);
         this.setWorld(world);
     }
 
@@ -103,13 +90,19 @@ public abstract class Entity {
     public Entity(){
 
         this.setPosition(new Vector());
-        this.setRadius(this.getMinimumRadius());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
-        this.setHeading(0);
         this.setWorld(null);
 
     }
+
+    // Termination
+    public boolean isTerminated = false;
+    public void terminate(){
+        this.isTerminated = true;
+        this.setWorld(null);
+    }
+
     //Position:
     private Vector position;
 
@@ -285,67 +278,20 @@ public abstract class Entity {
         setVelocity(new Vector(this.getVelocity().getX(), -this.getVelocity().getY()));
     }
 
-    // Heading
-
-    /**
-     * Variable registering the orientation of this entity.
-     */
-    private double heading;
-
-    /**
-     * Returns the heading of the entity.
-     */
-    @Basic
-    public double getHeading(){
-        return this.heading;
-    }
-
-    /**
-     * Set the heading at the given angle.
-     *
-     * @param   angle
-     *          The angle at which the new heading will be set.
-     *
-     * @pre     The angle must be a valid angle.
-     *          | isValidAngle(angle)
-     */
-
-    @Model
-    protected void setHeading(double angle) {
-        assert isValidAngle(angle);
-        this.heading = angle;
-    }
-
-    /**
-     * Checks if the angle is valid.
-     *
-     * @param   angle
-     *          The angle between the entity's direction and the x-axis.
-     *
-     * @return  True if and only if the angle is between 0 and 2 * π.
-     *          | result == ((this.getHeading() + angle < 2 * Math.PI) && (0 <= this.getHeading() + angle))
-     */
-    public boolean isValidAngle(double angle){
-        return ((angle < 2 * Math.PI) && (0 <= angle));
-    }
-
     //Radius
     /**
      * Variable registering the minimum radius of all entities.
      */
-    private double minimumRadius = 10;
+    protected double minimumRadius = 10;
 
     protected double getMinimumRadius(){
         return this.minimumRadius;
     }
 
-    protected void setMinimumRadius(double newMinimumRadius){
-        this.minimumRadius = newMinimumRadius;
-    }
     /**
      * Variable registering the radius of this entity.
      */
-    private double radius;
+    protected double radius;
 
     /**
      * Returns the radius of the entity.
@@ -354,10 +300,6 @@ public abstract class Entity {
     @Immutable
     public double getRadius(){
         return this.radius;
-    }
-
-    public void setRadius(double newRadius){
-        this.radius = newRadius;
     }
 
     /**

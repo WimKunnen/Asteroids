@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="779da06e-14df-4405-8223-1cd0624a41df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,23 +56,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="516">
+              <caret line="238" column="41" lean-forward="true" selection-start-line="238" selection-start-column="41" selection-end-line="238" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4779#4780#0" expanded="true" />
+                <element signature="e#4832#4833#0" expanded="true" />
+                <element signature="e#4878#4879#0" expanded="true" />
+                <element signature="e#4917#4918#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state relative-caret-position="75">
+              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -80,18 +85,18 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="145" column="13" lean-forward="false" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
+            <state relative-caret-position="1575">
+              <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4658#4659#0" expanded="true" />
-                <element signature="e#4695#4696#0" expanded="true" />
-                <element signature="e#17021#17022#0" expanded="true" />
-                <element signature="e#17056#17057#0" expanded="true" />
-                <element signature="e#17106#17107#0" expanded="true" />
-                <element signature="e#17147#17148#0" expanded="true" />
-                <element signature="e#17278#17279#0" expanded="true" />
-                <element signature="e#17318#17319#0" expanded="true" />
+                <element signature="e#4292#4293#0" expanded="true" />
+                <element signature="e#4329#4330#0" expanded="true" />
+                <element signature="e#9177#9178#0" expanded="true" />
+                <element signature="e#9218#9219#0" expanded="true" />
+                <element signature="e#9434#9435#0" expanded="true" />
+                <element signature="e#9468#9469#0" expanded="true" />
+                <element signature="e#9722#9723#0" expanded="true" />
+                <element signature="e#9796#9797#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,9 +105,31 @@
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1560">
+              <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1557#1558#0" expanded="true" />
+                <element signature="e#1598#1599#0" expanded="true" />
+                <element signature="e#1661#1662#0" expanded="true" />
+                <element signature="e#1714#1715#0" expanded="true" />
+                <element signature="e#1927#1928#0" expanded="true" />
+                <element signature="e#1961#1962#0" expanded="true" />
+                <element signature="e#2007#2008#0" expanded="true" />
+                <element signature="e#2046#2047#0" expanded="true" />
+                <element signature="e#2300#2301#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
+                <element signature="e#2443#2444#0" expanded="true" />
+                <element signature="e#2483#2484#0" expanded="true" />
+                <element signature="e#2531#2532#0" expanded="true" />
+                <element signature="e#2575#2576#0" expanded="true" />
+                <element signature="e#2641#2642#0" expanded="true" />
+                <element signature="e#2680#2681#0" expanded="true" />
+                <element signature="e#2810#2811#0" expanded="true" />
+                <element signature="e#2844#2845#0" expanded="true" />
+                <element signature="e#2891#2892#0" expanded="true" />
+                <element signature="e#2931#2932#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,10 +194,10 @@
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestVector.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Vector.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
       </list>
     </option>
   </component>
@@ -199,7 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -418,6 +444,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1015,6 +1042,7 @@
       <workItem from="1489603341592" duration="296000" />
       <workItem from="1489603813613" duration="9077000" />
       <workItem from="1489613948029" duration="271000" />
+      <workItem from="1489765427347" duration="2404000" />
     </task>
     <servers />
   </component>
@@ -1051,7 +1079,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19111000" />
+    <option name="totallyTimeSpent" value="21515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1165,6 +1193,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1239,6 +1271,10 @@
           <caret line="457" column="90" lean-forward="false" selection-start-line="457" selection-start-column="90" selection-end-line="457" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1313,6 +1349,10 @@
           <caret line="549" column="36" lean-forward="true" selection-start-line="549" selection-start-column="36" selection-end-line="549" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1387,6 +1427,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1493,6 +1537,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1554,28 +1602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3570">
           <caret line="243" column="5" lean-forward="false" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part1TestPartial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#512#513#0" expanded="false" />
-            <element signature="e#540#541#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestVector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1644,47 +1670,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestVector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1650">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part1TestPartial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#512#513#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1557#1558#0" expanded="true" />
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+            <element signature="e#2007#2008#0" expanded="true" />
+            <element signature="e#2046#2047#0" expanded="true" />
+            <element signature="e#2300#2301#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+            <element signature="e#2483#2484#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+            <element signature="e#2575#2576#0" expanded="true" />
+            <element signature="e#2641#2642#0" expanded="true" />
+            <element signature="e#2680#2681#0" expanded="true" />
+            <element signature="e#2810#2811#0" expanded="true" />
+            <element signature="e#2844#2845#0" expanded="true" />
+            <element signature="e#2891#2892#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="145" column="13" lean-forward="false" selection-start-line="145" selection-start-column="13" selection-end-line="145" selection-end-column="13" />
+        <state relative-caret-position="1575">
+          <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4658#4659#0" expanded="true" />
-            <element signature="e#4695#4696#0" expanded="true" />
-            <element signature="e#17021#17022#0" expanded="true" />
-            <element signature="e#17056#17057#0" expanded="true" />
-            <element signature="e#17106#17107#0" expanded="true" />
-            <element signature="e#17147#17148#0" expanded="true" />
-            <element signature="e#17278#17279#0" expanded="true" />
-            <element signature="e#17318#17319#0" expanded="true" />
+            <element signature="e#4292#4293#0" expanded="true" />
+            <element signature="e#4329#4330#0" expanded="true" />
+            <element signature="e#9177#9178#0" expanded="true" />
+            <element signature="e#9218#9219#0" expanded="true" />
+            <element signature="e#9434#9435#0" expanded="true" />
+            <element signature="e#9468#9469#0" expanded="true" />
+            <element signature="e#9722#9723#0" expanded="true" />
+            <element signature="e#9796#9797#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="75">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="238" column="41" lean-forward="true" selection-start-line="238" selection-start-column="41" selection-end-line="238" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4878#4879#0" expanded="true" />
+            <element signature="e#4917#4918#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

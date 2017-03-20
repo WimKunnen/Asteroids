@@ -63,13 +63,20 @@ public class Ship extends Entity{
      * @param   heading
      *          The initial heading of the new ship.
      */
-    public Ship(double x, double y, double velocityX, double velocityY, double radius,double minimumRadius, double heading, World world){
-        super(x, y, velocityX, velocityY, radius, 10, heading, world);
+    public Ship(double x, double y, double velocityX, double velocityY, double heading, World world, double radius){
+        super(x, y, velocityX, velocityY, world);
+        this.setMinimumRadius(10);
+        if(isValidRadius(radius)){
+            this.setRadius(radius);
+        }else{
+            throw new IllegalArgumentException();
+        }
+        this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         int counter = 0;
         while(counter < 15){
-            this.reload(new Bullet());
+            this.reloadSingleBullet(new Bullet());
             counter += 1;
         }
     }
@@ -80,10 +87,60 @@ public class Ship extends Entity{
     public Ship(){
 
         super();
+        this.setMinimumRadius(10);
+        this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
+        this.setHeading(0);
+        int counter = 0;
+        while(counter < 15){
+            this.reloadSingleBullet(new Bullet());
+            counter += 1;
+        }
+    }
+    // Heading
+
+    /**
+     * Variable registering the orientation of this entity.
+     */
+    private double heading;
+
+    /**
+     * Returns the heading of the entity.
+     */
+    @Basic
+    public double getHeading(){
+        return this.heading;
     }
 
+    /**
+     * Set the heading at the given angle.
+     *
+     * @param   angle
+     *          The angle at which the new heading will be set.
+     *
+     * @pre     The angle must be a valid angle.
+     *          | isValidAngle(angle)
+     */
+
+    @Model
+    protected void setHeading(double angle) {
+        assert isValidAngle(angle);
+        this.heading = angle;
+    }
+
+    /**
+     * Checks if the angle is valid.
+     *
+     * @param   angle
+     *          The angle between the ship's direction and the x-axis.
+     *
+     * @return  True if and only if the angle is between 0 and 2 * π.
+     *          | result == ((this.getHeading() + angle < 2 * Math.PI) && (0 <= this.getHeading() + angle))
+     */
+    public boolean isValidAngle(double angle){
+        return ((angle < 2 * Math.PI) && (0 <= angle));
+    }
     //Mass
     private double totalMass = this.getMassOfEntity();
     protected double getTotalMass(){
@@ -95,7 +152,13 @@ public class Ship extends Entity{
             this.totalMass += bullet.getMassOfEntity();
         }
     }
-
+    //Radius
+    private void setMinimumRadius(double newMinimumRadius){
+        this.minimumRadius = newMinimumRadius;
+    }
+    private void setRadius(double newRadius){
+        this.radius = newRadius;
+    }
     //Thruster
 
     private boolean thruster = false;
@@ -108,7 +171,7 @@ public class Ship extends Entity{
     }
     private void thrustOff(){
         this.thruster = false;
-        this.setVelocity(this.getVelocity());
+        //this.setVelocity(this.getVelocity());
     }
     private double thrustForce;
     private double getThrustForce(){
@@ -121,27 +184,6 @@ public class Ship extends Entity{
     public double getAcceleration(){
         return this.getTotalMass() / this.getThrustForce();
     }
-//    /**
-//     * The current velocity is increased by the added velocity.
-//     *
-//     * @param   addedVelocitySize
-//     *          The size of the velocity vector by which the current velocity is increased.
-//     *
-//     * @post    The velocity has increased by the given velocity
-//     *          | new.velocity == this.velocity.sum(new Vector(addedVelocitySize * cos(this.getHeading()),
-//     *          |                    addedVelocitySize * sin(this.getHeading()))
-//     *          If the given velocity is smaller than zero, the velocity is unchanged.
-//     */
-//    public void thrust(double addedVelocitySize){
-//        if (addedVelocitySize < 0) {
-//            addedVelocitySize = 0;
-//        }
-//        Vector addedVelocity = new Vector(addedVelocitySize * Math.cos(this.getHeading()),
-//                addedVelocitySize * Math.sin(this.getHeading()));
-//        Vector newVelocity = this.velocity.sum(addedVelocity);
-//        this.setVelocity(newVelocity);
-//
-//        }
 
     public void thrust(double timeDifference){
 
@@ -176,13 +218,25 @@ public class Ship extends Entity{
     public ArrayList<Bullet> getBullets(){
         return this.bullets;
     }
-    public void reload(Bullet bullet){
+
+    private void reloadSingleBullet(Bullet bullet){
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
+        bullet.setSource(this);
+        bullet.setRadius(0.1 * this.getRadius());
+        bullet.setPosition(this.getPosition());
+        bullet.setVelocity(this.velocity);
+    }
+
+    private void reloadMultipleBullets(ArrayList<Bullet> newBullets){
+        for(Bullet bullet : newBullets){
+            this.reloadSingleBullet(bullet);
+        }
     }
 
     public void fire(){
         Bullet bullet = bullets.get(bullets.size()-1);
+        bullets.remove(bullets.size()-1);
         Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));
         Vector bulletVelocity = pointingVector.resizeVector(250);
         bullet.setVelocity(bulletVelocity);

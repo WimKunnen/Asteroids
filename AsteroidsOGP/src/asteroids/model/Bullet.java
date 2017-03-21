@@ -64,7 +64,6 @@ public class Bullet extends Entity {
     protected void setSource(Ship sourceShip){
         this.source = sourceShip;
     }
-    public Ship ship;
 
 //    public void loadOnShip(Ship ship){
 //        this.ship = ship;
@@ -74,8 +73,6 @@ public class Bullet extends Entity {
 //        this.ship = ship;
 //        setPosition(vector);
 //    }
-
-    public Ship getShip(){return ship;}
 
 
 

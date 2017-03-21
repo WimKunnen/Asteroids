@@ -58,8 +58,7 @@ public abstract class Entity {
         this.setRadius(radius);
         if(Double.isNaN(x) ||  Double.isNaN(y))
             throw new IllegalArgumentException();
-        else if(this.getWorld() != null && (x + this.getRadius() > this.getWorld().getWidth()
-                || y + this.getRadius() > this.getWorld().getHeight()))
+        else if(this.getWorld() != null && this.fitsInBoundaries(world, new Vector(x,y)))
             throw new IllegalArgumentException();
         else
             this.setPosition(new Vector(x, y));

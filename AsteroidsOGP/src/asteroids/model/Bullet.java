@@ -111,18 +111,15 @@ public class Bullet extends Entity {
     protected void setSource(Ship sourceShip){
         this.source = sourceShip;
     }
-    public Ship ship;
 
-    public void loadOnShip(Ship ship){
-        this.ship = ship;
-    }
-
-    public void loadOnShip(Ship ship, Vector vector){
-        this.ship = ship;
-        setPosition(vector);
-    }
-
-    public Ship getShip(){return ship;}
+//    public void loadOnShip(Ship ship){
+//        this.ship = ship;
+//    }
+//
+//    public void loadOnShip(Ship ship, Vector vector){
+//        this.ship = ship;
+//        setPosition(vector);
+//    }
 
 
 

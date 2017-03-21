@@ -377,7 +377,7 @@ public abstract class Entity {
         double sigma = this.sigma(other);
         double d = d(deltaV, deltaR, sigma);
 
-        return  !((deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() != other.getWorld());
+        return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() == other.getWorld();
     }
 
 
@@ -584,10 +584,16 @@ public abstract class Entity {
 
     //Interaction with world
     public boolean fitsInBoundaries(World world){
-        return !(getPosition().getX() + this.getRadius() > world.getWidth()
-                || getPosition().getX() - this.getRadius() < 0
-                || getPosition().getY() + this.getRadius() > world.getHeight()
-                || getPosition().getY() - this.getRadius() < 0);
+        return !(getPosition().getX() + 0.99*this.getRadius() > world.getWidth()
+                || getPosition().getX() - 0.99*this.getRadius() < 0
+                || getPosition().getY() + 0.99*this.getRadius() > world.getHeight()
+                || getPosition().getY() - 0.99*this.getRadius() < 0);
+    }
+    public boolean fitsInBoundaries(World world, Vector vector){
+        return !(vector.getX() + 0.99*this.getRadius() > world.getWidth()
+                || vector.getX() - 0.99*this.getRadius() < 0
+                || vector.getY() + 0.99*this.getRadius() > world.getHeight()
+                || vector.getY() - 0.99*this.getRadius() < 0);
     }
 
     public boolean noOverlapsInNewWorld(World world){

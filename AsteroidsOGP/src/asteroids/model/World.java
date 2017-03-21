@@ -173,10 +173,10 @@ public class World {
 
 
     }
-
+//TODO
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
-        if (bullet.getShip() == ship){
-            bullet.loadOnShip(ship,ship.getPosition());
+        if (bullet.getSource() == ship){
+//            bullet.loadOnShip(ship,ship.getPosition());
             ship.reloadSingleBullet(bullet);
         }
         else{

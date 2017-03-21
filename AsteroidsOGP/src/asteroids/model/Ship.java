@@ -64,8 +64,8 @@ public class Ship extends Entity{
      *          The initial heading of the new ship.
      */
     public Ship(double x, double y, double velocityX, double velocityY, double heading, World world, double radius){
-        super(x, y, velocityX, velocityY, world);
-        this.setMinimumRadius(10);
+        super(x, y, velocityX, velocityY, radius, world);
+        this.setMinimumRadius();
         if(isValidRadius(radius)){
             this.setRadius(radius);
         }else{
@@ -87,7 +87,7 @@ public class Ship extends Entity{
     public Ship(){
 
         super();
-        this.setMinimumRadius(10);
+        this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
@@ -146,18 +146,11 @@ public class Ship extends Entity{
     protected double getTotalMass(){
         return this.totalMass;
     }
-    protected void setTotalMass(List<Bullet> bullets){
+    protected void setTotalMass(ArrayList<Bullet> bullets){
         totalMass = this.getMassOfEntity();
         for(Bullet bullet : bullets){
             this.totalMass += bullet.getMassOfEntity();
         }
-    }
-    //Radius
-    private void setMinimumRadius(double newMinimumRadius){
-        this.minimumRadius = newMinimumRadius;
-    }
-    private void setRadius(double newRadius){
-        this.radius = newRadius;
     }
     //Thruster
 
@@ -165,14 +158,16 @@ public class Ship extends Entity{
     public boolean getThrusterState(){
         return this.thruster;
     }
+
+    //TODO check thrust enable meaning
     private void thrustOn(double timeDifference){
         this.thruster = true;
         this.thrust(timeDifference);
     }
     private void thrustOff(){
         this.thruster = false;
-        //this.setVelocity(this.getVelocity());
     }
+
     private double thrustForce;
     private double getThrustForce(){
         return this.thrustForce;
@@ -219,7 +214,7 @@ public class Ship extends Entity{
         return this.bullets;
     }
 
-    public void reloadSingleBullet(Bullet bullet){
+    protected void reloadSingleBullet(Bullet bullet){
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
         bullet.setSource(this);
@@ -233,7 +228,7 @@ public class Ship extends Entity{
             this.reloadSingleBullet(bullet);
         }
     }
-
+// TODO change fire
     public void fire(){
         Bullet bullet = bullets.get(bullets.size()-1);
         bullets.remove(bullets.size()-1);

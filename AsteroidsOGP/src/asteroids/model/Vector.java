@@ -2,6 +2,7 @@ package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.Basic;
 import be.kuleuven.cs.som.annotate.Immutable;
+import be.kuleuven.cs.som.annotate.Value;
 
 /**
  * A class of two dimensional vectors used to create an adaptation of the Atari game 'Asteroids'.
@@ -9,10 +10,17 @@ import be.kuleuven.cs.som.annotate.Immutable;
  * @invar   The size of a vector will always be nonnegative.
  *          | vectorLength >= 0
  *
+ * @invar   The x component will never change.
+ *          | new.getX() == this.geX()
+ *
+ * @invar   The y component will never change.
+ *          | new.getY() == this.geY()
+ *
  * @author  Wim Kunnen and Maarten Doclo.
  *
  * @version 1.0
  */
+@Value
 public class Vector {
 
     /**
@@ -138,4 +146,14 @@ public class Vector {
         return new double[]{this.getX(),this.getY()};
     }
 
+    @Override
+    public boolean equals(Object other){
+        if (other == null)
+            return false;
+        if (this.getClass() != other.getClass())
+            return false;
+        Vector otherVector = (Vector) other;
+        return (this.getX()== otherVector.getX() && this.getY() == otherVector.getY());
+    }
 }
+

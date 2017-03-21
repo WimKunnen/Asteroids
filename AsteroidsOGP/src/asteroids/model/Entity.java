@@ -2,7 +2,6 @@ package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
-import asteroids.model.Bullet;
 
 
 /**
@@ -53,9 +52,10 @@ public abstract class Entity {
      *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
      *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
-    public Entity(double x, double y, double velocityX, double velocityY, World world)
+    public Entity(double x, double y, double velocityX, double velocityY, double radius, World world)
             throws IllegalArgumentException{
-
+        this.setMinimumRadius();
+        this.setRadius(radius);
         if(Double.isNaN(x) ||  Double.isNaN(y))
             throw new IllegalArgumentException();
         else if(this.getWorld() != null && (x + this.getRadius() > this.getWorld().getWidth()
@@ -88,20 +88,14 @@ public abstract class Entity {
      *          | new.getRadius() == this.minimumRadius
      */
     public Entity(){
-
+        this.setMinimumRadius();
+        this.setRadius(this.getMinimumRadius());
         this.setPosition(new Vector());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
         this.setWorld(null);
 
     }
-
-    // Termination
-//    public boolean isTerminated = false;
-//    public void terminate(){
-//        this.isTerminated = true;
-//        this.setWorld(null);
-//    }
 
     //Position:
     private Vector position;
@@ -293,6 +287,15 @@ public abstract class Entity {
      */
     protected double radius;
 
+    protected void setRadius(double newRadius){
+        this.radius = newRadius;
+    }
+    protected void setMinimumRadius(){
+        if (this instanceof Ship)
+            this.minimumRadius = 10;
+        if (this instanceof Bullet)
+            this.minimumRadius = 1;
+    }
     /**
      * Returns the radius of the entity.
      */
@@ -333,8 +336,8 @@ public abstract class Entity {
             else {
                 double xDifference = (this.getPosition().getX() - other.getPosition().getX());
                 double yDifference = (this.getPosition().getY() - other.getPosition().getY());
-                double radiusSum = this.getRadius() + other.getRadius();
-                return Math.sqrt(xDifference * xDifference + yDifference * yDifference) - radiusSum;
+                double sumRadii = this.getRadius() + other.getRadius();
+                return Math.sqrt(xDifference * xDifference + yDifference * yDifference) - sumRadii;
             }
         }else{
             throw new IllegalArgumentException("Not an existing entity!");
@@ -343,7 +346,7 @@ public abstract class Entity {
 
     /**
      * Returns true if and only if the distance between the two entities is nonnegative or the two entities are the same.
-     * | return getDistanceBetween < 0 || this == other
+     * | return getDistanceBetween < -0.01 * sumRadii || this == other
      *
      * @param   other
      *          The second entity.
@@ -354,7 +357,8 @@ public abstract class Entity {
      */
     public boolean overlap(Entity other) throws IllegalArgumentException{
         if (other != null) {
-            return this.getDistanceBetween(other) < 0 || this == other;
+            double sumRadii = this.getRadius() + other.getRadius();
+            return this.getDistanceBetween(other) < -0.01 * sumRadii || this == other;
         }else{
             throw new IllegalArgumentException("Not an existing entity!");
         }
@@ -483,11 +487,19 @@ public abstract class Entity {
         double time = getTimeToCollisionWithBoundary();
         String boundary = getBoundaryOfCollision();
         Vector radiusVector;
-        if (boundary.equals("X")) {return null;}
-        else if (boundary.equals("R")) {radiusVector = new Vector(getRadius(),0);}
-        else if (boundary.equals("L")) {radiusVector = new Vector(-getRadius(),0);}
-        else if (boundary.equals("T")) {radiusVector = new Vector(0, getRadius());}
-        else {radiusVector = new Vector(0, -getRadius());}
+        if (boundary.equals("X")) {
+            return null;
+        }
+        else if (boundary.equals("R")) {
+            radiusVector = new Vector(getRadius(),0);
+        }
+        else if (boundary.equals("L")) {
+            radiusVector = new Vector(-getRadius(),0);}
+        else if (boundary.equals("T")) {radiusVector = new Vector(0, getRadius());
+        }
+        else {
+            radiusVector = new Vector(0, -getRadius());
+        }
 
         return this.getPosition().sum(getVelocity().resizeVector(time)).sum(radiusVector);
     }
@@ -583,7 +595,7 @@ public abstract class Entity {
     }
 
     //Interaction with world
-    public boolean fitsInBoundaries(World world){
+    public boolean fitsInBoundaries(World world) {
         return !(getPosition().getX() + this.getRadius() > world.getWidth()
                 || getPosition().getX() - this.getRadius() < 0
                 || getPosition().getY() + this.getRadius() > world.getHeight()
@@ -592,11 +604,12 @@ public abstract class Entity {
 
     public boolean noOverlapsInNewWorld(World world){
         for (Entity entity : world.getAllEntities()){
-            if (this.overlap(entity)){
+            if (this.overlap(entity)) {
                 if (!(entity instanceof Ship && this instanceof Bullet && ((Ship) entity).getBullets().contains(this) //If they are not a bullet and its ship
-                        || (entity instanceof Bullet && this instanceof Ship && ((Ship) this).getBullets().contains(entity))))
-                        { return false;}
+                        || (entity instanceof Bullet && this instanceof Ship && ((Ship) this).getBullets().contains(entity)))) {
+                    return false;
                 }
+            }
         }
         return true;
     }

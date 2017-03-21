@@ -141,7 +141,6 @@ public class World {
 
             evolve(timeDifference - getTimeToFirstCollision());
 
-
         }
     }
 
@@ -152,7 +151,9 @@ public class World {
         if (entity1 instanceof Ship && entity2 instanceof Ship){
             Ship ship1 = (Ship)entityPair.get(0);
             Ship ship2 = (Ship)entityPair.get(1);
+
             List<Ship> shipPair = new ArrayList<>();
+
             shipPair.add(ship1);shipPair.add(ship2);
             entity1.setVelocity(new Vector(entity1.getVelocity().getX() +
                     Jx(shipPair)/ship1.getTotalMass(),
@@ -176,7 +177,7 @@ public class World {
 
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
         if (bullet.getShip() == ship){
-            bullet.loadOnShip(ship,ship.getPosition());
+//            bullet.loadOnShip(ship,ship.getPosition());
             ship.reloadSingleBullet(bullet);
         }
         else{
@@ -237,7 +238,7 @@ public class World {
         Ship ship2 = shipPair.get(1);
         return 2*ship1.getTotalMass()*ship2.getTotalMass()*
                 ship1.deltaV(ship2).scalarProduct(ship1.deltaR(ship2))
-                / ship1.sigma(ship2) / (ship1.getTotalMass()+ship2.getTotalMass());
+                / ( ship1.sigma(ship2) * (ship1.getTotalMass()+ship2.getTotalMass()));
     }
     public double Jx(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);

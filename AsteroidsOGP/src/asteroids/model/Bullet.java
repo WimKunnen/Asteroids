@@ -27,14 +27,8 @@ public class Bullet extends Entity {
      *          | getWorld() == null || getSource() == null
      *
      */
-    public Bullet(double x, double y, double velocityX, double velocityY, World world) throws IllegalArgumentException{
-        super(x, y, velocityX, velocityY, world);
-        this.setMinimumRadius(1);
-        if(isValidRadius(radius)){
-            this.setRadius(radius);
-        }else{
-            throw new IllegalArgumentException();
-        }
+    public Bullet(double x, double y, double velocityX, double velocityY, double radius, World world) throws IllegalArgumentException{
+        super(x, y, velocityX, velocityY, radius, world);
         this.setDensity(7.8 * Math.pow(10, 12));
     }
 
@@ -44,49 +38,8 @@ public class Bullet extends Entity {
     public Bullet(){
         super();
         this.setDensity(7.8 * Math.pow(10, 12));
-        this.setMinimumRadius(1);
+        this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
-    }
-    //Radius
-    /**
-     * Variable registering the minimum radius of all entities.
-     */
-    private double minimumRadius = 10;
-
-
-    protected double getMinimumRadius(){
-        return this.minimumRadius;
-    }
-
-    protected void setMinimumRadius(double newMinimumRadius){
-        this.minimumRadius = newMinimumRadius;
-    }
-    /**
-     * Variable registering the radius of this entity.
-     */
-    private double radius;
-
-    /**
-     * Returns the radius of the entity.
-     */
-    @Basic
-    @Immutable
-    public double getRadius(){
-        return this.radius;
-    }
-
-    public void setRadius(double newRadius){
-        this.radius = newRadius;
-    }
-
-    /**
-     * Returns true if and only if the given radius is larger than the minimum radius and not NaN.
-     *
-     * @param   radius
-     *          The radius which validity will be checked.
-     */
-    public boolean isValidRadius(double radius){
-        return (radius >= minimumRadius && ! Double.isNaN(radius));
     }
 
     private int maxNbBounces = 3;
@@ -113,14 +66,14 @@ public class Bullet extends Entity {
     }
     public Ship ship;
 
-    public void loadOnShip(Ship ship){
-        this.ship = ship;
-    }
-
-    public void loadOnShip(Ship ship, Vector vector){
-        this.ship = ship;
-        setPosition(vector);
-    }
+//    public void loadOnShip(Ship ship){
+//        this.ship = ship;
+//    }
+//
+//    public void loadOnShip(Ship ship, Vector vector){
+//        this.ship = ship;
+//        setPosition(vector);
+//    }
 
     public Ship getShip(){return ship;}
 

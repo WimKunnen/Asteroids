@@ -155,5 +155,11 @@ public class Vector {
         Vector otherVector = (Vector) other;
         return (this.getX()== otherVector.getX() && this.getY() == otherVector.getY());
     }
+
+    @Override
+    public int hashCode(){
+        double hashCode = Math.floor(this.getX() + this.getY());
+        return (int) hashCode;
+    }
 }
 

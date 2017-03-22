@@ -31,12 +31,12 @@ public class TestShip {
 	 */
 	@Before
 	public void setUp() {
-		ship1 = new Ship(1.5,15.0,10.0,20.0,30.0, Math.PI);
+		ship1 = new Ship(1.5,15.0,10.0,20.0,30.0, Math.PI,100000000);
 		ship1.setMaximumVelocity(100000.0);
-		ship2 = new Ship(0.0,0.0,10.0,10.0,30.0,0.0);
+		ship2 = new Ship(0.0,0.0,10.0,10.0,30.0,0.0,100000000);
 		ship2.setMaximumVelocity(300010);
-		ship3 = new Ship(100.0,0.0,0.0,0.0,30,0.0);
-		ship4 = new Ship(30.0,0.0,10.0,0.0,10.0,0.0);
+		ship3 = new Ship(100.0,0.0,0.0,0.0,30,0.0,100000000);
+		ship4 = new Ship(30.0,0.0,10.0,0.0,10.0,0.0,100000000);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class TestShip {
 	 */
 	@Test(expected=IllegalArgumentException.class)
 	public void radius_IllegalCase() throws Exception {
-		ship1 = new Ship(1.5,15.0,10.0,20.0,5.0,Math.PI);
+		ship1 = new Ship(1.5,15.0,10.0,20.0,5.0,Math.PI,100000000);
 
 	}
 
@@ -131,7 +131,7 @@ public class TestShip {
 	 */
 	@Test(expected=IllegalArgumentException.class)
 	public void radiusNaN() throws Exception {
-		ship1 = new Ship(1.5,15.0,10.0,20.0,Double.NaN,Math.PI);
+		ship1 = new Ship(1.5,15.0,10.0,20.0,Double.NaN,Math.PI,100000000);
 
 	}
 

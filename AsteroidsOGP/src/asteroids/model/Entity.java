@@ -52,13 +52,11 @@ public abstract class Entity {
      *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
      *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
-    public Entity(double x, double y, double velocityX, double velocityY, double radius, World world)
+    public Entity(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
         this.setMinimumRadius();
         this.setRadius(radius);
         if(Double.isNaN(x) ||  Double.isNaN(y))
-            throw new IllegalArgumentException();
-        else if(this.getWorld() != null && this.fitsInBoundaries(world, new Vector(x,y)))
             throw new IllegalArgumentException();
         else
             this.setPosition(new Vector(x, y));
@@ -92,8 +90,6 @@ public abstract class Entity {
         this.setPosition(new Vector());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
-        this.setWorld(null);
-
     }
 
     //Position:
@@ -580,12 +576,15 @@ public abstract class Entity {
     }
 
     protected double massOfEntity = 4.0/3 * Math.pow(this.getRadius(), 3) * this.density;
-    protected double getMassOfEntity(){
+    public double getMassOfEntity(){
         return this.massOfEntity;
     }
 
     // Termination
     public boolean isTerminated = false;
+    public boolean checkTermination(){
+        return this.isTerminated;
+    }
 
     public void terminate(){
         isTerminated = true;

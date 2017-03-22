@@ -1,9 +1,12 @@
 package asteroids.facade;
 
-import asteroids.model.Ship;
-import asteroids.model.Vector;
-import asteroids.part1.facade.IFacade;
+import asteroids.model.*;
+import asteroids.part2.CollisionListener;
+import asteroids.part2.facade.IFacade;
 import asteroids.util.ModelException;
+
+import java.util.Collection;
+import java.util.Set;
 
 /**
  * A class implementing the IFacade class.
@@ -11,7 +14,7 @@ import asteroids.util.ModelException;
  *
  * @author  WimKunnen and Maarten Doclo.
  *
- * @version 1.0
+ * @version 2.0
  */
 
 
@@ -23,9 +26,15 @@ public class Facade implements IFacade {
     public Facade() {
     }
 
+    /******
+     * SHIP
+     *****/
+
+
     /**
      * Returns a new Ship at the origin point (0,0) with a velocity of 0, a heading of 0 and a radius equal to the minimum radius.
      */
+    @Override @Deprecated
     public Ship createShip() throws ModelException {
         return new Ship();
     }
@@ -51,12 +60,67 @@ public class Facade implements IFacade {
      * @param   orientation
      *          The heading of the newly created Ship.
      */
-    public Ship createShip(double x, double y, double xVelocity, double yVelocity, double radius, double orientation) throws ModelException {
+    public Ship createShip(double x, double y, double xVelocity, double yVelocity, double radius, double orientation,
+                           double mass) throws ModelException {
        try{
-           return new Ship(x, y, xVelocity, yVelocity, radius, orientation);
+           return new Ship(x, y, xVelocity, yVelocity, orientation, radius,mass);
        }catch(IllegalArgumentException e) {
            throw new ModelException(e);
        }
+    }
+
+    /**
+     * Terminate the given ship.
+     */
+    public void terminateShip(Ship ship) throws ModelException{
+        ship.terminate();
+    }
+
+    /**
+     * Check whether the given ship is terminated.
+     */
+    public boolean isTerminatedShip(Ship ship) throws ModelException{
+        return ship.checkTermination();
+    }
+
+    /**
+     * Return the total mass of the given ship.
+     */
+    public double getShipMass(Ship ship) throws ModelException{
+        return ship.getTotalMass();
+    }
+
+    /**
+     * Return the world of the given ship.
+     */
+    public World getShipWorld(Ship ship) throws ModelException{
+        return ship.getWorld();
+    }
+
+    /**
+     * Return whether the given ship's thruster is active.
+     */
+    public boolean isShipThrusterActive(Ship ship) throws ModelException{
+        return ship.getThrusterState();
+    }
+
+    /**
+     * Enables or disables the given ship's thruster depending on the value
+     * of the parameter active.
+     */
+    public void setThrusterActive(Ship ship, boolean active) throws ModelException{
+        if(active){
+            ship.thrustOn();
+        }else{
+            ship.thrustOff();
+        }
+    }
+
+    /**
+     * Return the acceleration of the given ship.
+     */
+    public double getShipAcceleration(Ship ship) throws ModelException{
+        return ship.getAcceleration();
     }
 
     /**
@@ -100,6 +164,7 @@ public class Facade implements IFacade {
      *          The time difference is invalid.
      *          | dt < 0
      */
+    @Override @Deprecated
     public void move(Ship ship, double dt) throws ModelException {
         try {
             ship.move(dt);
@@ -117,8 +182,319 @@ public class Facade implements IFacade {
      * @param   amount
      *          The given factor by which the speed will be increased.
      */
+    @Override @Deprecated
     public void thrust(Ship ship, double amount){
-        ship.thrust(amount);
+
+    }
+
+    /********
+     * BULLET
+     *******/
+
+    /**
+     * Create a new non-null bullet with the given position, velocity and
+     * radius,
+     *
+     * The bullet is not located in a world nor loaded on a ship.
+     */
+    public Bullet createBullet(double x, double y, double xVelocity, double yVelocity, double radius)
+            throws ModelException{
+        try{
+            return new Bullet(x, y, xVelocity, yVelocity, radius);
+        }catch(IllegalArgumentException e) {
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Terminate bullet.
+     */
+    public void terminateBullet(Bullet bullet) throws ModelException{
+        bullet.terminate();
+    }
+
+    /**
+     * Check whether bullet is terminated.
+     */
+    public boolean isTerminatedBullet(Bullet bullet) throws ModelException{
+        return bullet.checkTermination();
+    }
+
+    /**
+     * Return the position of a given bullet as an array containing the
+     * x-coordinate, followed by the y-coordinate.
+     */
+    public double[] getBulletPosition(Bullet bullet) throws ModelException{
+        return bullet.getPosition().getValues();
+    }
+
+    /**
+     * Return the velocity of a given bullet as an array containing the
+     * velocity along the X-axis, followed by the velocity along the Y-axis.
+     */
+    public double[] getBulletVelocity(Bullet bullet) throws ModelException{
+        return bullet.getVelocity().getValues();
+    }
+
+    /**
+     * Return the radius of a given bullet.
+     */
+    public double getBulletRadius(Bullet bullet) throws ModelException{
+        return bullet.getRadius();
+    }
+
+    /**
+     * Return the mass of a given bullet.
+     */
+    public double getBulletMass(Bullet bullet) throws ModelException{
+        return bullet.getMassOfEntity();
+    }
+
+    /**
+     * Return the world in which the given bullet is positioned.
+     *
+     * This method must return null if a bullet is not positioned in a world, or
+     * if it is positioned on a ship.
+     */
+    public World getBulletWorld(Bullet bullet) throws ModelException{
+        return bullet.getWorld();
+    }
+
+    /**
+     * Return the ship in which the given bullet is positioned.
+     *
+     * This method must return null if a bullet is not positioned on a ship.
+     */
+    public Ship getBulletShip(Bullet bullet) throws ModelException{
+        if (bullet.getWorld() == null)
+            throw new ModelException("The bullet is not part of any world");
+        if (bullet.getPosition() == bullet.getSource().getPosition())
+            return bullet.getSource();
+        else
+            return null;
+    }
+
+    /**
+     * Return the ship that fired the given bullet.
+     */
+    public Ship getBulletSource(Bullet bullet) throws ModelException{
+        if (bullet.getPosition() == bullet.getSource().getPosition())
+            throw new ModelException("The bullet hasn't been fires");
+        else
+            return bullet.getSource();
+    }
+
+    /*******
+     * WORLD
+     ******/
+    /**
+     * Create a new world with the given width and height.
+     */
+    public World createWorld(double width, double height) throws ModelException{
+        return new World(width,height);
+    }
+
+    /**
+     * Terminate the given world>.
+     */
+    public void terminateWorld(World world) throws ModelException{
+        world.terminate();
+    }
+
+    /**
+     * Check whether the given world is terminated.
+     */
+    public boolean isTerminatedWorld(World world) throws ModelException{
+        return world.checkTermination();
+    }
+
+    /**
+     * Return the size of the given world as an array containing the width,
+     * followed by the height.
+     */
+    public double[] getWorldSize(World world) throws ModelException{
+        return world.getWorldSize();
+    }
+
+    /**
+     * Return all ships located within the given world.
+     */
+    public Set<? extends Ship> getWorldShips(World world) throws ModelException{
+        return world.getAllShips();
+    }
+
+    /**
+     * Return all bullets located in the given world.
+     */
+    public Set<? extends Bullet> getWorldBullets(World world) throws ModelException{
+        return world.getAllBullets();
+    }
+
+    /**
+     * Add the given ship to the given world.
+     */
+    public void addShipToWorld(World world, Ship ship) throws ModelException{
+        world.addEntity(ship);
+    }
+
+    /**
+     * Remove the given ship from the given world.
+     */
+    public void removeShipFromWorld(World world, Ship ship) throws ModelException{
+        world.removeEntity(ship);
+    }
+
+    /**
+     * Add bullet to world.
+     */
+    public void addBulletToWorld(World world, Bullet bullet) throws ModelException{
+        world.addEntity(bullet);
+    }
+
+    /**
+     * Remove ship from world.
+     */
+    public void removeBulletFromWorld(World world, Bullet bullet) throws ModelException{
+        world.removeEntity(bullet);
+    }
+
+    /*****************
+     * LOADING BULLETS
+     ****************/
+    /**
+     * Return the set of all bullets loaded on the given ship.
+     *
+     * For students working alone, this method may return null.
+     */
+    public Set<? extends Bullet> getBulletsOnShip(Ship ship) throws ModelException{
+        return ship.getBullets();
+    }
+
+    /**
+     * Return the number of bullets loaded on the given ship.
+     */
+    public int getNbBulletsOnShip(Ship ship) throws ModelException{
+        return ship.getBullets().size();
+    }
+
+    /**
+     * Load a given bullet on the given ship.
+     */
+    public void loadBulletOnShip(Ship ship, Bullet bullet) throws ModelException{
+        try {
+            ship.reload(bullet);
+        }catch (IllegalArgumentException e) {
+            throw new ModelException("Bullet and Spaceship don't match");
+        }
+    }
+
+    /**
+     * Load a collection of bullets on the given ship.
+     */
+    public void loadBulletsOnShip(Ship ship, Collection<Bullet> bullets) throws ModelException{
+        try {
+            ship.reload(bullets);
+        }catch (IllegalArgumentException e) {
+            throw new ModelException("Bullet and Spaceship don't match");
+        }
+    }
+
+    /**
+     * Remove a given bullet from a given ship.
+     */
+    public void removeBulletFromShip(Ship ship, Bullet bullet) throws ModelException{
+        ship.getBullets().remove(bullet);
+    }
+
+    /**
+     * The given ship fires a bullet.
+     */
+    public void fireBullet(Ship ship) throws ModelException{
+        ship.fire();
+    }
+
+    /************
+     * COLLISIONS
+     ***********/
+
+    /**
+     * Return the shortest time in which the given entity will collide with the
+     * boundaries of its world.
+     */
+    public double getTimeCollisionBoundary(Object object) throws ModelException{
+        Entity entity = (Entity) object;
+        return entity.getTimeToCollisionWithBoundary();
+    }
+
+    /**
+     * Return the first position at which the given entity will collide with the
+     * boundaries of its world.
+     */
+    public double[] getPositionCollisionBoundary(Object object) throws ModelException{
+        Entity entity = (Entity) object;
+        Vector positionOfCollision =  entity.getCollisionPositionWithBoundary();
+        return positionOfCollision == null ? null : positionOfCollision.getValues();
+    }
+
+    /**
+     * Return the shortest time in which the first entity will collide with the
+     * second entity.
+     */
+    public double getTimeCollisionEntity(Object entity1, Object entity2) throws ModelException{
+        Entity entityA = (Entity) entity1;
+        Entity entityB = (Entity) entity2;
+        return entityA.getTimeToCollision(entityB);
+    }
+
+    /**
+     * Return the first position at which the first entity will collide with the
+     * second entity.
+     */
+    public double[] getPositionCollisionEntity(Object entity1, Object entity2) throws ModelException{
+        Entity entityA = (Entity) entity1;
+        Entity entityB = (Entity) entity2;
+        Vector positionOfCollision =  entityA.getCollisionPosition(entityB);
+        return positionOfCollision == null ? null : positionOfCollision.getValues();
+    }
+
+    /**
+     * Return the time that must pass before a boundary collision or an entity
+     * collision will take place in the given world. Positive Infinity is
+     * returned if no collision will occur.
+     */
+    public double getTimeNextCollision(World world) throws ModelException{
+        return world.getTimeToFirstCollision();
+    }
+
+    /**
+     * Return the position of the first boundary collision or entity collision
+     * that will take place in the given world. Null is returned if no collision
+     * will occur.
+     */
+    public double[] getPositionNextCollision(World world) throws ModelException{
+        Vector positionOfCollision =  world.getFirstCollisionPosition();
+        return positionOfCollision == null ? null : positionOfCollision.getValues();
+    }
+    /**
+     * Advance the given world by dt seconds.
+     */
+    public void evolve(World world, double dt, CollisionListener collisionListener) throws ModelException{
+        world.evolve(dt);
+    }
+
+    /**
+     * Return the entity at the given <code>position</code> in the given
+     * <code>world</code>.
+     */
+    public Object getEntityAt(World world, double x, double y) throws ModelException{
+        return world.getEntityAt(new Vector(x,y));
+    }
+
+    /**
+     * Return a set of all the entities in the given world.
+     */
+    public Set<? extends Object> getEntities(World world) throws ModelException{
+        return world.getAllEntities();
     }
 
     /**
@@ -163,7 +539,6 @@ public class Facade implements IFacade {
             throw new ModelException(e);
         }
     }
-
     /**
      * Returns the time it will take before two ships collide.
      *
@@ -190,7 +565,7 @@ public class Facade implements IFacade {
     public double[] getCollisionPosition(Ship ship1, Ship ship2) throws ModelException {
         try {
             Vector collisionPosition = ship1.getCollisionPosition(ship2);
-            return collisionPosition == null ? null : ship1.getCollisionPosition(ship2).getValues();
+            return collisionPosition == null ? null : collisionPosition.getValues();
         } catch (IllegalArgumentException e) {
             throw new ModelException(e);
         }

@@ -4,6 +4,7 @@ import be.kuleuven.cs.som.taglet.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
@@ -64,14 +65,15 @@ public class Ship extends Entity{
      * @param   heading
      *          The initial heading of the new ship.
      */
-    public Ship(double x, double y, double velocityX, double velocityY, double heading, World world, double radius){
-        super(x, y, velocityX, velocityY, radius, world);
+    public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass){
+        super(x, y, velocityX, velocityY, radius);
         this.setMinimumRadius();
         if(isValidRadius(radius)){
             this.setRadius(radius);
         }else{
             throw new IllegalArgumentException();
         }
+        this.setMass(mass);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
@@ -144,12 +146,22 @@ public class Ship extends Entity{
     public boolean isValidAngle(double angle){
         return ((angle < 2 * Math.PI) && (0 <= angle));
     }
+
     //Mass
-    private double totalMass = this.getMassOfEntity();
-    protected double getTotalMass(){
+    private double mass;
+    private double getMass(){
+        return this.mass;
+    }
+    public void setMass(double newMass){
+        if (newMass > this.getMassOfEntity())
+            this.mass = newMass;
+    }
+
+    private double totalMass = this.getMass();
+    public double getTotalMass(){
         return this.totalMass;
     }
-    protected void setTotalMass(ArrayList<Bullet> bullets){
+    protected void setTotalMass(HashSet<Bullet> bullets){
         totalMass = this.getMassOfEntity();
         for(Bullet bullet : bullets){
             this.totalMass += bullet.getMassOfEntity();
@@ -163,11 +175,10 @@ public class Ship extends Entity{
     }
 
     //TODO check thrust enable meaning
-    private void thrustOn(double timeDifference){
+    public void thrustOn(){
         this.thruster = true;
-        this.thrust(timeDifference);
     }
-    private void thrustOff(){
+    public void thrustOff(){
         this.thruster = false;
     }
 
@@ -212,12 +223,18 @@ public class Ship extends Entity{
 
     //Bullets
 
-    private ArrayList<Bullet> bullets = new ArrayList<>();
-    public ArrayList<Bullet> getBullets(){
+    private HashSet<Bullet> bullets = new HashSet<>();
+    public HashSet<Bullet> getBullets(){
         return this.bullets;
     }
 
-    protected void reload(Bullet bullet) throws IllegalArgumentException{
+    public Bullet getRandomBulletOnShip(){
+        for(Bullet bullet : this.getBullets())
+            return bullet;
+        return null;
+    }
+
+    public void reload(Bullet bullet) throws IllegalArgumentException{
         if (bullet.getSource() != this)
             throw new IllegalArgumentException("Bullet and Spaceship don't match");
         this.bullets.add(bullet);
@@ -226,7 +243,7 @@ public class Ship extends Entity{
         bullet.setVelocity(this.velocity);
     }
 
-    private void reload(ArrayList<Bullet> newBullets){
+    public void reload(Collection<Bullet> newBullets){
         for(Bullet bullet : newBullets){
             this.reload(bullet);
         }
@@ -235,7 +252,7 @@ public class Ship extends Entity{
 // TODO change fire
     public void fire() {
         if(this.getWorld() != null) {
-            Bullet bullet = bullets.get(bullets.size() - 1);
+            Bullet bullet = this.getRandomBulletOnShip();
             bullets.remove(bullet);
 
             Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));

@@ -27,8 +27,8 @@ public class Bullet extends Entity {
      *          | getWorld() == null || getSource() == null
      *
      */
-    public Bullet(double x, double y, double velocityX, double velocityY, double radius, World world) throws IllegalArgumentException{
-        super(x, y, velocityX, velocityY, radius, world);
+    public Bullet(double x, double y, double velocityX, double velocityY, double radius) throws IllegalArgumentException{
+        super(x, y, velocityX, velocityY, radius);
         this.setDensity(7.8 * Math.pow(10, 12));
     }
 
@@ -62,7 +62,8 @@ public class Bullet extends Entity {
         return this.source;
     }
     protected void setSource(Ship sourceShip){
-        this.source = sourceShip;
+        if (sourceShip.getWorld() == this.getWorld())
+            this.source = sourceShip;
     }
 
 

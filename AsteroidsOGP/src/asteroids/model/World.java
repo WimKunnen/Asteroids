@@ -1,6 +1,8 @@
 package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
+import be.kuleuven.cs.som.annotate.Immutable;
+import jdk.nashorn.internal.ir.annotations.*;
 
 import java.util.*;
 
@@ -40,8 +42,16 @@ public class World {
     @Basic @Immutable
     public double getHeight() {return this.height;}
 
-    public boolean isTerminated = false;
+    private final double[] worldSize = new double[]{this.getWidth(), this.getHeight()};
+    @Basic @Immutable
+    public double[] getWorldSize(){
+        return this.worldSize;
+    }
 
+    public boolean isTerminated = false;
+    public boolean checkTermination(){
+        return this.isTerminated;
+    }
     public void terminate(){
         this.isTerminated = true;
         for (Entity entity : getAllEntities()){
@@ -230,6 +240,10 @@ public class World {
         if (entityTime < time)
             time = entityTime;
         return time;
+    }
+
+    public Vector getFirstCollisionPosition(){
+        return new Vector(0,0);
     }
 
     public double J(List<Ship> shipPair) {

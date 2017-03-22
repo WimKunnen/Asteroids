@@ -2,6 +2,7 @@ package asteroids.model;
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -74,10 +75,11 @@ public class Ship extends Entity{
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
-        int counter = 0;
-        while(counter < 15){
-            this.reloadSingleBullet(new Bullet());
-            counter += 1;
+        for (int i = 0; i < 15; i++){
+            Bullet bullet = new Bullet();
+            bullet.setSource(this);
+            bullet.setRadius(0.1 * this.getRadius());
+            this.reload(new Bullet());
         }
     }
 
@@ -92,10 +94,11 @@ public class Ship extends Entity{
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
-        int counter = 0;
-        while(counter < 15){
-            this.reloadSingleBullet(new Bullet());
-            counter += 1;
+        for (int i = 0; i < 15; i++){
+            Bullet bullet = new Bullet();
+            bullet.setSource(this);
+            bullet.setRadius(0.1 * this.getRadius());
+            this.reload(new Bullet());
         }
     }
     // Heading
@@ -214,33 +217,50 @@ public class Ship extends Entity{
         return this.bullets;
     }
 
-    protected void reloadSingleBullet(Bullet bullet){
+    protected void reload(Bullet bullet) throws IllegalArgumentException{
+        if (bullet.getSource() != this)
+            throw new IllegalArgumentException("Bullet and Spaceship don't match");
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
-        bullet.setSource(this);
-        bullet.setRadius(0.1 * this.getRadius());
         bullet.setPosition(this.getPosition());
         bullet.setVelocity(this.velocity);
     }
 
-    private void reloadMultipleBullets(ArrayList<Bullet> newBullets){
+    private void reload(ArrayList<Bullet> newBullets){
         for(Bullet bullet : newBullets){
-            this.reloadSingleBullet(bullet);
+            this.reload(bullet);
         }
     }
-// TODO change fire
-    public void fire(){
-        Bullet bullet = bullets.get(bullets.size()-1);
-        bullets.remove(bullets.size()-1);
-        Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));
-        Vector bulletVelocity = pointingVector.resizeVector(250);
-        bullet.setVelocity(bulletVelocity);
-        double averageRadius = (this.getRadius() + bullet.getRadius()) / 2;
-        double offset = this.getRadius() + bullet.getRadius() + averageRadius;
-        Vector relativePositionBullet = pointingVector.normalize().resizeVector(offset); //normalize is unnecessary?
-        Vector absolutePositionBullet = this.getPosition().sum(relativePositionBullet);
-        bullet.setPosition(absolutePositionBullet);
 
+// TODO change fire
+    public void fire() {
+        if(this.getWorld() != null) {
+            Bullet bullet = bullets.get(bullets.size() - 1);
+            bullets.remove(bullet);
+
+            Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));
+
+            double offset = this.getRadius() + bullet.getRadius();
+            Vector relativePositionBullet = pointingVector.resizeVector(offset);
+            Vector absolutePositionBullet = this.getPosition().sum(relativePositionBullet);
+            bullet.setPosition(absolutePositionBullet);
+
+            if (!bullet.fitsInBoundaries(this.getWorld())){
+                bullet.terminate();
+            }
+
+            for(Entity entity : this.getWorld().getAllEntities()){
+                if (bullet.overlap(entity)) {
+                    List<Entity> entityList = new ArrayList<>();
+                    entityList.add(bullet);
+                    entityList.add(entity);
+                    this.getWorld().resolveCollision(entityList);
+                }
+            }
+
+            Vector bulletVelocity = pointingVector.resizeVector(250);
+            bullet.setVelocity(bulletVelocity);
+        }
     }
 
 }

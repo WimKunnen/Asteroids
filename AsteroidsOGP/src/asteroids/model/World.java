@@ -144,7 +144,7 @@ public class World {
         }
     }
 
-
+//TODO check method with firing bullets (List usage)
     public void resolveCollision(List<Entity> entityPair) {
         Entity entity1 = entityPair.get(0);
         Entity entity2 = entityPair.get(1);
@@ -177,8 +177,7 @@ public class World {
 //TODO
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
         if (bullet.getSource() == ship){
-//            bullet.loadOnShip(ship,ship.getPosition());
-            ship.reloadSingleBullet(bullet);
+            ship.reload(bullet);
         }
         else{
             ship.terminate();

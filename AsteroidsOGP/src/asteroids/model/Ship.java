@@ -235,8 +235,8 @@ public class Ship extends Entity{
     }
 
     public void reload(Bullet bullet) throws IllegalArgumentException{
-        if (bullet.getSource() != this)
-            throw new IllegalArgumentException("Bullet and Spaceship don't match");
+//        if (bullet.getSource() != this)
+//            throw new IllegalArgumentException("Bullet and Spaceship don't match");
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
         bullet.setPosition(this.getPosition());

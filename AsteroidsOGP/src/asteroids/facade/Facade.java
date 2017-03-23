@@ -94,7 +94,11 @@ public class Facade implements IFacade {
      * Return the world of the given ship.
      */
     public World getShipWorld(Ship ship) throws ModelException{
-        return ship.getWorld();
+        try {
+            return ship.getWorld();
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
@@ -257,7 +261,11 @@ public class Facade implements IFacade {
      * if it is positioned on a ship.
      */
     public World getBulletWorld(Bullet bullet) throws ModelException{
-        return bullet.getWorld();
+        try {
+            return bullet.getWorld();
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
@@ -266,9 +274,9 @@ public class Facade implements IFacade {
      * This method must return null if a bullet is not positioned on a ship.
      */
     public Ship getBulletShip(Bullet bullet) throws ModelException{
-        if (bullet.getWorld() == null)
-            throw new ModelException("The bullet is not part of any world");
-        if (bullet.getPosition() == bullet.getSource().getPosition())
+        if (bullet.getSource() == null)
+            return null;
+        if (bullet.getSource().getBullets().contains(bullet))
             return bullet.getSource();
         else
             return null;
@@ -334,28 +342,52 @@ public class Facade implements IFacade {
      * Add the given ship to the given world.
      */
     public void addShipToWorld(World world, Ship ship) throws ModelException{
-        world.addEntity(ship);
+        try {
+            world.addEntity(ship);
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
      * Remove the given ship from the given world.
      */
     public void removeShipFromWorld(World world, Ship ship) throws ModelException{
-        world.removeEntity(ship);
+        try {
+            world.removeEntity(ship);
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
      * Add bullet to world.
      */
     public void addBulletToWorld(World world, Bullet bullet) throws ModelException{
-        world.addEntity(bullet);
+        try {
+            world.addEntity(bullet);
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
      * Remove ship from world.
      */
     public void removeBulletFromWorld(World world, Bullet bullet) throws ModelException{
-        world.removeEntity(bullet);
+        try {
+            world.removeEntity(bullet);
+        }catch (NullPointerException e){
+            throw new ModelException(e);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
     }
 
     /*****************

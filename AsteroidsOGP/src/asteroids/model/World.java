@@ -59,8 +59,8 @@ public class World {
         }
     }
 
-    public Set<Ship> allShips;
-    public Set<Bullet> allBullets;
+    public HashSet<Ship> allShips = new HashSet<>();
+    public HashSet<Bullet> allBullets = new HashSet<>();
 
 
     public final static double lowerBound = 0;
@@ -75,15 +75,18 @@ public class World {
     public Set<Ship> getAllShips() {return this.allShips;}
     public Set<Bullet> getAllBullets() {return this.allBullets;}
 
+    //TODO Overlap!
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         else{
             entity.setWorld(this);
-            if (entity instanceof Ship)
-                allShips.add((Ship)entity);
-            if (entity instanceof Bullet)
-                allBullets.add((Bullet)entity);
+            if (entity instanceof Ship) {
+                allShips.add((Ship) entity);
+            }
+            else if (entity instanceof Bullet) {
+                allBullets.add((Bullet) entity);
+            }
 
         }
 

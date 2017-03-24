@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="779da06e-14df-4405-8223-1cd0624a41df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
+=======
+    <list default="true" id="472bc59b-d39a-4227-970d-546158449418" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+>>>>>>> BranchWim
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,6 +26,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -28,6 +35,16 @@
               <folding>
                 <element signature="e#3889#3890#0" expanded="true" />
                 <element signature="e#3928#3929#0" expanded="true" />
+=======
+      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+              <folding>
+                <element signature="e#1876#1877#0" expanded="true" />
+                <element signature="e#1916#1917#0" expanded="true" />
+>>>>>>> BranchWim
               </folding>
             </state>
           </provider>
@@ -36,6 +53,7 @@
       <file leaf-file-name="Vector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="34">
               <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding>
@@ -55,6 +73,11 @@
                 <element signature="e#3778#3779#0" expanded="true" />
                 <element signature="e#3838#3839#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="-1737">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+>>>>>>> BranchWim
             </state>
           </provider>
         </entry>
@@ -62,8 +85,13 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="97">
               <caret line="236" column="22" lean-forward="false" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="22" />
+=======
+            <state relative-caret-position="135">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+>>>>>>> BranchWim
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3739#3740#0" expanded="true" />
@@ -93,8 +121,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+=======
+      <file leaf-file-name="IFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+>>>>>>> BranchWim
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
               <caret line="138" column="48" lean-forward="false" selection-start-line="138" selection-start-column="48" selection-end-line="138" selection-end-column="48" />
@@ -112,6 +145,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -168,6 +202,10 @@
       </file>
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+=======
+      <file leaf-file-name="Vector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
+>>>>>>> BranchWim
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="183">
               <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="31" />
@@ -179,15 +217,35 @@
       <file leaf-file-name="TestVector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestVector.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1870">
               <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
+=======
+            <state relative-caret-position="228">
+              <caret line="203" column="65" lean-forward="false" selection-start-line="203" selection-start-column="65" selection-end-line="203" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> BranchWim
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> BranchWim
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -216,8 +274,16 @@
       <find>getcollisi</find>
       <find>getallenti</find>
       <find>get</find>
+<<<<<<< HEAD
       <find>getdist</find>
       <find>reload</find>
+=======
+      <find>Exc</find>
+      <find>source</find>
+      <find>add</find>
+      <find>sourc</find>
+      <find>getAllEnt</find>
+>>>>>>> BranchWim
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,6 +297,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestVector.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
@@ -239,6 +306,15 @@
         <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+=======
+        <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+        <option value="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Vector.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
+>>>>>>> BranchWim
       </list>
     </option>
   </component>
@@ -269,8 +345,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="PackagesPane" />
+=======
+>>>>>>> BranchWim
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,6 +402,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -367,6 +447,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+=======
+>>>>>>> BranchWim
               <option name="myItemId" value="part2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -487,6 +569,11 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+>>>>>>> BranchWim
       <pane id="Scratches" />
     </panes>
   </component>
@@ -830,6 +917,7 @@
       <created>1489230337558</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1489230337558</updated>
       <workItem from="1489230338774" duration="4745000" />
       <workItem from="1489237977872" duration="41000" />
@@ -842,6 +930,14 @@
       <workItem from="1489603813613" duration="9077000" />
       <workItem from="1489613948029" duration="271000" />
       <workItem from="1489765427347" duration="2404000" />
+=======
+      <updated>1490210460810</updated>
+      <workItem from="1490210462053" duration="10150000" />
+      <workItem from="1490221339523" duration="83000" />
+      <workItem from="1490281866434" duration="2837000" />
+      <workItem from="1490351637905" duration="124000" />
+      <workItem from="1490355063523" duration="991000" />
+>>>>>>> BranchWim
     </task>
     <servers />
   </component>
@@ -878,7 +974,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="21515000" />
+=======
+    <option name="totallyTimeSpent" value="14185000" />
+>>>>>>> BranchWim
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -893,18 +993,27 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2623942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> BranchWim
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15739386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1701389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> BranchWim
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -934,12 +1043,171 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part1TestPartial.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="90">
           <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestShip.java">
+=======
+        <state relative-caret-position="810">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3660">
+          <caret line="273" column="36" lean-forward="false" selection-start-line="273" selection-start-column="36" selection-end-line="273" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6405">
+          <caret line="441" column="25" lean-forward="false" selection-start-line="441" selection-start-column="24" selection-end-line="441" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/CollisionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="161" column="30" lean-forward="false" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="117" column="22" lean-forward="true" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3660">
+          <caret line="273" column="36" lean-forward="false" selection-start-line="273" selection-start-column="36" selection-end-line="273" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6405">
+          <caret line="441" column="25" lean-forward="false" selection-start-line="441" selection-start-column="24" selection-end-line="441" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/CollisionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="161" column="30" lean-forward="false" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="160" column="26" lean-forward="false" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+>>>>>>> BranchWim
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
           <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
@@ -1078,6 +1346,7 @@
           <caret line="457" column="90" lean-forward="false" selection-start-line="457" selection-start-column="90" selection-end-line="457" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#3739#3740#0" expanded="true" />
             <element signature="e#3774#3775#0" expanded="true" />
             <element signature="e#4537#4538#0" expanded="true" />
@@ -1100,6 +1369,8 @@
             <element signature="e#5760#5761#0" expanded="true" />
             <element signature="e#6805#6806#0" expanded="true" />
             <element signature="e#6840#6841#0" expanded="true" />
+=======
+>>>>>>> BranchWim
           </folding>
         </state>
       </provider>
@@ -1116,8 +1387,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part1TestPartial.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="90">
           <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+=======
+        <state relative-caret-position="810">
+          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
+>>>>>>> BranchWim
         </state>
       </provider>
     </entry>
@@ -1260,6 +1540,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#3739#3740#0" expanded="true" />
             <element signature="e#3774#3775#0" expanded="true" />
             <element signature="e#4537#4538#0" expanded="true" />
@@ -1282,6 +1563,8 @@
             <element signature="e#5760#5761#0" expanded="true" />
             <element signature="e#6805#6806#0" expanded="true" />
             <element signature="e#6840#6841#0" expanded="true" />
+=======
+>>>>>>> BranchWim
           </folding>
         </state>
       </provider>
@@ -1321,6 +1604,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -1346,6 +1630,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/util/Util.java">
+>>>>>>> BranchWim
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2700">
           <caret line="183" column="9" lean-forward="false" selection-start-line="183" selection-start-column="9" selection-end-line="183" selection-end-column="9" />
@@ -1436,6 +1723,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1444,12 +1732,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part1/facade/IFacade.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/CollisionListener.java">
+>>>>>>> BranchWim
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="69" column="17" lean-forward="false" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar://$PROJECT_DIR$/lib/AnnotationsDoclets.jar!/be/kuleuven/cs/som/taglet/InvarTaglet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1461,12 +1753,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3570">
           <caret line="243" column="5" lean-forward="false" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/asteroid1.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> BranchWim
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/deathstar.png">
@@ -1474,6 +1775,12 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/sphere.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/sphere.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1495,13 +1802,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="161" column="30" lean-forward="false" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+>>>>>>> BranchWim
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-2040">
           <caret line="148" column="5" lean-forward="false" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+=======
+        <state relative-caret-position="228">
+          <caret line="203" column="65" lean-forward="false" selection-start-line="203" selection-start-column="65" selection-end-line="203" selection-end-column="65" />
+>>>>>>> BranchWim
           <folding>
             <element signature="e#3889#3890#0" expanded="true" />
             <element signature="e#3928#3929#0" expanded="true" />
@@ -1509,6 +1836,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -1638,6 +1966,33 @@
             <element signature="e#19970#19971#0" expanded="true" />
             <element signature="e#20070#20071#0" expanded="true" />
             <element signature="e#20110#20111#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1737">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+>>>>>>> BranchWim
           </folding>
         </state>
       </provider>

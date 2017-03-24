@@ -201,6 +201,7 @@ public class World {
     public Entity firstEntityToCollideBoundary;
     public List<Entity> firstEntityPairToCollide;
 
+    //TODO Use getAllEntities() instead of adding to a new array!
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();

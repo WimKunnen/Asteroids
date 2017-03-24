@@ -81,7 +81,10 @@ public class Ship extends Entity{
             Bullet bullet = new Bullet();
             bullet.setSource(this);
             bullet.setRadius(0.1 * this.getRadius());
-            this.reload(new Bullet());
+            this.bullets.add(bullet);
+            this.setTotalMass(bullets);
+            bullet.setPosition(this.getPosition());
+            bullet.setVelocity(this.velocity);
         }
     }
 
@@ -100,7 +103,10 @@ public class Ship extends Entity{
             Bullet bullet = new Bullet();
             bullet.setSource(this);
             bullet.setRadius(0.1 * this.getRadius());
-            this.reload(new Bullet());
+            this.bullets.add(bullet);
+            this.setTotalMass(bullets);
+            bullet.setPosition(this.getPosition());
+            bullet.setVelocity(this.velocity);
         }
     }
     // Heading
@@ -235,8 +241,10 @@ public class Ship extends Entity{
     }
 
     public void reload(Bullet bullet) throws IllegalArgumentException{
-//        if (bullet.getSource() != this)
-//            throw new IllegalArgumentException("Bullet and Spaceship don't match");
+        if (bullet.getSource() == null)
+            bullet.setSource(this);
+        if (bullet.getSource() != this)
+            throw new IllegalArgumentException("Bullet and Spaceship don't match");
         this.bullets.add(bullet);
         this.setTotalMass(bullets);
         bullet.setPosition(this.getPosition());

@@ -39,12 +39,17 @@
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+            <state relative-caret-position="670">
+              <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
               <folding>
+<<<<<<< Updated upstream
                 <element signature="e#1876#1877#0" expanded="true" />
                 <element signature="e#1916#1917#0" expanded="true" />
 >>>>>>> BranchWim
+=======
+                <element signature="e#2225#2226#0" expanded="true" />
+                <element signature="e#2265#2266#0" expanded="true" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -53,6 +58,7 @@
       <file leaf-file-name="Vector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             <state relative-caret-position="34">
               <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
@@ -78,6 +84,13 @@
               <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
 >>>>>>> BranchWim
+=======
+            <state relative-caret-position="210">
+              <caret line="153" column="24" lean-forward="false" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
+              <folding>
+                <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -936,8 +949,12 @@
       <workItem from="1490221339523" duration="83000" />
       <workItem from="1490281866434" duration="2837000" />
       <workItem from="1490351637905" duration="124000" />
+<<<<<<< Updated upstream
       <workItem from="1490355063523" duration="991000" />
 >>>>>>> BranchWim
+=======
+      <workItem from="1490355063523" duration="1702000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -974,11 +991,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="21515000" />
 =======
     <option name="totallyTimeSpent" value="14185000" />
 >>>>>>> BranchWim
+=======
+    <option name="totallyTimeSpent" value="14896000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1002,10 +1023,14 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15739386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
 =======
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1701389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1701389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> BranchWim
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1054,8 +1079,8 @@
         <state relative-caret-position="810">
           <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="23" />
           <folding>
-            <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1064,7 +1089,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3660">
           <caret line="273" column="36" lean-forward="false" selection-start-line="273" selection-start-column="36" selection-end-line="273" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1127,8 +1154,8 @@
         <state relative-caret-position="810">
           <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="23" />
           <folding>
-            <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1137,7 +1164,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3660">
           <caret line="273" column="36" lean-forward="false" selection-start-line="273" selection-start-column="36" selection-end-line="273" selection-end-column="36" />
-          <folding />
+          <folding>
+            <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1200,8 +1229,8 @@
         <state relative-caret-position="810">
           <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
           <folding>
-            <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1209,8 +1238,16 @@
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
 >>>>>>> BranchWim
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1785">
           <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+=======
+        <state relative-caret-position="3135">
+          <caret line="238" column="83" lean-forward="false" selection-start-line="237" selection-start-column="8" selection-end-line="238" selection-end-column="83" />
+          <folding>
+            <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1394,8 +1431,8 @@
         <state relative-caret-position="810">
           <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
           <folding>
-            <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
           </folding>
 >>>>>>> BranchWim
         </state>
@@ -1403,8 +1440,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestShip.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1845">
           <caret line="128" column="86" lean-forward="false" selection-start-line="128" selection-start-column="86" selection-end-line="128" selection-end-column="86" />
+=======
+        <state relative-caret-position="3135">
+          <caret line="238" column="83" lean-forward="true" selection-start-line="237" selection-start-column="8" selection-end-line="238" selection-end-column="83" />
+          <folding>
+            <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1979,20 +2024,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1737">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="153" column="24" lean-forward="false" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
+          <folding>
+            <marker date="1490356769000" expanded="true" signature="4894:4961" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        <state relative-caret-position="670">
+          <caret line="83" column="7" lean-forward="false" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
           <folding>
+<<<<<<< Updated upstream
             <element signature="e#1876#1877#0" expanded="true" />
             <element signature="e#1916#1917#0" expanded="true" />
 >>>>>>> BranchWim
+=======
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2265#2266#0" expanded="true" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>

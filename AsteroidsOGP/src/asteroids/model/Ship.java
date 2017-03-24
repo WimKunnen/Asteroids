@@ -148,15 +148,22 @@ public class Ship extends Entity{
     }
 
     //Mass
+    /**
+     * Variable registering the current mass of the ship.
+     */
     private double mass;
     private double getMass(){
         return this.mass;
     }
+
     public void setMass(double newMass){
         if (newMass > this.getMassOfEntity())
             this.mass = newMass;
     }
 
+    /**
+     * Variable registering the total mass of the ship.
+     */
     private double totalMass = this.getMass();
     public double getTotalMass(){
         return this.totalMass;

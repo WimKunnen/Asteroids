@@ -42,25 +42,46 @@ public class Bullet extends Entity {
         this.setRadius(this.getMinimumRadius());
     }
 
+    /**
+     * Variable registering the maximum number of bounces for this bullet.
+     */
     private int maxNbBounces = 3;
+    /**
+     * @see implementation
+     */
     public int getMaxNbBounces(){
         return this.maxNbBounces;
     }
+    /**
+     * @see implementation
+     */
     private void setMaxNbBounces(int newMaxNb){
         this.maxNbBounces = newMaxNb;
     }
     private int nbOfBounces = 0;
+    /**
+     * @see implementation
+     */
     public int getNbOfBounces(){
         return this.nbOfBounces;
     }
+    /**
+     * @see implementation
+     */
     protected void riseNbOfBounces() {
         this.nbOfBounces += 1;
     }
 
     public Ship source;
+    /**
+     * @see implementation
+     */
     public Ship getSource(){
         return this.source;
     }
+    /**
+     * @see implementation
+     */
     protected void setSource(Ship sourceShip){
         this.source = sourceShip;
     }

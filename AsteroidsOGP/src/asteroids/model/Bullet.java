@@ -62,8 +62,7 @@ public class Bullet extends Entity {
         return this.source;
     }
     protected void setSource(Ship sourceShip){
-        if (sourceShip.getWorld() == this.getWorld())
-            this.source = sourceShip;
+        this.source = sourceShip;
     }
 
 

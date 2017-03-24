@@ -81,10 +81,7 @@ public class Ship extends Entity{
             Bullet bullet = new Bullet();
             bullet.setSource(this);
             bullet.setRadius(0.1 * this.getRadius());
-            this.bullets.add(bullet);
-            this.setTotalMass(bullets);
-            bullet.setPosition(this.getPosition());
-            bullet.setVelocity(this.velocity);
+            this.reload(bullet);
         }
     }
 
@@ -103,10 +100,7 @@ public class Ship extends Entity{
             Bullet bullet = new Bullet();
             bullet.setSource(this);
             bullet.setRadius(0.1 * this.getRadius());
-            this.bullets.add(bullet);
-            this.setTotalMass(bullets);
-            bullet.setPosition(this.getPosition());
-            bullet.setVelocity(this.velocity);
+            this.reload(bullet);
         }
     }
     // Heading

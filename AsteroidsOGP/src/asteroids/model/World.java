@@ -75,19 +75,19 @@ public class World {
     public Set<Ship> getAllShips() {return this.allShips;}
     public Set<Bullet> getAllBullets() {return this.allBullets;}
 
-    //TODO Overlap!
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
-        else{
+        if (entity.noOverlapsInNewWorld(this)) {
             entity.setWorld(this);
             if (entity instanceof Ship) {
                 allShips.add((Ship) entity);
-            }
-            else if (entity instanceof Bullet) {
+            } else if (entity instanceof Bullet) {
                 allBullets.add((Bullet) entity);
             }
-
+        }
+        else{
+            throw new IllegalArgumentException("Can't be added!");
         }
 
     }
@@ -125,8 +125,20 @@ public class World {
             }
 
         }
-        else{
+        else {
             evolve(getTimeToFirstCollision());
+
+            List<Entity> allEntities = new ArrayList<>();
+            allEntities.addAll(getAllBullets());
+            allEntities.addAll(getAllShips());
+            for (int i = 0; i < allEntities.size(); i++) {
+
+                //TODO check boundarycollision
+
+                for (int k = i + 1; k < allEntities.size(); k++) {
+                    //TODO check entitycollision
+                }
+            }
 
             if (getTimeToFirstBoundaryCollision() < getTimeToFirstEntityCollision()){ //Boundary collision
                 String boundary = firstEntityToCollideBoundary.getBoundaryOfCollision();

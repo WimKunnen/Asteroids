@@ -379,6 +379,19 @@ public abstract class Entity {
         return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() == other.getWorld();
     }
 
+    public boolean apparentlyCollidesWith(Entity entity){
+        double sumRadii = this.sigma(entity);
+        return (0.99*sumRadii < this.getDistanceBetween(entity) + sumRadii &&
+                this.getDistanceBetween(entity) + sumRadii < 1.01*sumRadii);
+    }
+
+    //TODO
+    public boolean apparrentlyCollidesWithBoundary(){
+        return (distanceToBoundary < 1.01*getRadius() && distanceToBounary > 0.99*getRadius());
+    }
+
+
+
 
 
     /**
@@ -617,4 +630,6 @@ public abstract class Entity {
         }
         return true;
     }
+
+
 }

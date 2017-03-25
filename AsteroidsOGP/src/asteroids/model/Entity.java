@@ -145,6 +145,7 @@ public abstract class Entity {
      *          | !isValidTimeDifference
      */
     public void move(double timeDifference) throws IllegalArgumentException{
+
         if(isValidTimeDifference(timeDifference)){
             setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
         }else{
@@ -418,6 +419,15 @@ public abstract class Entity {
      * The distance from the centre of the ship to the four boundaries: left, right, top, bottom.
      */
     public List getDistanceToBoundary(){
+        if (getWorld() == null){
+            List<Double> distances = new ArrayList<>();
+            distances.add(Double.POSITIVE_INFINITY);
+            distances.add(Double.POSITIVE_INFINITY);
+            distances.add(Double.POSITIVE_INFINITY);
+            distances.add(Double.POSITIVE_INFINITY);
+            return distances;
+        }
+
         double top = getWorld().getHeight() - getPosition().getY();
         double bot = getPosition().getY();
         double left = getPosition().getX();
@@ -645,12 +655,18 @@ public abstract class Entity {
 
     //Interaction with world
     public boolean fitsInBoundaries(World world){
+        if (world == null){
+            return true;
+        }
         return !(getPosition().getX() + 0.99*this.getRadius() > world.getWidth()
                 || getPosition().getX() - 0.99*this.getRadius() < 0
                 || getPosition().getY() + 0.99*this.getRadius() > world.getHeight()
                 || getPosition().getY() - 0.99*this.getRadius() < 0);
     }
     public boolean fitsInBoundaries(World world, Vector vector){
+        if (world == null){
+            return true;
+        }
         return !(vector.getX() + 0.99*this.getRadius() > world.getWidth()
                 || vector.getX() - 0.99*this.getRadius() < 0
                 || vector.getY() + 0.99*this.getRadius() > world.getHeight()

@@ -62,6 +62,7 @@ public class World {
     public HashSet<Ship> allShips = new HashSet<>();
     public HashSet<Bullet> allBullets = new HashSet<>();
 
+    public HashMap<Vector, Entity> entityPositionMap = new HashMap<>();
 
     public final static double lowerBound = 0;
     public static double upperBound = Double.MAX_VALUE;
@@ -78,8 +79,9 @@ public class World {
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
-        if (entity.noOverlapsInNewWorld(this)) {
+        if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
             entity.setWorld(this);
+            entityPositionMap.put(entity.getPosition(),entity);
             if (entity instanceof Ship) {
                 allShips.add((Ship) entity);
             } else if (entity instanceof Bullet) {
@@ -110,8 +112,10 @@ public class World {
         }
     }
 
-    public Entity getEntityAt(Vector position) {
-        return null;
+    //TODO problem: when two entities have the same position and after some time they don't... only one entity is remembered.
+
+    public Entity getEntityAt(Vector position){
+        return entityPositionMap.get(position);
     }
 
 
@@ -205,8 +209,8 @@ public class World {
         }
     }
 
-//    public Entity firstEntityToCollideBoundary;
-//    public List<Entity> firstEntityPairToCollide;
+    public Entity firstEntityToCollideBoundary;
+    public List<Entity> firstEntityPairToCollide = new ArrayList<>();
 
     //TODO Use getAllEntities() instead of adding to a new array! Done?
     public double getTimeToFirstEntityCollision(){
@@ -218,9 +222,9 @@ public class World {
                 double newTime = allEntities.get(i).getTimeToCollision(allEntities.get(k));
                 if (newTime < timeToFirstCollision) {
                     timeToFirstCollision = newTime;
-//                    firstEntityPairToCollide.clear();
-//                    firstEntityPairToCollide.add(allEntities.get(i));
-//                    firstEntityPairToCollide.add(allEntities.get(k));
+                    firstEntityPairToCollide.clear();
+                    firstEntityPairToCollide.add(allEntities.get(i));
+                    firstEntityPairToCollide.add(allEntities.get(k));
                 }
             }
         }
@@ -237,7 +241,7 @@ public class World {
             double newTime = allEntities.get(i).getTimeToCollisionWithBoundary();
             if (newTime < timeToFirstCollision) {
                 timeToFirstCollision = newTime;
-//                firstEntityToCollideBoundary = allEntities.get(i);
+                firstEntityToCollideBoundary = allEntities.get(i);
             }
         }
         return timeToFirstCollision;
@@ -253,7 +257,24 @@ public class World {
 
     //TODO
     public Vector getFirstCollisionPosition(){
-        return new Vector(0,0);
+
+        double timeToFirstEntityCollision = getTimeToFirstEntityCollision();
+        double timeToFirstBoundaryCollision = getTimeToFirstBoundaryCollision();
+
+        if (timeToFirstBoundaryCollision == Double.POSITIVE_INFINITY
+                && timeToFirstEntityCollision == Double.POSITIVE_INFINITY){
+            return null;
+        }
+
+        if (timeToFirstBoundaryCollision < timeToFirstEntityCollision){
+            return firstEntityToCollideBoundary.getCollisionPositionWithBoundary();
+        }
+
+        if (timeToFirstBoundaryCollision > timeToFirstEntityCollision){
+            return firstEntityPairToCollide.get(0).getCollisionPosition(firstEntityPairToCollide.get(1));
+        }
+
+        return null; //TODO can this differently?
     }
 
     public double J(List<Ship> shipPair) {

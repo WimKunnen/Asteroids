@@ -277,9 +277,9 @@ public class Ship extends Entity{
 
             for(Entity entity : this.getWorld().getAllEntities()){
                 if (bullet.overlap(entity)) {
-                    List<Entity> entityList = new ArrayList<>();
-                    entityList.add(bullet);
-                    entityList.add(entity);
+//                    List<Entity> entityList = new ArrayList<>();
+//                    entityList.add(bullet);
+//                    entityList.add(entity);
                     this.getWorld().resolveCollision(bullet, entity);
                 }
             }

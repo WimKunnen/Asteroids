@@ -280,7 +280,7 @@ public class Ship extends Entity{
                     List<Entity> entityList = new ArrayList<>();
                     entityList.add(bullet);
                     entityList.add(entity);
-                    this.getWorld().resolveCollision(entityList);
+                    this.getWorld().resolveCollision(bullet, entity);
                 }
             }
 

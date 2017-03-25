@@ -3,6 +3,9 @@ package asteroids.model;
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A class of entities for the game Asteroids.
@@ -379,18 +382,53 @@ public abstract class Entity {
         return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() == other.getWorld();
     }
 
-    public boolean apparentlyCollidesWith(Entity entity){
+    public boolean apparentlyCollidesWithEntity(Entity entity){
         double sumRadii = this.sigma(entity);
         return (0.99*sumRadii < this.getDistanceBetween(entity) + sumRadii &&
                 this.getDistanceBetween(entity) + sumRadii < 1.01*sumRadii);
     }
 
     //TODO
-    public boolean apparrentlyCollidesWithBoundary(){
-        return (distanceToBoundary < 1.01*getRadius() && distanceToBounary > 0.99*getRadius());
+    public boolean apparentlyCollidesWithBoundary(){
+        return apparentlyCollidesWithLeft()
+                || apparentlyCollidesWithRight()
+                || apparentlyCollidesWithTop()
+                || apparentlyCollidesWithBottom();
     }
 
+    public boolean apparentlyCollidesWithLeft(){
+        double left = (Double)getDistanceToBoundary().get(0);
+        return (left < 1.01*getRadius() && left > 0.99*getRadius());
+    }
+    public boolean apparentlyCollidesWithRight(){
+        double right = (Double)getDistanceToBoundary().get(1);
+        return (right < 1.01*getRadius() && right > 0.99*getRadius());
+    }
+    public boolean apparentlyCollidesWithTop(){
+        double top = (Double)getDistanceToBoundary().get(2);
+        return (top < 1.01*getRadius() && top > 0.99*getRadius());
+    }
 
+    public boolean apparentlyCollidesWithBottom(){
+        double bottom = (Double)getDistanceToBoundary().get(3);
+        return (bottom < 1.01*getRadius() && bottom > 0.99*getRadius());
+    }
+
+    /**
+     * The distance from the centre of the ship to the four boundaries: left, right, top, bottom.
+     */
+    public List getDistanceToBoundary(){
+        double top = getWorld().getHeight() - getPosition().getY();
+        double bot = getPosition().getY();
+        double left = getPosition().getX();
+        double right = getWorld().getWidth() - getPosition().getX();
+        List<Double> distances = new ArrayList<>();
+        distances.add(left);
+        distances.add(right);
+        distances.add(top);
+        distances.add(bot);
+        return distances;
+    }
 
 
 

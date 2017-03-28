@@ -253,6 +253,10 @@ public class Ship extends Entity{
         this.setTotalMass(bullets);
         bullet.setPosition(this.getPosition());
         bullet.setVelocity(this.velocity);
+        if (bullet.getWorld() != null) {
+            //System.out.println(bullet.getWorld());
+            bullet.getWorld().removeEntity(bullet);
+        }
     }
 
     public void reload(Collection<Bullet> newBullets){

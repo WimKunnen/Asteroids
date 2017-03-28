@@ -16,6 +16,7 @@ public class Part2 {
 				System.out.println("unknown option: " + arg);
 				return;
 			}
+
 		}
 
 		IFacade facade = new asteroids.facade.Facade();

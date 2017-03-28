@@ -98,6 +98,16 @@ public class World {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         else{
+
+            if (entityPositionMap.containsValue(entity)){
+                Vector keyPosition = entity.getPosition();
+                entityPositionMap.remove(keyPosition);
+            }
+
+//            else{
+//                throw new IllegalArgumentException("Entity not in this world!");
+//            }
+
             if (entity instanceof Ship) {
                 if (!allShips.contains(entity))
                     throw new IllegalArgumentException();
@@ -118,11 +128,19 @@ public class World {
         return entityPositionMap.get(position);
     }
 
+    public void updatePositionMap() {
+        entityPositionMap.clear();
+        Set<Entity> allEntities = getAllEntities();
+        for (Entity entity : allEntities){
+            entityPositionMap.put(entity.getPosition(),entity);
+        }
+    }
 
     public void evolve(double timeDifference) {
         if (timeDifference <= getTimeToFirstCollision()){ //No collision in the given time.
             for (Entity entity : getAllEntities()) {
                 entity.move(timeDifference);
+                updatePositionMap();
                 if (entity instanceof Ship)
                     if (((Ship) entity).getThrusterState())
                         ((Ship) entity).thrust(timeDifference);
@@ -253,6 +271,7 @@ public class World {
         double entityTime = getTimeToFirstEntityCollision();
         if (entityTime < time)
             time = entityTime;
+
         return time;
     }
 

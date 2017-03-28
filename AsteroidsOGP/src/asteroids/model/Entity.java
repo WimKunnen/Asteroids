@@ -123,7 +123,7 @@ public abstract class Entity {
 
     // The entities world
 
-    protected World world = new World();
+    protected World world = null;
 
     public World getWorld(){
         return this.world;
@@ -463,6 +463,9 @@ public abstract class Entity {
         double timeToCollision = -(deltaV.scalarProduct(deltaR) + Math.sqrt(d)) / deltaV.scalarProduct(deltaV);
 
         if (this.willCollide(other)) {
+            if (timeToCollision < 0 ){
+                System.out.println("negative in entity collision");
+            }
             return timeToCollision;
         } else {
             return Double.POSITIVE_INFINITY;
@@ -492,6 +495,9 @@ public abstract class Entity {
             double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
             if (timeToCollisionY < time)
                 time = timeToCollisionY;
+        }
+        if (time < 0 ) {
+            System.out.println("negative in entity collision");
         }
         return time;
 

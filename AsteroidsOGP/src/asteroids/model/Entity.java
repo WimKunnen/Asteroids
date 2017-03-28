@@ -468,7 +468,7 @@ public abstract class Entity {
 
         if (this.willCollide(other)) {
             if (timeToCollision < 0 ){
-                System.out.println("negative in entity collision");
+                System.out.println("negative in entity collision: "+ timeToCollision);
             }
             return timeToCollision;
         } else {
@@ -501,7 +501,7 @@ public abstract class Entity {
                 time = timeToCollisionY;
         }
         if (time < 0 ) {
-            System.out.println("negative in entity collision");
+            System.out.println("negative in entity collision:" + time);
         }
         return time;
 

@@ -162,8 +162,20 @@ public class World {
             allEntities.addAll(getAllEntities());
             for (int i = 0; i < allEntities.size(); i++) {
 
-                Entity currentEntity = allEntities.get(i); //Boundary collision resolve
-                if (currentEntity.apparentlyCollidesWithBoundary()){
+                Entity currentEntity = allEntities.get(i);
+
+                for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
+                    Entity otherEntity = allEntities.get(k);
+                    if (currentEntity.apparentlyCollidesWithEntity(otherEntity)) {
+                        resolveCollision(currentEntity, otherEntity);
+                    }
+                }
+            }
+            for (int i = 0; i < allEntities.size(); i++) {
+
+                Entity currentEntity = allEntities.get(i);
+                
+                if (currentEntity.apparentlyCollidesWithBoundary()){ //Boundary collision resolve
                     if (currentEntity.apparentlyCollidesWithLeft() || currentEntity.apparentlyCollidesWithRight()){
                         currentEntity.negateVelocityX();
                         if (currentEntity instanceof Bullet) {
@@ -180,12 +192,6 @@ public class World {
                             if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces())
                                 (currentEntity).terminate();
                         }
-                    }
-                }
-                for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
-                    Entity otherEntity = allEntities.get(k);
-                    if (currentEntity.apparentlyCollidesWithEntity(otherEntity)){
-                        resolveCollision(currentEntity, otherEntity);
                     }
                 }
             }

@@ -126,6 +126,7 @@ public class World {
                 if (entity instanceof Ship)
                     if (((Ship) entity).getThrusterState())
                         ((Ship) entity).thrust(timeDifference);
+
             }
 
         }
@@ -212,7 +213,7 @@ public class World {
     public Entity firstEntityToCollideBoundary;
     public List<Entity> firstEntityPairToCollide = new ArrayList<>();
 
-    //TODO Use getAllEntities() instead of adding to a new array! Done?
+    //TODO Use getAllEntities() instead of adding to a new array! Done? Done!
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();

@@ -76,6 +76,7 @@ public class Ship extends Entity{
         this.setMass(mass);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
+        this.setMassOfEntity(this.getDensity());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         for (int i = 0; i < 15; i++){
             Bullet bullet = new Bullet();
@@ -94,6 +95,7 @@ public class Ship extends Entity{
         this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42 * Math.pow(10, 12));
+        this.setMassOfEntity(this.getDensity());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
         for (int i = 0; i < 15; i++){
@@ -184,13 +186,14 @@ public class Ship extends Entity{
     //TODO check thrust enable meaning
     public void thrustOn(){
         this.thruster = true;
+       // this.thrust();
     }
     public void thrustOff(){
         this.thruster = false;
     }
 
     private double thrustForce;
-    private double getThrustForce(){
+    protected double getThrustForce(){
         return this.thrustForce;
     }
     private void setThrustForce(double newForce){
@@ -198,7 +201,7 @@ public class Ship extends Entity{
     }
 
     public double getAcceleration(){
-        return this.getTotalMass() / this.getThrustForce();
+        return this.getThrustForce() / this.getTotalMass();
     }
 
     public void thrust(double timeDifference){

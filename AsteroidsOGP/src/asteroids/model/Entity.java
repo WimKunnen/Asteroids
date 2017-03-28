@@ -636,7 +636,10 @@ public abstract class Entity {
         this.density = newDensity;
     }
 
-    protected double massOfEntity = 4.0/3 * Math.pow(this.getRadius(), 3) * this.density;
+    protected double massOfEntity;
+    protected void setMassOfEntity(double density){
+        this.massOfEntity = 4.0/3 * Math.PI * Math.pow(this.getRadius(), 3) * density;
+    }
     public double getMassOfEntity(){
         return this.massOfEntity;
     }

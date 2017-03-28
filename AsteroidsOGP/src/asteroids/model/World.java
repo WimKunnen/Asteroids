@@ -174,7 +174,7 @@ public class World {
             for (int i = 0; i < allEntities.size(); i++) {
 
                 Entity currentEntity = allEntities.get(i);
-                
+
                 if (currentEntity.apparentlyCollidesWithBoundary()){ //Boundary collision resolve
                     if (currentEntity.apparentlyCollidesWithLeft() || currentEntity.apparentlyCollidesWithRight()){
                         currentEntity.negateVelocityX();
@@ -195,7 +195,8 @@ public class World {
                     }
                 }
             }
-
+            if (timeDifference - timeToFirstCollision < 0){System.out.println("NEGATIVEEEEEEEEEE");}
+            System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
             evolve(timeDifference - timeToFirstCollision);
 
         }

@@ -2,6 +2,7 @@ package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
+import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -469,6 +470,7 @@ public abstract class Entity {
         if (this.willCollide(other)) {
             if (timeToCollision < 0 ){
                 System.out.println("negative in entity collision: "+ timeToCollision);
+                timeToCollision = 0; //TODO
             }
             return timeToCollision;
         } else {
@@ -502,6 +504,7 @@ public abstract class Entity {
         }
         if (time < 0 ) {
             System.out.println("negative in entity collision:" + time);
+            time = 0; //TODO
         }
         return time;
 

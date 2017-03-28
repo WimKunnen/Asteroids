@@ -83,13 +83,18 @@ public class World {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
             if (entity instanceof Ship) {
-                allShips.add((Ship) entity);
-            } else if (entity instanceof Bullet) {
-                allBullets.add((Bullet) entity);
+                getAllShips().add((Ship) entity);
+            } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
+                getAllBullets().add((Bullet) entity);
             }
         }
         else{
-            throw new IllegalArgumentException("Can't be added!");
+            if(entity instanceof Bullet){
+                entity.terminate();
+            }
+
+            else
+                throw new IllegalArgumentException("Can't be added!");
         }
 
     }
@@ -137,6 +142,7 @@ public class World {
     }
 
     public void evolve(double timeDifference) {
+        //System.out.println(getAllBullets().size());
         if (timeDifference <= getTimeToFirstCollision()){ //No collision in the given time.
             for (Entity entity : getAllEntities()) {
                 entity.move(timeDifference);
@@ -219,10 +225,10 @@ public class World {
     }
 //TODO
     public void resolveBulletShipCollision(Ship ship,Bullet bullet){
-        if (bullet.getSource() == ship){
+        if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
             ship.reload(bullet);
         }
-        else{
+        if (bullet.getSource() != ship) {
             ship.terminate();
             bullet.terminate();
         }
@@ -300,19 +306,19 @@ public class World {
     public double J(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
-        return 2*ship1.getTotalMass()*ship2.getTotalMass()*
+        return 2 * ship1.getTotalMass() * ship2.getTotalMass() *
                 ship1.deltaV(ship2).scalarProduct(ship1.deltaR(ship2))
-                / ( ship1.sigma(ship2) * (ship1.getTotalMass()+ship2.getTotalMass()));
+                / ( ship1.sigma(ship2) * (ship1.getTotalMass() + ship2.getTotalMass()));
     }
     public double Jx(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
-        return J(shipPair)/ship1.sigma(ship2) * ship1.deltaR(ship2).getX();
+        return J(shipPair) * ship1.deltaR(ship2).getX() / ship1.sigma(ship2);
     }
 
     public double Jy(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
-        return J(shipPair)/ship1.sigma(ship2) * ship1.deltaR(ship2).getY();
+        return J(shipPair) * ship1.deltaR(ship2).getY() / ship1.sigma(ship2);
     }
 }

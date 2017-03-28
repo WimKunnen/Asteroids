@@ -59,6 +59,7 @@ public abstract class Entity {
             throws IllegalArgumentException{
         this.setMinimumRadius();
         this.setRadius(radius);
+        this.setWorld(world);
         if(Double.isNaN(x) ||  Double.isNaN(y))
             throw new IllegalArgumentException();
         else
@@ -66,7 +67,7 @@ public abstract class Entity {
 
         this.setMaximumVelocity(speedOfLight);
         this.setVelocity(new Vector(velocityX,velocityY));
-        this.setWorld(world);
+
     }
 
     /**
@@ -113,6 +114,9 @@ public abstract class Entity {
         this.position = newPosition;
     }
 
+    protected boolean isValidPosition(Vector position){
+        return (Double.isNaN(position.getX()) ||  Double.isNaN(position.getY()));
+    }
     /**
      * Returns the position vector of the entity.
      */

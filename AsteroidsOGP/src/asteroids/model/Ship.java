@@ -249,14 +249,14 @@ public class Ship extends Entity{
             bullet.setSource(this);
         if (bullet.getSource() != this)
             throw new IllegalArgumentException("Bullet and Spaceship don't match");
-        this.bullets.add(bullet);
-        this.setTotalMass(bullets);
-        bullet.setPosition(this.getPosition());
-        bullet.setVelocity(this.velocity);
+        if (bullet.hasBeenOutOfShip()) {
+            this.bullets.add(bullet);
+            this.setTotalMass(bullets);
+            bullet.setPosition(this.getPosition());
+            bullet.setVelocity(this.velocity);
+            bullet.switchBeenOutOfShip(false);
         if (bullet.getWorld() != null) {
-            //System.out.println(bullet.getWorld());
             bullet.getWorld().removeEntity(bullet);
-        }
     }
 
     public void reload(Collection<Bullet> newBullets){
@@ -270,6 +270,7 @@ public class Ship extends Entity{
         if(this.getWorld() != null) {
             Bullet bullet = this.getRandomBulletOnShip();
             bullets.remove(bullet);
+            bullet.switchBeenOutOfShip(false);
 
             Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));
 
@@ -281,19 +282,21 @@ public class Ship extends Entity{
             if (!bullet.fitsInBoundaries(this.getWorld())){
                 bullet.terminate();
             }
-
-            for(Entity entity : this.getWorld().getAllEntities()){
-                if (bullet.overlap(entity)) {
-//                    List<Entity> entityList = new ArrayList<>();
-//                    entityList.add(bullet);
-//                    entityList.add(entity);
-                    this.getWorld().resolveCollision(bullet, entity);
-                }
-            }
+            
+//            this.getWorld().addEntity(bullet);
+//            this.getWorld().getAllEntities().add(bullet);
+            this.getWorld().getAllBullets().add(bullet);
 
             Vector bulletVelocity = pointingVector.resizeVector(250);
             bullet.setVelocity(bulletVelocity);
+
+            for(Entity entity : this.getWorld().getAllEntities()){
+                if (bullet.overlap(entity)) {
+                    this.getWorld().resolveCollision(bullet, entity);
+                }
+            }
         }
+
     }
 
 }

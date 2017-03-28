@@ -88,5 +88,17 @@ public class Bullet extends Entity {
         this.source = sourceShip;
     }
 
+//    protected boolean canBeFired(){
+//        if (!(this.fitsInBoundaries(this.getWorld())))
+//            return false;
+//
+//    }
+    private boolean beenOutOfShip = true;
+    protected boolean hasBeenOutOfShip(){
+        return this.beenOutOfShip;
+    }
+    protected void switchBeenOutOfShip(Boolean bool){
+        this.beenOutOfShip = bool;
+    }
 
 }

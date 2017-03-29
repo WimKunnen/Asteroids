@@ -105,6 +105,7 @@ public class Ship extends Entity{
             this.reload(bullet);
         }
     }
+
     // Heading
 
     /**
@@ -272,6 +273,7 @@ public class Ship extends Entity{
         if(this.getWorld() != null) {
             Bullet bullet = this.getRandomBulletOnShip();
             bullets.remove(bullet);
+
             bullet.switchBeenOutOfShip(false);
 
             Vector pointingVector = new Vector(Math.cos(this.getHeading()), Math.sin(this.getHeading()));
@@ -285,9 +287,10 @@ public class Ship extends Entity{
                 bullet.terminate();
             }
             
-//            this.getWorld().addEntity(bullet);
+            this.getWorld().addEntity(bullet);
+           // System.out.println(this.getWorld().getAllBullets().size());
 //            this.getWorld().getAllEntities().add(bullet);
-            this.getWorld().getAllBullets().add(bullet);
+//            this.getWorld().getAllBullets().add(bullet);
 
             Vector bulletVelocity = pointingVector.resizeVector(250);
             bullet.setVelocity(bulletVelocity);

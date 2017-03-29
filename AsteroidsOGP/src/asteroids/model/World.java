@@ -12,6 +12,15 @@ import java.util.*;
  */
 public class World {
 
+    /**
+     * Initializer for the World.
+     *
+     * @param   width
+     *          The new width of the newly created world.
+     *
+     * @param   height
+     *          The new width of the newly created world.
+     */
     public World(double width, double height){
         if (width < lowerBound)
             this.width = lowerBound;
@@ -26,32 +35,55 @@ public class World {
             this.height = upperBound;
         else
             this.height = height;
-
+        this.worldSize = new double[]{this.getWidth(), this.getHeight()};
     }
 
-    public World(){
-        this.height = 800;
-        this.width = 800;
-    }
-
+    /**
+     * Variable registering the width of a world.
+     */
     private final double width;
+    /**
+     * @see implementation
+     */
     @Basic @Immutable
     public double getWidth(){return this.width;}
 
+    /**
+     * Variable registering the height of a world.
+     */
     private final double height;
+    /**
+     * @see implementation
+     */
     @Basic @Immutable
     public double getHeight() {return this.height;}
 
-    private final double[] worldSize = new double[]{this.getWidth(), this.getHeight()};
+    /**
+     * Variable registering the worldsize as an array of doubles.
+     */
+    private final double[] worldSize;
+    /**
+     * @see implementation
+     */
     @Basic @Immutable
     public double[] getWorldSize(){
         return this.worldSize;
     }
 
+    /**
+     * Variable registering whether or not a world is terminated.
+     */
     public boolean isTerminated = false;
+
+    /**
+     * @see implementation
+     */
     public boolean checkTermination(){
         return this.isTerminated;
     }
+    /**
+     * @see implementation
+     */
     public void terminate(){
         this.isTerminated = true;
         for (Entity entity : getAllEntities()){
@@ -59,46 +91,90 @@ public class World {
         }
     }
 
+    /**
+     * Variable registering all ships in the world as a set.
+     */
     public HashSet<Ship> allShips = new HashSet<>();
+    /**
+     * Variable registering all bullets in the world as a set.
+     */
     public HashSet<Bullet> allBullets = new HashSet<>();
 
+    /**
+     * Variable registering all entities in the world as a hashmap, with the entity's position as a key.
+     */
     public HashMap<Vector, Entity> entityPositionMap = new HashMap<>();
 
+    /**
+     * Variable registering the lower bound of the values of width and height.
+     */
     public final static double lowerBound = 0;
+
+    /**
+     * Variable registering the upper bound of the values of width and height.
+     */
     public static double upperBound = Double.MAX_VALUE;
 
+    /**
+     * @see implementation
+     */
     public Set<Entity> getAllEntities() {
         Set<Entity> allEntities = new HashSet<>();
         allEntities.addAll(getAllBullets());
         allEntities.addAll(getAllShips());
         return allEntities;
     }
-    public Set<Ship> getAllShips() {return this.allShips;}
-    public Set<Bullet> getAllBullets() {return this.allBullets;}
+    /**
+     * @see implementation
+     */
+    public Set<Ship> getAllShips() {
+        return this.allShips;
+    }
+    /**
+     * @see implementation
+     */
+    public Set<Bullet> getAllBullets() {
+        return this.allBullets;
+    }
 
+    /**
+     * @see implementation
+     */
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
+//            this.getAllEntities().add(entity);
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
             if (entity instanceof Ship) {
-                getAllShips().add((Ship) entity);
+                allShips.add((Ship) entity);
             } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
-                getAllBullets().add((Bullet) entity);
+//                System.out.println('a');
+
+                // Added correctly!
+
+//                System.out.println();
+//                System.out.println(getAllBullets().size());
+
+                allBullets.add((Bullet) entity);
+//                System.out.println(getAllBullets().size());
             }
         }
         else{
             if(entity instanceof Bullet){
                 entity.terminate();
+                System.out.println('-');
             }
-
             else
                 throw new IllegalArgumentException("Can't be added!");
         }
 
     }
 
+    /**
+     * @see implementation
+     */
     public void removeEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
@@ -129,10 +205,16 @@ public class World {
 
     //TODO problem: when two entities have the same position and after some time they don't... only one entity is remembered.
 
+    /**
+     * @see implementation
+     */
     public Entity getEntityAt(Vector position){
         return entityPositionMap.get(position);
     }
 
+    /**
+     * @see implementation
+     */
     public void updatePositionMap() {
         entityPositionMap.clear();
         Set<Entity> allEntities = getAllEntities();
@@ -150,7 +232,8 @@ public class World {
                 if (entity instanceof Ship)
                     if (((Ship) entity).getThrusterState())
                         ((Ship) entity).thrust(timeDifference);
-
+                if (entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip())
+                    ((Bullet) entity).switchBeenOutOfShip(true);
             }
 
         }
@@ -180,8 +263,9 @@ public class World {
                         currentEntity.negateVelocityX();
                         if (currentEntity instanceof Bullet) {
                             ((Bullet) currentEntity).riseNbOfBounces();
-                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces())
+                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()) {
                                 (currentEntity).terminate();
+                            }
                         }
                     }
 
@@ -189,8 +273,9 @@ public class World {
                         currentEntity.negateVelocityY();
                         if (currentEntity instanceof Bullet) {
                             ((Bullet) currentEntity).riseNbOfBounces();
-                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces())
+                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()){
                                 (currentEntity).terminate();
+                            }
                         }
                     }
                 }
@@ -231,10 +316,13 @@ public class World {
 
     }
 //TODO
-    public void resolveBulletShipCollision(Ship ship,Bullet bullet){
+    public void resolveBulletShipCollision(Ship ship, Bullet bullet){
         if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
             ship.reload(bullet);
+            System.out.println('R');
+
         }
+
         if (bullet.getSource() != ship) {
             ship.terminate();
             bullet.terminate();
@@ -279,6 +367,9 @@ public class World {
         return timeToFirstCollision;
     }
 
+    /**
+     * | return (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision)
+     */
     public double getTimeToFirstCollision() {
         double time = getTimeToFirstBoundaryCollision();
         double entityTime = getTimeToFirstEntityCollision();
@@ -289,6 +380,9 @@ public class World {
     }
 
     //TODO
+    /**
+     * @see implementation
+     */
     public Vector getFirstCollisionPosition(){
 
         double timeToFirstEntityCollision = getTimeToFirstEntityCollision();
@@ -310,6 +404,9 @@ public class World {
         return null; //TODO can this differently?
     }
 
+    /**
+     * @see implementation
+     */
     public double J(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
@@ -317,12 +414,19 @@ public class World {
                 ship1.deltaV(ship2).scalarProduct(ship1.deltaR(ship2))
                 / ( ship1.sigma(ship2) * (ship1.getTotalMass() + ship2.getTotalMass()));
     }
+
+    /**
+     * @see implementation
+     */
     public double Jx(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return J(shipPair) * ship1.deltaR(ship2).getX() / ship1.sigma(ship2);
     }
 
+    /**
+     * @see implementation
+     */
     public double Jy(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);

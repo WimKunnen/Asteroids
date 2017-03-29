@@ -175,7 +175,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			g2d.setFont(g2d.getFont().deriveFont(40f));
 			drawCenteredString(g2d, msg);
 			g2d.setFont(g2d.getFont().deriveFont(20f));
-			drawCenteredString(g2d, "Press ESC to continue ...", getHeight() / 3 * 2);
+			drawCenteredString(g2d, "Press ESC to exit ...", getHeight() / 3 * 2);
 		}
 	}
 

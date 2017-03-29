@@ -60,6 +60,10 @@ public class Bullet extends Entity {
     private void setMaxNbBounces(int newMaxNb){
         this.maxNbBounces = newMaxNb;
     }
+
+    /**
+     * Variable registering the amount of bounces a bullet has done so far.
+     */
     private int nbOfBounces = 0;
     /**
      * @see implementation
@@ -93,10 +97,19 @@ public class Bullet extends Entity {
 //            return false;
 //
 //    }
+    /**
+     * Boolean registering if the bullet has yet been outside of the ship after reloading.
+     */
     private boolean beenOutOfShip = true;
+    /**
+     * @see implementation
+     */
     protected boolean hasBeenOutOfShip(){
         return this.beenOutOfShip;
     }
+    /**
+     * @see implementation
+     */
     protected void switchBeenOutOfShip(Boolean bool){
         this.beenOutOfShip = bool;
     }

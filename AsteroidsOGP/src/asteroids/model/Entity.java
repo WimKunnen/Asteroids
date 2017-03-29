@@ -98,6 +98,9 @@ public abstract class Entity {
     }
 
     //Position:
+    /**
+     * Variable registering the position of the entity as a vector.
+     */
     private Vector position;
 
     /**
@@ -115,6 +118,9 @@ public abstract class Entity {
         this.position = newPosition;
     }
 
+    /**
+     * @see implementation
+     */
     protected boolean isValidPosition(Vector position){
         return (Double.isNaN(position.getX()) ||  Double.isNaN(position.getY()));
     }
@@ -128,13 +134,22 @@ public abstract class Entity {
 
     // The entities world
 
+    /**
+     * Variable registering the current world of the entity, initialized at null.
+     */
     protected World world = null;
 
+    /**
+     * @see implementation
+     */
     public World getWorld(){
         return this.world;
     }
 
-    protected void setWorld(World newWorld){
+    /**
+     * @see implementation
+     */
+    protected void setWorld(World newWorld) {
         this.world = newWorld;
     }
 
@@ -175,6 +190,9 @@ public abstract class Entity {
      */
     private final double speedOfLight = 300000;
 
+    /**
+     * Constant registering the speed of light squared.
+     */
     private final double speedOfLightSquared = speedOfLight*speedOfLight;
 
     /**
@@ -182,6 +200,9 @@ public abstract class Entity {
      */
     private double maximumVelocity;
 
+    /**
+     * Variable registering the maximum velocity squared of this entity.
+     */
     private double maximumVelocitySquared;
 
     /**
@@ -237,7 +258,7 @@ public abstract class Entity {
     }
 
     /**
-     * Returns the velocity vector.
+     * Variable registering the velocity of the entity as a vector.
      */
     protected Vector velocity;
 
@@ -269,9 +290,15 @@ public abstract class Entity {
         return this.velocity;
     }
 
+    /**
+     * @see implementation
+     */
     public void negateVelocityX() {
         setVelocity(new Vector(-this.getVelocity().getX(), this.getVelocity().getY()));
     }
+    /**
+     * @see implementation
+     */
     public void negateVelocityY() {
         setVelocity(new Vector(this.getVelocity().getX(), -this.getVelocity().getY()));
     }
@@ -282,6 +309,9 @@ public abstract class Entity {
      */
     protected double minimumRadius = 10;
 
+    /**
+     * @see implementation
+     */
     protected double getMinimumRadius(){
         return this.minimumRadius;
     }
@@ -291,9 +321,15 @@ public abstract class Entity {
      */
     protected double radius;
 
+    /**
+     * @see implementation
+     */
     protected void setRadius(double newRadius){
         this.radius = newRadius;
     }
+    /**
+     * @see implementation
+     */
     protected void setMinimumRadius(){
         if (this instanceof Ship)
             this.minimumRadius = 10;
@@ -388,6 +424,16 @@ public abstract class Entity {
         return  !(deltaV.scalarProduct(deltaR) >= 0 || d <= 0 || this.overlap(other)) && this.getWorld() == other.getWorld();
     }
 
+    /**
+     * Returns true if and only if the entity appears to collide with the other entity.
+     * An entity appears to collide with another entity if the distance between their centers is between
+     * 99% and 101% of the sum of their radii.
+     *
+     * @see implementation
+     *
+     * @param   entity
+     *          Another entity which the entity appears to collide with.
+     */
     public boolean apparentlyCollidesWithEntity(Entity entity){
         double sumRadii = this.sigma(entity);
         return (0.99*sumRadii < this.getDistanceBetween(entity) + sumRadii &&
@@ -395,6 +441,9 @@ public abstract class Entity {
     }
 
     //TODO
+    /**
+     * @see implementation
+     */
     public boolean apparentlyCollidesWithBoundary(){
         return apparentlyCollidesWithLeft()
                 || apparentlyCollidesWithRight()
@@ -402,19 +451,46 @@ public abstract class Entity {
                 || apparentlyCollidesWithBottom();
     }
 
+    /**
+     * Returns true if and only if the entity appears to collide with the left boundary.
+     * An entity appears to collide with the left boundary if the distance between the center of the entity and
+     * the left boundary is between 99% and 101% of the radius of the ship.
+     *
+     * @see implementation
+     */
     public boolean apparentlyCollidesWithLeft(){
         double left = (Double)getDistanceToBoundary().get(0);
         return (left < 1.01*getRadius() && left > 0.99*getRadius());
     }
+    /**
+     * Returns true if and only if the entity appears to collide with the right boundary.
+     * An entity appears to collide with the right boundary if the distance between the center of the entity and
+     * the right boundary is between 99% and 101% of the radius of the ship.
+     *
+     * @see implementation
+     */
     public boolean apparentlyCollidesWithRight(){
         double right = (Double)getDistanceToBoundary().get(1);
         return (right < 1.01*getRadius() && right > 0.99*getRadius());
     }
+    /**
+     * Returns true if and only if the entity appears to collide with the top boundary.
+     * An entity appears to collide with the top boundary if the distance between the center of the entity and
+     * the top boundary is between 99% and 101% of the radius of the ship.
+     *
+     * @see implementation
+     */
     public boolean apparentlyCollidesWithTop(){
         double top = (Double)getDistanceToBoundary().get(2);
         return (top < 1.01*getRadius() && top > 0.99*getRadius());
     }
-
+    /**
+     * Returns true if and only if the entity appears to collide with the bottom boundary.
+     * An entity appears to collide with the bottom boundary if the distance between the center of the entity and
+     * the bottom boundary is between 99% and 101% of the radius of the ship.
+     *
+     * @see implementation
+     */
     public boolean apparentlyCollidesWithBottom(){
         double bottom = (Double)getDistanceToBoundary().get(3);
         return (bottom < 1.01*getRadius() && bottom > 0.99*getRadius());
@@ -422,6 +498,9 @@ public abstract class Entity {
 
     /**
      * The distance from the centre of the ship to the four boundaries: left, right, top, bottom.
+     * These values are added to a list.
+     *
+     * @see implementation
      */
     public List getDistanceToBoundary(){
         if (getWorld() == null){
@@ -478,6 +557,12 @@ public abstract class Entity {
         }
     }
 
+    /**
+     * Returns the time before the entity will collide with one of the boundaries.
+     * If two collisions are possible with the current position and velocity, the time until the first collision is returned.
+     *
+     * @see implementation
+     */
     public double getTimeToCollisionWithBoundary() {
         double time = Double.POSITIVE_INFINITY;
         if (this.world == null)
@@ -507,13 +592,13 @@ public abstract class Entity {
             time = 0; //TODO
         }
         return time;
-
     }
 
     /**
      * Return at which side of the world the first collision with a boundary would happen: Right ("R"), Left("L"),
      * Top("T"), Bottom("B") or no boundary("X").
      *
+     * @see implementation
      */
     public String getBoundaryOfCollision(){
         double time = Double.POSITIVE_INFINITY;
@@ -552,6 +637,11 @@ public abstract class Entity {
         return boundary;
     }
 
+    /**
+     * Returns the position at which the first collision with one of the boundaries will happen.
+     *
+     * @see implementation
+     */
     public Vector getCollisionPositionWithBoundary() {
         double time = getTimeToCollisionWithBoundary();
         String boundary = getBoundaryOfCollision();
@@ -563,8 +653,10 @@ public abstract class Entity {
             radiusVector = new Vector(getRadius(),0);
         }
         else if (boundary.equals("L")) {
-            radiusVector = new Vector(-getRadius(),0);}
-        else if (boundary.equals("T")) {radiusVector = new Vector(0, getRadius());
+            radiusVector = new Vector(-getRadius(),0);
+        }
+        else if (boundary.equals("T")) {
+            radiusVector = new Vector(0, getRadius());
         }
         else {
             radiusVector = new Vector(0, -getRadius());
@@ -641,35 +733,82 @@ public abstract class Entity {
     }
 
     // Mass
+    /**
+     * Variable registering the density of the entity.
+     */
     protected double density;
+
+    /**
+     * @see implementation
+     */
     protected double getDensity(){
         return this.density;
     }
+    /**
+     * @see implementation
+     */
     protected void setDensity(double newDensity){
         this.density = newDensity;
     }
 
-    protected double massOfEntity;
-    protected void setMassOfEntity(double density){
-        this.massOfEntity = 4.0/3 * Math.PI * Math.pow(this.getRadius(), 3) * density;
+    /**
+     * Returns the volume of the entity based on its radius.
+     */
+    protected double getVolume(){
+        return 4.0/3 * Math.PI * Math.pow(this.getRadius(), 3);
     }
+    /**
+     * Returns the mass of an entity.
+     */
+    protected double massOfEntity;
+    /**
+     * The mass of the entity will be based on its volume and density
+     * | mass = volume * density
+     */
+    protected void setMassOfEntity(double density){
+        this.massOfEntity = this.getVolume() * density;
+    }
+    /**
+     * @see implementation
+     */
     public double getMassOfEntity(){
         return this.massOfEntity;
     }
 
     // Termination
+    /**
+     * Variable registering whether or not an entity is terminated.
+     */
     public boolean isTerminated = false;
+    /**
+     * @see implementation
+     */
     public boolean checkTermination(){
         return this.isTerminated;
     }
 
+    /**
+     * The entity will be terminated and removed from its world.
+     *
+     * @see implementation
+     */
     public void terminate(){
         isTerminated = true;
         if (getWorld() != null)
             getWorld().removeEntity(this);
+        System.out.println('T');
     }
 
     //Interaction with world
+
+    /**
+     * Returns true if and only if the entity fits within the boundaries of the given world.
+     *
+     * @see implementation
+     *
+     * @param   world
+     *          A candidate world for the entity to be placed in.
+     */
     public boolean fitsInBoundaries(World world){
         if (world == null){
             return true;
@@ -679,6 +818,18 @@ public abstract class Entity {
                 || getPosition().getY() + 0.99*this.getRadius() > world.getHeight()
                 || getPosition().getY() - 0.99*this.getRadius() < 0);
     }
+
+    /**
+     * Returns true is and only if the entity can be placed within the world, based on the vector.
+     *
+     * @see implementation
+     *
+     * @param   world
+     *          A candidate world for the entity to be placed in.
+     *
+     * @param   vector
+     *          A vector which is part of an entity.
+     */
     public boolean fitsInBoundaries(World world, Vector vector){
         if (world == null){
             return true;
@@ -689,6 +840,12 @@ public abstract class Entity {
                 || vector.getY() - 0.99*this.getRadius() < 0);
     }
 
+    /**
+     * Returns true is and only if the entity does not overlap with any entity in the given world.
+     *
+     * @param   world
+     *          A candidate world in which the ship might be placed
+     */
     public boolean noOverlapsInNewWorld(World world){
         for (Entity entity : world.getAllEntities()){
             if (this.overlap(entity)) {

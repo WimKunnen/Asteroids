@@ -796,7 +796,6 @@ public abstract class Entity {
         isTerminated = true;
         if (getWorld() != null)
             getWorld().removeEntity(this);
-        System.out.println('T');
     }
 
     //Interaction with world

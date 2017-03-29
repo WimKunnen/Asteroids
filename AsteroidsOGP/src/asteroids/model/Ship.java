@@ -73,17 +73,12 @@ public class Ship extends Entity{
         }else{
             throw new IllegalArgumentException();
         }
-        this.setMass(mass);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
+        this.setMass(mass);
+        this.setTotalMass(new HashSet<>());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
-        for (int i = 0; i < 15; i++){
-            Bullet bullet = new Bullet();
-            bullet.setSource(this);
-            bullet.setRadius(0.1 * this.getRadius());
-            this.reload(bullet);
-        }
     }
 
     /**
@@ -96,14 +91,9 @@ public class Ship extends Entity{
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
+        this.setTotalMass(new HashSet<>());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
-        for (int i = 0; i < 15; i++){
-            Bullet bullet = new Bullet();
-            bullet.setSource(this);
-            bullet.setRadius(0.1 * this.getRadius());
-            this.reload(bullet);
-        }
     }
 
     // Heading
@@ -172,7 +162,7 @@ public class Ship extends Entity{
         return this.totalMass;
     }
     protected void setTotalMass(HashSet<Bullet> bullets){
-        totalMass = this.getMassOfEntity();
+        totalMass = this.getMass();
         for(Bullet bullet : bullets){
             this.totalMass += bullet.getMassOfEntity();
         }
@@ -288,9 +278,6 @@ public class Ship extends Entity{
             }
             
             this.getWorld().addEntity(bullet);
-           // System.out.println(this.getWorld().getAllBullets().size());
-//            this.getWorld().getAllEntities().add(bullet);
-//            this.getWorld().getAllBullets().add(bullet);
 
             Vector bulletVelocity = pointingVector.resizeVector(250);
             bullet.setVelocity(bulletVelocity);

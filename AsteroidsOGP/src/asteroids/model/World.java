@@ -150,21 +150,12 @@ public class World {
             if (entity instanceof Ship) {
                 allShips.add((Ship) entity);
             } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
-//                System.out.println('a');
-
-                // Added correctly!
-
-//                System.out.println();
-//                System.out.println(getAllBullets().size());
-
                 allBullets.add((Bullet) entity);
-//                System.out.println(getAllBullets().size());
             }
         }
         else{
             if(entity instanceof Bullet){
                 entity.terminate();
-                System.out.println('-');
             }
             else
                 throw new IllegalArgumentException("Can't be added!");
@@ -223,7 +214,6 @@ public class World {
     }
 
     public void evolve(double timeDifference) {
-        //System.out.println(getAllBullets().size());
         if (timeDifference <= getTimeToFirstCollision()){ //No collision in the given time.
             for (Entity entity : getAllEntities()) {
                 entity.move(timeDifference);
@@ -307,7 +297,7 @@ public class World {
             resolveBulletShipCollision((Ship) entity2,(Bullet) entity1);
         else if (entity1 instanceof Ship && entity2 instanceof Bullet)
             resolveBulletShipCollision((Ship) entity1,(Bullet) entity2);
-        else if (entity1 instanceof Bullet && entity2 instanceof Bullet){
+        else if (entity1 instanceof Bullet && entity2 instanceof Bullet && ((Bullet) entity1).hasBeenOutOfShip() && ((Bullet) entity2).hasBeenOutOfShip()){
             entity1.terminate();
             entity2.terminate();
         }
@@ -318,8 +308,6 @@ public class World {
     public void resolveBulletShipCollision(Ship ship, Bullet bullet){
         if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
             ship.reload(bullet);
-            System.out.println('R');
-
         }
 
         if (bullet.getSource() != ship) {

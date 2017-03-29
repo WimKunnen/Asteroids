@@ -203,7 +203,6 @@ public class World {
         }
     }
 
-    //TODO problem: when two entities have the same position and after some time they don't... only one entity is remembered.
 
     /**
      * @see implementation
@@ -280,7 +279,7 @@ public class World {
                     }
                 }
             }
-            if (timeDifference - timeToFirstCollision < 0){System.out.println("NEGATIVEEEEEEEEEE");}
+
             System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
             evolve(timeDifference - timeToFirstCollision);
 
@@ -332,7 +331,7 @@ public class World {
     public Entity firstEntityToCollideBoundary;
     public List<Entity> firstEntityPairToCollide = new ArrayList<>();
 
-    //TODO Use getAllEntities() instead of adding to a new array! Done? Done!
+
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
@@ -401,7 +400,7 @@ public class World {
             return firstEntityPairToCollide.get(0).getCollisionPosition(firstEntityPairToCollide.get(1));
         }
 
-        return null; //TODO can this differently?
+        throw new AssertionError();
     }
 
     /**

@@ -214,65 +214,62 @@ public class World {
     }
 
     public void evolve(double timeDifference) {
-        if (timeDifference <= getTimeToFirstCollision()){ //No collision in the given time.
-            for (Entity entity : getAllEntities()) {
-                entity.move(timeDifference);
-                updatePositionMap();
-                if (entity instanceof Ship)
-                    if (((Ship) entity).getThrusterState())
-                        ((Ship) entity).thrust(timeDifference);
-                if (entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip())
-                    ((Bullet) entity).switchBeenOutOfShip(true);
-            }
-
-        }
-        else {
-            double timeToFirstCollision = getTimeToFirstCollision();
-            evolve(timeToFirstCollision);
-
-            List<Entity> allEntities = new ArrayList<>();
-            allEntities.addAll(getAllEntities());
-            for (int i = 0; i < allEntities.size(); i++) {
-
-                Entity currentEntity = allEntities.get(i);
-
-                for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
-                    Entity otherEntity = allEntities.get(k);
-                    if (currentEntity.apparentlyCollidesWithEntity(otherEntity)) {
-                        resolveCollision(currentEntity, otherEntity);
-                    }
+        if (timeDifference > 0) {
+            if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
+                for (Entity entity : getAllEntities()) {
+                    entity.move(timeDifference);
+                    updatePositionMap();
+                    if (entity instanceof Ship)
+                        if (((Ship) entity).getThrusterState())
+                            ((Ship) entity).thrust(timeDifference);
+                    if (entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip())
+                        ((Bullet) entity).switchBeenOutOfShip(true);
                 }
-            }
-            for (int i = 0; i < allEntities.size(); i++) {
 
-                Entity currentEntity = allEntities.get(i);
+            } else {
+                double timeToFirstCollision = getTimeToFirstCollision();
+                evolve(timeToFirstCollision);
 
-                if (currentEntity.apparentlyCollidesWithBoundary()){ //Boundary collision resolve
-                    if (currentEntity.apparentlyCollidesWithLeft() || currentEntity.apparentlyCollidesWithRight()){
-                        currentEntity.negateVelocityX();
-                        if (currentEntity instanceof Bullet) {
-                            ((Bullet) currentEntity).riseNbOfBounces();
-                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()) {
-                                (currentEntity).terminate();
-                            }
+                List<Entity> allEntities = new ArrayList<>();
+                allEntities.addAll(getAllEntities());
+                for (int i = 0; i < allEntities.size(); i++) {
+
+                    Entity currentEntity = allEntities.get(i);
+
+                    for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
+                        Entity otherEntity = allEntities.get(k);
+                        if (currentEntity.apparentlyCollidesWithEntity(otherEntity)) {
+                            resolveCollision(currentEntity, otherEntity);
                         }
                     }
 
-                    if (currentEntity.apparentlyCollidesWithBottom() || currentEntity.apparentlyCollidesWithTop()){
-                        currentEntity.negateVelocityY();
-                        if (currentEntity instanceof Bullet) {
-                            ((Bullet) currentEntity).riseNbOfBounces();
-                            if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()){
-                                (currentEntity).terminate();
+                    if (currentEntity.apparentlyCollidesWithBoundary()) { //Boundary collision resolve
+                        if (currentEntity.apparentlyCollidesWithLeft() || currentEntity.apparentlyCollidesWithRight()) {
+                            currentEntity.negateVelocityX();
+                            if (currentEntity instanceof Bullet) {
+                                ((Bullet) currentEntity).riseNbOfBounces();
+                                if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()) {
+                                    (currentEntity).terminate();
+                                }
+                            }
+                        }
+
+                        if (currentEntity.apparentlyCollidesWithBottom() || currentEntity.apparentlyCollidesWithTop()) {
+                            currentEntity.negateVelocityY();
+                            if (currentEntity instanceof Bullet) {
+                                ((Bullet) currentEntity).riseNbOfBounces();
+                                if (((Bullet) currentEntity).getNbOfBounces() >= ((Bullet) currentEntity).getMaxNbBounces()) {
+                                    (currentEntity).terminate();
+                                }
                             }
                         }
                     }
                 }
+
+                System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
+                evolve(timeDifference - timeToFirstCollision);
+
             }
-
-            System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
-            evolve(timeDifference - timeToFirstCollision);
-
         }
     }
 

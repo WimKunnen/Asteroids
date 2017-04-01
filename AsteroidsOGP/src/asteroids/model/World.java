@@ -238,13 +238,14 @@ public class World {
 
                     for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
                         Entity otherEntity = allEntities.get(k);
-                        if (currentEntity.apparentlyCollidesWithEntity(otherEntity)) {
+                        if (currentEntity.apparentlyCollidesWithEntity(otherEntity) && !currentEntity.fliesApartFrom(otherEntity)) {
                             resolveCollision(currentEntity, otherEntity);
                         }
                     }
 
                     if (currentEntity.apparentlyCollidesWithBoundary()) { //Boundary collision resolve
-                        if (currentEntity.apparentlyCollidesWithLeft() || currentEntity.apparentlyCollidesWithRight()) {
+                        if ((currentEntity.apparentlyCollidesWithLeft() && currentEntity.getVelocity().getX() < 0) ||
+                                (currentEntity.apparentlyCollidesWithRight() && currentEntity.getVelocity().getX() > 0)) {
                             currentEntity.negateVelocityX();
                             if (currentEntity instanceof Bullet) {
                                 ((Bullet) currentEntity).riseNbOfBounces();
@@ -254,7 +255,8 @@ public class World {
                             }
                         }
 
-                        if (currentEntity.apparentlyCollidesWithBottom() || currentEntity.apparentlyCollidesWithTop()) {
+                        if ((currentEntity.apparentlyCollidesWithBottom() && currentEntity.getVelocity().getY() < 0) ||
+                                (currentEntity.apparentlyCollidesWithTop() && currentEntity.getVelocity().getY() > 0)) {
                             currentEntity.negateVelocityY();
                             if (currentEntity instanceof Bullet) {
                                 ((Bullet) currentEntity).riseNbOfBounces();

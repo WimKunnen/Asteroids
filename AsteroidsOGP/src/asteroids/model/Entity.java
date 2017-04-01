@@ -732,6 +732,21 @@ public abstract class Entity {
                 - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);
     }
 
+    public boolean fliesApartFrom(Entity other){
+        Vector pointingVector = other.getPosition().sum(this.getPosition().negate());
+
+        double thisVelocityLength = this.getVelocity().vectorLength();
+        double otherVelocityLength = other.getVelocity().vectorLength();
+
+        double angleBetweenThis = this.getVelocity().angleBetween(pointingVector);
+        double angleBetweenOther = other.getVelocity().angleBetween(pointingVector);
+
+        double thisProjectedLength = thisVelocityLength * Math.cos(angleBetweenThis);
+        double otherProjectedLength = otherVelocityLength * Math.cos(angleBetweenOther);
+
+        return (otherProjectedLength >= thisProjectedLength);
+    }
+
     // Mass
     /**
      * Variable registering the density of the entity.

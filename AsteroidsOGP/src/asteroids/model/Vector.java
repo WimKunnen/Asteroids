@@ -146,6 +146,17 @@ public class Vector {
         return new double[]{this.getX(),this.getY()};
     }
 
+    public Vector negate() {
+        return new Vector(-this.getX(),-this.getY());
+    }
+
+    public double angleBetween(Vector other){
+        Vector normalizedThis = this.normalize();
+        Vector normalizedOther = other.normalize();
+        double dotProduct = normalizedThis.scalarProduct(normalizedOther);
+        return Math.acos(dotProduct);
+    }
+
     @Override
     public boolean equals(Object other){
         if (other == null)

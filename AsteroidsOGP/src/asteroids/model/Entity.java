@@ -201,11 +201,6 @@ public abstract class Entity {
     private double maximumVelocity;
 
     /**
-     * Variable registering the maximum velocity squared of this entity.
-     */
-    private double maximumVelocitySquared;
-
-    /**
      * Returns the maximum velocity of this entity
      *
      */
@@ -214,14 +209,6 @@ public abstract class Entity {
         return this.maximumVelocity;
     }
 
-    /**
-     * Returns the square of the maximum velocity of this entity
-     *
-     */
-    @Basic @Immutable
-    private double getMaximumVelocitySquared(){
-        return this.maximumVelocitySquared;
-    }
 
     /**
      * Sets the maximum velocity at the given velocity.
@@ -247,13 +234,10 @@ public abstract class Entity {
     public void setMaximumVelocity(double velocity){
         if(velocity <= speedOfLight && 0 <= velocity) {
             this.maximumVelocity = velocity;
-            this.maximumVelocitySquared = velocity * velocity;
         }else if(velocity > speedOfLight){
             this.maximumVelocity = speedOfLight;
-            this.maximumVelocitySquared = speedOfLightSquared;
         }else{
             this.maximumVelocity = 0;
-            this.maximumVelocitySquared = 0;
         }
     }
 
@@ -278,7 +262,7 @@ public abstract class Entity {
 
     @Model
     protected void setVelocity(Vector velocity){
-        this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocitySquared()
+        this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocity()*this.getMaximumVelocity()
                 ? velocity.normalize().resizeVector(maximumVelocity) :  velocity;
     }
 
@@ -358,8 +342,18 @@ public abstract class Entity {
     // Collision detection
     /**
      * Returns the distance between two entities.
-     * | return sqrt(xDifference * xDifference + yDifference * yDifference) - radiusDifference
      * The distance between a entity and itself is zero.
+     *
+     * @return The distance between the outer edges of two entities
+     *         | result ==
+     *         |    if (this == other)
+     *         |        then 0
+     *         |        else sqrt(
+     *         |        (this.getPosition().getX() - other.getPosition().getX())*(this.getPosition().getX() - other.getPosition().getX())
+     *         |        + (this.getPosition().getY() - other.getPosition().getY())*(this.getPosition().getY() - other.getPosition().getY())
+     *         |        )
+     *         |        - (this.getRadius() + other.getRadius())
+     *
      * @param   other
      *          The second entity.
      *
@@ -440,7 +434,6 @@ public abstract class Entity {
                 this.getDistanceBetween(entity) + sumRadii < 1.01*sumRadii);
     }
 
-    //TODO
     /**
      * @see implementation
      */
@@ -528,8 +521,6 @@ public abstract class Entity {
 
     /**
      * If two entities will collide, the time it takes them to collide is returned.
-     * | if (willCollide) then
-     * |    return timeToCollision
      *
      * @param other
      *        | The other entity
@@ -537,6 +528,13 @@ public abstract class Entity {
      * @throws NullPointerException
      *        The other entity does not exist
      *        | other == null
+     *
+     * @note  The time returned by this method is the time it takes for these entities to collide for the first time.
+     *        When the entities move through each other they collide again. This is not the time this method looks for.
+     * @note  During the time returned by this method the two entities move closer to each other.
+     *        When this time is past, the distance between the two entities is zero.
+     * @note  The time returned by this method shall only be correct if the path of the two entities is not
+     *        disturbed by collisions with other entities or by accelerating.
      */
 
     public double getTimeToCollision(Entity other) throws NullPointerException{

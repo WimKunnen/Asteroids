@@ -134,7 +134,7 @@ public class Ship extends Entity{
      *          The angle between the ship's direction and the x-axis.
      *
      * @return  True if and only if the angle is between 0 and 2 * π.
-     *          | result == ((this.getHeading() + angle < 2 * Math.PI) && (0 <= this.getHeading() + angle))
+     *          | result == ((angle < 2 * Math.PI) && (0 <= angle))
      */
     public boolean isValidAngle(double angle){
         return ((angle < 2 * Math.PI) && (0 <= angle));

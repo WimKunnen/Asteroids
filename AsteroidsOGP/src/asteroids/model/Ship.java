@@ -1,13 +1,8 @@
 package asteroids.model;
 import be.kuleuven.cs.som.annotate.*;
-import be.kuleuven.cs.som.taglet.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
-
 
 
 /**
@@ -284,7 +279,7 @@ public class Ship extends Entity{
 
             for(Entity entity : this.getWorld().getAllEntities()){
                 if (bullet.overlap(entity)) {
-                    this.getWorld().resolveCollision(bullet, entity);
+                    this.getWorld().resolveEntityCollision(bullet, entity);
                 }
             }
         }

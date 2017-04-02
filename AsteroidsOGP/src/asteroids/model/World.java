@@ -1,12 +1,15 @@
 package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
-import be.kuleuven.cs.som.annotate.Immutable;
-import jdk.nashorn.internal.ir.annotations.*;
+import jdk.nashorn.internal.ir.annotations.Immutable;
 
 import java.util.*;
 
 /**
+ *
+ * @invar The width and height of world always lie between the lowerbound and upperbound.
+ *        | (lowerbound <= width && width <= upperbound
+ *        |     && lowerbound <= height && height <= upperbound)
  *
  * @author Maarten Doclo and Wim Kunnen
  */
@@ -63,6 +66,7 @@ public class World {
      */
     private final double[] worldSize;
     /**
+     * Return the size of the world as an array of doubles.
      * @see implementation
      */
     @Basic @Immutable
@@ -76,12 +80,14 @@ public class World {
     public boolean isTerminated = false;
 
     /**
+     * Return whether or not a world is terminated.
      * @see implementation
      */
     public boolean checkTermination(){
         return this.isTerminated;
     }
     /**
+     * Terminate the world.
      * @see implementation
      */
     public void terminate(){
@@ -116,6 +122,7 @@ public class World {
     public static double upperBound = Double.MAX_VALUE;
 
     /**
+     * Return a set with all entities in this world.
      * @see implementation
      */
     public Set<Entity> getAllEntities() {
@@ -125,12 +132,14 @@ public class World {
         return allEntities;
     }
     /**
+     * Return a set of all ships in this world.
      * @see implementation
      */
     public Set<Ship> getAllShips() {
         return this.allShips;
     }
     /**
+     * Return a set of all bullets in this world.
      * @see implementation
      */
     public Set<Bullet> getAllBullets() {
@@ -138,13 +147,13 @@ public class World {
     }
 
     /**
+     * Add an entity to this world.
      * @see implementation
      */
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
-//            this.getAllEntities().add(entity);
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
             if (entity instanceof Ship) {
@@ -164,28 +173,32 @@ public class World {
     }
 
     /**
+     * Remove an entity from this world.
      * @see implementation
      */
     public void removeEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
         else{
-
             if (entityPositionMap.containsValue(entity)){
                 Vector keyPosition = entity.getPosition();
                 entityPositionMap.remove(keyPosition);
             }
 
-//            else{
-//                throw new IllegalArgumentException("Entity not in this world!");
-//            }
+            else{
+                throw new IllegalArgumentException("Entity not in this world!");
+            }
+
+            if (!getAllEntities().contains(entity)){
+                throw new IllegalArgumentException("Entity not in this world!");
+            }
 
             if (entity instanceof Ship) {
                 if (!allShips.contains(entity))
                     throw new IllegalArgumentException();
                 allShips.remove(entity);
             }
-            if (entity instanceof Bullet){
+            else if (entity instanceof Bullet){
                 if (!allBullets.contains(entity))
                     throw new IllegalArgumentException();
                 allBullets.remove(entity);
@@ -196,13 +209,15 @@ public class World {
 
 
     /**
+     * Get the entity at a given position
      * @see implementation
      */
     public Entity getEntityAt(Vector position){
-        return entityPositionMap.get(position);
+        return entityPositionMap.get(position); // returns null if no such key (total programming)
     }
 
     /**
+     * Updates the map that holds the positions of all entities as keys.
      * @see implementation
      */
     public void updatePositionMap() {
@@ -213,7 +228,11 @@ public class World {
         }
     }
 
-    public void evolve(double timeDifference) {
+    /**
+     * Evolve the world a given time difference.
+     *
+     */
+    public void evolve (double timeDifference) throws IllegalArgumentException {
         if (timeDifference > 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
                 for (Entity entity : getAllEntities()) {
@@ -239,7 +258,7 @@ public class World {
                     for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
                         Entity otherEntity = allEntities.get(k);
                         if (currentEntity.apparentlyCollidesWithEntity(otherEntity) && !currentEntity.fliesApartFrom(otherEntity)) {
-                            resolveCollision(currentEntity, otherEntity);
+                            resolveEntityCollision(currentEntity, otherEntity);
                         }
                     }
 
@@ -267,16 +286,26 @@ public class World {
                         }
                     }
                 }
-
+                if (getTimeToFirstCollision() <=0){ //TODO
+                    throw new IllegalArgumentException();
+                }
                 System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
                 evolve(timeDifference - timeToFirstCollision);
-
+                
             }
+        }
+        else{
+            throw new IllegalArgumentException();
         }
     }
 
-//TODO check method with firing bullets (List usage)
-    public void resolveCollision(Entity entity1, Entity entity2) {
+
+    /**
+     * Resolve the collision between a two ships.
+     * @param entity1 one colliding ship
+     * @param entity2 other colliding ship
+     */
+    public void resolveEntityCollision(Entity entity1, Entity entity2) {
         if (entity1 instanceof Ship && entity2 instanceof Ship){
             Ship ship1 = (Ship)entity1;
             Ship ship2 = (Ship)entity2;
@@ -304,12 +333,18 @@ public class World {
 
     }
 //TODO
+
+    /**
+     * Resolve the collision between a bullet and a ship.
+     * @param ship the colliding ship
+     * @param bullet the colliding bullet
+     */
     public void resolveBulletShipCollision(Ship ship, Bullet bullet){
         if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
             ship.reload(bullet);
         }
 
-        if (bullet.getSource() != ship) {
+        else if (bullet.getSource() != ship) {
             ship.terminate();
             bullet.terminate();
         }
@@ -319,6 +354,10 @@ public class World {
     public List<Entity> firstEntityPairToCollide = new ArrayList<>();
 
 
+    /**
+     * Return the time to the first collision between two entities.
+     * @return
+     */
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
@@ -338,11 +377,14 @@ public class World {
         return timeToFirstCollision;
     }
 
+    /**
+     * Return the time to the first collision between an entity and a boundary of the world.
+     * @return
+     */
     public double getTimeToFirstBoundaryCollision() {
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
-        allEntities.addAll(getAllBullets());
-        allEntities.addAll(getAllShips());
+        allEntities.addAll(getAllEntities());
         for (int i = 0; i < allEntities.size(); i++) {
             double newTime = allEntities.get(i).getTimeToCollisionWithBoundary();
             if (newTime < timeToFirstCollision) {
@@ -354,7 +396,7 @@ public class World {
     }
 
     /**
-     * | return (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision)
+     * | return (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision))
      */
     public double getTimeToFirstCollision() {
         double time = getTimeToFirstBoundaryCollision();
@@ -391,6 +433,7 @@ public class World {
     }
 
     /**
+     * J as defined in the assignment.
      * @see implementation
      */
     public double J(List<Ship> shipPair) {
@@ -402,6 +445,7 @@ public class World {
     }
 
     /**
+     * J_x as defined in the assignment.
      * @see implementation
      */
     public double Jx(List<Ship> shipPair) {
@@ -411,6 +455,7 @@ public class World {
     }
 
     /**
+     * J_y as defined in the assignment.
      * @see implementation
      */
     public double Jy(List<Ship> shipPair) {

@@ -11,6 +11,13 @@ import java.util.List;
 /**
  * A class of entities for the game Asteroids.
  * Possible entities are currently ships and bullets.
+ *
+ * @invar An entity located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar An entity located in a world never overlaps with other entities in that world.
+ *        | if (getWorld() != null)
+ *        |     this.noOverlapsInNewWorld(getWorld())
  */
 public abstract class Entity {
 
@@ -190,10 +197,10 @@ public abstract class Entity {
      */
     private final double speedOfLight = 300000;
 
-    /**
-     * Constant registering the speed of light squared.
-     */
-    private final double speedOfLightSquared = speedOfLight*speedOfLight;
+//    /**
+//     * Constant registering the speed of light squared.
+//     */
+//    private final double speedOfLightSquared = speedOfLight*speedOfLight;
 
     /**
      * Variable registering the maximum velocity of this entity.
@@ -379,8 +386,9 @@ public abstract class Entity {
     }
 
     /**
-     * Returns true if and only if the distance between the two entities is nonnegative or the two entities are the same.
-     * | return getDistanceBetween < -0.01 * sumRadii || this == other
+     * Returns true if and only if the two ships significantly overlap or the two entities are the same.
+     * @return  ...
+     *          | return getDistanceBetween < -0.01 * sumRadii || this == other
      *
      * @param   other
      *          The second entity.
@@ -435,6 +443,10 @@ public abstract class Entity {
     }
 
     /**
+     * Returns true if and only if the entity appears to collide with a boundary.
+     * An entity appears to collide with a boundary if the distance between the center of the entity and
+     * the boundary is between 99% and 101% of the radius of the ship.
+     *
      * @see implementation
      */
     public boolean apparentlyCollidesWithBoundary(){
@@ -452,7 +464,7 @@ public abstract class Entity {
      * @see implementation
      */
     public boolean apparentlyCollidesWithLeft(){
-        double left = (Double)getDistanceToBoundary().get(0);
+        double left = (Double)getDistancesToBoundaries().get(0);
         return (left < 1.01*getRadius() && left > 0.99*getRadius());
     }
     /**
@@ -463,7 +475,7 @@ public abstract class Entity {
      * @see implementation
      */
     public boolean apparentlyCollidesWithRight(){
-        double right = (Double)getDistanceToBoundary().get(1);
+        double right = (Double) getDistancesToBoundaries().get(1);
         return (right < 1.01*getRadius() && right > 0.99*getRadius());
     }
     /**
@@ -474,7 +486,7 @@ public abstract class Entity {
      * @see implementation
      */
     public boolean apparentlyCollidesWithTop(){
-        double top = (Double)getDistanceToBoundary().get(2);
+        double top = (Double) getDistancesToBoundaries().get(2);
         return (top < 1.01*getRadius() && top > 0.99*getRadius());
     }
     /**
@@ -485,7 +497,7 @@ public abstract class Entity {
      * @see implementation
      */
     public boolean apparentlyCollidesWithBottom(){
-        double bottom = (Double)getDistanceToBoundary().get(3);
+        double bottom = (Double) getDistancesToBoundaries().get(3);
         return (bottom < 1.01*getRadius() && bottom > 0.99*getRadius());
     }
 
@@ -495,7 +507,7 @@ public abstract class Entity {
      *
      * @see implementation
      */
-    public List getDistanceToBoundary(){
+    public List getDistancesToBoundaries(){
         if (getWorld() == null){
             List<Double> distances = new ArrayList<>();
             distances.add(Double.POSITIVE_INFINITY);
@@ -570,7 +582,7 @@ public abstract class Entity {
             if (timeToCollisionX < time)
                 time = timeToCollisionX;
         }
-        if (getVelocity().getX() < 0) {
+        else if (getVelocity().getX() < 0) {
             double timeToCollisionX = Math.abs((getPosition().getX() - getRadius()) / getVelocity().getX());
             if (timeToCollisionX < time)
                 time = timeToCollisionX;
@@ -580,13 +592,13 @@ public abstract class Entity {
             if (timeToCollisionY < time)
                 time = timeToCollisionY;
         }
-        if (getVelocity().getY() < 0){
+        else if (getVelocity().getY() < 0){
             double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
             if (timeToCollisionY < time)
                 time = timeToCollisionY;
         }
         if (time < 0 ) {
-            System.out.println("negative in entity collision:" + time);
+            System.out.println("negative in boundary collision:" + time);
             time = 0; //TODO
         }
         return time;
@@ -611,7 +623,7 @@ public abstract class Entity {
             }
 
         }
-        if (getVelocity().getX() < 0) {
+        else if (getVelocity().getX() < 0) {
             double timeToCollisionX = Math.abs((getPosition().getX() - getRadius()) / getVelocity().getX());
             if (timeToCollisionX < time) {
                 time = timeToCollisionX;
@@ -625,7 +637,7 @@ public abstract class Entity {
                 boundary = "T";
             }
         }
-        if (getVelocity().getY() < 0){
+        else if (getVelocity().getY() < 0){
             double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
             if (timeToCollisionY < time) {
                 time = timeToCollisionY;

@@ -72,8 +72,8 @@ public class Ship extends Entity{
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
         this.setMass(mass);
+        this.totalMass = this.getMass();
         this.setThrustForce(1.1 *  Math.pow(10, 21));
-        this.setTotalMass(this.getBullets());
     }
 
     /**
@@ -138,7 +138,7 @@ public class Ship extends Entity{
     /**
      * Variable registering the current mass of the ship.
      */
-    private double mass;
+    private double mass = this.getMassOfEntity();
 
     public void setMass(double newMass){
         if (newMass > this.getMassOfEntity())
@@ -151,16 +151,16 @@ public class Ship extends Entity{
     /**
      * Variable registering the total mass of the ship.
      */
-    private double totalMass = this.getTotalMass();
+    private double totalMass;
     public double getTotalMass(){
         return this.totalMass;
     }
-    protected void setTotalMass(HashSet<Bullet> bullets){
-        //this.totalMass = this.getMass();
-        for(Bullet bullet : bullets){
-            this.totalMass += bullet.getMassOfEntity();
-        }
-    }
+//    protected void setTotalMass(HashSet<Bullet> bullets){
+//        this.totalMass = this.getMass();
+//        for(Bullet bullet : bullets){
+//            this.totalMass = this.totalMass + bullet.getMassOfEntity();
+//        }
+//    }
     //Thruster
 
     private boolean thruster = false;
@@ -234,9 +234,9 @@ public class Ship extends Entity{
             bullet.setSource(this);
         if (bullet.getSource() != this)
             throw new IllegalArgumentException("Bullet and Spaceship don't match");
-        if (bullet.hasBeenOutOfShip()) {
+        if (bullet.hasBeenOutOfShip() && bullet.getRadius() >= 0.1 * this.getRadius()) {
             this.bullets.add(bullet);
-            this.setTotalMass(bullets);
+            this.totalMass = this.totalMass + bullet.getMassOfEntity();
             bullet.setPosition(this.getPosition());
             bullet.setVelocity(this.velocity);
             bullet.switchBeenOutOfShip(false);
@@ -257,7 +257,7 @@ public class Ship extends Entity{
         if(this.getWorld() != null && this.bullets.size() > 0) {
             Bullet bullet = this.getRandomBulletOnShip();
             this.bullets.remove(bullet);
-            this.setTotalMass(this.getBullets());
+            this.totalMass -= bullet.getMassOfEntity();
 
             bullet.switchBeenOutOfShip(false);
 

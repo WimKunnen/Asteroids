@@ -233,7 +233,7 @@ public class World {
      *
      */
     public void evolve (double timeDifference) throws IllegalArgumentException {
-        if (timeDifference > 0) {
+        if (timeDifference >= 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
                 for (Entity entity : getAllEntities()) {
                     entity.move(timeDifference);
@@ -286,9 +286,9 @@ public class World {
                         }
                     }
                 }
-                if (getTimeToFirstCollision() <=0){ //TODO
-                    throw new IllegalArgumentException();
-                }
+//                if (getTimeToFirstCollision() <=0){ //TODO
+//                    throw new IllegalArgumentException();
+//                }
                 evolve(timeDifference - timeToFirstCollision);
 
             }

@@ -155,12 +155,7 @@ public class Ship extends Entity{
     public double getTotalMass(){
         return this.totalMass;
     }
-//    protected void setTotalMass(HashSet<Bullet> bullets){
-//        this.totalMass = this.getMass();
-//        for(Bullet bullet : bullets){
-//            this.totalMass = this.totalMass + bullet.getMassOfEntity();
-//        }
-//    }
+
     //Thruster
 
     private boolean thruster = false;
@@ -231,7 +226,7 @@ public class Ship extends Entity{
             bullet.setSource(this);
         if (bullet.getSource() != this)
             throw new IllegalArgumentException("Bullet and Spaceship don't match");
-        if (bullet.hasBeenOutOfShip() && bullet.getRadius() >= 0.1 * this.getRadius()) {
+        if (bullet.hasBeenOutOfShip()) {
             this.bullets.add(bullet);
             this.totalMass = this.totalMass + bullet.getMassOfEntity();
             bullet.setPosition(this.getPosition());

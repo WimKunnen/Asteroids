@@ -72,8 +72,8 @@ public class Ship extends Entity{
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
         this.setMass(mass);
-        //this.setTotalMass(this.getBullets());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
+        this.setTotalMass(this.getBullets());
     }
 
     /**
@@ -86,7 +86,6 @@ public class Ship extends Entity{
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42E12);
         this.setMassOfEntity(this.getDensity());
-        //this.setTotalMass(new HashSet<>());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
     }
@@ -140,19 +139,19 @@ public class Ship extends Entity{
      * Variable registering the current mass of the ship.
      */
     private double mass;
-    private double getMass(){
-        return this.mass;
-    }
 
     public void setMass(double newMass){
         if (newMass > this.getMassOfEntity())
             this.mass = newMass;
     }
+    private double getMass(){
+        return this.mass;
+    }
 
     /**
      * Variable registering the total mass of the ship.
      */
-    private double totalMass = this.mass;
+    private double totalMass = this.getTotalMass();
     public double getTotalMass(){
         return this.totalMass;
     }
@@ -257,7 +256,8 @@ public class Ship extends Entity{
     public void fire() {
         if(this.getWorld() != null && this.bullets.size() > 0) {
             Bullet bullet = this.getRandomBulletOnShip();
-            bullets.remove(bullet);
+            this.bullets.remove(bullet);
+            this.setTotalMass(this.getBullets());
 
             bullet.switchBeenOutOfShip(false);
 

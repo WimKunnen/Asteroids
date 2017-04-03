@@ -81,7 +81,7 @@ public class AsteroidsFrame2<F extends IFacade> extends JFrame {
 			return;
 		}
 
-		for (int i = 1; i < 30; i++) {
+		for (int i = 1; i < 20; i++) {
 			try {
 				Bullet bullet = facade.createBullet(width / 2.0, height / 2.0, 0, 0, Math.random() * 10 + 5);
 				facade.loadBulletOnShip(player, bullet);

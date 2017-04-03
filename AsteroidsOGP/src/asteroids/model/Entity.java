@@ -558,11 +558,17 @@ public abstract class Entity {
 
         if (this.willCollide(other)) {
             if (timeToCollision < 0 ){
-                System.out.println("negative in entity collision: "+ timeToCollision);
                 timeToCollision = 0; //TODO
             }
             return timeToCollision;
-        } else {
+        }
+        if( this instanceof Bullet && other instanceof Ship && ((Bullet)this).getSource() == other && !((Bullet)this).hasBeenOutOfShip()){
+            return Double.POSITIVE_INFINITY;
+        }
+        if( other instanceof Bullet && this instanceof Ship && ((Bullet)other).getSource() == this&& !((Bullet)other).hasBeenOutOfShip()){
+            return Double.POSITIVE_INFINITY;
+        }
+        else{
             return Double.POSITIVE_INFINITY;
         }
     }
@@ -598,7 +604,6 @@ public abstract class Entity {
                 time = timeToCollisionY;
         }
         if (time < 0 ) {
-            System.out.println("negative in boundary collision:" + time);
             time = 0; //TODO
         }
         return time;

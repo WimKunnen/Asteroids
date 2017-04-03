@@ -289,7 +289,6 @@ public class World {
                 if (getTimeToFirstCollision() <=0){ //TODO
                     throw new IllegalArgumentException();
                 }
-                System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
                 evolve(timeDifference - timeToFirstCollision);
                 
             }
@@ -312,13 +311,17 @@ public class World {
 
             List<Ship> shipPair = new ArrayList<>();
 
-            shipPair.add(ship1);shipPair.add(ship2);
-            entity1.setVelocity(new Vector(entity1.getVelocity().getX() +
+            shipPair.add(ship1);
+            shipPair.add(ship2);
+            Vector velocity1 = new Vector(entity1.getVelocity().getX() +
                     Jx(shipPair)/ship1.getTotalMass(),
-                    entity1.getVelocity().getY() + Jy(shipPair)/ship1.getTotalMass()));
-            entity2.setVelocity(new Vector(entity2.getVelocity().getX() -
+                    entity1.getVelocity().getY() + Jy(shipPair)/ship1.getTotalMass());
+            Vector velocity2 = new Vector(entity2.getVelocity().getX() -
                     Jx(shipPair)/ship2.getTotalMass(),
-                    entity2.getVelocity().getY() - Jy(shipPair)/ship2.getTotalMass()));
+                    entity2.getVelocity().getY() - Jy(shipPair)/ship2.getTotalMass());
+
+            entity1.setVelocity(velocity1);
+            entity2.setVelocity(velocity2);
         }
 
         else if (entity1 instanceof Bullet && entity2 instanceof Ship)

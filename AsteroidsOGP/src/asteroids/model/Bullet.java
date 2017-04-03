@@ -24,7 +24,7 @@ public class Bullet extends Entity {
      *          The initial velocity of the new bullet along the y-axis.
      *
      * @invar   A bullet cannot be held by a world and a ship at the same time.
-     *          | getWorld() == null || getSource() == null
+     *          | getSource() == null || getWorld() == null || !getSource().getBullets.contains(this)
      *
      */
     public Bullet(double x, double y, double velocityX, double velocityY, double radius) throws IllegalArgumentException{

@@ -172,16 +172,13 @@ public class Ship extends Entity{
     //TODO check thrust enable meaning
     public void thrustOn(){
         this.thruster = true;
-       // this.thrust();
     }
     public void thrustOff(){
         this.thruster = false;
     }
 
     private double thrustForce;
-    protected double getThrustForce(){
-        return this.thrustForce;
-    }
+    protected double getThrustForce(){ return this.thrustForce; }
     private void setThrustForce(double newForce){
         this.thrustForce = newForce;
     }

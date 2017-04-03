@@ -291,7 +291,7 @@ public class World {
                 }
                 System.out.println(timeDifference - timeToFirstCollision + "     " + timeToFirstCollision);
                 evolve(timeDifference - timeToFirstCollision);
-                
+
             }
         }
         else{

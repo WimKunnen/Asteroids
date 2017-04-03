@@ -40,8 +40,16 @@ public class Bullet extends Entity {
         super();
         this.setDensity(7.8 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
-        this.setMinimumRadius();
+        //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
+    }
+
+    public static double minimumRadius = 1;
+    /**
+     * @see implementation
+     */
+    protected double getMinimumRadius(){
+        return minimumRadius;
     }
 
     /**

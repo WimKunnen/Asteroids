@@ -62,12 +62,8 @@ public class Ship extends Entity{
      */
     public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass){
         super(x, y, velocityX, velocityY, radius);
-        this.setMinimumRadius();
-        if(isValidRadius(radius)){
-            this.setRadius(radius);
-        }else{
-            throw new IllegalArgumentException();
-        }
+        //this.setMinimumRadius();
+        this.setRadius(radius);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
         this.setMassOfEntity(this.getDensity());
@@ -82,7 +78,7 @@ public class Ship extends Entity{
     public Ship(){
 
         super();
-        this.setMinimumRadius();
+        //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42E12);
         this.setMassOfEntity(this.getDensity());
@@ -96,6 +92,14 @@ public class Ship extends Entity{
      * Variable registering the orientation of this entity.
      */
     private double heading;
+
+    private static double minimumRadius = 10;
+    /**
+     * @see implementation
+     */
+    protected double getMinimumRadius(){
+        return minimumRadius;
+    }
 
     /**
      * Returns the heading of the entity.
@@ -186,9 +190,13 @@ public class Ship extends Entity{
         return this.getThrustForce() / this.getTotalMass();
     }
 
+
     public void thrust(double timeDifference){
 
         double acceleration = this.getAcceleration();
+        if (acceleration < 0){
+            acceleration = 0;
+        }
         Vector accelerationVector = new Vector(acceleration * Math.cos(this.getHeading()) * timeDifference,
                 acceleration*Math.sin(this.getHeading()) * timeDifference);
         Vector newVelocity = this.getVelocity().sum(accelerationVector);

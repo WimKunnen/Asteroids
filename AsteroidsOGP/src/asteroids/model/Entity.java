@@ -295,6 +295,7 @@ public abstract class Entity {
     }
 
 //    Radius
+
 //    /**
 //     * Variable registering the minimum radius of all entities.
 //     */
@@ -805,19 +806,19 @@ public abstract class Entity {
     /**
      * Returns the mass of an entity.
      */
-    protected double massOfEntity;
-    /**
-     * The mass of the entity will be based on its volume and density
-     * | mass = volume * density
-     */
-    protected void setMassOfEntity(double density){
-        this.massOfEntity = this.getVolume() * density;
-    }
+//    protected double massOfEntity;
+//    /**
+//     * The mass of the entity will be based on its volume and density
+//     * | mass = volume * density
+//     */
+//    protected void setMassOfEntity(double density){
+//        this.massOfEntity = this.getVolume() * density;
+//    }
     /**
      * @see implementation
      */
     public double getMassOfEntity(){
-        return this.massOfEntity;
+        return this.getVolume() * getDensity();
     }
 
     // Termination

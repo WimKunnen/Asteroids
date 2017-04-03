@@ -30,7 +30,7 @@ public class Bullet extends Entity {
     public Bullet(double x, double y, double velocityX, double velocityY, double radius) throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
         this.setDensity(7.8E12);
-        this.setMassOfEntity(this.getDensity());
+        //this.setMassOfEntity(this.getDensity());
     }
 
     /**
@@ -39,12 +39,12 @@ public class Bullet extends Entity {
     public Bullet(){
         super();
         this.setDensity(7.8 * Math.pow(10, 12));
-        this.setMassOfEntity(this.getDensity());
+        //this.setMassOfEntity(this.getDensity());
         //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
     }
 
-    public static double minimumRadius = 1;
+    private static double minimumRadius = 1;
     /**
      * @see implementation
      */

@@ -286,9 +286,6 @@ public class World {
                         }
                     }
                 }
-//                if (getTimeToFirstCollision() <=0){ //TODO
-//                    throw new IllegalArgumentException();
-//                }
                 evolve(timeDifference - timeToFirstCollision);
 
             }

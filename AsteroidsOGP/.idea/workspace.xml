@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Entity.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Entity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/AsteroidsFrame2.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/AsteroidsFrame2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part2TestPartial.class" afterPath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part2TestPartial.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,18 +39,41 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2235">
-              <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="236" column="69" lean-forward="false" selection-start-line="236" selection-start-column="69" selection-end-line="236" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3305#3306#0" expanded="true" />
+                <element signature="e#3340#3341#0" expanded="true" />
+                <element signature="e#4063#4064#0" expanded="true" />
+                <element signature="e#4125#4126#0" expanded="true" />
+                <element signature="e#4418#4419#0" expanded="true" />
+                <element signature="e#4450#4451#0" expanded="true" />
+                <element signature="e#4587#4588#0" expanded="true" />
+                <element signature="e#4624#4625#0" expanded="true" />
+                <element signature="e#4954#4955#0" expanded="true" />
+                <element signature="e#4990#4991#0" expanded="true" />
+                <element signature="e#5148#5149#0" expanded="true" />
+                <element signature="e#5185#5186#0" expanded="true" />
+                <element signature="e#5257#5258#0" expanded="true" />
+                <element signature="e#5296#5297#0" expanded="true" />
+                <element signature="e#5346#5347#0" expanded="true" />
+                <element signature="e#5389#5390#0" expanded="true" />
+                <element signature="e#5427#5428#0" expanded="true" />
+                <element signature="e#5493#5494#0" expanded="true" />
+                <element signature="e#6538#6539#0" expanded="true" />
+                <element signature="e#6573#6574#0" expanded="true" />
+                <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Part2TestPartial.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Part2TestPartial.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="42" column="57" lean-forward="false" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+            <state relative-caret-position="433">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,8 +82,8 @@
       <file leaf-file-name="AsteroidsFrame2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+            <state relative-caret-position="390">
+              <caret line="96" column="90" lean-forward="false" selection-start-line="96" selection-start-column="90" selection-end-line="96" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -63,8 +92,8 @@
       <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5685">
-              <caret line="393" column="11" lean-forward="false" selection-start-line="393" selection-start-column="7" selection-end-line="393" selection-end-column="11" />
+            <state relative-caret-position="136">
+              <caret line="393" column="22" lean-forward="false" selection-start-line="393" selection-start-column="21" selection-end-line="393" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -73,7 +102,7 @@
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="378">
               <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
               <folding />
             </state>
@@ -83,19 +112,30 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8385">
-              <caret line="592" column="9" lean-forward="false" selection-start-line="589" selection-start-column="0" selection-end-line="592" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="811">
+              <caret line="564" column="124" lean-forward="false" selection-start-line="564" selection-start-column="124" selection-end-line="564" selection-end-column="124" />
+              <folding>
+                <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1516">
+              <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+              <folding>
+                <element signature="e#1873#1874#0" expanded="true" />
+                <element signature="e#1910#1911#0" expanded="true" />
+                <element signature="e#2169#2170#0" expanded="true" />
+                <element signature="e#2209#2210#0" expanded="true" />
+                <element signature="e#3637#3638#0" expanded="true" />
+                <element signature="e#3673#3674#0" expanded="true" />
+                <element signature="e#3807#3808#0" expanded="true" />
+                <element signature="e#3845#3846#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>thrust</find>
       <find>thru</find>
       <find>force</find>
       <find>remov</find>
@@ -129,6 +168,10 @@
       <find>load</find>
       <find>system</find>
       <find>mass</find>
+      <find>thrust</find>
+      <find>sys</find>
+      <find>Sys</find>
+      <find>settotalmass</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,12 +187,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
         <option value="$PROJECT_DIR$/src-provided/asteroids/part2/internal/WorldView2.java" />
-        <option value="$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
-        <option value="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+        <option value="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" />
+        <option value="$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java" />
       </list>
     </option>
   </component>
@@ -178,9 +221,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -940,8 +983,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Part2" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Part2TestPartial.testLoadBulletOnShipOverlappingBullets" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Part2TestPartial" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Part2TestPartial" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Part2TestPartial.testLoadBulletOnShipOverlappingBullets" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.Part2TestPartial.testEvolveShipWithActiveThruster" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.Part2TestPartial.testCreateWorld" />
       </list>
@@ -972,51 +1015,55 @@
       <workItem from="1490818167782" duration="1484000" />
       <workItem from="1490957679467" duration="252000" />
       <workItem from="1490971289115" duration="391000" />
+      <workItem from="1491155065824" duration="93000" />
+      <workItem from="1491155277110" duration="291000" />
+      <workItem from="1491215506456" duration="3879000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Part2TestPartial - 2017.03.29 at 16h 53m 04s.xml">
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 06m 46s.xml">
       <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial - 2017.03.29 at 16h 59m 10s.xml">
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 07m 28s.xml">
       <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 46m 19s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 08m 11s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 47m 41s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 09m 46s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 47m 49s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 10m 15s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 50m 04s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 11m 08s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 51m 30s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 12m 01s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testEvolveShipWithActiveThruster - 2017.03.29 at 16h 52m 58s.xml">
-      <configuration name="Part2TestPartial.testEvolveShipWithActiveThruster" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 12m 24s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testLoadBulletOnShipOverlappingBullets - 2017.03.29 at 17h 05m 10s.xml">
-      <configuration name="Part2TestPartial.testLoadBulletOnShipOverlappingBullets" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 12m 51s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part2TestPartial_testLoadBulletOnShipOverlappingBullets - 2017.03.29 at 17h 06m 56s.xml">
-      <configuration name="Part2TestPartial.testLoadBulletOnShipOverlappingBullets" configurationId="JUnit" />
+    <history-entry file="Part2TestPartial - 2017.04.03 at 15h 13m 19s.xml">
+      <configuration name="Part2TestPartial" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35124000" />
+    <option name="totallyTimeSpent" value="39387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1040,7 +1087,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1074,7 +1120,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6840">
           <caret line="488" column="17" lean-forward="false" selection-start-line="488" selection-start-column="17" selection-end-line="488" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,7 +1130,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5535">
           <caret line="383" column="7" lean-forward="false" selection-start-line="383" selection-start-column="7" selection-end-line="383" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,7 +1155,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,7 +1202,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6840">
           <caret line="488" column="17" lean-forward="false" selection-start-line="488" selection-start-column="17" selection-end-line="488" selection-end-column="17" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,7 +1212,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5535">
           <caret line="383" column="7" lean-forward="false" selection-start-line="383" selection-start-column="7" selection-end-line="383" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,7 +1237,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3945">
           <caret line="290" column="13" lean-forward="false" selection-start-line="290" selection-start-column="13" selection-end-line="290" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1170,7 +1284,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
           <caret line="135" column="19" lean-forward="false" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1186,7 +1302,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1202,7 +1327,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1226,7 +1374,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
           <caret line="132" column="30" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1242,7 +1392,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4215">
           <caret line="291" column="5" lean-forward="true" selection-start-line="291" selection-start-column="5" selection-end-line="291" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,7 +1417,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2535">
           <caret line="186" column="9" lean-forward="false" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,7 +1448,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1274,7 +1458,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="126" column="59" lean-forward="false" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1290,7 +1483,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2535">
           <caret line="186" column="9" lean-forward="false" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1298,7 +1514,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,7 +1524,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="126" column="59" lean-forward="true" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1333,14 +1560,6 @@
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/asteroid1.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="264" column="20" lean-forward="false" selection-start-line="264" selection-start-column="20" selection-end-line="264" selection-end-column="20" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/internal/BulletVisualization.java">
@@ -1394,6 +1613,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="154" column="25" lean-forward="false" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="393" column="22" lean-forward="false" selection-start-line="393" selection-start-column="21" selection-end-line="393" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="811">
+          <caret line="564" column="124" lean-forward="false" selection-start-line="564" selection-start-column="124" selection-end-line="564" selection-end-column="124" />
+          <folding>
+            <marker date="1491224449000" expanded="true" signature="196:303" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/Part2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1402,58 +1655,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="42" column="57" lean-forward="false" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="1516">
+          <caret line="404" column="0" lean-forward="false" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+          <folding>
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#3637#3638#0" expanded="true" />
+            <element signature="e#3673#3674#0" expanded="true" />
+            <element signature="e#3807#3808#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5685">
-          <caret line="393" column="11" lean-forward="false" selection-start-line="393" selection-start-column="7" selection-end-line="393" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="390">
+          <caret line="96" column="90" lean-forward="false" selection-start-line="96" selection-start-column="90" selection-end-line="96" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="236" column="69" lean-forward="false" selection-start-line="236" selection-start-column="69" selection-end-line="236" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4125#4126#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4990#4991#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5346#5347#0" expanded="true" />
+            <element signature="e#5389#5390#0" expanded="true" />
+            <element signature="e#5427#5428#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#6538#6539#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <marker date="1491225549000" expanded="true" signature="4628:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java">
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="83" column="30" lean-forward="false" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8385">
-          <caret line="592" column="9" lean-forward="false" selection-start-line="589" selection-start-column="0" selection-end-line="592" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>

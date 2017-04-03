@@ -81,7 +81,7 @@ public class AsteroidsFrame2<F extends IFacade> extends JFrame {
 			return;
 		}
 
-		for (int i = 1; i < 30; i++) {
+		for (int i = 1; i < 500; i++) {
 			try {
 				Bullet bullet = facade.createBullet(width / 2.0, height / 2.0, 0, 0, Math.random() * 10 + 5);
 				facade.loadBulletOnShip(player, bullet);
@@ -94,7 +94,7 @@ public class AsteroidsFrame2<F extends IFacade> extends JFrame {
 		for (int j = 0; j < nbEnemyShips; j++) {
 			try {
 				Ship enemyShip = facade.createShip(Math.random() * width, Math.random() * height, 25, 50,
-						10.0 + Math.random() * 40, Math.random() * 2 * Math.PI / 3, 1.0E22);
+						10.0 + Math.random() * 40, Math.random() * 2 * Math.PI / 3, 1.0E19);
 				facade.addShipToWorld(world, enemyShip);
 				for (int i = 1; i < 10; i++) {
 					Bullet bullet = facade.createBullet(facade.getShipPosition(enemyShip)[0],

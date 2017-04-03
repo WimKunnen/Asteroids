@@ -65,7 +65,7 @@ public abstract class Entity {
      */
     public Entity(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
-        this.setMinimumRadius();
+        //this.setMinimumRadius();
         this.setRadius(radius);
         this.setWorld(world);
         if(Double.isNaN(x) ||  Double.isNaN(y))
@@ -97,8 +97,8 @@ public abstract class Entity {
      *          | new.getRadius() == this.minimumRadius
      */
     public Entity(){
-        this.setMinimumRadius();
-        this.setRadius(this.getMinimumRadius());
+        //this.setMinimumRadius();
+        this.setRadius(this.getMinimumRadiusEntity());
         this.setPosition(new Vector());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
@@ -294,17 +294,23 @@ public abstract class Entity {
         setVelocity(new Vector(this.getVelocity().getX(), -this.getVelocity().getY()));
     }
 
-    //Radius
-    /**
-     * Variable registering the minimum radius of all entities.
-     */
-    protected double minimumRadius = 10;
+//    Radius
+//    /**
+//     * Variable registering the minimum radius of all entities.
+//     */
+//    protected double minimumRadius = 10;
 
     /**
      * @see implementation
      */
-    protected double getMinimumRadius(){
-        return this.minimumRadius;
+    protected double getMinimumRadiusEntity(){
+        if (this instanceof Ship) {
+            return ((Ship)this).getMinimumRadius();
+        }
+        else if (this instanceof Bullet){
+            return ((Bullet)this).getMinimumRadius();
+        }
+        throw new AssertionError();
     }
 
     /**
@@ -316,17 +322,20 @@ public abstract class Entity {
      * @see implementation
      */
     protected void setRadius(double newRadius){
+        if (!isValidRadius(newRadius)) {
+            throw new IllegalArgumentException("Not a valid radius!");
+        }
         this.radius = newRadius;
     }
-    /**
-     * @see implementation
-     */
-    protected void setMinimumRadius(){
-        if (this instanceof Ship)
-            this.minimumRadius = 10;
-        if (this instanceof Bullet)
-            this.minimumRadius = 1;
-    }
+//    /**
+//     * @see implementation
+//     */
+//    protected void setMinimumRadius(){
+//        if (this instanceof Ship)
+//            this.minimumRadius = 10;
+//        if (this instanceof Bullet)
+//            this.minimumRadius = 1;
+//    }
     /**
      * Returns the radius of the entity.
      */
@@ -342,8 +351,14 @@ public abstract class Entity {
      * @param   radius
      *          The radius which validity will be checked.
      */
-    public boolean isValidRadius(double radius){
-        return (radius >= minimumRadius && ! Double.isNaN(radius));
+    public boolean isValidRadius(double radius) {
+        if (this instanceof Ship){
+            return (radius >= ((Ship) this).getMinimumRadius() && !Double.isNaN(radius));
+        }
+        else if (this instanceof Bullet){
+            return (radius >= ((Bullet) this).getMinimumRadius() && !Double.isNaN(radius));
+        }
+        throw new AssertionError();
     }
 
     // Collision detection

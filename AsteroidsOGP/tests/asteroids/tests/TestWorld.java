@@ -40,32 +40,92 @@ public class TestWorld {
         ship2 = new Ship(100.0, 100.0, 10.0, 0.0, 0.0, 10.0, 100000000);
         ship2.setMaximumVelocity(300010);
         ship3 = new Ship(100.0, 0.0, 0.0, 0.0, 0.0, 30.0, 100000000);
-        ship4 = new Ship(30.0, 0.0, 10.0, 0.0, 0.0, 30.0, 100000000);
+        ship4 = new Ship(150.0, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
 
 
         bullet1 = new Bullet(150.0,150.0,0.0,0.0,10.0);
+        bullet2 = new Bullet(300.0,300.0,0.0,0.0,10.0);
+        bullet2.switchBeenOutOfShip(false);
+
         ship1.reload(bullet1);
         world = new World(1000,1000);
 
         world.addEntity(ship1);
-        world.addEntity(bullet1);
-
         world.addEntity(ship2);
+        world.addEntity(bullet2);
 
+
+
+
+    }
+
+    @Test
+    public void positionMapUpdateTest(){
+        assertEquals(ship2,world.getEntityAt(position3));
         world.evolve(1.0);
-
-
-    }
-
-    @Test
-    public void mapTest(){
-        assertEquals(bullet1, world.getEntityAt(position));
-        assertEquals(2,world.entityPositionMap.size());
-    }
-
-    @Test
-    public void positionUpdateMapTest(){
         assertEquals(position2,ship2.getPosition());
         assertEquals(ship2,world.getEntityAt(position2));
     }
+
+    @Test
+    public void worldSizeTest(){
+        World world2 = new World(-10,-20);
+        assertEquals(world2.getLowerBound(), world2.getHeight(),EPSILON);
+        assertEquals(world2.getLowerBound(), world2.getWidth(),EPSILON);
+    }
+
+    @Test
+    public void terminateTest(){
+        assertEquals(world,ship1.getWorld());
+        assertEquals(world,ship2.getWorld());
+        assertFalse(world.checkTermination());
+
+        world.terminate();
+
+        assertEquals(null,ship1.getWorld());
+        assertEquals(null,ship2.getWorld());
+        assertTrue(world.checkTermination());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void addEntityOutOfBoundariesTest(){
+        world.addEntity(ship3);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void addEntityOnOtherEntityTest(){
+        world.addEntity(ship4);
+    }
+
+    @Test
+    public void addEntityTest(){
+        assertEquals(3,world.getAllEntities().size());
+        assertEquals(2,world.getAllShips().size());
+        assertEquals(1,world.getAllBullets().size());
+    }
+
+    @Test
+    public void removeEntityTest(){
+        assertTrue(world.entityPositionMap.containsValue(ship1));
+
+        world.removeEntity(ship1);
+
+        assertEquals(2,world.getAllEntities().size());
+        assertEquals(1,world.getAllShips().size());
+        assertFalse(world.entityPositionMap.containsValue(ship1));
+
+        world.removeEntity(ship2);
+
+        assertEquals(1,world.getAllEntities().size());
+        assertEquals(0,world.getAllShips().size());
+    }
+
+    @Test
+    public void resolveBulletShipCollisionTest(){
+        world.resolveBulletShipCollision(ship1,bullet2);
+        assertTrue(ship1.checkTermination());
+        assertTrue(bullet2.checkTermination());
+    }
+
+
 }

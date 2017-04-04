@@ -118,7 +118,7 @@ public class Bullet extends Entity {
     /**
      * @see implementation
      */
-    protected void switchBeenOutOfShip(Boolean bool){
+    public void switchBeenOutOfShip(Boolean bool){
         this.beenOutOfShip = bool;
     }
 

@@ -9,7 +9,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Maarten Doclo on 4/04/2017.
+ * A class containing test suits for the class of entities.
+ *
+ * @author Maarten Doclo and Wim Kunnen
  */
 public class TestEntity {
     private static final double EPSILON = 0.0001;
@@ -24,20 +26,15 @@ public class TestEntity {
     private Bullet bullet1;
     private Bullet bullet2;
 
-    private Vector position = new Vector(150.0,150.0);
-    private Vector position2 = new Vector(110.0,100.0);
-    private Vector position3 = new Vector(100.0,100.0);
     private World world;
 
     /**
-     * A set up method which initializes 4 ships and set a maximum velocity to the first two ships.
+     * A set up method which initializes five ships, two bullets and a world.
      */
     @Before
     public void setUp() {
         ship1 = new Ship(150.0, 150.0, 10.0, 20.0, 0.0, 10.0, 100000000);
-        ship1.setMaximumVelocity(100000.0);
         ship2 = new Ship(100.0, 100.0, 10.0, 0.0, 0.0, 10.0, 100000000);
-        ship2.setMaximumVelocity(300010);
         ship3 = new Ship(120.0, 100.0, 0.0, 0.0, 0.0, 10.0, 100000000);
         ship4 = new Ship(150.0, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
         ship5 = new Ship(969.9, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
@@ -55,6 +52,9 @@ public class TestEntity {
         world.addEntity(bullet2);
     }
 
+    /**
+     * A test suit for the initializer of the Entity class.
+     */
     @Test (expected = IllegalArgumentException.class)
     public void initializerTest(){
         assertEquals(null, ship4.getWorld());
@@ -62,6 +62,9 @@ public class TestEntity {
         new Ship(Double.POSITIVE_INFINITY,1,1,1,1,1,1);
     }
 
+    /**
+     * A test suit for the negateVelocity() method of the Entity class.
+     */
     @Test
     public void negateVelocityTest(){
         ship1.negateVelocityY();
@@ -70,6 +73,9 @@ public class TestEntity {
         assertEquals(-10,ship1.getVelocity().getX(),EPSILON);
     }
 
+    /**
+     * A test suit for the isValidRadius() method of the Entity class.
+     */
     @Test
     public void isValidRadiusTest(){
         assertFalse(ship1.isValidRadius(9));
@@ -78,6 +84,9 @@ public class TestEntity {
         assertTrue(bullet1.isValidRadius(1.5));
     }
 
+    /**
+     * A test suit for the apparentlyCollidesWithEntity() method of the Entity class.
+     */
     @Test
     public void apparentlyCollideTest(){
         assertTrue(ship2.apparentlyCollidesWithEntity(ship3));
@@ -92,6 +101,9 @@ public class TestEntity {
         assertFalse(ship2.apparentlyCollidesWithEntity(ship3));
     }
 
+    /**
+     * A test suit for the apparentlyCollidesWithEBoundary() method of the Entity class.
+     */
     @Test
     public void apparentlyCollidesWithBoundaryTest(){
         world.addEntity(ship5);
@@ -102,6 +114,10 @@ public class TestEntity {
         assertFalse(ship5.apparentlyCollidesWithTop());
     }
 
+    /**
+     * A test suit for the methods getTimeToCollisionWithBoundary(), getBoundaryOfCollision() and
+     * getCollisionPositionWithBoundary() of the Entity class.
+     */
     @Test
     public void CollisionWithBoundaryTest(){
         world.addEntity(ship5);
@@ -115,6 +131,9 @@ public class TestEntity {
         assertEquals(160.0,ship5.getCollisionPositionWithBoundary().getY(),EPSILON);
     }
 
+    /**
+     * A test suit for the fliesApartFrom() method of the Entity class.
+     */
     @Test
     public void fliesApartFromTest(){
         ship2 = new Ship(100.0, 100.0, -10.0, 0.0, 0.0, 10.0, 100000000);
@@ -138,6 +157,9 @@ public class TestEntity {
         assertFalse(ship2.fliesApartFrom(ship3));
     }
 
+    /**
+     * A test suit for the terminate() method of the Entity class.
+     */
     @Test
     public void terminateTest(){
         World thisWorld = ship1.getWorld();
@@ -146,6 +168,9 @@ public class TestEntity {
         assertFalse(thisWorld.getAllEntities().contains(ship1));
     }
 
+    /**
+     * A test suit for the fitsInBoundaries() method of the Entity class.
+     */
     @Test
     public void fitsInBoundariesTest() {
         assertTrue(ship5.fitsInBoundaries(world));
@@ -155,6 +180,9 @@ public class TestEntity {
         assertFalse(ship5.fitsInBoundaries(world));
     }
 
+    /**
+     * A test suit for the noOverlapsInNewWorld() method of the Entity class.
+     */
     @Test
     public void noOverlapsInNewWorldTest() {
         assertTrue(ship5.noOverlapsInNewWorld(world));

@@ -31,14 +31,12 @@ public class TestWorld {
     private World world;
 
     /**
-     * A set up method which initializes 4 ships and set a maximum velocity to the first two ships.
+     * A set up method which initializes four ships, two bullets and a world.
      */
     @Before
     public void setUp() {
         ship1 = new Ship(150.0, 150.0, 10.0, 20.0, 0.0, 10.0, 100000000);
-        ship1.setMaximumVelocity(100000.0);
         ship2 = new Ship(100.0, 100.0, 10.0, 0.0, 0.0, 10.0, 100000000);
-        ship2.setMaximumVelocity(300010);
         ship3 = new Ship(100.0, 0.0, 0.0, 0.0, 0.0, 30.0, 100000000);
         ship4 = new Ship(150.0, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
 
@@ -53,12 +51,11 @@ public class TestWorld {
         world.addEntity(ship1);
         world.addEntity(ship2);
         world.addEntity(bullet2);
-
-
-
-
     }
 
+    /**
+     * A test suit for the updatePositionMap() method of the World class.
+     */
     @Test
     public void positionMapUpdateTest(){
         assertEquals(ship2,world.getEntityAt(position3));
@@ -67,6 +64,9 @@ public class TestWorld {
         assertEquals(ship2,world.getEntityAt(position2));
     }
 
+    /**
+     * A test suit for the initializer method of the World class.
+     */
     @Test
     public void worldSizeTest(){
         World world2 = new World(-10,-20);
@@ -74,6 +74,9 @@ public class TestWorld {
         assertEquals(world2.getLowerBound(), world2.getWidth(),EPSILON);
     }
 
+    /**
+     * A test suit for the terminate() method of the World class.
+     */
     @Test
     public void terminateTest(){
         assertEquals(world,ship1.getWorld());
@@ -87,16 +90,27 @@ public class TestWorld {
         assertTrue(world.checkTermination());
     }
 
+    /**
+     * A test suit for the addEntity() method of the World class, which handles the case in which the entity to add
+     * doesn't fit in the boundaries of the new world.
+     */
     @Test (expected = IllegalArgumentException.class)
     public void addEntityOutOfBoundariesTest(){
         world.addEntity(ship3);
     }
 
+    /**
+     * A test suit for the addEntity() method of the World class, which handles the case in which the entity to add
+     * overlaps with an entity in the new world.
+     */
     @Test (expected = IllegalArgumentException.class)
     public void addEntityOnOtherEntityTest(){
         world.addEntity(ship4);
     }
 
+    /**
+     * A test suit for the addEntity() method of the World class.
+     */
     @Test
     public void addEntityTest(){
         assertEquals(3,world.getAllEntities().size());
@@ -104,6 +118,9 @@ public class TestWorld {
         assertEquals(1,world.getAllBullets().size());
     }
 
+    /**
+     * A test suit for the removeEntity() method of the World class.
+     */
     @Test
     public void removeEntityTest(){
         assertTrue(world.entityPositionMap.containsValue(ship1));
@@ -120,6 +137,9 @@ public class TestWorld {
         assertEquals(0,world.getAllShips().size());
     }
 
+    /**
+     * A test suit for the resolveBulletShipCollision() method of the World class.
+     */
     @Test
     public void resolveBulletShipCollisionTest(){
         world.resolveBulletShipCollision(ship1,bullet2);

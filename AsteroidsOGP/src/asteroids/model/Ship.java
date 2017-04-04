@@ -66,7 +66,7 @@ public class Ship extends Entity{
         this.setRadius(radius);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
-        this.setMassOfEntity(this.getDensity());
+        //this.setMassOfEntity(this.getDensity());
         this.setMass(mass);
         this.totalMass = this.getMass();
         this.setThrustForce(1.1 *  Math.pow(10, 21));
@@ -81,7 +81,7 @@ public class Ship extends Entity{
         //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42E12);
-        this.setMassOfEntity(this.getDensity());
+        //this.setMassOfEntity(this.getDensity());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
     }

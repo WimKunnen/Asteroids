@@ -2,10 +2,16 @@ package asteroids.tests;
 
 
 import static org.junit.Assert.*;
+
+import asteroids.model.Bullet;
+import asteroids.model.World;
 import org.junit.Test;
 import org.junit.*;
 
 import asteroids.model.Ship;
+
+import java.util.Collection;
+import java.util.HashSet;
 
 
 /**
@@ -24,18 +30,30 @@ public class TestShip {
 	private Ship ship2;
 	private Ship ship3;
 	private Ship ship4;
+	private Ship ship5;
+	private Collection<Bullet> bullets = new HashSet<>();
 
 	/**
 	 * A set up method which initializes 4 ships and set a maximum velocity to the first two ships.
 	 */
 	@Before
 	public void setUp() {
-		ship1 = new Ship(1.5,15.0,10.0,20.0,30.0, Math.PI,100000000);
+		ship1 = new Ship(1.5,15.0,10.0,20.0,Math.PI, 30.0,1E19);
 		ship1.setMaximumVelocity(100000.0);
-		ship2 = new Ship(0.0,0.0,10.0,10.0,30.0,0.0,100000000);
+		ship2 = new Ship(0.0,0.0,10.0,10.0,0.0,30.0,1E19);
 		ship2.setMaximumVelocity(300010);
-		ship3 = new Ship(100.0,0.0,0.0,0.0,30,0.0,100000000);
-		ship4 = new Ship(30.0,0.0,10.0,0.0,10.0,0.0,100000000);
+		ship3 = new Ship(100.0,0.0,0.0,0.0,0.0,30.0,1E19);
+		ship4 = new Ship(30.0,0.0,10.0,0.0,0.0,10.0,1E19);
+		ship5 = new Ship(200.0,200.0,10.0,0.0,0.0,30.0,1E19);
+		for (int i = 0; i < 10; i++){
+			ship1.reload(new Bullet(0,0,0,0,3));
+		}
+		for (int i = 0; i < 10; i++){
+			bullets.add(new Bullet(0,0,0,0,3));
+		}
+		for (int i = 0; i < 10; i++){
+			ship5.reload(new Bullet(0,0,0,0,3));
+		}
 	}
 
 	/**
@@ -192,11 +210,11 @@ public class TestShip {
 	 */
 	@Test
 	public void testThrust(){
-		ship2.thrust(10);
-		assertEquals(20.0,ship2.getVelocity().getX(),EPSILON);
+		ship2.thrust(1);
+		assertEquals(120.0,ship2.getVelocity().getX(),EPSILON);
 		assertEquals(10.0,ship2.getVelocity().getY(),EPSILON);
-		ship2.thrust(-10);
-		assertEquals(20.0,ship2.getVelocity().getX(),EPSILON);
+		ship2.thrust(-1);
+		assertEquals(10.0,ship2.getVelocity().getX(),EPSILON);
 		assertEquals(10.0,ship2.getVelocity().getY(),EPSILON);
 
 	}
@@ -251,5 +269,86 @@ public class TestShip {
 		assertNull(ship2.getCollisionPosition(ship3));
 		assertEquals(70.0,ship3.getCollisionPosition(ship4).getX(), EPSILON);
 		assertEquals(0.0, ship3.getCollisionPosition(ship4).getY(),EPSILON);
+	}
+
+	/**
+	 * A test suit which tests the reload() method for a single bullet from the Ship class.
+	 * It involves the Ship ship1.
+	 */
+	@Test
+	public void testReloadOne(){
+		assertEquals(10, ship1.getBullets().size(),EPSILON);
+		assertTrue(ship1.getTotalMass() > 1E19);
+		Bullet bullet = ship1.getRandomBulletOnShip();
+		assertTrue(ship1.getPosition() == bullet.getPosition());
+		assertTrue(ship1.getVelocity() == bullet.getVelocity());
+		assertTrue(bullet.getWorld() == null);
+		assertFalse(bullet.hasBeenOutOfShip());
+		assertTrue(bullet.getSource() == ship1);
+	}
+
+	/**
+	 * A test suit which tests the reload() method for multiple bullets from the Ship class.
+	 * It involves the Ships ship2.
+	 */
+	@Test
+	public void testReloadMultiple(){
+		ship2.reload(bullets);
+		assertEquals(10, ship2.getBullets().size(),EPSILON);
+		assertTrue(ship2.getTotalMass() > 1E19);
+		Bullet bullet = ship2.getRandomBulletOnShip();
+		assertTrue(ship2.getPosition() == bullet.getPosition());
+		assertTrue(ship2.getVelocity() == bullet.getVelocity());
+		assertTrue(bullet.getWorld() == null);
+		assertFalse(bullet.hasBeenOutOfShip());
+		assertTrue(bullet.getSource() == ship2);
+	}
+
+	/**
+	 * A test suit which tests the getAcceleration() method from the Ship class.
+	 * It involves the Ships ship1 and ship2.
+	 */
+	@Test
+	public void testAcceleration(){
+		assertEquals(1.1E2, ship2.getAcceleration(), EPSILON);
+		assertTrue(ship1.getAcceleration() < 1.1E2);
+	}
+
+	/**
+	 * A test suit which tests the getThrusterState() method from the Ship class.
+	 * It involves the Ships ship1.
+	 */
+	@Test
+	public void testThruster(){
+		assertFalse(ship1.getThrusterState());
+		ship1.thrustOn();
+		assertTrue(ship1.getThrusterState());
+		ship1.thrustOff();
+		assertFalse(ship1.getThrusterState());
+	}
+
+	/**
+	 * A test suit which tests the getTotalMass() method from the Ship class.
+	 * It involves the Ships ship1 and ship2.
+	 */
+	@Test
+	public void testMass(){
+		assertEquals(1E19, ship2.getTotalMass(),EPSILON);
+		assertTrue(1E19 < ship1.getTotalMass());
+	}
+
+	/**
+	 * A test suit which tests the fire() method from the Ship class.
+	 * It involves the Ships ship5.
+	 */
+	@Test
+	public void testFire(){
+		World world = new World(800,800);
+		world.addEntity(ship5);
+		assertEquals(10, ship1.getBullets().size(),EPSILON);
+		ship5.fire();
+		assertEquals(2, world.getAllEntities().size(),EPSILON);
+		assertEquals(9, ship1.getBullets().size(),EPSILON);
+
 	}
 }

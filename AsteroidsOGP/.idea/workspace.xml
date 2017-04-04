@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Bullet.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Bullet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Entity.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Entity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/TestShip.class" afterPath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/TestShip.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Vector.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Vector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,24 +19,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Vector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Vector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="447" column="29" lean-forward="false" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,20 +60,6 @@
               <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestBullet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,24 +93,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5835">
-              <caret line="400" column="16" lean-forward="false" selection-start-line="400" selection-start-column="16" selection-end-line="400" selection-end-column="16" />
+            <state relative-caret-position="301">
+              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestShip.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestShip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="69" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -201,13 +165,13 @@
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestWorld.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestVector.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Vector.java" />
-        <option value="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+        <option value="$PROJECT_DIR$/tests/asteroids/tests/TestShip.java" />
       </list>
     </option>
   </component>
@@ -429,8 +393,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestBullet">
-    <configuration default="false" name="TestBullet.testMinimumRadius" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Part2">
+    <configuration default="false" name="TestShip.testMass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -441,8 +405,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestBullet" />
-      <option name="METHOD_NAME" value="testMinimumRadius" />
+      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestShip" />
+      <option name="METHOD_NAME" value="testMass" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -456,7 +420,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestBullet.testGetRadius" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="TestShip.testReloadMultiple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -467,8 +431,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestBullet" />
-      <option name="METHOD_NAME" value="testGetRadius" />
+      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestShip" />
+      <option name="METHOD_NAME" value="testReloadMultiple" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -482,7 +446,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestBullet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="TestShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -493,7 +457,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestBullet" />
+      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestShip" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -508,33 +472,27 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestBullet.testSource" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Part2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="asteroids.tests.*" />
+          <option name="PATTERN" value="asteroids.part2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="AsteroidsOGP" />
+      <option name="MAIN_CLASS_NAME" value="asteroids.part2.Part2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestBullet" />
-      <option name="METHOD_NAME" value="testSource" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="AsteroidsOGP" />
       <envs />
-      <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="TestBullet.testHasBeenOutOfShip" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="TestShip.testFire" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -545,8 +503,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestBullet" />
-      <option name="METHOD_NAME" value="testHasBeenOutOfShip" />
+      <option name="MAIN_CLASS_NAME" value="asteroids.tests.TestShip" />
+      <option name="METHOD_NAME" value="testFire" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1008,19 +966,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestBullet.testMinimumRadius" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestBullet.testGetRadius" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestBullet" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestBullet.testSource" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestBullet.testHasBeenOutOfShip" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestShip.testMass" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestShip.testReloadMultiple" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestShip" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Part2" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestShip.testFire" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestBullet" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestBullet.testHasBeenOutOfShip" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestBullet.testSource" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestBullet.testGetRadius" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestBullet.testMinimumRadius" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Part2" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestShip.testFire" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestShip" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestShip.testReloadMultiple" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestShip.testMass" />
       </list>
     </recent_temporary>
   </component>
@@ -1055,44 +1013,44 @@
       <workItem from="1491229810642" duration="201000" />
       <workItem from="1491242632932" duration="178000" />
       <workItem from="1491242963503" duration="54000" />
-      <workItem from="1491298766612" duration="10976000" />
+      <workItem from="1491298766612" duration="13837000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestBullet - 2017.04.04 at 14h 52m 14s.xml">
-      <configuration name="TestBullet" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 29m 37s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet - 2017.04.04 at 15h 00m 01s.xml">
-      <configuration name="TestBullet" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 31m 07s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testGetRadius - 2017.04.04 at 14h 48m 54s.xml">
-      <configuration name="TestBullet.testGetRadius" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 31m 40s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testHasBeenOutOfShip - 2017.04.04 at 14h 56m 50s.xml">
-      <configuration name="TestBullet.testHasBeenOutOfShip" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 32m 20s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testHasBeenOutOfShip - 2017.04.04 at 14h 57m 12s.xml">
-      <configuration name="TestBullet.testHasBeenOutOfShip" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 32m 58s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testHasBeenOutOfShip - 2017.04.04 at 14h 57m 38s.xml">
-      <configuration name="TestBullet.testHasBeenOutOfShip" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 34m 32s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testMinimumRadius - 2017.04.04 at 14h 47m 39s.xml">
-      <configuration name="TestBullet.testMinimumRadius" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 43m 03s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testSource - 2017.04.04 at 14h 54m 46s.xml">
-      <configuration name="TestBullet.testSource" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 43m 27s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestBullet_testSource - 2017.04.04 at 14h 55m 25s.xml">
-      <configuration name="TestBullet.testSource" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 43m 34s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestVector_testHashCode - 2017.04.04 at 13h 32m 03s.xml">
-      <configuration name="TestVector.testHashCode" configurationId="JUnit" />
+    <history-entry file="TestShip_testFire - 2017.04.04 at 15h 45m 20s.xml">
+      <configuration name="TestShip.testFire" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51550000" />
+    <option name="totallyTimeSpent" value="54411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1120,7 +1078,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1615,34 +1573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5835">
-          <caret line="400" column="16" lean-forward="false" selection-start-line="400" selection-start-column="16" selection-end-line="400" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestShip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="69" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1669,6 +1599,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1512#1513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1800">
@@ -1679,15 +1621,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="50" lean-forward="false" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
+        <state relative-caret-position="235">
+          <caret line="447" column="29" lean-forward="false" selection-start-line="447" selection-start-column="29" selection-end-line="447" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1512#1513#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5160">
+          <caret line="344" column="27" lean-forward="true" selection-start-line="344" selection-start-column="27" selection-end-line="344" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

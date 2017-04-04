@@ -362,18 +362,20 @@ public class Ship extends Entity{
      *          Throws an exception if the bullet wasn't fired by this ship.
      */
     public void reload(Bullet bullet) throws IllegalArgumentException{
-        if (bullet.getSource() == null)
-            bullet.setSource(this);
-        if (bullet.getSource() != this)
-            throw new IllegalArgumentException("Bullet and Spaceship don't match");
-        if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
-            this.bullets.add(bullet);
-            this.totalMass = this.totalMass + bullet.getMassOfEntity();
-            bullet.setPosition(this.getPosition());
-            bullet.setVelocity(this.velocity);
-            bullet.switchBeenOutOfShip(false);
-            if (bullet.getWorld() != null) {
-                bullet.getWorld().removeEntity(bullet);
+        if(bullet.getRadius() >= 0.1* this.getRadius()) {
+            if (bullet.getSource() == null)
+                bullet.setSource(this);
+            if (bullet.getSource() != this)
+                throw new IllegalArgumentException("Bullet and Spaceship don't match");
+            if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
+                this.bullets.add(bullet);
+                this.totalMass = this.totalMass + bullet.getMassOfEntity();
+                bullet.setPosition(this.getPosition());
+                bullet.setVelocity(this.velocity);
+                bullet.switchBeenOutOfShip(false);
+                if (bullet.getWorld() != null) {
+                    bullet.getWorld().removeEntity(bullet);
+                }
             }
         }
     }
@@ -443,7 +445,7 @@ public class Ship extends Entity{
     public void fire() {
         if(this.getWorld() != null && this.getBullets().size() > 0) {
             Bullet bullet = this.getRandomBulletOnShip();
-            this.bullets.remove(bullet);
+            this.getBullets().remove(bullet);
             this.totalMass -= bullet.getMassOfEntity();
 
             bullet.switchBeenOutOfShip(false);

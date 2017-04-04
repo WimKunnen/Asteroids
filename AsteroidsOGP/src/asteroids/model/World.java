@@ -27,17 +27,17 @@ public class World {
      *          The new width of the newly created world.
      */
     public World(double width, double height){
-        if (width < lowerBound)
-            this.width = lowerBound;
-        else if (width > upperBound)
-            this.width = upperBound;
+        if (width < getLowerBound())
+            this.width = getLowerBound();
+        else if (width > getUpperBound())
+            this.width = getUpperBound();
         else
             this.width = width;
 
-        if (height < lowerBound)
-            this.height = lowerBound;
-        else if (height > upperBound)
-            this.height = upperBound;
+        if (height < getLowerBound())
+            this.height = getLowerBound();
+        else if (height > getUpperBound())
+            this.height = getUpperBound();
         else
             this.height = height;
         this.worldSize = new double[]{this.getWidth(), this.getHeight()};
@@ -102,11 +102,11 @@ public class World {
     /**
      * Variable registering all ships in the world as a set.
      */
-    public HashSet<Ship> allShips = new HashSet<>();
+    private HashSet<Ship> allShips = new HashSet<>();
     /**
      * Variable registering all bullets in the world as a set.
      */
-    public HashSet<Bullet> allBullets = new HashSet<>();
+    private HashSet<Bullet> allBullets = new HashSet<>();
 
     /**
      * Variable registering all entities in the world as a hashmap, with the entity's position as a key.
@@ -116,12 +116,28 @@ public class World {
     /**
      * Variable registering the lower bound of the values of width and height.
      */
-    public final static double lowerBound = 0;
+    private final static double lowerBound = 0;
+
+    /**
+     * Return the lower bound of the size of worlds.
+     * @see implementation
+     */
+    public double getLowerBound(){
+        return lowerBound;
+    }
 
     /**
      * Variable registering the upper bound of the values of width and height.
      */
-    public static double upperBound = Double.MAX_VALUE;
+    private static double upperBound = Double.MAX_VALUE;
+
+    /**
+     * Return the upper bound of the size of worlds.
+     * @see implementation
+     */
+    public double getUpperBound(){
+        return upperBound;
+    }
 
     /**
      * Return a set with all entities in this world.
@@ -196,12 +212,12 @@ public class World {
             }
 
             if (entity instanceof Ship) {
-                if (!allShips.contains(entity))
+                if (!getAllShips().contains(entity))
                     throw new IllegalArgumentException();
                 allShips.remove(entity);
             }
             else if (entity instanceof Bullet){
-                if (!allBullets.contains(entity))
+                if (!getAllBullets().contains(entity))
                     throw new IllegalArgumentException();
                 allBullets.remove(entity);
             }
@@ -233,15 +249,7 @@ public class World {
     public void evolve (double timeDifference) throws IllegalArgumentException {
         if (timeDifference >= 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
-                for (Entity entity : getAllEntities()) {
-                    entity.move(timeDifference);
-                    updatePositionMap();
-                    if (entity instanceof Ship)
-                        if (((Ship) entity).getThrusterState())
-                            ((Ship) entity).thrust(timeDifference);
-                    if (entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip())
-                        ((Bullet) entity).switchBeenOutOfShip(true);
-                }
+                moveAllEntities(timeDifference);
 
             } else {
                 double timeToFirstCollision = getTimeToFirstCollision();
@@ -290,6 +298,22 @@ public class World {
         }
         else{
             throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Move all entities in this world for a given timeDifference.
+     * @param timeDifference How much time the entities need to move for. 
+     */
+    private void moveAllEntities(double timeDifference){
+        for (Entity entity : getAllEntities()) {
+            entity.move(timeDifference);
+            updatePositionMap();
+            if (entity instanceof Ship)
+                if (((Ship) entity).getThrusterState())
+                    ((Ship) entity).thrust(timeDifference);
+            if (entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip())
+                ((Bullet) entity).switchBeenOutOfShip(true);
         }
     }
 
@@ -438,7 +462,7 @@ public class World {
      * J as defined in the assignment.
      * @see implementation
      */
-    public double J(List<Ship> shipPair) {
+    private double J(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return 2 * ship1.getTotalMass() * ship2.getTotalMass() *
@@ -450,7 +474,7 @@ public class World {
      * J_x as defined in the assignment.
      * @see implementation
      */
-    public double Jx(List<Ship> shipPair) {
+    private double Jx(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return J(shipPair) * ship1.deltaR(ship2).getX() / ship1.sigma(ship2);
@@ -460,7 +484,7 @@ public class World {
      * J_y as defined in the assignment.
      * @see implementation
      */
-    public double Jy(List<Ship> shipPair) {
+    private double Jy(List<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return J(shipPair) * ship1.deltaR(ship2).getY() / ship1.sigma(ship2);

@@ -131,6 +131,8 @@ public abstract class Entity {
     }
 
     /**
+     * Method to check whether or not a position is valid.
+     *
      * @see implementation
      */
     protected boolean isValidPosition(Vector position){
@@ -151,6 +153,8 @@ public abstract class Entity {
     protected World world = null;
 
     /**
+     * Method to check what world the entity is part of.
+     *
      * @see implementation
      */
     public World getWorld(){
@@ -158,6 +162,8 @@ public abstract class Entity {
     }
 
     /**
+     * Method to set the current world the entity is placed in.
+     *
      * @see implementation
      */
     protected void setWorld(World newWorld) {
@@ -288,12 +294,17 @@ public abstract class Entity {
     }
 
     /**
+     * Method to negate the X component of the velocity.
+     *
      * @see implementation
      */
     public void negateVelocityX() {
         setVelocity(new Vector(-this.getVelocity().getX(), this.getVelocity().getY()));
     }
+
     /**
+     * Method to negate the Y component of the velocity.
+     *
      * @see implementation
      */
     public void negateVelocityY() {
@@ -308,6 +319,8 @@ public abstract class Entity {
 //    protected double minimumRadius = 10;
 
     /**
+     * Method to check the minimum radius of an entity.
+     *
      * @see implementation
      */
     protected double getMinimumRadiusEntity(){
@@ -326,6 +339,8 @@ public abstract class Entity {
     protected double radius;
 
     /**
+     * Method to set the radius of an entity.
+     *
      * @see implementation
      */
     protected void setRadius(double newRadius){
@@ -377,7 +392,7 @@ public abstract class Entity {
      *         | result ==
      *         |    if (this == other)
      *         |        then 0
-     *         |        else sqrt(
+     *         |    else sqrt(
      *         |        (this.getPosition().getX() - other.getPosition().getX())*(this.getPosition().getX() - other.getPosition().getX())
      *         |        + (this.getPosition().getY() - other.getPosition().getY())*(this.getPosition().getY() - other.getPosition().getY())
      *         |        )
@@ -796,12 +811,16 @@ public abstract class Entity {
     protected double density;
 
     /**
+     * Method to check the density of the entity.
+     *
      * @see implementation
      */
     protected double getDensity(){
         return this.density;
     }
     /**
+     * Method to set the density of an entity.
+     *
      * @see implementation
      */
     protected void setDensity(double newDensity){
@@ -826,6 +845,8 @@ public abstract class Entity {
 //        this.massOfEntity = this.getVolume() * density;
 //    }
     /**
+     * Method to check the mass of an entity.
+     *
      * @see implementation
      */
     public double getMassOfEntity(){
@@ -837,7 +858,10 @@ public abstract class Entity {
      * Variable registering whether or not an entity is terminated.
      */
     public boolean isTerminated = false;
+
     /**
+     * Method to check whether or not an entity is terminated.
+     *
      * @see implementation
      */
     public boolean checkTermination(){

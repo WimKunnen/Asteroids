@@ -128,16 +128,36 @@ public class TestVector {
         assertFalse(u.equals(h));
     }
 
+    /**
+     * A test suit which tests the negate() method from the Vector class.
+     * The tests are run with the previously defined vector objects v, y and u.
+     */
     @Test
     public void testNegate(){
         assertTrue(v.negate().equals(y));
         assertFalse(u.negate().equals(v));
     }
 
+    /**
+     * A test suit which tests the hashCode() method from the Vector class.
+     * The tests are run with the previously defined vector objects v, w and h.
+     */
     @Test
     public void testHashCode(){
         assertEquals(v.hashCode(), 7, EPSILON);
         assertEquals(v.hashCode(), w.hashCode(), EPSILON);
         assertFalse(v.hashCode() == h.hashCode());
+    }
+
+    /**
+     * A test suit which tests the angleBetween() method from the Vector class.
+     * The tests are run with the previously defined vector objects v, x, h and y.
+     */
+    @Test
+    public void testAngleBetween(){
+        assertEquals( 0.0555, v.angleBetween(x), EPSILON);
+        assertEquals( 0.1243, h.angleBetween(x), EPSILON);
+        assertEquals(0, w.angleBetween(v), EPSILON);
+        assertEquals(Math.PI, v.angleBetween(y), EPSILON);
     }
 }

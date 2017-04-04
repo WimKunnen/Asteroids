@@ -345,10 +345,9 @@ public class TestShip {
 	public void testFire(){
 		World world = new World(800,800);
 		world.addEntity(ship5);
-		assertEquals(10, ship1.getBullets().size(),EPSILON);
+		assertEquals(10, ship5.getBullets().size(),EPSILON);
 		ship5.fire();
 		assertEquals(2, world.getAllEntities().size(),EPSILON);
-		assertEquals(9, ship1.getBullets().size(),EPSILON);
-
+		assertEquals(9, ship5.getBullets().size(),EPSILON);
 	}
 }

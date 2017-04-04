@@ -443,7 +443,7 @@ public class Ship extends Entity{
     public void fire() {
         if(this.getWorld() != null && this.getBullets().size() > 0) {
             Bullet bullet = this.getRandomBulletOnShip();
-            this.getBullets().remove(bullet);
+            this.bullets.remove(bullet);
             this.totalMass -= bullet.getMassOfEntity();
 
             bullet.switchBeenOutOfShip(false);

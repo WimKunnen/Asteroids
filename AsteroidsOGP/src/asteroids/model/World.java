@@ -274,7 +274,6 @@ public class World {
                     }
                 }
                 evolve(timeDifference - timeToFirstCollision);
-
             }
         }
         else{

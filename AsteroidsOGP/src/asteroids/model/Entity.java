@@ -1,8 +1,6 @@
 package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
-import be.kuleuven.cs.som.taglet.*;
-import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +71,7 @@ public abstract class Entity {
         this.setRadius(radius);
         this.setWorld(world);
         Vector position = new Vector(x, y);
-        if(isValidPosition(position))
+        if(isInvalidPosition(position))
             throw new IllegalArgumentException();
         else
             this.setPosition(position);
@@ -135,7 +133,7 @@ public abstract class Entity {
      *
      * @see implementation
      */
-    protected boolean isValidPosition(Vector position){
+    protected boolean isInvalidPosition(Vector position){
         return (Double.isNaN(position.getX()) ||  Double.isNaN(position.getY()));
     }
     /**
@@ -544,7 +542,7 @@ public abstract class Entity {
      *
      * @see implementation
      */
-    public List getDistancesToBoundaries(){
+    private List getDistancesToBoundaries(){
         if (getWorld() == null){
             List<Double> distances = new ArrayList<>();
             distances.add(Double.POSITIVE_INFINITY);

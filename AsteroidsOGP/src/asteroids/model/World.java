@@ -12,6 +12,8 @@ import java.util.*;
  *        |     && lowerbound <= height && height <= upperbound)
  *
  * @author Maarten Doclo and Wim Kunnen
+ *
+ * @version 1.0
  */
 public class World {
 
@@ -228,10 +230,6 @@ public class World {
         }
     }
 
-    /**
-     * Evolve the world a given time difference.
-     *
-     */
     public void evolve (double timeDifference) throws IllegalArgumentException {
         if (timeDifference >= 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
@@ -297,9 +295,13 @@ public class World {
 
 
     /**
-     * Resolve the collision between a two ships.
-     * @param entity1 one colliding ship
-     * @param entity2 other colliding ship
+     * Resolve the collision between a two entity.
+     *
+     * @param   entity1
+     *          One colliding entity
+     *
+     * @param   entity2
+     *          Other colliding entity
      */
     public void resolveEntityCollision(Entity entity1, Entity entity2) {
         if (entity1 instanceof Ship && entity2 instanceof Ship){
@@ -332,12 +334,14 @@ public class World {
 
 
     }
-//TODO
 
     /**
      * Resolve the collision between a bullet and a ship.
-     * @param ship the colliding ship
-     * @param bullet the colliding bullet
+     *
+     * @param   ship
+     *          The colliding ship
+     * @param   bullet
+     *          The colliding bullet
      */
     public void resolveBulletShipCollision(Ship ship, Bullet bullet){
         if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
@@ -356,7 +360,6 @@ public class World {
 
     /**
      * Return the time to the first collision between two entities.
-     * @return
      */
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
@@ -379,7 +382,6 @@ public class World {
 
     /**
      * Return the time to the first collision between an entity and a boundary of the world.
-     * @return
      */
     public double getTimeToFirstBoundaryCollision() {
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
@@ -396,7 +398,7 @@ public class World {
     }
 
     /**
-     * | return (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision))
+     * @return  result == (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision))
      */
     public double getTimeToFirstCollision() {
         double time = getTimeToFirstBoundaryCollision();

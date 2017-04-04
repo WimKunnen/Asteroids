@@ -4,7 +4,6 @@ package asteroids.tests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.*;
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 
 import asteroids.model.Ship;
 
@@ -12,7 +11,7 @@ import asteroids.model.Ship;
 /**
  * A class containing test suits for the class of ships.
  *
- * @version 1.0
+ * @version 2.0
  *
  * @author Maarten Doclo and Wim Kunnen
  */

@@ -287,7 +287,7 @@ public class Facade implements IFacade {
      */
     public Ship getBulletSource(Bullet bullet) throws ModelException{
         if (bullet.getPosition() == bullet.getSource().getPosition())
-            throw new ModelException("The bullet hasn't been fires");
+            throw new ModelException("The bullet hasn't been fired");
         else
             return bullet.getSource();
     }

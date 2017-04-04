@@ -45,10 +45,12 @@ public class Bullet extends Entity {
     }
 
     private static double minimumRadius = 1;
+
     /**
      * @see implementation
      */
-    protected double getMinimumRadius(){
+    @Basic
+    public double getMinimumRadius(){
         return minimumRadius;
     }
 
@@ -56,12 +58,15 @@ public class Bullet extends Entity {
      * Variable registering the maximum number of bounces for this bullet.
      */
     private int maxNbBounces = 3;
+
     /**
      * @see implementation
      */
+    @Basic
     public int getMaxNbBounces(){
         return this.maxNbBounces;
     }
+
     /**
      * @see implementation
      */
@@ -73,30 +78,37 @@ public class Bullet extends Entity {
      * Variable registering the amount of bounces a bullet has done so far.
      */
     private int nbOfBounces = 0;
+
     /**
      * @see implementation
      */
+    @Basic
     public int getNbOfBounces(){
         return this.nbOfBounces;
     }
+
     /**
      * @see implementation
      */
-    protected void riseNbOfBounces() {
+    public void riseNbOfBounces() {
         this.nbOfBounces += 1;
     }
 
+    /**
+     * Variable registering the bullets source ship.
+     */
     public Ship source;
     /**
      * @see implementation
      */
+    @Basic
     public Ship getSource(){
         return this.source;
     }
     /**
      * @see implementation
      */
-    protected void setSource(Ship sourceShip){
+    public void setSource(Ship sourceShip){
         this.source = sourceShip;
     }
 
@@ -112,7 +124,8 @@ public class Bullet extends Entity {
     /**
      * @see implementation
      */
-    protected boolean hasBeenOutOfShip(){
+    @Basic
+    public boolean hasBeenOutOfShip(){
         return this.beenOutOfShip;
     }
     /**

@@ -18,6 +18,10 @@ import java.util.List;
  * @invar An entity located in a world never overlaps with other entities in that world.
  *        | if (getWorld() != null)
  *        |     this.noOverlapsInNewWorld(getWorld())
+ *
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 2.0
  */
 public abstract class Entity {
 
@@ -68,10 +72,11 @@ public abstract class Entity {
         //this.setMinimumRadius();
         this.setRadius(radius);
         this.setWorld(world);
-        if(Double.isNaN(x) ||  Double.isNaN(y))
+        Vector position = new Vector(x, y);
+        if(isValidPosition(position))
             throw new IllegalArgumentException();
         else
-            this.setPosition(new Vector(x, y));
+            this.setPosition(position);
 
         this.setMaximumVelocity(speedOfLight);
         this.setVelocity(new Vector(velocityX,velocityY));
@@ -139,8 +144,7 @@ public abstract class Entity {
         return position;
     }
 
-    // The entities world
-
+    // The world of the entity.
     /**
      * Variable registering the current world of the entity, initialized at null.
      */
@@ -166,6 +170,9 @@ public abstract class Entity {
      *
      * @param   timeDifference
      *          The difference in time between two frames.
+     *
+     * @post    The new position is equal to the sum of the old position and the velocity times the time difference.
+     *          | new.getPosition == this.getPosition + this.getVelocity * timeDifference
      *
      * @throws  IllegalArgumentException
      *          The given time difference is smaller than zero.
@@ -266,7 +273,6 @@ public abstract class Entity {
      *          the new total velocity is set at the maximum velocity, but the new direction of the velocity remains unaltered.
      *
      */
-
     @Model
     protected void setVelocity(Vector velocity){
         this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocity()*this.getMaximumVelocity()
@@ -564,7 +570,6 @@ public abstract class Entity {
      * @note  The time returned by this method shall only be correct if the path of the two entities is not
      *        disturbed by collisions with other entities or by accelerating.
      */
-
     public double getTimeToCollision(Entity other) throws NullPointerException{
         Vector deltaV = this.deltaV(other);
         Vector deltaR = this.deltaR(other);
@@ -763,6 +768,12 @@ public abstract class Entity {
                 - deltaV.scalarProduct(deltaV) * (deltaR.scalarProduct(deltaR) - sigma * sigma);
     }
 
+    /**
+     * Returns true if and only if the two entities fly away from each other.
+     *
+     * @param   other
+     *          The other entity.
+     */
     public boolean fliesApartFrom(Entity other){
         Vector pointingVector = other.getPosition().sum(this.getPosition().negate());
 

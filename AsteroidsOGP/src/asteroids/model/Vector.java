@@ -18,7 +18,7 @@ import be.kuleuven.cs.som.annotate.Value;
  *
  * @author  Wim Kunnen and Maarten Doclo.
  *
- * @version 1.0
+ * @version 2.0
  */
 @Value
 public class Vector {

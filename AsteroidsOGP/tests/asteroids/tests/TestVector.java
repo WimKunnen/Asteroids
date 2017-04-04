@@ -17,6 +17,9 @@ public class TestVector {
     private static Vector v = new Vector(3,4);
     private static Vector x = new Vector(2,3);
     private static Vector h = new Vector(1,2);
+    private static Vector w = new Vector(3,4);
+    private static Vector y = new Vector(-3,-4);
+
     private static final double EPSILON = 0.0001;
     private static double[] array1 = new double[]{3,4};
     private static double[] array2 = new double[]{2,3};
@@ -104,9 +107,37 @@ public class TestVector {
         assertTrue(11 == h.scalarProduct(v));
     }
 
+    /**
+     * A method which tests the getValues() method from the Vector class.
+     * The tests are run with the previously defined vector objects v and x and the arrays array1 and array2.
+     */
     @Test
     public void testGetValues(){
         assertArrayEquals(array1, v.getValues(), EPSILON);
         assertArrayEquals(array2, x.getValues(), EPSILON);
+    }
+
+    /**
+     * A method which tests the equals() method from the Vector class.
+     * The tests are run with the previously defined vector objects v, w, u and h.
+     */
+    @Test
+    public void testEquals(){
+        assertTrue(v.equals(w));
+        assertTrue(v.equals(v));
+        assertFalse(u.equals(h));
+    }
+
+    @Test
+    public void testNegate(){
+        assertTrue(v.negate().equals(y));
+        assertFalse(u.negate().equals(v));
+    }
+
+    @Test
+    public void testHashCode(){
+        assertEquals(v.hashCode(), 7, EPSILON);
+        assertEquals(v.hashCode(), w.hashCode(), EPSILON);
+        assertFalse(v.hashCode() == h.hashCode());
     }
 }

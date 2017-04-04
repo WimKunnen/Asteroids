@@ -146,10 +146,23 @@ public class Vector {
         return new double[]{this.getX(),this.getY()};
     }
 
+    /**
+     * Returns a new vector with its values negated.
+     *
+     * @return  result == new Vector(-this.getX, -this.getY)
+     */
     public Vector negate() {
         return new Vector(-this.getX(),-this.getY());
     }
 
+    /**
+     * Returns the angle between two vectors.
+     *
+     * @param   other
+     *          The other vector with which an angle will be calculated.
+     *
+     * @return  result == acos(this.scalarProduct(other))
+     */
     public double angleBetween(Vector other){
         Vector normalizedThis = this.normalize();
         Vector normalizedOther = other.normalize();
@@ -157,6 +170,12 @@ public class Vector {
         return Math.acos(dotProduct);
     }
 
+    /**
+     * Returns true if and only if the values of the two vectors are equal to each other
+     *
+     * @param   other
+     *          The other vector which will be checked to be equal to the original vector
+     */
     @Override
     public boolean equals(Object other){
         if (other == null)
@@ -167,6 +186,11 @@ public class Vector {
         return (this.getX()== otherVector.getX() && this.getY() == otherVector.getY());
     }
 
+    /**
+     * A method which calculates the hash code for the vector based on the x and y values.
+     *
+     * @return  result == getX + getY
+     */
     @Override
     public int hashCode(){
         double hashCode = Math.floor(this.getX() + this.getY());

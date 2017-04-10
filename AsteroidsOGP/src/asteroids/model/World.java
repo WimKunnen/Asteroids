@@ -79,7 +79,7 @@ public class World {
     /**
      * Variable registering whether or not a world is terminated.
      */
-    public boolean isTerminated = false;
+    private boolean isTerminated = false;
 
     /**
      * Return whether or not a world is terminated.

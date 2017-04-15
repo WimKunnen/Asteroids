@@ -130,6 +130,9 @@ public class Vector {
      * Rescales a vector with the given factor if factor is greater than zero.
      * Else, the original Vector is returned.
      *
+     * @param factor
+     *        The factor with which the vector needs to be multiplied.
+     *
      * |if (this.vectorLengthSquared >= 0)
      * |    then new == Vector(this.getX() * factor, this.getY() * factor)
      * |else

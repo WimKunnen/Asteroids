@@ -44,9 +44,13 @@ public class Bullet extends Entity {
         this.setRadius(this.getMinimumRadius());
     }
 
+    /**
+     * Variable registering the minimum radius of bullets.
+     */
     private static double minimumRadius = 1;
 
     /**
+     * Return the minimum radius of all bullets.
      * @see implementation
      */
     @Basic
@@ -61,6 +65,7 @@ public class Bullet extends Entity {
     private int maxNbBounces = 3;
 
     /**
+     * Return the maximum number of bounces of this bullet.
      * @see implementation
      */
     @Basic
@@ -69,6 +74,11 @@ public class Bullet extends Entity {
     }
 
     /**
+     * Set the maximum of bounces to the given integer.
+     *
+     * @param newMaxNb
+     *        The new maximum number of bounces of this bullet.
+     *
      * @see implementation
      */
     private void setMaxNbBounces(int newMaxNb){
@@ -81,6 +91,7 @@ public class Bullet extends Entity {
     private int nbOfBounces = 0;
 
     /**
+     * Return the number of bounces of this bullet.
      * @see implementation
      */
     @Basic
@@ -89,6 +100,7 @@ public class Bullet extends Entity {
     }
 
     /**
+     * Rise the number of bounces with one.
      * @see implementation
      */
     public void riseNbOfBounces() {
@@ -100,6 +112,7 @@ public class Bullet extends Entity {
      */
     public Ship source;
     /**
+     * Return the source ship of this bullet.
      * @see implementation
      */
     @Basic
@@ -107,6 +120,11 @@ public class Bullet extends Entity {
         return this.source;
     }
     /**
+     * Change the source of this bullet to a given ship.
+     *
+     * @param sourceShip
+     *        The ship that needs to be the source of this bullet.
+     *
      * @see implementation
      */
     public void setSource(Ship sourceShip){
@@ -118,6 +136,7 @@ public class Bullet extends Entity {
      */
     private boolean beenOutOfShip = true;
     /**
+     * Return whether the bullet has yet been outside of the ship after reloading.
      * @see implementation
      */
     @Basic
@@ -125,6 +144,11 @@ public class Bullet extends Entity {
         return this.beenOutOfShip;
     }
     /**
+     * Change the status of beenOutOfShip to the given boolean.
+     *
+     * @param bool
+     *        The boolean to which beenOutOfShip needs to change.
+     *
      * @see implementation
      */
     public void switchBeenOutOfShip(Boolean bool){

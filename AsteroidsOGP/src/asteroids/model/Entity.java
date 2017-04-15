@@ -276,7 +276,6 @@ public abstract class Entity {
      *          | new.getVelocityX() == velocity
      *          If the square of the new total velocity does exceed the square of the maximum velocity,
      *          the new total velocity is set at the maximum velocity, but the new direction of the velocity remains unaltered.
-     *
      */
     @Model
     protected void setVelocity(Vector velocity){
@@ -800,6 +799,9 @@ public abstract class Entity {
     }
     /**
      * Method to set the density of an entity.
+     *
+     * @param newDensity
+     *        The new density of this entity.
      *
      * @see implementation
      */

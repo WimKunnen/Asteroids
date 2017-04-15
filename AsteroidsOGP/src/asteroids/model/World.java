@@ -167,6 +167,10 @@ public class World {
 
     /**
      * Add an entity to this world.
+     *
+     * @param entity
+     *        The entity that needs to be added to this world.
+     *
      * @see implementation
      */
     public void addEntity(Entity entity) throws IllegalArgumentException {
@@ -193,6 +197,10 @@ public class World {
 
     /**
      * Remove an entity from this world.
+     *
+     * @param entity
+     *        The entity that needs to be removed from this world.
+     *
      * @see implementation
      */
     public void removeEntity(Entity entity) throws IllegalArgumentException {
@@ -229,6 +237,10 @@ public class World {
 
     /**
      * Get the entity at a given position
+     *
+     * @param position
+     *        The vector position at which an entity might be located.
+     *
      * @see implementation
      */
     public Entity getEntityAt(Vector position){
@@ -249,6 +261,9 @@ public class World {
 
     /**
      * Evolve this world for a given timedifference.
+     *
+     * @param timeDifference
+     *        The amount of seconds the world should evolve.
      */
     public void evolve (double timeDifference) throws IllegalArgumentException {
         if (timeDifference >= 0) {
@@ -287,6 +302,7 @@ public class World {
 
     /**
      * Move all entities in this world for a given timeDifference.
+     *
      * @param timeDifference How much time the entities need to move for. 
      */
     private void moveAllEntities(double timeDifference){
@@ -303,6 +319,7 @@ public class World {
 
     /**
      * Resolve the collision between an entity and the boundaries it collides with.
+     *
      * @param currentEntity The possibly colliding entity
      */
     private void resolveBoundaryCollision(Entity currentEntity){
@@ -474,6 +491,10 @@ public class World {
 
     /**
      * J as defined in the assignment.
+     *
+     * @param shipPair
+     *        a list of two ships
+     *
      * @see implementation
      */
     private double J(List<Ship> shipPair) {
@@ -486,6 +507,10 @@ public class World {
 
     /**
      * J_x as defined in the assignment.
+     *
+     * @param shipPair
+     *        a list of two ships
+     *
      * @see implementation
      */
     private double Jx(List<Ship> shipPair) {
@@ -496,6 +521,10 @@ public class World {
 
     /**
      * J_y as defined in the assignment.
+     *
+     * @param shipPair
+     *        a list of two ships
+     *
      * @see implementation
      */
     private double Jy(List<Ship> shipPair) {

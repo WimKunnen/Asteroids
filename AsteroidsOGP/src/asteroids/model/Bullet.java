@@ -23,6 +23,9 @@ public class Bullet extends Entity {
      * @param   velocityY
      *          The initial velocity of the new bullet along the y-axis.
      *
+     * @param   radius
+     *          The radius of this entity.
+     *
      * @invar   A bullet cannot be held by a world and a ship at the same time.
      *          | getSource() == null || getWorld() == null || !getSource().getBullets.contains(this)
      *
@@ -30,7 +33,6 @@ public class Bullet extends Entity {
     public Bullet(double x, double y, double velocityX, double velocityY, double radius) throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
         this.setDensity(7.8E12);
-        //this.setMassOfEntity(this.getDensity());
     }
 
     /**
@@ -39,8 +41,6 @@ public class Bullet extends Entity {
     public Bullet(){
         super();
         this.setDensity(7.8 * Math.pow(10, 12));
-        //this.setMassOfEntity(this.getDensity());
-        //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
     }
 
@@ -112,11 +112,6 @@ public class Bullet extends Entity {
         this.source = sourceShip;
     }
 
-//    protected boolean canBeFired(){
-//        if (!(this.fitsInBoundaries(this.getWorld())))
-//            return false;
-//
-//    }
     /**
      * Boolean registering if the bullet has yet been outside of the ship after reloading.
      */

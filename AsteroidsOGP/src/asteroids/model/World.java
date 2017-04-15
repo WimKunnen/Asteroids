@@ -6,6 +6,7 @@ import jdk.nashorn.internal.ir.annotations.Immutable;
 import java.util.*;
 
 /**
+ *A class of two dimensional worlds.
  *
  * @invar The width and height of world always lie between the lowerbound and upperbound.
  *        | (lowerbound <= width && width <= upperbound
@@ -79,7 +80,7 @@ public class World {
     /**
      * Variable registering whether or not a world is terminated.
      */
-    public boolean isTerminated = false;
+    private boolean isTerminated = false;
 
     /**
      * Return whether or not a world is terminated.
@@ -246,6 +247,9 @@ public class World {
         }
     }
 
+    /**
+     * Evolve this world for a given timedifference.
+     */
     public void evolve (double timeDifference) throws IllegalArgumentException {
         if (timeDifference >= 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
@@ -413,6 +417,7 @@ public class World {
 
     /**
      * Return the time to the first collision between an entity and a boundary of the world.
+     * @see implementation
      */
     public double getTimeToFirstBoundaryCollision() {
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
@@ -429,6 +434,7 @@ public class World {
     }
 
     /**
+     *Return the time to the first collision happening in this world.
      * @return  result == (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision))
      */
     public double getTimeToFirstCollision() {
@@ -440,8 +446,9 @@ public class World {
         return time;
     }
 
-    //TODO
+
     /**
+     * Return the position of the first collision happening in this world.
      * @see implementation
      */
     public Vector getFirstCollisionPosition(){

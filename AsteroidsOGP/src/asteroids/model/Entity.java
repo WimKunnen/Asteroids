@@ -14,8 +14,13 @@ import java.util.List;
  *        | if (getWorld() != null)
  *        |     this.fitsInBoundaries(getWorld())
  * @invar An entity located in a world never overlaps with other entities in that world.
- *        | if (getWorld() != null)
- *        |     this.noOverlapsInNewWorld(getWorld())
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     if (this.overlap(entity)) {
+ *        |         entity instanceof Ship && this instanceof Bullet && ((Ship) entity).getBullets().contains(this)
+ *        |         || entity instanceof Bullet && this instanceof Ship && ((Ship) this).getBullets().contains(entity)
+ *        |         || this == entity;
+ *        |     }
+ *        | }
  *
  * @author WimKunnen and Maarten Doclo
  *
@@ -37,6 +42,9 @@ public abstract class Entity {
      *
      * @param   velocityY
      *          The initial velocity of the new entity along the y-axis.
+     *
+     * @param   radius
+     *          The radius of this entity.
      *
      * @post    The new x coordinate is equal to x.
      *          | new.getPosition().getX() == x
@@ -67,7 +75,6 @@ public abstract class Entity {
      */
     public Entity(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
-        //this.setMinimumRadius();
         this.setRadius(radius);
         this.setWorld(world);
         Vector position = new Vector(x, y);
@@ -100,7 +107,6 @@ public abstract class Entity {
      *          | new.getRadius() == this.minimumRadius
      */
     public Entity(){
-        //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadiusEntity());
         this.setPosition(new Vector());
         this.setMaximumVelocity(this.speedOfLight);
@@ -208,11 +214,6 @@ public abstract class Entity {
      */
     private final double speedOfLight = 300000;
 
-//    /**
-//     * Constant registering the speed of light squared.
-//     */
-//    private final double speedOfLightSquared = speedOfLight*speedOfLight;
-
     /**
      * Variable registering the maximum velocity of this entity.
      */
@@ -234,7 +235,7 @@ public abstract class Entity {
      * @param   velocity
      *          The new maximum velocity
      *
-     * @post    If the given velocity is smaller or equal to speedOfLight and nonegative, the new maximum velocity is set at the given velocity.
+     * @post    If the given velocity is smaller or equal to speedOfLight and nonnegative, the new maximum velocity is set at the given velocity.
      *          |if(velocity <= speedOfLight && 0 <= velocity) then
      *          |   this.maximumVelocity = velocity
      *          |   this.maximumVelocitySquared = velocity * velocity
@@ -309,13 +310,7 @@ public abstract class Entity {
         setVelocity(new Vector(this.getVelocity().getX(), -this.getVelocity().getY()));
     }
 
-//    Radius
-
-//    /**
-//     * Variable registering the minimum radius of all entities.
-//     */
-//    protected double minimumRadius = 10;
-
+    //radius:
     /**
      * Method to check the minimum radius of an entity.
      *
@@ -339,6 +334,9 @@ public abstract class Entity {
     /**
      * Method to set the radius of an entity.
      *
+     * @param newRadius
+     *        The new radius of this entity.
+     *
      * @see implementation
      */
     protected void setRadius(double newRadius){
@@ -347,15 +345,7 @@ public abstract class Entity {
         }
         this.radius = newRadius;
     }
-//    /**
-//     * @see implementation
-//     */
-//    protected void setMinimumRadius(){
-//        if (this instanceof Ship)
-//            this.minimumRadius = 10;
-//        if (this instanceof Bullet)
-//            this.minimumRadius = 1;
-//    }
+
     /**
      * Returns the radius of the entity.
      */
@@ -469,7 +459,7 @@ public abstract class Entity {
      * @see implementation
      *
      * @param   entity
-     *          Another entity which the entity appears to collide with.
+     *          Another entity with which the entity appears to collide.
      */
     public boolean apparentlyCollidesWithEntity(Entity entity){
         double sumRadii = this.sigma(entity);
@@ -577,7 +567,7 @@ public abstract class Entity {
      *        | other == null
      *
      * @note  The time returned by this method is the time it takes for these entities to collide for the first time.
-     *        When the entities move through each other they collide again. This is not the time this method looks for.
+     *        When the entities move through each other, they collide again. This is not the time this method looks for.
      * @note  During the time returned by this method the two entities move closer to each other.
      *        When this time is past, the distance between the two entities is zero.
      * @note  The time returned by this method shall only be correct if the path of the two entities is not
@@ -592,14 +582,14 @@ public abstract class Entity {
 
         if (this.willCollide(other)) {
             if (timeToCollision < 0 ){
-                timeToCollision = 0; //TODO
+                timeToCollision = 0;
             }
             return timeToCollision;
         }
         if( this instanceof Bullet && other instanceof Ship && ((Bullet)this).getSource() == other && !((Bullet)this).hasBeenOutOfShip()){
             return Double.POSITIVE_INFINITY;
         }
-        if( other instanceof Bullet && this instanceof Ship && ((Bullet)other).getSource() == this&& !((Bullet)other).hasBeenOutOfShip()){
+        if( other instanceof Bullet && this instanceof Ship && ((Bullet)other).getSource() == this && !((Bullet)other).hasBeenOutOfShip()){
             return Double.POSITIVE_INFINITY;
         }
         else{
@@ -638,7 +628,7 @@ public abstract class Entity {
                 time = timeToCollisionY;
         }
         if (time < 0 ) {
-            time = 0; //TODO
+            time = 0;
         }
         return time;
     }
@@ -672,14 +662,12 @@ public abstract class Entity {
         if (getVelocity().getY() > 0) {
             double timeToCollisionY = (world.getHeight() - getRadius() - getPosition().getY()) / getVelocity().getY();
             if (timeToCollisionY < time) {
-                time = timeToCollisionY;
                 boundary = "T";
             }
         }
         else if (getVelocity().getY() < 0){
             double timeToCollisionY = Math.abs((getPosition().getY() - getRadius()) / getVelocity().getY());
             if (timeToCollisionY < time) {
-                time = timeToCollisionY;
                 boundary = "B";
             }
         }
@@ -786,6 +774,8 @@ public abstract class Entity {
      *
      * @param   other
      *          The other entity.
+     *
+     * @see implementation
      */
     public boolean fliesApartFrom(Entity other){
         Vector pointingVector = other.getPosition().sum(this.getPosition().negate());
@@ -822,6 +812,9 @@ public abstract class Entity {
      * @see implementation
      */
     protected void setDensity(double newDensity){
+        if (newDensity  < 0){
+            newDensity = -newDensity;
+        }
         this.density = newDensity;
     }
 
@@ -831,17 +824,8 @@ public abstract class Entity {
     protected double getVolume(){
         return 4.0/3 * Math.PI * Math.pow(this.getRadius(), 3);
     }
-    /**
-     * Returns the mass of an entity.
-     */
-//    protected double massOfEntity;
-//    /**
-//     * The mass of the entity will be based on its volume and density
-//     * | mass = volume * density
-//     */
-//    protected void setMassOfEntity(double density){
-//        this.massOfEntity = this.getVolume() * density;
-//    }
+
+
     /**
      * Method to check the mass of an entity.
      *
@@ -923,6 +907,8 @@ public abstract class Entity {
      *
      * @param   world
      *          A candidate world in which the ship might be placed
+     *
+     * @see implementation
      */
     public boolean noOverlapsInNewWorld(World world){
         for (Entity entity : world.getAllEntities()){

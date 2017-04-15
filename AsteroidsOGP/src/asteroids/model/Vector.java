@@ -83,6 +83,8 @@ public class Vector {
 
     /**
      * Returns the square of the length of the vector.
+     *
+     * @see implementation
      */
     public double vectorLengthSquared(){
         return this.getX() * this.getX() + this.getY() * this.getY();
@@ -90,6 +92,8 @@ public class Vector {
 
     /**
      * Returns the length of the vector.
+     *
+     * @see implementation
      */
     public double vectorLength(){
         return Math.sqrt(this.vectorLengthSquared());

@@ -11,7 +11,7 @@ public class Part2 {
 			if (arg.equals("-fullscreen")) {
 				tryFullscreen = true;
 			} else if (arg.equals("-nosound")) {
-				enableSound = false;
+				enableSound = true;
 			} else {
 				System.out.println("unknown option: " + arg);
 				return;

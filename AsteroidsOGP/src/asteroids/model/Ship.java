@@ -13,7 +13,7 @@ import java.util.HashSet;
  * 		    | isValidAngle()
  *
  * @invar   The velocity of a ship is always smaller than or equal to the speed of light.
- * 		    | velocity.vectorLength <= speedOfLight
+ * 		    | velocity.vectorLength() <= speedOfLight
  *
  * @invar   The radius will always be greater or equal to th minimum radius.
  *          | isValidRadius()
@@ -59,14 +59,15 @@ public class Ship extends Entity{
      *
      * @param   heading
      *          The initial heading of the new ship.
+     *
+     * @param   mass
+     *          The mass of this ship.
      */
     public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass){
         super(x, y, velocityX, velocityY, radius);
-        //this.setMinimumRadius();
         this.setRadius(radius);
         this.setHeading(heading);
         this.setDensity(1.42 * Math.pow(10, 12));
-        //this.setMassOfEntity(this.getDensity());
         this.setMass(mass);
         this.totalMass = this.getMass();
         this.setThrustForce(1.1 *  Math.pow(10, 21));
@@ -78,10 +79,8 @@ public class Ship extends Entity{
     public Ship(){
 
         super();
-        //this.setMinimumRadius();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42E12);
-        //this.setMassOfEntity(this.getDensity());
         this.setThrustForce(1.1 *  Math.pow(10, 21));
         this.setHeading(0);
     }
@@ -209,7 +208,6 @@ public class Ship extends Entity{
         return this.thruster;
     }
 
-    //TODO check thrust enable meaning
 
     /**
      * Method turning the thruster on.
@@ -280,7 +278,6 @@ public class Ship extends Entity{
                 acceleration*Math.sin(this.getHeading()) * timeDifference);
         Vector newVelocity = this.getVelocity().sum(accelerationVector);
         this.setVelocity(newVelocity);
-
     }
 
     /**

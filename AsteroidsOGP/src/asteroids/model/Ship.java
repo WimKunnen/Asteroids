@@ -103,6 +103,7 @@ public class Ship extends Entity{
      * @return  result == minimumRadius
      */
     @Basic
+    @Override
     protected double getMinimumRadius(){
         return minimumRadius;
     }

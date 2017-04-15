@@ -107,7 +107,7 @@ public abstract class Entity {
      *          | new.getRadius() == this.minimumRadius
      */
     public Entity(){
-        this.setRadius(this.getMinimumRadiusEntity());
+        this.setRadius(this.getMinimumRadius());
         this.setPosition(new Vector());
         this.setMaximumVelocity(this.speedOfLight);
         this.setVelocity(new Vector());
@@ -316,15 +316,7 @@ public abstract class Entity {
      *
      * @see implementation
      */
-    protected double getMinimumRadiusEntity(){
-        if (this instanceof Ship) {
-            return ((Ship)this).getMinimumRadius();
-        }
-        else if (this instanceof Bullet){
-            return ((Bullet)this).getMinimumRadius();
-        }
-        throw new AssertionError();
-    }
+    protected abstract double getMinimumRadius();
 
     /**
      * Variable registering the radius of this entity.

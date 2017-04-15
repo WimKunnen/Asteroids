@@ -50,6 +50,7 @@ public class Bullet extends Entity {
      * @see implementation
      */
     @Basic
+    @Override
     public double getMinimumRadius(){
         return minimumRadius;
     }

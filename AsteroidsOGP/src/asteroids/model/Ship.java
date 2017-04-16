@@ -21,6 +21,8 @@ import java.util.HashSet;
  * @invar   The maximum velocity of the ship shall always be smaller or equal to the speed of light.
  *          | getMaximumVelocity() <= speedOfLight
  *
+ * @invar   The mass of the ship will always be greater then the mass of an entity given its radius and density.
+ *          | getMass() >= getMassOfEntity()
  *
  *
  * @author  Wim Kunnen and Maarten Doclo
@@ -34,8 +36,8 @@ import java.util.HashSet;
  *  This Java class was created for the Asteroids Part 1 assignment for the course Objectoriented Programming
  *  given by Prof. dr. ir. E. Steegmans.
  *
- *  The code for this assignment can also be found at our public Github Repository:
- *  https://github.com/WimKunnen/AsteroidsPart1
+ *  The code for this assignment can also be found at our private Github Repository:
+ *  https://github.com/WimKunnen/AsteroidsGithub
  */
 
 public class Ship extends Entity{

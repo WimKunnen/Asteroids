@@ -1,5 +1,6 @@
 package asteroids.model;
 
+import asteroids.part2.CollisionListener;
 import be.kuleuven.cs.som.annotate.*;
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
@@ -265,14 +266,14 @@ public class World {
      * @param timeDifference
      *        The amount of seconds the world should evolve.
      */
-    public void evolve (double timeDifference) throws IllegalArgumentException {
+    public void evolve (double timeDifference, CollisionListener collisionListener) throws IllegalArgumentException {
         if (timeDifference >= 0) {
             if (timeDifference <= getTimeToFirstCollision()) { //No collision in the given time.
                 moveAllEntities(timeDifference);
 
             } else {
                 double timeToFirstCollision = getTimeToFirstCollision();
-                evolve(timeToFirstCollision);
+                evolve(timeToFirstCollision, collisionListener);
 
                 List<Entity> allEntities = new ArrayList<>();
                 allEntities.addAll(getAllEntities());
@@ -285,14 +286,24 @@ public class World {
                         Entity otherEntity = allEntities.get(k);
                         if (currentEntity.apparentlyCollidesWithEntity(otherEntity) && !currentEntity.fliesApartFrom(otherEntity)) {
                             resolveEntityCollision(currentEntity, otherEntity);
+                            if ((currentEntity instanceof Ship && otherEntity instanceof Bullet && ((Bullet) otherEntity).getSource() != currentEntity)||
+                                    (currentEntity instanceof Bullet && otherEntity instanceof Ship && ((Bullet) currentEntity).getSource() != otherEntity)
+                                    || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet)){
+                                Vector collisionPosition = currentEntity.getCollisionPosition(otherEntity);
+                                collisionListener.objectCollision(currentEntity, otherEntity, collisionPosition.getX(), collisionPosition.getY());
+                            }
                         }
                     }
 
                     if (currentEntity.apparentlyCollidesWithBoundary()) { //Boundary collision resolve
                         resolveBoundaryCollision(currentEntity);
+                        if (currentEntity instanceof Ship) {
+                            Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
+                            collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
+                        }
                     }
                 }
-                evolve(timeDifference - timeToFirstCollision);
+                evolve(timeDifference - timeToFirstCollision, collisionListener);
             }
         }
         else{

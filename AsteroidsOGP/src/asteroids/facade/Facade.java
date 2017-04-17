@@ -511,7 +511,7 @@ public class Facade implements IFacade {
      * Advance the given world by dt seconds.
      */
     public void evolve(World world, double dt, CollisionListener collisionListener) throws ModelException{
-        world.evolve(dt);
+        world.evolve(dt, collisionListener);
     }
 
     /**

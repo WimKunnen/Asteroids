@@ -59,7 +59,7 @@ public class TestWorld {
     @Test
     public void positionMapUpdateTest(){
         assertEquals(ship2,world.getEntityAt(position3));
-        world.evolve(1.0);
+        world.evolve(1.0, null);
         assertEquals(position2,ship2.getPosition());
         assertEquals(ship2,world.getEntityAt(position2));
     }

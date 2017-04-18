@@ -18,17 +18,20 @@ public class Planetoid extends MinorPlanet {
     }
 
     protected void decrementRadius(double timeDifference){
-        if(this.getRadius() > 5) {
-            Vector position1 = this.getPosition();
-            this.move(timeDifference);
-            Vector position2 = this.getPosition();
-            Vector travel = position2.sum(position1.negate());
-            double distanceTravelled = travel.vectorLength();
-            double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
-            this.setRadius(newRadius);
-        }
-        else
+        double velocity = this.getVelocity().vectorLength();
+        double distanceTravelled = velocity * timeDifference;
+
+//        Vector position1 = this.getPosition();
+//        this.move(timeDifference);
+//        Vector position2 = this.getPosition();
+//        Vector travel = position2.sum(position1.negate());
+//        double distanceTravelled = travel.vectorLength();
+
+        double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
+        if (newRadius < 5){
             this.terminate();
+        }
+        this.setRadius(newRadius);
     }
 
     @Override

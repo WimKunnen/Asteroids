@@ -19,7 +19,7 @@ public abstract class MinorPlanet extends Entity {
     /**
      * Variable registering the minimum radius of bullets.
      */
-    private static double minimumRadius = 5;
+    private final static double minimumRadius = 5;
 
     /**
      * Return the minimum radius of all bullets.

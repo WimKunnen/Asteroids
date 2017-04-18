@@ -474,6 +474,20 @@ public class Ship extends Entity{
 
     }
 
-    public void teleportRandomLocation(){}
+    public void teleportRandomLocation() {
+        World thisWorld = getWorld();
+        thisWorld.removeEntity(this);
+        double xRange = getWorld().getWidth() - 2 * getRadius();
+        double yRange = getWorld().getHeight() - 2 * getRadius();
+        Vector newPos = new Vector(getRadius() + Math.random()*xRange, getRadius() + Math.random()*yRange);
+        setPosition(newPos);
+        if (this.noOverlapsInNewWorld(thisWorld)){
+            thisWorld.addEntity(this);
+        }
+        else{
+            this.terminate();
+        }
 
+
+    }
 }

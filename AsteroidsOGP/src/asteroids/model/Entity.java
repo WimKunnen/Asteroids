@@ -192,6 +192,9 @@ public abstract class Entity {
 
         if(isValidTimeDifference(timeDifference)){
             setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
+            if (this instanceof Planetoid){
+                ((Planetoid) this).decrementRadius(timeDifference);
+            }
         }else{
             throw new IllegalArgumentException();
         }

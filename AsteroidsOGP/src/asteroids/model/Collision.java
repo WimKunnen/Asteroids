@@ -147,7 +147,7 @@ public class Collision {
     public double getTimeToFirstEntityCollision(){
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
-        allEntities.addAll(this.world.getAllEntities());
+        allEntities.addAll(getWorld().getAllEntities());
         for (int i = 0; i < allEntities.size(); i++){
             for (int k = i+1; k < allEntities.size(); k++){
                 double newTime = allEntities.get(i).getTimeToCollision(allEntities.get(k));
@@ -170,7 +170,7 @@ public class Collision {
     public double getTimeToFirstBoundaryCollision() {
         double timeToFirstCollision = Double.POSITIVE_INFINITY;
         List<Entity> allEntities = new ArrayList<>();
-        allEntities.addAll(this.world.getAllEntities());
+        allEntities.addAll(getWorld().getAllEntities());
         for (int i = 0; i < allEntities.size(); i++) {
             double newTime = allEntities.get(i).getTimeToCollisionWithBoundary();
             if (newTime < timeToFirstCollision) {

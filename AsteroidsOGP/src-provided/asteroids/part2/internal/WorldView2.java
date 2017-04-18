@@ -175,7 +175,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			g2d.setFont(g2d.getFont().deriveFont(40f));
 			drawCenteredString(g2d, msg);
 			g2d.setFont(g2d.getFont().deriveFont(20f));
-			drawCenteredString(g2d, "Press ESC to exit ...", getHeight() / 3 * 2);
+			drawCenteredString(g2d, "Press ESC to continue ...", getHeight() / 3 * 2);
 		}
 	}
 
@@ -203,7 +203,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 	protected Visualization<F, Bullet> createBulletVisualization(Bullet bullet) {
 		Ship ship = null;
 		try {
-			ship = facade.getBulletShip(bullet);
+			ship = facade.getBulletSource(bullet);
 		} catch (ModelException e) {
 			handleError(e);
 		}
@@ -302,9 +302,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		try {
 			if (fire && isPlayerActive(player)) {
 				facade.fireBullet(player);
-				for (Ship enemy : facade.getWorldShips(world))
-					if ((enemy != player) && (Math.random() > 0.75))
-						facade.fireBullet(enemy);
+				doFireEnemy();
 				game.getSound().play("torpedo");
 			}
 		} catch (ModelException exc) {
@@ -312,6 +310,12 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		} finally {
 			fire = false;
 		}
+	}
+
+	protected void doFireEnemy() throws ModelException {
+		for (Ship enemy : facade.getWorldShips(world))
+			if ((enemy != player) && (Math.random() > 0.75))
+				facade.fireBullet(enemy);
 	}
 
 	protected boolean isPlayerActive(Ship ship) {
@@ -338,6 +342,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 	}
 
 	private void doTurn() {
+		double deltaAngle = this.deltaAngle;
 		if (!Double.isNaN(deltaAngle)) {
 			try {
 				if (deltaAngle != 0) {
@@ -352,6 +357,7 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 
 	private void evolveWorld(long millisSinceLastEvolve) {
 		try {
+			millisSinceLastEvolve = Math.max(5, millisSinceLastEvolve);
 			facade.evolve(world, millisSinceLastEvolve / 1000., this);
 		} catch (ModelException exc) {
 			handleError(exc);

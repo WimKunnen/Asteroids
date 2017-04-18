@@ -73,7 +73,7 @@ public class Ship extends Entity{
         this.setDensity(1.42E12);
         this.setMass(mass);
         this.totalMass = this.getMass();
-        this.setThrustForce(1.1E18);
+        this.setThrustForce(1.1E21);
     }
 
     /**

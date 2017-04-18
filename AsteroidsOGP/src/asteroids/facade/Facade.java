@@ -2,7 +2,7 @@ package asteroids.facade;
 
 import asteroids.model.*;
 import asteroids.part2.CollisionListener;
-import asteroids.part2.facade.IFacade;
+import asteroids.part3.facade.IFacade;
 import asteroids.util.ModelException;
 
 import java.util.Collection;
@@ -19,10 +19,10 @@ import java.util.Set;
  */
 
 
-public class Facade implements IFacade {
+public class Facade implements asteroids.part3.facade.IFacade  {
 
     /**
-     * Default initializer for the Ship class.
+     * Default initializer for the Facade class.
      */
     public Facade() {
     }
@@ -31,6 +31,16 @@ public class Facade implements IFacade {
      * SHIP
      *****/
 
+
+    /**
+     * Return the number of students in your team (used to adapt the tests for
+     * single-student groups).
+     *
+     * @return 1 or 2
+     */
+    public int getNbStudentsInTeam(){
+        return 2;
+    };
 
     /**
      * Returns a new Ship at the origin point (0,0) with a velocity of 0, a heading of 0 and a radius equal to the minimum radius.

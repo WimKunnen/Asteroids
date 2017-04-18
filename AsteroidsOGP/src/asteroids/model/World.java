@@ -362,4 +362,13 @@ public class World {
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();
     }
+
+//    public Set<Entity> getAllEntityOfType(Class<Entity> clas){
+//        for (Entity entity : getAllEntities()){
+//            if (entity instanceof clas){
+//
+//            }
+//        }
+//        return new HashSet<>();
+//    }
 }

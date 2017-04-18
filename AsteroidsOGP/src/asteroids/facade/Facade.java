@@ -2,11 +2,12 @@ package asteroids.facade;
 
 import asteroids.model.*;
 import asteroids.part2.CollisionListener;
-import asteroids.part3.facade.IFacade;
+import asteroids.part3.programs.IProgramFactory;
 import asteroids.util.ModelException;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -40,7 +41,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      */
     public int getNbStudentsInTeam(){
         return 2;
-    };
+    }
 
     /**
      * Returns a new Ship at the origin point (0,0) with a velocity of 0, a heading of 0 and a radius equal to the minimum radius.
@@ -340,7 +341,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      */
     public Set<? extends Ship> getWorldShips(World world) throws ModelException{
         HashSet<Ship> shipSet = new HashSet<>();
-        for (Entity entity : world.getAllEntitiesFrom(Ship.class)){
+        for (Entity entity : world.getAllEntitiesOfType(Ship.class)){
             shipSet.add((Ship)entity);
         }
         return shipSet;
@@ -352,7 +353,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      */
     public Set<? extends Bullet> getWorldBullets(World world) throws ModelException{
         HashSet<Bullet> bulletSet = new HashSet<>();
-        for (Entity entity : world.getAllEntitiesFrom(Bullet.class)){
+        for (Entity entity : world.getAllEntitiesOfType(Bullet.class)){
             bulletSet.add((Bullet)entity);
         }
         return bulletSet;
@@ -621,5 +622,257 @@ public class Facade implements asteroids.part3.facade.IFacade  {
         } catch (IllegalArgumentException e) {
             throw new ModelException(e);
         }
+    }
+
+    /**************
+     * WORLD: Asteroids and planetoids
+     *************/
+
+    /**
+     * Return all asteroids located in <code>world</code>.
+     */
+    //TODO!!!!
+    public Set<? extends Asteroid> getWorldAsteroids(World world) throws ModelException{
+        Set<Entity> allEntitiesOfType =  world.getAllEntitiesOfType(Asteroid.class);
+        Set<Asteroid> allAsteroids = new HashSet<>();
+        for (Entity entity : allEntitiesOfType)
+            allAsteroids.add((Asteroid)entity);
+        return allAsteroids;
+    }
+
+    /**
+     * Add <code>asteroid</code> to <code>world</code>.
+     */
+    public void addAsteroidToWorld(World world, Asteroid asteroid) throws ModelException{
+        try {
+            world.addEntity(asteroid);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Remove <code>asteroid</code> from <code>world</code>.
+     */
+    public void removeAsteroidFromWorld(World world, Asteroid asteroid) throws ModelException{
+        try {
+            world.removeEntity(asteroid);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Return all planetoids located in <code>world</code>.
+     */
+    //TODO!!!!!
+    public Set<? extends Planetoid> getWorldPlanetoids(World world) throws ModelException{
+        Set<Entity> allEntitiesOfType =  world.getAllEntitiesOfType(Planetoid.class);
+        Set<Planetoid> allAsteroids = new HashSet<>();
+        for (Entity entity : allEntitiesOfType)
+            allAsteroids.add((Planetoid)entity);
+        return allAsteroids;
+    }
+
+    /**
+     * Add <code>planetoid</code> to <code>world</code>.
+     */
+    public void addPlanetoidToWorld(World world, Planetoid planetoid) throws ModelException{
+        try {
+            world.addEntity(planetoid);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Remove <code>planetoid</code> from <code>world</code>.
+     */
+    public void removePlanetoidFromWorld(World world, Planetoid planetoid) throws ModelException{
+        world.removeEntity(planetoid);
+    }
+
+    /**************
+     * ASTEROID: Basic methods
+     *************/
+
+    /**
+     * Create a new non-null asteroid with the given position, velocity and
+     * radius.
+     *
+     * The asteroid is not located in a world.
+     */
+    public Asteroid createAsteroid(double x, double y, double xVelocity, double yVelocity, double radius)
+            throws ModelException{
+        try{
+            return new Asteroid(x, y, xVelocity, yVelocity, radius);
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Terminate <code>asteroid</code>.
+     */
+    public void terminateAsteroid(Asteroid asteroid) throws ModelException{
+        asteroid.terminate();
+    }
+
+    /**
+     * Check whether <code>asteroid</code> is terminated.
+     */
+    public boolean isTerminatedAsteroid(Asteroid asteroid) throws ModelException{
+        return asteroid.checkTermination();
+    }
+
+    /**
+     * Return the position of <code>asteroid</code> as an array containing the
+     * x-coordinate, followed by the y-coordinate.
+     */
+    public double[] getAsteroidPosition(Asteroid asteroid) throws ModelException{
+        return asteroid.getPosition().getValues();
+    }
+
+    /**
+     * Return the velocity of <code>asteroid</code> as an array containing the
+     * velocity along the X-axis, followed by the velocity along the Y-axis.
+     */
+    public double[] getAsteroidVelocity(Asteroid asteroid) throws ModelException{
+        return asteroid.getVelocity().getValues();
+    }
+
+    /**
+     * Return the radius of <code>asteroid</code>.
+     */
+    public double getAsteroidRadius(Asteroid asteroid) throws ModelException{
+        return asteroid.getRadius();
+    }
+
+    /**
+     * Return the mass of <code>asteroid</code>.
+     */
+    public double getAsteroidMass(Asteroid asteroid) throws ModelException{
+        return asteroid.getMassOfEntity();
+    }
+
+    /**
+     * Return the world in which <code>asteroid</code> is positioned.
+     */
+    public World getAsteroidWorld(Asteroid asteroid) throws ModelException{
+        return asteroid.getWorld();
+    }
+
+    /**************
+     * PLANETOID: Basic methods
+     *************/
+
+    /**
+     * Create a new non-null planetoid with the given position, velocity,
+     * radius, and total traveled distance.
+     *
+     * The planetoid is not located in a world.
+     */
+    public Planetoid createPlanetoid(double x, double y, double xVelocity, double yVelocity, double radius,
+                                     double totalTraveledDistance) throws ModelException{
+        try {
+            Planetoid planetoid = new Planetoid(x, y, xVelocity, yVelocity, radius);
+            planetoid.decrementRadiusDistance(totalTraveledDistance);
+            return planetoid;
+        }catch (IllegalArgumentException e){
+            throw new ModelException(e);
+        }
+    }
+
+    /**
+     * Terminate <code>planetoid</code>.
+     */
+    public void terminatePlanetoid(Planetoid planetoid) throws ModelException{
+        planetoid.terminate();
+    }
+
+    /**
+     * Check whether <code>planetoid</code> is terminated.
+     */
+    public boolean isTerminatedPlanetoid(Planetoid planetoid) throws ModelException{
+        return planetoid.checkTermination();
+    }
+
+    /**
+     * Return the position of <code>planetoid</code> as an array containing the
+     * x-coordinate, followed by the y-coordinate.
+     */
+    public double[] getPlanetoidPosition(Planetoid planetoid) throws ModelException{
+        return planetoid.getPosition().getValues();
+    }
+
+    /**
+     * Return the velocity of <code>planetoid</code> as an array containing the
+     * velocity along the X-axis, followed by the velocity along the Y-axis.
+     */
+    public double[] getPlanetoidVelocity(Planetoid planetoid) throws ModelException{
+        return planetoid.getVelocity().getValues();
+    }
+
+    /**
+     * Return the radius of <code>planetoid</code>.
+     */
+    public double getPlanetoidRadius(Planetoid planetoid) throws ModelException{
+        return planetoid.getRadius();
+    }
+
+    /**
+     * Return the mass of <code>planetoid</code>.
+     */
+    public double getPlanetoidMass(Planetoid planetoid) throws ModelException{
+        return planetoid.getMassOfEntity();
+    }
+
+    /**
+     * Return the total traveled distance of <code>planetoid</code>.
+     */
+    public double getPlanetoidTotalTraveledDistance(Planetoid planetoid) throws ModelException{
+        return planetoid.getDistanceTravelled();
+    }
+
+    /**
+     * Return the world in which <code>planetoid</code> is positioned.
+     */
+    public World getPlanetoidWorld(Planetoid planetoid) throws ModelException{
+        return planetoid.getWorld();
+    }
+
+    /**********
+     * PROGRAMS
+     **********/
+
+    /**
+     * Return the program loaded on the given ship.
+     */
+    public Program getShipProgram(Ship ship) throws ModelException{
+        return ship.getProgram();
+    }
+
+    /**
+     * Load the given program on the given ship.
+     */
+    public void loadProgramOnShip(Ship ship, Program program) throws ModelException{
+        ship.setProgram(program);
+    }
+
+    /**
+     * Execute the program loaded on the given ship during the given period of
+     * time. The ship is positioned in some world. Returns null if the program
+     * is not completely executed. Otherwise, returns the objects that have been
+     * printed.
+     */
+    public List<Object> executeProgram(Ship ship, double dt) throws ModelException{
+        return null;
+    }
+
+    /**
+     * Creates a new program factory.
+     */
+    public IProgramFactory<?, ?, ?, ? extends Program> createProgramFactory() throws ModelException{
+        return null;
     }
 }

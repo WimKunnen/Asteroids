@@ -487,7 +487,15 @@ public class Ship extends Entity{
         else{
             this.terminate();
         }
+    }
 
+    private Program program;
 
+    public Program getProgram(){
+        return this.program;
+    }
+
+    public void setProgram(Program newProgram){
+        this.program = newProgram;
     }
 }

@@ -176,7 +176,7 @@ public class World {
      * Return a set of all entities from a given subclass of Entity in this world.
      * @see implementation
      */
-    public Set<Entity> getAllEntitiesFrom(Class c){
+    public Set<Entity> getAllEntitiesOfType(Class c){
         HashSet<Entity> allEntitiesFrom = new HashSet<>();
         for (Entity entity : getAllEntities()){
             if(c.isInstance(entity)){
@@ -362,13 +362,4 @@ public class World {
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();
     }
-
-//    public Set<Entity> getAllEntityOfType(Class<Entity> clas){
-//        for (Entity entity : getAllEntities()){
-//            if (entity instanceof clas){
-//
-//            }
-//        }
-//        return new HashSet<>();
-//    }
 }

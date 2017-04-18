@@ -17,7 +17,7 @@ public class Planetoid extends MinorPlanet {
         this.setRadius(this.getMinimumRadius());
     }
 
-    protected void decrementRadius(double timeDifference){
+    public void decrementRadius(double timeDifference){
         double velocity = this.getVelocity().vectorLength();
         double distanceTravelled = velocity * timeDifference;
 
@@ -27,6 +27,14 @@ public class Planetoid extends MinorPlanet {
 //        Vector travel = position2.sum(position1.negate());
 //        double distanceTravelled = travel.vectorLength();
 
+        double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
+        if (newRadius < 5){
+            this.terminate();
+        }
+        this.setRadius(newRadius);
+    }
+
+    public void decrementRadiusDistance(double distanceTravelled){
         double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
         if (newRadius < 5){
             this.terminate();
@@ -72,6 +80,42 @@ public class Planetoid extends MinorPlanet {
             if (getWorld() != null)
                 this.getWorld().removeEntity(this);
 
+        }
+    }
+
+    private double distanceTravelled;
+
+    public double getDistanceTravelled(){
+        return distanceTravelled;
+    }
+
+    protected void travel(double distance){
+        this.distanceTravelled += distance;
+    }
+
+    /**
+     * Changes the position of the entity by the velocity * time difference.
+     *
+     * @param   timeDifference
+     *          The difference in time between two frames.
+     *
+     * @post    The new position is equal to the sum of the old position and the velocity times the time difference.
+     *          | new.getPosition == this.getPosition + this.getVelocity * timeDifference
+     *
+     * @throws  IllegalArgumentException
+     *          The given time difference is smaller than zero.
+     *          | !isValidTimeDifference
+     */
+    @Override
+    public void move(double timeDifference) throws IllegalArgumentException{
+
+        if(isValidTimeDifference(timeDifference)){
+            setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
+            double distanceTravelled = timeDifference * this.getVelocity().vectorLength();
+            this.travel(distanceTravelled);
+            this.decrementRadius(timeDifference);
+        }else{
+            throw new IllegalArgumentException();
         }
     }
 }

@@ -192,9 +192,6 @@ public abstract class Entity {
 
         if(isValidTimeDifference(timeDifference)){
             setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
-            if (this instanceof Planetoid){
-                ((Planetoid) this).decrementRadius(timeDifference);
-            }
         }else{
             throw new IllegalArgumentException();
         }
@@ -207,7 +204,7 @@ public abstract class Entity {
      * @param   timeDifference
      *          The difference in time between two moments used in the thrust() method.
      */
-    private boolean isValidTimeDifference(double timeDifference){
+    protected boolean isValidTimeDifference(double timeDifference){
         return timeDifference >= 0;
     }
 

@@ -5,8 +5,6 @@ import org.junit.Before;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.*;
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 
 import asteroids.model.Ship;
 
@@ -114,8 +112,8 @@ public class TestWorld {
     @Test
     public void addEntityTest(){
         assertEquals(3,world.getAllEntities().size());
-        assertEquals(2,world.getAllEntitiesFrom(Ship.class).size());
-        assertEquals(1,world.getAllEntitiesFrom(Bullet.class).size());
+        assertEquals(2,world.getAllEntitiesOfType(Ship.class).size());
+        assertEquals(1,world.getAllEntitiesOfType(Bullet.class).size());
     }
 
     /**
@@ -128,13 +126,13 @@ public class TestWorld {
         world.removeEntity(ship1);
 
         assertEquals(2,world.getAllEntities().size());
-        assertEquals(1,world.getAllEntitiesFrom(Ship.class).size());
+        assertEquals(1,world.getAllEntitiesOfType(Ship.class).size());
         assertFalse(world.entityPositionMap.containsValue(ship1));
 
         world.removeEntity(ship2);
 
         assertEquals(1,world.getAllEntities().size());
-        assertEquals(0,world.getAllEntitiesFrom(Ship.class).size());
+        assertEquals(0,world.getAllEntitiesOfType(Ship.class).size());
     }
 
 //    /**

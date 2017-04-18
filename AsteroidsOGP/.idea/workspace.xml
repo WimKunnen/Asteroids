@@ -2,90 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/model/Program.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/program/Expression.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/program/FunctionDefinition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/program/FunctionInvocation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/program/ProgamFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/asteroids/program/ProgramStatement.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/facade/Facade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Asteroid.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Bullet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Collision.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Entity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/MinorPlanet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Planetoid.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/Part1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/facade/IFacade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/internal/AsteroidsFrame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/internal/AsteroidsFrame$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/internal/AsteroidsFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part1/internal/AsteroidsView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/CollisionListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/Part2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/facade/IFacade.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/AsteroidsFrame2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/AsteroidsMenu2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/BulletVisualization.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/CollisionVisualization.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/CompositeVisualization.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/DrawContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/Drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/Explosion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/FileSoundManager$Loop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/FileSoundManager$Play.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/FileSoundManager$Request.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/FileSoundManager$Stop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/FileSoundManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/NullSound.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/ShipVisualization.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/Sound.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/Visualization.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/WorldView2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part2/internal/WorldView2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/asteroid1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/blip.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/deathstar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/explosion.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/explosions.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/game-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/game-theme.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/load-error.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/menu-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/menu-theme.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/sounds.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/sphere.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/resources/torpedo.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/ModelException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/Util.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/internal/InternalUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/internal/ResourceUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/internal/SuccessOrFail$DefaultSuccessOrFail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/internal/SuccessOrFail$WrappedSuccessOrFail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/util/internal/SuccessOrFail.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/asteroid1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/blip.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/deathstar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/explosion.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/explosions.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/game-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/game-theme.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/load-error.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/menu-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/menu-theme.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/sounds.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/sphere.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src-provided/asteroids/resources/torpedo.wav" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/part2/Part2.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/part2/Part2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/CompositeVisualization.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/CompositeVisualization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/WorldView2.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/part2/internal/WorldView2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src-provided/asteroids/util/internal/InternalUtils.java" afterPath="$PROJECT_DIR$/src-provided/asteroids/util/internal/InternalUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" afterPath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/TestWorld.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/TestWorld.java" />
@@ -138,55 +58,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FunctionInvocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/program/FunctionInvocation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Expression.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/program/Expression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProgamFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/program/ProgamFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+            <state relative-caret-position="12750">
+              <caret line="860" column="0" lean-forward="true" selection-start-line="860" selection-start-column="0" selection-end-line="860" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#882#883#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IFacade.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="498" column="34" lean-forward="false" selection-start-line="498" selection-start-column="34" selection-end-line="498" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#16572#16573#0" expanded="true" />
+                <element signature="e#16607#16608#0" expanded="true" />
+                <element signature="e#16656#16657#0" expanded="true" />
+                <element signature="e#16697#16698#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part3/facade/IFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="655">
+              <caret line="260" column="100" lean-forward="true" selection-start-line="235" selection-start-column="4" selection-end-line="260" selection-end-column="100" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Planetoid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Planetoid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="114" column="43" lean-forward="true" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
+              <folding>
+                <element signature="e#2923#2924#0" expanded="true" />
+                <element signature="e#2963#2964#0" expanded="true" />
+                <element signature="e#3008#3009#0" expanded="true" />
+                <element signature="e#3058#3059#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="206" column="13" lean-forward="false" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
+              <folding>
+                <element signature="e#6732#6733#0" expanded="true" />
+                <element signature="e#6774#6775#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="163" column="38" lean-forward="true" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -260,12 +204,8 @@
         <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Asteroid.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Collision.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
         <option value="$PROJECT_DIR$/src-provided/asteroids/part2/Part2.java" />
         <option value="$PROJECT_DIR$/src-provided/asteroids/part2/internal/AsteroidsFrame2.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/ProgramStatements.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Program.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Action.java" />
@@ -273,6 +213,10 @@
         <option value="$PROJECT_DIR$/src/asteroids/program/ProgramStatement.java" />
         <option value="$PROJECT_DIR$/src/asteroids/program/ProgamFactory.java" />
         <option value="$PROJECT_DIR$/src-provided/asteroids/part3/programs/IProgramFactory.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
       </list>
     </option>
@@ -326,99 +270,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src-provided" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asteroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src-provided" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asteroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="part3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src-provided" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asteroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="part3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AsteroidsOGP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src-provided" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asteroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="part2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,10 +289,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="asteroids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="program" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1178,7 +1026,7 @@
       <workItem from="1492451022872" duration="23000" />
       <workItem from="1492459601488" duration="588000" />
       <workItem from="1492499173016" duration="10011000" />
-      <workItem from="1492548169031" duration="1426000" />
+      <workItem from="1492548169031" duration="3896000" />
     </task>
     <servers />
   </component>
@@ -1215,7 +1063,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71786000" />
+    <option name="totallyTimeSpent" value="74256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1459,114 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12090">
-          <caret line="845" column="7" lean-forward="false" selection-start-line="845" selection-start-column="7" selection-end-line="845" selection-end-column="7" />
-          <folding>
-            <marker date="1492534707000" expanded="true" signature="6530:6791" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="6856:6866" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="6893:6899" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="6921:7006" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="7060:7136" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="7178:7247" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="7308:7318" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="7346:7352" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="7359:8395" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="8448:8711" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="8717:8796" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="8833:9433" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="9492:9690" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="9696:9743" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="9786:9796" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="9817:9823" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="9829:9931" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="9965:9976" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="10055:10061" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="10067:10169" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="10203:10214" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="10293:10299" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="10319:10420" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="10476:10542" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="10577:10744" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="10791:10953" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="10959:11011" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="11016:11037" ph="@{...}" />
-            <marker date="1492534707000" expanded="false" signature="11067:11077" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="11096:11102" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="11108:11307" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="11356:11678" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="11711:12593" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="12677:13279" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="13285:13694" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="13767:14058" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="14064:14350" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="14423:14733" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="14739:15127" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="15190:15398" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="15404:15707" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="15759:15957" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="15963:16285" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="16333:16474" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="16479:16804" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="16853:16998" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="17003:17322" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="17369:17508" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="17513:17841" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="17891:18039" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="18045:18229" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="18273:19039" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="19047:19936" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="20015:20948" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="20954:21208" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="21260:22447" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="22453:22663" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="22706:23986" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="23992:24134" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="24188:24893" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="24899:25333" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="25416:26378" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="26384:26476" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="26515:26525" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="26593:26599" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="26605:26692" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="26731:26741" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="26809:26815" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="26821:26885" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="26923:26933" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="26977:26983" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="26989:27068" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="27133:27312" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="27318:27504" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="27552:28198" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="28216:28282" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="28318:28413" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="28447:28457" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="28477:28483" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="28488:28658" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="28707:28827" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="28833:28905" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="28938:28948" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="29003:29009" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="29016:29107" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="29143:29153" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="29192:29198" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="29223:29302" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="29349:29457" ph="/**...*/" />
-            <marker date="1492534707000" expanded="false" signature="29495:29505" ph=" { " />
-            <marker date="1492534707000" expanded="false" signature="29530:29536" ph=" }" />
-            <marker date="1492534707000" expanded="true" signature="29542:29652" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="29680:29791" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="29827:30060" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="30109:30482" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="30488:30810" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="30874:31219" ph="{...}" />
-            <marker date="1492534707000" expanded="true" signature="31225:31466" ph="/**...*/" />
-            <marker date="1492534707000" expanded="true" signature="31519:32004" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/resources/deathstar.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1586,32 +1326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="76" column="81" lean-forward="false" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5240">
-          <caret line="75" column="34" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Planetoid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="66" column="1" lean-forward="false" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="353" column="33" lean-forward="true" selection-start-line="353" selection-start-column="33" selection-end-line="353" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1765,23 +1479,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        <state relative-caret-position="258">
+          <caret line="206" column="13" lean-forward="false" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#6732#6733#0" expanded="true" />
+            <element signature="e#6774#6775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="163" column="38" lean-forward="true" selection-start-line="163" selection-start-column="38" selection-end-line="163" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Planetoid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="114" column="43" lean-forward="true" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
+          <folding>
+            <element signature="e#2923#2924#0" expanded="true" />
+            <element signature="e#2963#2964#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part3/facade/IFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="655">
+          <caret line="260" column="100" lean-forward="true" selection-start-line="235" selection-start-column="4" selection-end-line="260" selection-end-column="100" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="498" column="34" lean-forward="false" selection-start-line="498" selection-start-column="34" selection-end-line="498" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#16572#16573#0" expanded="true" />
+            <element signature="e#16607#16608#0" expanded="true" />
+            <element signature="e#16656#16657#0" expanded="true" />
+            <element signature="e#16697#16698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12750">
+          <caret line="860" column="0" lean-forward="true" selection-start-line="860" selection-start-column="0" selection-end-line="860" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

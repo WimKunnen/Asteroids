@@ -114,8 +114,8 @@ public class TestWorld {
     @Test
     public void addEntityTest(){
         assertEquals(3,world.getAllEntities().size());
-        assertEquals(2,world.getAllShips().size());
-        assertEquals(1,world.getAllBullets().size());
+        assertEquals(2,world.getAllEntitiesFrom(Ship.class).size());
+        assertEquals(1,world.getAllEntitiesFrom(Bullet.class).size());
     }
 
     /**
@@ -128,13 +128,13 @@ public class TestWorld {
         world.removeEntity(ship1);
 
         assertEquals(2,world.getAllEntities().size());
-        assertEquals(1,world.getAllShips().size());
+        assertEquals(1,world.getAllEntitiesFrom(Ship.class).size());
         assertFalse(world.entityPositionMap.containsValue(ship1));
 
         world.removeEntity(ship2);
 
         assertEquals(1,world.getAllEntities().size());
-        assertEquals(0,world.getAllShips().size());
+        assertEquals(0,world.getAllEntitiesFrom(Ship.class).size());
     }
 
 //    /**

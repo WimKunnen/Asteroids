@@ -96,24 +96,26 @@ public class World {
      */
     public void terminate(){
         this.isTerminated = true;
-        for (Entity entity : getAllEntities()){
+        Set<Entity> allEntities = new HashSet<>();
+        allEntities.addAll(getAllEntities());
+        for (Entity entity : allEntities){
             removeEntity(entity);
         }
     }
 
-    /**
-     * Variable registering all ships in the world as a set.
-     */
-    private HashSet<Ship> allShips = new HashSet<>();
-    /**
-     * Variable registering all bullets in the world as a set.
-     */
-    private HashSet<Bullet> allBullets = new HashSet<>();
-
-    /**
-     * Variable registering all minor planets in the world as a set.
-     */
-    private HashSet<MinorPlanet> allMinorPlanets = new HashSet<>();
+//    /**
+//     * Variable registering all ships in the world as a set.
+//     */
+//    private HashSet<Ship> allShips = new HashSet<>();
+//    /**
+//     * Variable registering all bullets in the world as a set.
+//     */
+//    private HashSet<Bullet> allBullets = new HashSet<>();
+//
+//    /**
+//     * Variable registering all minor planets in the world as a set.
+//     */
+//    private HashSet<MinorPlanet> allMinorPlanets = new HashSet<>();
 
     private HashSet<Entity> allEntities = new HashSet<>();
 
@@ -155,29 +157,29 @@ public class World {
     public Set<Entity> getAllEntities() {
         return this.allEntities;
     }
-    /**
-     * Return a set of all ships in this world.
-     * @see implementation
-     */
-    public Set<Ship> getAllShips() {
-        return this.allShips;
-    }
-    /**
-     * Return a set of all bullets in this world.
-     * @see implementation
-     */
-    public Set<Bullet> getAllBullets() {
-        return this.allBullets;
-    }
+//    /**
+//     * Return a set of all ships in this world.
+//     * @see implementation
+//     */
+//    public Set<Ship> getAllShips() {
+//        return this.allShips;
+//    }
+//    /**
+//     * Return a set of all bullets in this world.
+//     * @see implementation
+//     */
+//    public Set<Bullet> getAllBullets() {
+//        return this.allBullets;
+//    }
 
     /**
-     * Return a set of all minor planets in this world.
+     * Return a set of all entities from a given subclass of Entity in this world.
      * @see implementation
      */
     public Set<Entity> getAllEntitiesFrom(Class c){
         HashSet<Entity> allEntitiesFrom = new HashSet<>();
         for (Entity entity : getAllEntities()){
-            if(entity instanceof c){
+            if(c.isInstance(entity)){
                 allEntitiesFrom.add(entity);
             }
         }
@@ -241,19 +243,11 @@ public class World {
                 throw new IllegalArgumentException("Entity not in this world!");
             }
 
-            if (!getAllEntities().contains(entity)){
+            if (getAllEntities().contains(entity)){
+                allEntities.remove(entity);
+            }
+            else{
                 throw new IllegalArgumentException("Entity not in this world!");
-            }
-
-            if (entity instanceof Ship) {
-                if (!getAllShips().contains(entity))
-                    throw new IllegalArgumentException();
-                allShips.remove(entity);
-            }
-            else if (entity instanceof Bullet){
-                if (!getAllBullets().contains(entity))
-                    throw new IllegalArgumentException();
-                allBullets.remove(entity);
             }
             entity.setWorld(null);
         }

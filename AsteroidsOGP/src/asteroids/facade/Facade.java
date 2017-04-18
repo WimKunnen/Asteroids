@@ -6,6 +6,7 @@ import asteroids.part2.facade.IFacade;
 import asteroids.util.ModelException;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -328,14 +329,23 @@ public class Facade implements IFacade {
      * Return all ships located within the given world.
      */
     public Set<? extends Ship> getWorldShips(World world) throws ModelException{
-        return world.getAllShips();
+        HashSet<Ship> shipSet = new HashSet<>();
+        for (Entity entity : world.getAllEntitiesFrom(Ship.class)){
+            shipSet.add((Ship)entity);
+        }
+        return shipSet;
+
     }
 
     /**
      * Return all bullets located in the given world.
      */
     public Set<? extends Bullet> getWorldBullets(World world) throws ModelException{
-        return world.getAllBullets();
+        HashSet<Bullet> bulletSet = new HashSet<>();
+        for (Entity entity : world.getAllEntitiesFrom(Bullet.class)){
+            bulletSet.add((Bullet)entity);
+        }
+        return bulletSet;
     }
 
     /**

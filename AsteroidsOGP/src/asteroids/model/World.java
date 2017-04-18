@@ -111,6 +111,13 @@ public class World {
     private HashSet<Bullet> allBullets = new HashSet<>();
 
     /**
+     * Variable registering all minor planets in the world as a set.
+     */
+    private HashSet<MinorPlanet> allMinorPlanets = new HashSet<>();
+
+    private HashSet<Entity> allEntities = new HashSet<>();
+
+    /**
      * Variable registering all entities in the world as a hashmap, with the entity's position as a key.
      */
     public HashMap<Vector, Entity> entityPositionMap = new HashMap<>();
@@ -146,10 +153,7 @@ public class World {
      * @see implementation
      */
     public Set<Entity> getAllEntities() {
-        Set<Entity> allEntities = new HashSet<>();
-        allEntities.addAll(getAllBullets());
-        allEntities.addAll(getAllShips());
-        return allEntities;
+        return this.allEntities;
     }
     /**
      * Return a set of all ships in this world.
@@ -167,6 +171,20 @@ public class World {
     }
 
     /**
+     * Return a set of all minor planets in this world.
+     * @see implementation
+     */
+    public Set<Entity> getAllEntitiesFrom(Class c){
+        HashSet<Entity> allEntitiesFrom = new HashSet<>();
+        for (Entity entity : getAllEntities()){
+            if(entity instanceof c){
+                allEntitiesFrom.add(entity);
+            }
+        }
+        return allEntitiesFrom;
+    }
+
+    /**
      * Add an entity to this world.
      *
      * @param entity
@@ -180,11 +198,17 @@ public class World {
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
-            if (entity instanceof Ship) {
-                allShips.add((Ship) entity);
-            } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
-                allBullets.add((Bullet) entity);
+            if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
+                allEntities.add(entity);
             }
+//            if (entity instanceof Ship) {
+//                allShips.add((Ship) entity);
+//            } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
+//                allBullets.add((Bullet) entity);
+//            }
+//            else if (entity instanceof MinorPlanet){
+//                allMinorPlanets.add((MinorPlanet)entity);
+//            }
         }
         else{
             if(entity instanceof Bullet){

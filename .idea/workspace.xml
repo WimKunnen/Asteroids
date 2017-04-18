@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="364e285f-0322-4f79-9dc4-516d835c5e56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Collision.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Collision.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/MinorPlanet.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/MinorPlanet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Planetoid.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Planetoid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="196" column="13" lean-forward="true" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="13" />
+            <state relative-caret-position="183">
+              <caret line="172" column="27" lean-forward="false" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,19 +83,22 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="487" column="29" lean-forward="true" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
+            <state relative-caret-position="100">
+              <caret line="448" column="46" lean-forward="true" selection-start-line="448" selection-start-column="46" selection-end-line="448" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="327" column="40" lean-forward="false" selection-start-line="327" selection-start-column="40" selection-end-line="327" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="287">
+              <caret line="176" column="41" lean-forward="false" selection-start-line="176" selection-start-column="41" selection-end-line="176" selection-end-column="41" />
+              <folding>
+                <element signature="e#4023#4024#0" expanded="true" />
+                <element signature="e#4062#4063#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,9 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getveloci</find>
-      <find>GETRADIUS</find>
-      <find>isvalidra</find>
       <find>getdistance</find>
       <find>getdist</find>
       <find>overlap</find>
@@ -144,8 +139,11 @@
       <find>getcollisionpositionwith</find>
       <find>minimumrad</find>
       <find>getveloc</find>
-      <find>move</find>
       <find>moveallen</find>
+      <find>move</find>
+      <find>getall</find>
+      <find>addenti</find>
+      <find>setworld</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,8 +167,8 @@
         <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Collision.java" />
         <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java" />
         <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Planetoid.java" />
-        <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Entity.java" />
+        <option value="$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java" />
       </list>
     </option>
   </component>
@@ -774,7 +772,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="e#4023#4024#0" expanded="true" />
+            <element signature="e#4062#4063#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +819,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#4023#4024#0" expanded="true" />
+            <element signature="e#4062#4063#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,14 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="487" column="29" lean-forward="true" selection-start-line="487" selection-start-column="29" selection-end-line="487" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Collision.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2020">
@@ -1166,20 +1162,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java">
+    <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="327" column="40" lean-forward="false" selection-start-line="327" selection-start-column="40" selection-end-line="327" selection-end-column="40" />
+        <state relative-caret-position="100">
+          <caret line="448" column="46" lean-forward="true" selection-start-line="448" selection-start-column="46" selection-end-line="448" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="196" column="13" lean-forward="true" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="13" />
+        <state relative-caret-position="183">
+          <caret line="172" column="27" lean-forward="false" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsteroidsOGP/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="176" column="41" lean-forward="false" selection-start-line="176" selection-start-column="41" selection-end-line="176" selection-end-column="41" />
+          <folding>
+            <element signature="e#4023#4024#0" expanded="true" />
+            <element signature="e#4062#4063#0" expanded="true" />
           </folding>
         </state>
       </provider>

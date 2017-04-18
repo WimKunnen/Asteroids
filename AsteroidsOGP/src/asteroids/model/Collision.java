@@ -64,7 +64,7 @@ public class Collision {
             Ship ship1 = (Ship)entity1;
             Ship ship2 = (Ship)entity2;
 
-            List<Ship> shipPair = new ArrayList<>();
+            ArrayList<Ship> shipPair = new ArrayList<>();
 
             shipPair.add(ship1);
             shipPair.add(ship2);
@@ -79,14 +79,41 @@ public class Collision {
             entity2.setVelocity(velocity2);
         }
 
+        else if (entity1 instanceof MinorPlanet && entity2 instanceof MinorPlanet){
+            MinorPlanet planet1 = (MinorPlanet)entity1;
+            MinorPlanet planet2 = (MinorPlanet)entity2;
+
+            List<MinorPlanet> planetPair = new ArrayList<>();
+
+            planetPair.add(planet1);
+            planetPair.add(planet2);
+
+            Vector velocity1 = new Vector(entity1.getVelocity().getX() +
+                    Jx(planetPair)/planet1.getMassOfEntity(),
+                    entity1.getVelocity().getY() + Jy(planetPair)/planet1.getMassOfEntity());
+            Vector velocity2 = new Vector(entity2.getVelocity().getX() -
+                    Jx(planetPair)/planet2.getMassOfEntity(),
+                    entity2.getVelocity().getY() - Jy(planetPair)/planet2.getMassOfEntity());
+            entity1.setVelocity(velocity1);
+            entity2.setVelocity(velocity2);
+        }
+
         else if (entity1 instanceof Bullet && entity2 instanceof Ship)
-            resolveBulletShipCollision((Ship) entity2,(Bullet) entity1);
+            resolveBulletEntityCollision((Ship) entity2,(Bullet) entity1);
         else if (entity1 instanceof Ship && entity2 instanceof Bullet)
-            resolveBulletShipCollision((Ship) entity1,(Bullet) entity2);
+            resolveBulletEntityCollision((Ship) entity1,(Bullet) entity2);
         else if (entity1 instanceof Bullet && entity2 instanceof Bullet && ((Bullet) entity1).hasBeenOutOfShip() && ((Bullet) entity2).hasBeenOutOfShip()){
             entity1.terminate();
             entity2.terminate();
         }
+        else if (entity1 instanceof Ship && entity2 instanceof Asteroid)
+            entity1.terminate();
+        else if (entity1 instanceof Asteroid && entity2 instanceof Ship)
+            entity2.terminate();
+        else if (entity1 instanceof Ship && entity2 instanceof Planetoid)
+            ((Ship) entity1).teleportRandomLocation();
+        else if (entity1 instanceof Planetoid && entity2 instanceof Ship)
+            ((Ship) entity2).teleportRandomLocation();
 
 
     }
@@ -94,18 +121,18 @@ public class Collision {
     /**
      * Resolve the collision between a bullet and a ship.
      *
-     * @param   ship
-     *          The colliding ship
+     * @param   entity
+     *          The colliding entity
      * @param   bullet
      *          The colliding bullet
      */
-    public void resolveBulletShipCollision(Ship ship, Bullet bullet){
-        if (bullet.getSource() == ship && bullet.hasBeenOutOfShip()){
-            ship.reload(bullet);
+    public void resolveBulletEntityCollision(Entity entity, Bullet bullet){
+        if (bullet.getSource() == (Ship)entity && bullet.hasBeenOutOfShip()){
+            ((Ship)entity).reload(bullet);
         }
 
-        else if (bullet.getSource() != ship) {
-            ship.terminate();
+        else if (bullet.getSource() != entity) {
+            entity.terminate();
             bullet.terminate();
         }
     }
@@ -201,12 +228,28 @@ public class Collision {
      *
      * @see implementation
      */
-    private double J(List<Ship> shipPair) {
+    private double J(ArrayList<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return 2 * ship1.getTotalMass() * ship2.getTotalMass() *
                 ship1.deltaV(ship2).scalarProduct(ship1.deltaR(ship2))
                 / ( ship1.sigma(ship2) * (ship1.getTotalMass() + ship2.getTotalMass()));
+    }
+
+    /**
+     * J as defined in the assignment.
+     *
+     * @param planetPair
+     *        a list of two minor planets.
+     *
+     * @see implementation
+     */
+    private double J(List<MinorPlanet> planetPair) {
+        MinorPlanet planet1 = planetPair.get(0);
+        MinorPlanet planet2 = planetPair.get(1);
+        return 2 * planet1.getMassOfEntity() * planet2.getMassOfEntity() *
+                planet1.deltaV(planet2).scalarProduct(planet1.deltaR(planet2))
+                / ( planet1.sigma(planet2) * (planet1.getMassOfEntity() + planet2.getMassOfEntity()));
     }
 
     /**
@@ -217,10 +260,24 @@ public class Collision {
      *
      * @see implementation
      */
-    private double Jx(List<Ship> shipPair) {
+    private double Jx(ArrayList<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return J(shipPair) * ship1.deltaR(ship2).getX() / ship1.sigma(ship2);
+    }
+
+    /**
+     * J_x as defined in the assignment.
+     *
+     * @param planetPair
+     *        a list of two minor planets
+     *
+     * @see implementation
+     */
+    private double Jx(List<MinorPlanet> planetPair) {
+        MinorPlanet planet1 = planetPair.get(0);
+        MinorPlanet planet2 = planetPair.get(1);
+        return J(planetPair) * planet1.deltaR(planet2).getX() / planet1.sigma(planet2);
     }
 
     /**
@@ -231,9 +288,23 @@ public class Collision {
      *
      * @see implementation
      */
-    private double Jy(List<Ship> shipPair) {
+    private double Jy(ArrayList<Ship> shipPair) {
         Ship ship1 = shipPair.get(0);
         Ship ship2 = shipPair.get(1);
         return J(shipPair) * ship1.deltaR(ship2).getY() / ship1.sigma(ship2);
+    }
+
+    /**
+     * J_y as defined in the assignment.
+     *
+     * @param planetPair
+     *        a list of two planets
+     *
+     * @see implementation
+     */
+    private double Jy(List<MinorPlanet> planetPair) {
+        MinorPlanet planet1 = planetPair.get(0);
+        MinorPlanet planet2 = planetPair.get(1);
+        return J(planetPair) * planet1.deltaR(planet2).getY() / planet1.sigma(planet2);
     }
 }

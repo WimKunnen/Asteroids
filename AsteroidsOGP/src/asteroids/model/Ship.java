@@ -65,25 +65,25 @@ public class Ship extends Entity{
      * @param   mass
      *          The mass of this ship.
      */
-    public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass){
+    public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass)
+            throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
         this.setRadius(radius);
         this.setHeading(heading);
-        this.setDensity(1.42 * Math.pow(10, 12));
+        this.setDensity(1.42E12);
         this.setMass(mass);
         this.totalMass = this.getMass();
-        this.setThrustForce(1.1 *  Math.pow(10, 21));
+        this.setThrustForce(1.1E18);
     }
 
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
      */
     public Ship(){
-
         super();
         this.setRadius(this.getMinimumRadius());
         this.setDensity(1.42E12);
-        this.setThrustForce(1.1 *  Math.pow(10, 21));
+        this.setThrustForce(1.1E18);
         this.setHeading(0);
     }
 
@@ -473,5 +473,7 @@ public class Ship extends Entity{
         }
 
     }
+
+    public void teleportRandomLocation(){}
 
 }

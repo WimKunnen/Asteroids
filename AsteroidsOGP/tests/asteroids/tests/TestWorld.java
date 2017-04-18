@@ -138,11 +138,11 @@ public class TestWorld {
     }
 
 //    /**
-//     * A test suit for the resolveBulletShipCollision() method of the World class.
+//     * A test suit for the resolveBulletEntityCollision() method of the World class.
 //     */
 //    @Test
 //    public void resolveBulletShipCollisionTest(){
-//        world.resolveBulletShipCollision(ship1,bullet2);
+//        world.resolveBulletEntityCollision(ship1,bullet2);
 //        assertTrue(ship1.checkTermination());
 //        assertTrue(bullet2.checkTermination());
 //    }

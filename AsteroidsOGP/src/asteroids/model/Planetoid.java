@@ -36,6 +36,7 @@ public class Planetoid extends MinorPlanet {
 
     @Override
     public void terminate(){
+        World thisWorld = getWorld();
 
         if (this.getRadius() >= 30){
             double positionAngle = Math.random() * 2 * Math.PI;
@@ -50,18 +51,27 @@ public class Planetoid extends MinorPlanet {
             Vector positionB = positionA.negate();
 
             Asteroid childA = new Asteroid();
-            childA.setPosition(positionA);
+            childA.setPosition(positionA.sum(getPosition()));
             childA.setVelocity(velocityA);
+            childA.setRadius(this.getRadius()/2);
 
             Asteroid childB = new Asteroid();
-            childB.setPosition(positionB);
+            childB.setPosition(positionB.sum(getPosition()));
             childB.setVelocity(velocityB);
+            childB.setRadius(this.getRadius()/2);
+
+            this.isTerminated = true;
+            if (getWorld() != null)
+                this.getWorld().removeEntity(this);
+
+            thisWorld.addEntity(childA);
+            thisWorld.addEntity(childB);
         }
+        else {
+            this.isTerminated = true;
+            if (getWorld() != null)
+                this.getWorld().removeEntity(this);
 
-        this.isTerminated = true;
-        if (getWorld() != null)
-            this.getWorld().removeEntity(this);
-
-
+        }
     }
 }

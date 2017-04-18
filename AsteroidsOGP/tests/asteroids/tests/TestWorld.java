@@ -137,15 +137,15 @@ public class TestWorld {
         assertEquals(0,world.getAllShips().size());
     }
 
-    /**
-     * A test suit for the resolveBulletShipCollision() method of the World class.
-     */
-    @Test
-    public void resolveBulletShipCollisionTest(){
-        world.resolveBulletShipCollision(ship1,bullet2);
-        assertTrue(ship1.checkTermination());
-        assertTrue(bullet2.checkTermination());
-    }
+//    /**
+//     * A test suit for the resolveBulletShipCollision() method of the World class.
+//     */
+//    @Test
+//    public void resolveBulletShipCollisionTest(){
+//        world.resolveBulletShipCollision(ship1,bullet2);
+//        assertTrue(ship1.checkTermination());
+//        assertTrue(bullet2.checkTermination());
+//    }
 
 
 }

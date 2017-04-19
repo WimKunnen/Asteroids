@@ -157,20 +157,44 @@ public class World {
     public Set<Entity> getAllEntities() {
         return this.allEntities;
     }
-//    /**
-//     * Return a set of all ships in this world.
-//     * @see implementation
-//     */
-//    public Set<Ship> getAllShips() {
-//        return this.allShips;
-//    }
-//    /**
-//     * Return a set of all bullets in this world.
-//     * @see implementation
-//     */
-//    public Set<Bullet> getAllBullets() {
-//        return this.allBullets;
-//    }
+    /**
+     * Return a set of all ships in this world.
+     * @see implementation
+     */
+    public Set<Ship> getAllShips() {
+        HashSet<Ship> shipSet = new HashSet<>();
+        for (Entity entity : this.getAllEntitiesOfType(Ship.class)){
+            shipSet.add((Ship)entity);
+        }
+        return shipSet;
+    }
+    /**
+     * Return a set of all bullets in this world.
+     * @see implementation
+     */
+    public Set<Bullet> getAllBullets() {
+        HashSet<Bullet> bulletSet = new HashSet<>();
+        for (Entity entity : this.getAllEntitiesOfType(Bullet.class)){
+            bulletSet.add((Bullet)entity);
+        }
+        return bulletSet;
+    }
+
+    public Set<Asteroid> getAllAsteroids() {
+        Set<Entity> allEntitiesOfType =  this.getAllEntitiesOfType(Asteroid.class);
+        Set<Asteroid> allAsteroids = new HashSet<>();
+        for (Entity entity : allEntitiesOfType)
+            allAsteroids.add((Asteroid)entity);
+        return allAsteroids;
+    }
+
+    public Set<Planetoid> getAllPlanetoids(){
+        Set<Entity> allEntitiesOfType =  this.getAllEntitiesOfType(Planetoid.class);
+        Set<Planetoid> allAsteroids = new HashSet<>();
+        for (Entity entity : allEntitiesOfType)
+            allAsteroids.add((Planetoid)entity);
+        return allAsteroids;
+    }
 
     /**
      * Return a set of all entities from a given subclass of Entity in this world.

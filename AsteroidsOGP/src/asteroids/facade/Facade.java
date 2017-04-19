@@ -340,23 +340,14 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Return all ships located within the given world.
      */
     public Set<? extends Ship> getWorldShips(World world) throws ModelException{
-        HashSet<Ship> shipSet = new HashSet<>();
-        for (Entity entity : world.getAllEntitiesOfType(Ship.class)){
-            shipSet.add((Ship)entity);
-        }
-        return shipSet;
-
+        return world.getAllShips();
     }
 
     /**
      * Return all bullets located in the given world.
      */
     public Set<? extends Bullet> getWorldBullets(World world) throws ModelException{
-        HashSet<Bullet> bulletSet = new HashSet<>();
-        for (Entity entity : world.getAllEntitiesOfType(Bullet.class)){
-            bulletSet.add((Bullet)entity);
-        }
-        return bulletSet;
+        return world.getAllBullets();
     }
 
     /**
@@ -631,13 +622,8 @@ public class Facade implements asteroids.part3.facade.IFacade  {
     /**
      * Return all asteroids located in <code>world</code>.
      */
-    //TODO!!!!
     public Set<? extends Asteroid> getWorldAsteroids(World world) throws ModelException{
-        Set<Entity> allEntitiesOfType =  world.getAllEntitiesOfType(Asteroid.class);
-        Set<Asteroid> allAsteroids = new HashSet<>();
-        for (Entity entity : allEntitiesOfType)
-            allAsteroids.add((Asteroid)entity);
-        return allAsteroids;
+        return world.getAllAsteroids();
     }
 
     /**
@@ -665,13 +651,8 @@ public class Facade implements asteroids.part3.facade.IFacade  {
     /**
      * Return all planetoids located in <code>world</code>.
      */
-    //TODO!!!!!
     public Set<? extends Planetoid> getWorldPlanetoids(World world) throws ModelException{
-        Set<Entity> allEntitiesOfType =  world.getAllEntitiesOfType(Planetoid.class);
-        Set<Planetoid> allAsteroids = new HashSet<>();
-        for (Entity entity : allEntitiesOfType)
-            allAsteroids.add((Planetoid)entity);
-        return allAsteroids;
+        return world.getAllPlanetoids();
     }
 
     /**

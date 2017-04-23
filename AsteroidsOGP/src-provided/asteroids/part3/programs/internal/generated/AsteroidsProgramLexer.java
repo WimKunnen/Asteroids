@@ -1,6 +1,6 @@
 // Generated from AsteroidsProgram.g4 by ANTLR 4.7
 
-    package asteroids.part3.programs.internal.generated;
+package asteroids.part3.programs.internal.generated;
 
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

@@ -27,9 +27,6 @@ public class Program {
             case THRUSTOFF:
                 return 0.2;
 
-            case OTHER:
-                return 0;
-
             default:
                 return 0;
         }

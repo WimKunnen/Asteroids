@@ -180,6 +180,10 @@ public class World {
         return bulletSet;
     }
 
+    /**
+     * Return a set of all asteroids in this world.
+     * @see implementation
+     */
     public Set<Asteroid> getAllAsteroids() {
         Set<Entity> allEntitiesOfType =  this.getAllEntitiesOfType(Asteroid.class);
         Set<Asteroid> allAsteroids = new HashSet<>();
@@ -188,6 +192,10 @@ public class World {
         return allAsteroids;
     }
 
+    /**
+     * Return a set of all planetoids in this world.
+     * @see implementation
+     */
     public Set<Planetoid> getAllPlanetoids(){
         Set<Entity> allEntitiesOfType =  this.getAllEntitiesOfType(Planetoid.class);
         Set<Planetoid> allAsteroids = new HashSet<>();

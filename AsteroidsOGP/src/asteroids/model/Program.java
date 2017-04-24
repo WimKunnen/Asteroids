@@ -1,6 +1,6 @@
 package asteroids.model;
 
-import asteroids.program.ProgramStatement;
+import asteroids.model.program.ProgramStatement;
 
 /**
  * Created by WimKunnen on 18/04/2017.

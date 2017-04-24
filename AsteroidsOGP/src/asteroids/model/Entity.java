@@ -359,6 +359,10 @@ public abstract class Entity {
         else if (this instanceof Bullet){
             return (radius >= ((Bullet) this).getMinimumRadius() && !Double.isNaN(radius));
         }
+        else if (this instanceof MinorPlanet){
+            return (radius >= ((MinorPlanet) this).getMinimumRadius() && !Double.isNaN(radius));
+        }
+
         throw new AssertionError();
     }
 

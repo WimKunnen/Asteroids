@@ -28,10 +28,12 @@ public class Planetoid extends MinorPlanet {
 //        double distanceTravelled = travel.vectorLength();
 
         double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
-        if (newRadius < 5){
+        if (newRadius <= 5){
             this.terminate();
         }
-        this.setRadius(newRadius);
+        else{
+            this.setRadius(newRadius);
+        }
     }
 
     public void decrementRadiusDistance(double distanceTravelled){
@@ -113,7 +115,7 @@ public class Planetoid extends MinorPlanet {
             setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
             double distanceTravelled = timeDifference * this.getVelocity().vectorLength();
             this.travel(distanceTravelled);
-            this.decrementRadius(timeDifference);
+            this.decrementRadius(timeDifference*500);
         }else{
             throw new IllegalArgumentException();
         }

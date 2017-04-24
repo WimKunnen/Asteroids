@@ -3,6 +3,7 @@ import be.kuleuven.cs.som.annotate.*;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -464,6 +465,8 @@ public class Ship extends Entity{
             Vector bulletVelocity = pointingVector.resizeVector(250);
             bullet.setVelocity(bulletVelocity);
 
+//            Set<Entity> allEntities = this.getWorld().getAllEntities();
+
             for(Entity entity : this.getWorld().getAllEntities()){
                 if (bullet.overlap(entity)) {
                     Collision collision = new Collision(this.getWorld());
@@ -477,8 +480,8 @@ public class Ship extends Entity{
     public void teleportRandomLocation() {
         World thisWorld = getWorld();
         thisWorld.removeEntity(this);
-        double xRange = getWorld().getWidth() - 2 * getRadius();
-        double yRange = getWorld().getHeight() - 2 * getRadius();
+        double xRange = thisWorld.getWidth() - 2 * getRadius();
+        double yRange = thisWorld.getHeight() - 2 * getRadius();
         Vector newPos = new Vector(getRadius() + Math.random()*xRange, getRadius() + Math.random()*yRange);
         setPosition(newPos);
         if (this.noOverlapsInNewWorld(thisWorld)){

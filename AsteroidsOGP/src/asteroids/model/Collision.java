@@ -60,6 +60,13 @@ public class Collision {
      *          Other colliding entity
      */
     public void resolveEntityCollision(Entity entity1, Entity entity2) {
+
+        if ((entity1 instanceof Bullet && ((Bullet) entity1).getSource() != entity2 && ((Bullet) entity1).hasBeenOutOfShip())
+                || (entity2 instanceof Bullet && ((Bullet) entity2).getSource() != entity1 && ((Bullet) entity2).hasBeenOutOfShip())){
+            entity1.terminate();
+            entity2.terminate();
+        }
+
         if (entity1 instanceof Ship && entity2 instanceof Ship){
             Ship ship1 = (Ship)entity1;
             Ship ship2 = (Ship)entity2;

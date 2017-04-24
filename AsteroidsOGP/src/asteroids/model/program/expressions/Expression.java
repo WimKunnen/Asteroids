@@ -1,4 +1,4 @@
-package asteroids.program.expressions;
+package asteroids.model.program.expressions;
 
 /**
  * Created by WimKunnen on 18/04/2017.

@@ -338,9 +338,15 @@ public class World {
                         if (currentEntity.apparentlyCollidesWithEntity(otherEntity) && !currentEntity.fliesApartFrom(otherEntity)) {
                             collision.resolveEntityCollision(currentEntity, otherEntity);
 
-                            if ((currentEntity instanceof Ship && otherEntity instanceof Bullet && ((Bullet) otherEntity).getSource() != currentEntity)||
-                                    (currentEntity instanceof Bullet && otherEntity instanceof Ship && ((Bullet) currentEntity).getSource() != otherEntity)
-                                    || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet)){
+                            if ((currentEntity instanceof Ship && otherEntity instanceof Bullet
+                                    && ((Bullet) otherEntity).getSource() != currentEntity)||
+                                    (currentEntity instanceof Bullet && otherEntity instanceof Ship
+                                            && ((Bullet) currentEntity).getSource() != otherEntity)
+                                    || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet)
+                                    ||(currentEntity instanceof MinorPlanet && otherEntity instanceof Bullet) ||
+                                    (currentEntity instanceof Bullet && otherEntity instanceof MinorPlanet)
+                                    || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet))
+                            {
                                 Vector collisionPosition = currentEntity.getCollisionPosition(otherEntity);
                                 collisionListener.objectCollision(currentEntity, otherEntity, collisionPosition.getX(), collisionPosition.getY());
                             }
@@ -355,6 +361,10 @@ public class World {
                             collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
                         }
                         else if (currentEntity instanceof Ship){
+                            Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
+                            collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
+                        }
+                        else if (currentEntity instanceof MinorPlanet){
                             Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
                             collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
                         }

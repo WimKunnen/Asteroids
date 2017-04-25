@@ -53,7 +53,7 @@ public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 		int height = getHeight();
 		try {
 			world = facade.createWorld(width, height);
-			player = facade.createShip(width / 2., height / 2., 1, 6, 40, 0, 3.9e17);
+			player = facade.createShip(width / 2., height / 2., 1, 6, 40, 0, 3.9e15);
 			facade.addShipToWorld(world, player);
 		} catch (ModelException e) {
 			handleError(e);

@@ -27,7 +27,6 @@ import java.util.List;
  * @version 2.0
  */
 public abstract class Entity {
-
     /**
      * Initializes a new Entity.
      *

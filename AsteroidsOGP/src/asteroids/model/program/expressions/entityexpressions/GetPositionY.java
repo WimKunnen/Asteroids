@@ -1,8 +1,9 @@
-package asteroids.model.program.expressions;
+package asteroids.model.program.expressions.entityexpressions;
 
 import asteroids.model.Entity;
 import asteroids.model.Program;
 import asteroids.model.program.OneArgumentExecutable;
+import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.EntityType;
 

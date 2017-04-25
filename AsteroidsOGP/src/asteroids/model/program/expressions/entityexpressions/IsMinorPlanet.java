@@ -1,9 +1,10 @@
-package asteroids.model.program.expressions;
+package asteroids.model.program.expressions.entityexpressions;
 
 import asteroids.model.Entity;
 import asteroids.model.MinorPlanet;
 import asteroids.model.Program;
 import asteroids.model.program.OneArgumentExecutable;
+import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.BooleanType;
 import asteroids.model.program.types.EntityType;
 

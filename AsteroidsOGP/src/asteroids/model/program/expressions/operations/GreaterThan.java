@@ -1,7 +1,8 @@
-package asteroids.model.program.expressions;
+package asteroids.model.program.expressions.operations;
 
 import asteroids.model.Program;
 import asteroids.model.program.TwoArgumentExecutable;
+import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.BooleanType;
 import asteroids.model.program.types.DoubleType;
 

@@ -70,7 +70,7 @@ public class Program {
     }
     public void setVariableValue(String name, Type<?> value) throws RuntimeException{
         Type<?> current = globals.get(name);
-        if(current == null || current.getClass() != value.getClass())
+        if(current != null && current.getClass() != value.getClass())
             throw new RuntimeException();
 
         globals.put(name, value);

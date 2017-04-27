@@ -345,7 +345,6 @@ public class World {
                                     || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet)
                                     ||(currentEntity instanceof MinorPlanet && otherEntity instanceof Bullet) ||
                                     (currentEntity instanceof Bullet && otherEntity instanceof MinorPlanet)
-                                    || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet))
                             {
                                 Vector collisionPosition = currentEntity.getCollisionPosition(otherEntity);
                                 collisionListener.objectCollision(currentEntity, otherEntity, collisionPosition.getX(), collisionPosition.getY());

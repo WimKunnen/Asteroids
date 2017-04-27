@@ -2,22 +2,56 @@ package asteroids.model;
 
 /**
  * Created by WimKunnen on 18/04/2017.
+ *
+ * A class of planetoids.
  */
 public class Planetoid extends MinorPlanet {
 
+    /**
+     * Initializes a new planetoid by using the initializer defined in the Entity super class.
+     * @param   x
+     *          The initial position of the new planetoid along the x-axis.
+     *
+     * @param   y
+     *          The initial position of the new planetoid along the y-axis.
+     *
+     * @param   velocityX
+     *          The initial velocity of the new planetoid along the x-axis.
+     *
+     * @param   velocityY
+     *          The initial velocity of the new planetoid along the y-axis.
+     *
+     * @param   radius
+     *          The initial radius of the new planetoid.
+     */
     public Planetoid(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
         this.setDensity(0.917E12);
     }
 
+    /**
+     * Default initializer which uses the initializer defined in the MinorPlanet super class.
+     */
     public Planetoid() {
         super();
         this.setDensity(0.917E12);
         this.setRadius(this.getMinimumRadius());
     }
 
+    /**
+     * A method to decrement the radius of the planetoid based on the traveled time.
+     *
+     * @param timeDifference
+     *        The amount of time the planetoid has traveled.
+     * @see implementation
+     * @throws IllegalArgumentException
+     *       | !isValidTimeDifference(timeDifference)
+     */
     public void decrementRadius(double timeDifference){
+        if (!isValidTimeDifference(timeDifference)){
+            throw new IllegalArgumentException();
+        }
         double velocity = this.getVelocity().vectorLength();
         double distanceTravelled = velocity * timeDifference;
 
@@ -36,7 +70,18 @@ public class Planetoid extends MinorPlanet {
         }
     }
 
+    /**
+     * A method to decrement the radius of the planetoid based on the traveled distance.
+     *
+     * @param distanceTravelled
+     *        The distance traveled by this planetoid.
+     * @throws IllegalArgumentException
+     *         | distanceTravelled <=0
+     */
     public void decrementRadiusDistance(double distanceTravelled){
+        if (distanceTravelled <=0){
+            throw new IllegalArgumentException();
+        }
         double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
         if (newRadius < 5){
             this.terminate();
@@ -44,6 +89,10 @@ public class Planetoid extends MinorPlanet {
         this.setRadius(newRadius);
     }
 
+    /**
+     * A method to terminate a planetoid.
+     * @see implementation
+     */
     @Override
     public void terminate(){
         World thisWorld = getWorld();
@@ -85,12 +134,25 @@ public class Planetoid extends MinorPlanet {
         }
     }
 
+    /**
+     * Variable registering the total distance traveled by this planetoid.
+     */
     private double distanceTravelled;
 
+    /**
+     * Return the distance travelled by this planetoid.
+     */
     public double getDistanceTravelled(){
         return distanceTravelled;
     }
 
+    /**
+     * Method to add an certain distance to the variable distanceTravelled.
+     * @param distance
+     *        The distance with which distanceTravelled needs to be increased.
+     * @post ...
+     *       | new.distanceTravelled = this.distanceTravelled + distance.
+     */
     protected void travel(double distance){
         this.distanceTravelled += distance;
     }
@@ -115,7 +177,7 @@ public class Planetoid extends MinorPlanet {
             setPosition(this.getPosition().sum(getVelocity().resizeVector(timeDifference)));
             double distanceTravelled = timeDifference * this.getVelocity().vectorLength();
             this.travel(distanceTravelled);
-            this.decrementRadius(timeDifference*500);
+            this.decrementRadius(timeDifference);
         }else{
             throw new IllegalArgumentException();
         }

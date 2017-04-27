@@ -5,18 +5,35 @@ import java.util.List;
 
 /**
  * Created by WimKunnen on 18/04/2017.
+ *
+ * A class of collisions.
  */
 public class Collision {
+    /**
+     * A variable registering the world to which the collision belongs.
+     */
     private World world;
+
+    /**
+     * Initializer for a new collision.
+     * @param world
+     *        The world in which the collision takes place.
+     */
 
     public Collision(World world){
         this.setWorld(world);
     }
 
+    /**
+     * Return the world of this collision.
+     */
     private World getWorld(){
         return this.world;
     }
 
+    /**
+     * Set the world of this collision to a given world.
+     */
     private void setWorld(World world){
         this.world = world;
     }
@@ -189,7 +206,7 @@ public class Collision {
     }
 
     /**
-     *Return the time to the first collision happening in this world.
+     * Return the time to the first collision happening in this world.
      * @return  result == (Math.min(getTimeToFirstBoundaryCollision,getTimeToFirstEntityCollision))
      */
     public double getTimeToFirstCollision() {

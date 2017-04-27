@@ -3,6 +3,7 @@ import be.kuleuven.cs.som.annotate.*;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 
@@ -467,12 +468,24 @@ public class Ship extends Entity{
 
 //            Set<Entity> allEntities = this.getWorld().getAllEntities();
 
-            for(Entity entity : this.getWorld().getAllEntities()){
-                if (bullet.overlap(entity)) {
+            Set<Entity> allEntities = new HashSet<>();
+            allEntities.addAll(getWorld().getAllEntities());
+            Iterator<Entity> iter = allEntities.iterator();
+
+            while (iter.hasNext()){
+                Entity thisEntity = iter.next();
+                if (bullet.overlap(thisEntity)){
                     Collision collision = new Collision(this.getWorld());
-                    collision.resolveEntityCollision(bullet, entity);
+                    collision.resolveEntityCollision(bullet, thisEntity);
                 }
             }
+
+//            for(Entity entity : this.getWorld().getAllEntities()){
+//                if (bullet.overlap(entity)) {
+//                    Collision collision = new Collision(this.getWorld());
+//                    collision.resolveEntityCollision(bullet, entity);
+//                }
+//            }
         }
 
     }

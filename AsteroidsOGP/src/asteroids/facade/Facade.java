@@ -759,7 +759,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
     public Planetoid createPlanetoid(double x, double y, double xVelocity, double yVelocity, double radius,
                                      double totalTraveledDistance) throws ModelException{
         try {
-            Planetoid planetoid = new Planetoid(x, y, xVelocity, yVelocity, radius);
+            Planetoid planetoid = new Planetoid(x, y, xVelocity, yVelocity, radius, totalTraveledDistance);
             try {
                 planetoid.decrementRadiusDistance(totalTraveledDistance);
             }catch (IllegalArgumentException e){

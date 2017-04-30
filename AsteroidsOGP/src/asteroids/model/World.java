@@ -1,6 +1,7 @@
 package asteroids.model;
 
 import asteroids.part2.CollisionListener;
+import asteroids.part2.internal.Sound;
 import be.kuleuven.cs.som.annotate.*;
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
@@ -31,14 +32,14 @@ public class World {
     public World(double width, double height){
         if (width < getLowerBound())
             this.width = getLowerBound();
-        else if (width > getUpperBound())
+        else if (width > getUpperBound() || Double.isNaN(width))
             this.width = getUpperBound();
         else
             this.width = width;
 
         if (height < getLowerBound())
             this.height = getLowerBound();
-        else if (height > getUpperBound())
+        else if (height > getUpperBound() || Double.isNaN(height))
             this.height = getUpperBound();
         else
             this.height = height;

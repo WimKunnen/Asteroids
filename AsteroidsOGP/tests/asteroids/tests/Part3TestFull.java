@@ -9,23 +9,14 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+import asteroids.model.*;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
-import asteroids.model.Asteroid;
-import asteroids.model.Bullet;
-import asteroids.model.Planetoid;
-import asteroids.model.Ship;
-import asteroids.model.World;
 import asteroids.part3.facade.IFacade;
-import asteroids.model.Program;
-import asteroids.model.program.ProgramFactory;
-import asteroids.part3.programs.IProgramFactory;
-import asteroids.part3.programs.internal.ProgramParser;
 import asteroids.util.ModelException;
 
 public class Part3TestFull {
@@ -120,6 +111,7 @@ public class Part3TestFull {
     Ship ship = facade.createShip(100, 120, Double.NaN, 5, 50, 0, 1.0E20);
     double velocity = Math.sqrt(facade.getShipVelocity(ship)[0] * facade.getShipVelocity(ship)[0]
         + facade.getShipVelocity(ship)[1] * facade.getShipVelocity(ship)[1]);
+    System.out.println(velocity);
     assertTrue(0 - EPSILON <= velocity);
     assertTrue(velocity <= 300000 + EPSILON);
     score += 1;
@@ -136,6 +128,7 @@ public class Part3TestFull {
     score += 3;
   }
 
+  @Test
   public void testCreateShipRadiusNan() throws ModelException {
     try {
       max_score += 1;

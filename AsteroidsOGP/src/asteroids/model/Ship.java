@@ -261,7 +261,7 @@ public class Ship extends Entity{
      * @return  result == thrustForce / totalMass
      */
     public double getAcceleration(){
-        return this.getThrustForce() / this.getTotalMass();
+        return this.getThrusterState() ? this.getThrustForce() / this.getTotalMass() : 0;
     }
 
     /**
@@ -278,6 +278,7 @@ public class Ship extends Entity{
         if (acceleration < 0){
             acceleration = 0;
         }
+
         Vector accelerationVector = new Vector(acceleration * Math.cos(this.getHeading()) * timeDifference,
                 acceleration*Math.sin(this.getHeading()) * timeDifference);
         Vector newVelocity = this.getVelocity().sum(accelerationVector);

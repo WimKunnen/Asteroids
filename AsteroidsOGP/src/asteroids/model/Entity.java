@@ -77,13 +77,22 @@ public abstract class Entity {
         this.setRadius(radius);
         this.setWorld(world);
         Vector position = new Vector(x, y);
+        Vector velocity = new Vector(velocityX,velocityY);
         if(isInvalidPosition(position))
             throw new IllegalArgumentException();
         else
             this.setPosition(position);
 
         this.setMaximumVelocity(speedOfLight);
-        this.setVelocity(new Vector(velocityX,velocityY));
+
+        if(Double.isNaN(velocityX) || Double.isNaN(velocityY)) {
+            double angle = Math.random() * Math.PI * 2;
+            Vector newVelocity = new Vector(this.getMaximumVelocity() * Math.cos(angle),
+                    getMaximumVelocity() * Math.sin(angle));
+            this.setVelocity(newVelocity);
+        }
+        else
+            this.setVelocity(velocity);
 
     }
 
@@ -138,9 +147,19 @@ public abstract class Entity {
      *
      * @see implementation
      */
-    protected boolean isInvalidPosition(Vector position){
-        return (Double.isNaN(position.getX()) ||  Double.isNaN(position.getY()));
+    protected boolean isInvalidPosition(Vector vector){
+        return (Double.isNaN(vector.getX()) || Double.isNaN(vector.getY()));
     }
+
+    /**
+     * Method to check whether or not a position is valid.
+     *
+     * @see implementation
+     */
+    protected boolean isInvalidVelocity(Vector vector){
+        return (Double.isNaN(vector.getX()) || Double.isNaN(vector.getY()));
+    }
+
     /**
      * Returns the position vector of the entity.
      */
@@ -278,7 +297,7 @@ public abstract class Entity {
      */
     @Model
     protected void setVelocity(Vector velocity){
-        this.velocity = velocity.vectorLengthSquared() > this.getMaximumVelocity()*this.getMaximumVelocity()
+        this.velocity = (velocity.vectorLengthSquared() > this.getMaximumVelocity()*this.getMaximumVelocity())
                 ? velocity.normalize().resizeVector(maximumVelocity) :  velocity;
     }
 

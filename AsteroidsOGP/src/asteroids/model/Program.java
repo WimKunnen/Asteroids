@@ -17,6 +17,10 @@ public class Program {
         return ship;
     }
 
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
+
     @Raw
     public void scheduleStatement(Statement statement){
         if(statement != null)

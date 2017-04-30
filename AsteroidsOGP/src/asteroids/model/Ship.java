@@ -490,12 +490,18 @@ public class Ship extends Entity{
 
     }
 
+    /**
+     * A method which teleports the ship to a valid location in its world. The location is chosen at random.
+     * If the ship would overlap with another entity when placed at the new location, the ship is terminated.
+     *  | if(!noOverlapsInNewWorld) then
+     *  |   this.terminate()
+     */
     public void teleportRandomLocation() {
         World thisWorld = getWorld();
         thisWorld.removeEntity(this);
         double xRange = thisWorld.getWidth() - 2 * getRadius();
         double yRange = thisWorld.getHeight() - 2 * getRadius();
-        Vector newPos = new Vector(getRadius() + Math.random()*xRange, getRadius() + Math.random()*yRange);
+        Vector newPos = new Vector(getRadius() + Math.random() * xRange, getRadius() + Math.random() * yRange);
         setPosition(newPos);
         if (this.noOverlapsInNewWorld(thisWorld)){
             thisWorld.addEntity(this);
@@ -507,11 +513,25 @@ public class Ship extends Entity{
 
     private Program program;
 
+    /**
+     * Method which returns the program that is currently loaded on the ship.
+     *
+     * @return  The ships program
+     *          | this.program
+     */
+    @Basic
     public Program getProgram(){
         return this.program;
     }
 
+    /**
+     * Sets the ships program to the given program.
+     *
+     * @param   newProgram
+     *          | Program that will be loaded on the ship.
+     */
     public void setProgram(Program newProgram){
         this.program = newProgram;
+        newProgram.setShip(this);
     }
 }

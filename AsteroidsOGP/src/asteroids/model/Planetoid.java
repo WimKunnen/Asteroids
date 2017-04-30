@@ -91,6 +91,10 @@ public class Planetoid extends MinorPlanet {
 
     /**
      * A method to terminate a planetoid.
+     * When a planetoid has a radius greater than 30 km and is terminated, two new asteroids spawn with
+     * a difference of half the planetoids  between their centers. One of asteroids get a random velocity
+     * while the other will move in the opposite direction.
+     *
      * @see implementation
      */
     @Override

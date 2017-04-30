@@ -19,10 +19,13 @@ public class GetVelocityY extends OneArgumentExecutable<Expression<EntityType>>
     }
 
     @Override
-    public DoubleType calculate(Program program) throws RuntimeException{
+    public DoubleType calculate(Program program) throws RuntimeException {
         Entity e = this.getFirstArgument().calculate(program).getType();
-        if(e == null)
+        if (e == null)
             throw new RuntimeException();
-        return new DoubleType(e.getVelocity().getX());
+        //DoubleType a = new DoubleType((Entity q) -> q.getVelocity().getX());
+        //(Entity q) -> new DoubleType(q.getVelocity().getY());
+        return new DoubleType(e.getVelocity().getY());
+        //this.getFirstArgument().calculate(program).getType() -> new DoubleType(this.getFirstArgument().calculate(program).getType().getVelocity().getX());
     }
 }

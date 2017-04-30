@@ -399,11 +399,21 @@ public class World {
         }
     }
 
+    /**
+     * Returns the time difference until the first collision in this world.
+     *
+     * @return  collision.getTimeToFirstCollision()
+     */
     public double getTimeToFirstCollision(){
         Collision collision = new Collision(this);
         return collision.getTimeToFirstCollision();
     }
 
+    /**
+     * Returns the position of the first collision that will take place in this world.
+     *
+     * @return  collision.getFirstCollisionPosition()
+     */
     public Vector getFirstCollisionPosition(){
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();

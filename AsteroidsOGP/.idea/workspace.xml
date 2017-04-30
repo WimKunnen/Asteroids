@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Asteroid.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Asteroid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Collision.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Collision.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/MinorPlanet.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/MinorPlanet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Planetoid.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Planetoid.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Program.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Program.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/ArgumentExecutable.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/ArgumentExecutable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/expressions/entityexpressions/GetVelocityY.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/expressions/entityexpressions/GetVelocityY.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/types/Type.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/types/Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part3/Part3.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/part3/Part3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AsteroidsOGP.iml" afterPath="$PROJECT_DIR$/AsteroidsOGP.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Program.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Program.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" afterPath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/World.java" afterPath="$PROJECT_DIR$/src/asteroids/model/World.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/types/Type.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/types/Type.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,19 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Break.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Break.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#538#539#0" expanded="false" />
-                <element signature="e#562#563#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GreaterOrEqual.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/operations/GreaterOrEqual.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,9 +71,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-390">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,8 +79,18 @@
       <file leaf-file-name="Part3TestFull.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="89">
+              <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-653">
+              <caret line="319" column="36" lean-forward="false" selection-start-line="319" selection-start-column="36" selection-end-line="319" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -122,21 +99,19 @@
       <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="219" column="39" lean-forward="false" selection-start-line="219" selection-start-column="15" selection-end-line="219" selection-end-column="39" />
+            <state relative-caret-position="125">
+              <caret line="765" column="44" lean-forward="false" selection-start-line="765" selection-start-column="44" selection-end-line="765" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetVelocityX.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityX.java">
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="2487">
+              <caret line="530" column="58" lean-forward="false" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -278,10 +253,10 @@
         <option value="$PROJECT_DIR$/src/asteroids/model/program/types/Type.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Program.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
       </list>
     </option>
@@ -1310,7 +1285,7 @@
       <workItem from="1493287803580" duration="5698000" />
       <workItem from="1493392777370" duration="1538000" />
       <workItem from="1493546049842" duration="151000" />
-      <workItem from="1493547105955" duration="633000" />
+      <workItem from="1493547105955" duration="1181000" />
     </task>
     <servers />
   </component>
@@ -1324,34 +1299,34 @@
     <history-entry file="Part3TestFull - 2017.04.30 at 12h 22m 21s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 24m 15s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 25m 18s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 26m 22s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 27m 39s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 30m 05s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Part3TestFull - 2017.04.30 at 12h 31m 30s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="TestEntity_negateVelocityTest - 2017.04.30 at 12h 17m 00s.xml">
       <configuration name="TestEntity.negateVelocityTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestVector_testAngleBetween - 2017.04.04 at 16h 27m 26s.xml">
-      <configuration name="TestVector.testAngleBetween" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestVector_testAngleBetween - 2017.04.04 at 16h 27m 38s.xml">
-      <configuration name="TestVector.testAngleBetween" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestVector_testAngleBetween - 2017.04.04 at 16h 28m 31s.xml">
-      <configuration name="TestVector.testAngleBetween" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestVector_testAngleBetween - 2017.04.04 at 16h 28m 40s.xml">
-      <configuration name="TestVector.testAngleBetween" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestVector_testAngleBetween - 2017.04.04 at 16h 31m 23s.xml">
-      <configuration name="TestVector.testAngleBetween" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestWorld - 2017.04.10 at 10h 29m 28s.xml">
-      <configuration name="TestWorld" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115582000" />
+    <option name="totallyTimeSpent" value="116130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1373,7 +1348,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6142684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6142684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17222223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1705,17 +1680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7545">
-          <caret line="530" column="58" lean-forward="false" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
-          <folding>
-            <element signature="e#17684#17685#0" expanded="false" />
-            <element signature="e#17719#17720#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/operations/GreaterOrEqual.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1723,14 +1687,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5850">
-          <caret line="404" column="51" lean-forward="false" selection-start-line="404" selection-start-column="51" selection-end-line="404" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1817,16 +1773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -1835,18 +1781,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-653">
+          <caret line="319" column="36" lean-forward="false" selection-start-line="319" selection-start-column="36" selection-end-line="319" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2487">
+          <caret line="530" column="58" lean-forward="false" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="219" column="39" lean-forward="false" selection-start-line="219" selection-start-column="15" selection-end-line="219" selection-end-column="39" />
+        <state relative-caret-position="125">
+          <caret line="765" column="44" lean-forward="false" selection-start-line="765" selection-start-column="44" selection-end-line="765" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="89">
+          <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding />
         </state>
       </provider>

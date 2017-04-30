@@ -317,7 +317,7 @@ public class World {
      *        The amount of seconds the world should evolve.
      */
     public void evolve (double timeDifference, CollisionListener collisionListener) throws IllegalArgumentException {
-        if (timeDifference >= 0) {
+        if (timeDifference >= 0 || !(Double.isNaN(timeDifference))) {
             Collision collision = new Collision(this);
             if (timeDifference <= collision.getTimeToFirstCollision()) { //No collision in the given time.
                 moveAllEntities(timeDifference);

@@ -298,7 +298,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Return the ship that fired the given bullet.
      */
     public Ship getBulletSource(Bullet bullet) throws ModelException{
-        if (bullet.getPosition() == bullet.getSource().getPosition())
+        if (bullet.getWorld() != null)
             throw new ModelException("The bullet hasn't been fired");
         else
             return bullet.getSource();
@@ -395,8 +395,6 @@ public class Facade implements asteroids.part3.facade.IFacade  {
     public void removeBulletFromWorld(World world, Bullet bullet) throws ModelException{
         try {
             world.removeEntity(bullet);
-        }catch (NullPointerException e){
-            throw new ModelException(e);
         }catch (IllegalArgumentException e){
             throw new ModelException(e);
         }
@@ -523,7 +521,12 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Advance the given world by dt seconds.
      */
     public void evolve(World world, double dt, CollisionListener collisionListener) throws ModelException{
-        world.evolve(dt, collisionListener);
+        try {
+            world.evolve(dt, collisionListener);
+        }
+        catch(IllegalArgumentException e){
+            throw new ModelException(e);
+        }
     }
 
     /**
@@ -757,7 +760,11 @@ public class Facade implements asteroids.part3.facade.IFacade  {
                                      double totalTraveledDistance) throws ModelException{
         try {
             Planetoid planetoid = new Planetoid(x, y, xVelocity, yVelocity, radius);
-            planetoid.decrementRadiusDistance(totalTraveledDistance);
+            try {
+                planetoid.decrementRadiusDistance(totalTraveledDistance);
+            }catch (IllegalArgumentException e){
+                throw new ModelException(e);
+            }
             return planetoid;
         }catch (IllegalArgumentException e){
             throw new ModelException(e);

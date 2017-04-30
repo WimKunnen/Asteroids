@@ -27,7 +27,7 @@ public class Asteroid extends MinorPlanet {
     public Asteroid(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
-        this.setDensity(2.56E12);
+        this.setDensity(2.65E12);
     }
 
     /**
@@ -35,7 +35,7 @@ public class Asteroid extends MinorPlanet {
      */
     public Asteroid(){
         super();
-        this.setDensity(2.56E12);
+        this.setDensity(2.65E12);
         this.setRadius(this.getMinimumRadius());
     }
 

@@ -5,11 +5,19 @@
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="" />
 =======
     <list default="true" id="1639ad51-f533-4771-8e9e-0bfdc1e1557b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/facade/Facade.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/facade/Facade.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Asteroid.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Asteroid.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Planetoid.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Planetoid.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/Ship.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/World.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part3TestFull.class" afterPath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part3TestFull.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Entity.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" afterPath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Asteroid.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Asteroid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Ship.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
     </list>
 >>>>>>> BranchWim
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,6 +38,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <file leaf-file-name="Part3TestFull.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
@@ -40,21 +49,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
               <caret line="579" column="3" lean-forward="true" selection-start-line="579" selection-start-column="3" selection-end-line="579" selection-end-column="3" />
+=======
+      <file leaf-file-name="Part3TestFull.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="472" column="44" lean-forward="false" selection-start-line="472" selection-start-column="44" selection-end-line="472" selection-end-column="44" />
+=======
+      <file leaf-file-name="Asteroid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Asteroid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
@@ -88,14 +113,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
               <caret line="582" column="125" lean-forward="false" selection-start-line="582" selection-start-column="118" selection-end-line="582" selection-end-column="125" />
+=======
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3540">
+              <caret line="250" column="16" lean-forward="false" selection-start-line="250" selection-start-column="16" selection-end-line="250" selection-end-column="16" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="17">
               <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
 =======
@@ -105,11 +138,16 @@
             <state relative-caret-position="133">
               <caret line="524" column="0" lean-forward="false" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
 >>>>>>> BranchWim
+=======
+            <state relative-caret-position="2160">
+              <caret line="163" column="7" lean-forward="false" selection-start-line="158" selection-start-column="6" selection-end-line="163" selection-end-column="7" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="Collision.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Collision.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,45 +158,67 @@
             <state relative-caret-position="6630">
               <caret line="530" column="58" lean-forward="false" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
 >>>>>>> BranchWim
+=======
+      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11115">
+              <caret line="761" column="104" lean-forward="false" selection-start-line="761" selection-start-column="104" selection-end-line="761" selection-end-column="104" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+=======
+      <file leaf-file-name="Planetoid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Planetoid.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="435">
+              <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+              <folding>
+                <element signature="e#5117#5118#0" expanded="true" />
+                <element signature="e#5157#5158#0" expanded="true" />
+                <element signature="e#5399#5400#0" expanded="true" />
+                <element signature="e#5457#5458#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2400">
+              <caret line="171" column="40" lean-forward="false" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
+              <folding>
+                <element signature="e#5363#5364#0" expanded="true" />
+                <element signature="e#5395#5396#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+>>>>>>> BranchWim
+=======
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11835">
               <caret line="821" column="22" lean-forward="false" selection-start-line="821" selection-start-column="22" selection-end-line="821" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoubleType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/types/DoubleType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding>
-                <element signature="e#283#284#0" expanded="false" />
-                <element signature="e#311#312#0" expanded="false" />
-                <element signature="e#351#352#0" expanded="false" />
-                <element signature="e#391#392#0" expanded="false" />
-                <element signature="e#466#467#0" expanded="false" />
-                <element signature="e#510#511#0" expanded="false" />
-                <element signature="e#572#573#0" expanded="false" />
-                <element signature="e#616#617#0" expanded="false" />
-                <element signature="e#684#685#0" expanded="false" />
-                <element signature="e#722#723#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
->>>>>>> BranchWim
+>>>>>>> Stashed changes
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -258,6 +318,7 @@
         <option value="$PROJECT_DIR$/src/asteroids/model/program/types/DoubleType.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/program/types/Type.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Program.java" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/Part2TestPartial.java" />
@@ -269,13 +330,21 @@
         <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
 =======
         <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
-        <option value="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
         <option value="$PROJECT_DIR$/src/asteroids/model/Entity.java" />
+<<<<<<< Updated upstream
 >>>>>>> BranchWim
+=======
+        <option value="$PROJECT_DIR$/src/asteroids/model/Bullet.java" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Asteroid.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Planetoid.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
+        <option value="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
       </list>
     </option>
   </component>
@@ -306,9 +375,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+=======
+      <pane id="Scope" />
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -421,6 +494,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,6 +526,7 @@
       <recent name="" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.Part3">
     <configuration default="false" name="Part3TestFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -460,6 +536,37 @@
         </pattern>
       </extension>
       <module name="AsteroidsOGP" />
+=======
+  <component name="RunManager" selected="JUnit.Part3TestFull">
+    <configuration default="false" name="Part3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="asteroids.part3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="asteroids.part3.Part3" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AsteroidsOGP" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Part3TestFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="asteroids.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="AsteroidsOGP" />
+>>>>>>> Stashed changes
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
@@ -478,7 +585,11 @@
       <patterns />
       <method />
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="false" name="Part3TestFull.testEvolveShipBoundaryCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration default="false" name="Part3TestFull.testEvolveBulletDiesOnThirdBounce" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -490,7 +601,11 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
       <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
+<<<<<<< Updated upstream
       <option name="METHOD_NAME" value="testEvolveShipBoundaryCollision" />
+=======
+      <option name="METHOD_NAME" value="testEvolveBulletDiesOnThirdBounce" />
+>>>>>>> Stashed changes
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -504,7 +619,11 @@
       <patterns />
       <method />
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="false" name="Part3TestFull.testLoadMultipleBulletsOnShipIllegalBullets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration default="false" name="Part3TestFull.testCreatePlanetoid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -516,7 +635,11 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
       <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
+<<<<<<< Updated upstream
       <option name="METHOD_NAME" value="testLoadMultipleBulletsOnShipIllegalBullets" />
+=======
+      <option name="METHOD_NAME" value="testCreatePlanetoid" />
+>>>>>>> Stashed changes
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -530,7 +653,11 @@
       <patterns />
       <method />
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="false" name="Part3TestFull.testEvolveAfterAsteroidBulletCollision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+=======
+    <configuration default="false" name="Part3TestFull.testCreateShipMassTooSmall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -542,7 +669,11 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
       <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
+<<<<<<< Updated upstream
       <option name="METHOD_NAME" value="testEvolveAfterAsteroidBulletCollision" />
+=======
+      <option name="METHOD_NAME" value="testCreateShipMassTooSmall" />
+>>>>>>> Stashed changes
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -781,6 +912,7 @@
       <method />
     </configuration>
     <list size="5">
+<<<<<<< Updated upstream
       <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testEvolveShipBoundaryCollision" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testLoadMultipleBulletsOnShipIllegalBullets" />
@@ -794,6 +926,21 @@
         <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testEvolveAfterAsteroidBulletCollision" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testLoadMultipleBulletsOnShipIllegalBullets" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testEvolveShipBoundaryCollision" />
+=======
+      <item index="0" class="java.lang.String" itemvalue="Application.Part3" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testEvolveBulletDiesOnThirdBounce" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testCreatePlanetoid" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testCreateShipMassTooSmall" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testCreateShipMassTooSmall" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testCreatePlanetoid" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Part3" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testEvolveBulletDiesOnThirdBounce" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -851,11 +998,14 @@
       <workItem from="1493287803580" duration="5698000" />
       <workItem from="1493392777370" duration="1538000" />
       <workItem from="1493546049842" duration="151000" />
-      <workItem from="1493547105955" duration="1798000" />
+      <workItem from="1493547105955" duration="2702000" />
+      <workItem from="1493562569991" duration="1054000" />
+      <workItem from="1493576983636" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <history-entry file="Part3TestFull - 2017.04.30 at 16h 00m 31s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
@@ -888,39 +1038,47 @@
       <configuration name="Part3TestFull.testEvolveAfterAsteroidBulletCollision" configurationId="JUnit" />
 =======
     <history-entry file="Part3TestFull - 2017.04.30 at 12h 27m 39s.xml">
+=======
+    <history-entry file="Part3TestFull - 2017.04.30 at 16h 34m 06s.xml">
+>>>>>>> Stashed changes
       <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 30m 05s.xml">
+    <history-entry file="Part3TestFull - 2017.04.30 at 16h 36m 27s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 31m 30s.xml">
+    <history-entry file="Part3TestFull - 2017.04.30 at 16h 40m 58s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 33m 59s.xml">
+    <history-entry file="Part3TestFull - 2017.04.30 at 16h 45m 56s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 35m 43s.xml">
-      <configuration name="Part3TestFull" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testCreatePlanetoid - 2017.04.30 at 16h 37m 08s.xml">
+      <configuration name="Part3TestFull.testCreatePlanetoid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 36m 18s.xml">
-      <configuration name="Part3TestFull" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testCreatePlanetoid - 2017.04.30 at 16h 40m 51s.xml">
+      <configuration name="Part3TestFull.testCreatePlanetoid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 37m 38s.xml">
-      <configuration name="Part3TestFull" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testCreateShipMassTooSmall - 2017.04.30 at 16h 42m 18s.xml">
+      <configuration name="Part3TestFull.testCreateShipMassTooSmall" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 38m 56s.xml">
-      <configuration name="Part3TestFull" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testCreateShipMassTooSmall - 2017.04.30 at 16h 45m 37s.xml">
+      <configuration name="Part3TestFull.testCreateShipMassTooSmall" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull - 2017.04.30 at 12h 40m 33s.xml">
-      <configuration name="Part3TestFull" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testEvolveBulletDiesOnThirdBounce - 2017.04.30 at 12h 57m 21s.xml">
+      <configuration name="Part3TestFull.testEvolveBulletDiesOnThirdBounce" configurationId="JUnit" />
     </history-entry>
+<<<<<<< Updated upstream
     <history-entry file="Part3TestFull - 2017.04.30 at 12h 41m 18s.xml">
       <configuration name="Part3TestFull" configurationId="JUnit" />
 >>>>>>> BranchWim
+=======
+    <history-entry file="Part3TestFull_testEvolveBulletDiesOnThirdBounce - 2017.04.30 at 12h 57m 29s.xml">
+      <configuration name="Part3TestFull.testEvolveBulletDiesOnThirdBounce" configurationId="JUnit" />
+>>>>>>> Stashed changes
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116747000" />
+    <option name="totallyTimeSpent" value="118715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -928,6 +1086,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4292624" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
@@ -938,12 +1097,35 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42200726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17222223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42200726" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17222223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4292624" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1202,6 +1384,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="51" lean-forward="false" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+<<<<<<< Updated upstream
+=======
+          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1250,6 +1436,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestWorld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1268,10 +1455,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="24" lean-forward="true" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/GetVelocityY.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/TestVector.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1303,18 +1497,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+=======
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="238" column="16" lean-forward="false" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/types/DoubleType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/TestBullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Asteroid.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1326,10 +1549,17 @@
         <state relative-caret-position="6630">
           <caret line="530" column="58" lean-forward="false" selection-start-line="530" selection-start-column="58" selection-end-line="530" selection-end-column="58" />
 >>>>>>> BranchWim
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Asteroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1350,10 +1580,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3540">
+          <caret line="250" column="16" lean-forward="false" selection-start-line="250" selection-start-column="16" selection-end-line="250" selection-end-column="16" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1364,20 +1601,27 @@
         <state relative-caret-position="133">
           <caret line="524" column="0" lean-forward="false" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
 >>>>>>> BranchWim
+=======
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="163" column="7" lean-forward="false" selection-start-line="158" selection-start-column="6" selection-end-line="163" selection-end-column="7" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+        <state relative-caret-position="11115">
+          <caret line="761" column="104" lean-forward="false" selection-start-line="761" selection-start-column="104" selection-end-line="761" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/asteroids/model/Planetoid.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <state relative-caret-position="17">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
@@ -1404,11 +1648,22 @@
           <caret line="63" column="53" lean-forward="false" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
 >>>>>>> BranchWim
           <folding />
+=======
+        <state relative-caret-position="435">
+          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="e#5117#5118#0" expanded="true" />
+            <element signature="e#5157#5158#0" expanded="true" />
+            <element signature="e#5399#5400#0" expanded="true" />
+            <element signature="e#5457#5458#0" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <state relative-caret-position="230">
           <caret line="579" column="3" lean-forward="true" selection-start-line="579" selection-start-column="3" selection-end-line="579" selection-end-column="3" />
@@ -1431,6 +1686,21 @@
         <state relative-caret-position="-390">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> BranchWim
+=======
+        <state relative-caret-position="2400">
+          <caret line="171" column="40" lean-forward="false" selection-start-line="171" selection-start-column="40" selection-end-line="171" selection-end-column="40" />
+          <folding>
+            <element signature="e#5363#5364#0" expanded="true" />
+            <element signature="e#5395#5396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11835">
+          <caret line="821" column="22" lean-forward="false" selection-start-line="821" selection-start-column="22" selection-end-line="821" selection-end-column="22" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>

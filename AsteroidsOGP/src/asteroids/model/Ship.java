@@ -170,11 +170,7 @@ public class Ship extends Entity{
      *          The new mass of the ship.
      */
     public void setMass(double newMass){
-        if (newMass > this.getMassOfEntity())
-            this.mass = newMass;
-        else{
-            this.mass = getMassOfEntity();
-        }
+        this.mass = newMass > this.getMassOfEntity() ? newMass : this.getMassOfEntity();
     }
 
     /**

@@ -1215,17 +1215,19 @@ public class Part3TestFull {
 //  }
 
   @Test
-  public void testEvolveBulletDiesOnSecondBounce() throws ModelException {
+  public void testEvolveBulletDiesOnThirdBounce() throws ModelException {
     max_score += 12;
     World world = facade.createWorld(1000, 1000);
     Bullet bullet = facade.createBullet(200, 200, -10, 0, 50);
     facade.addBulletToWorld(world, bullet);
+    // first bounce after 15 sec
     // second bounce after 105 sec
-    facade.evolve(world, 104.0, null);
+    // third bounce after 195 sec
+    facade.evolve(world, 194.0, null);
     assertEquals(1, facade.getWorldBullets(world).size());
-    assertEquals(940, facade.getBulletPosition(bullet)[0], EPSILON);
+    assertEquals(60, facade.getBulletPosition(bullet)[0], EPSILON);
     assertEquals(200, facade.getBulletPosition(bullet)[1], EPSILON);
-    assertEquals(10, facade.getBulletVelocity(bullet)[0], EPSILON);
+    assertEquals(-10, facade.getBulletVelocity(bullet)[0], EPSILON);
     assertEquals(0, facade.getBulletVelocity(bullet)[1], EPSILON);
     facade.evolve(world, 2.0, null);
     assertEquals(0, facade.getWorldBullets(world).size());

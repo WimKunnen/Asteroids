@@ -298,7 +298,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Return the ship that fired the given bullet.
      */
     public Ship getBulletSource(Bullet bullet) throws ModelException{
-        if (bullet.getWorld() != null)
+        if (bullet.getWorld() == null)
             throw new ModelException("The bullet hasn't been fired");
         else
             return bullet.getSource();

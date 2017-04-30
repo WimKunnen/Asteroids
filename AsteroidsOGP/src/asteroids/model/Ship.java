@@ -172,6 +172,9 @@ public class Ship extends Entity{
     public void setMass(double newMass){
         if (newMass > this.getMassOfEntity())
             this.mass = newMass;
+        else{
+            this.mass = getMassOfEntity();
+        }
     }
 
     /**
@@ -316,6 +319,20 @@ public class Ship extends Entity{
     }
 
     /**
+     * Removes the given bullet from this ship.
+     * @post The given bullet doesn't belong to this ships collection of bullets anymore.
+     *      | !new.getBullets().contains(bullet)
+     * @post The bullet doesn't belong to a world.
+     *      | bullet.getWorld() == null
+     * @param bullet
+     *        The bullet to remove from this ship.
+     */
+    public void removeBullet(Bullet bullet){
+        bullets.remove(bullet);
+        bullet.setWorld(null);
+    }
+
+    /**
      * A method which returns a random bullet out of the set of bullets
      *
      * @return  result == bullet
@@ -364,19 +381,24 @@ public class Ship extends Entity{
      *          Throws an exception if the bullet wasn't fired by this ship.
      */
     public void reload(Bullet bullet) throws IllegalArgumentException{
-        if (bullet.getSource() == null)
+        if (bullet != null) {
+            if (bullet.getSource() == null)
                 bullet.setSource(this);
-        if (bullet.getSource() != this)
+            if (bullet.getSource() != this)
                 throw new IllegalArgumentException("Bullet and Spaceship don't match");
-        if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
-            this.bullets.add(bullet);
-            this.totalMass = this.totalMass + bullet.getMassOfEntity();
-            bullet.setPosition(this.getPosition());
-            bullet.setVelocity(this.velocity);
-            bullet.switchBeenOutOfShip(false);
-            if (bullet.getWorld() != null) {
-                bullet.getWorld().removeEntity(bullet);
+            if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
+                this.bullets.add(bullet);
+                this.totalMass = this.totalMass + bullet.getMassOfEntity();
+                bullet.setPosition(this.getPosition());
+                bullet.setVelocity(this.velocity);
+                bullet.switchBeenOutOfShip(false);
+                if (bullet.getWorld() != null) {
+                    bullet.getWorld().removeEntity(bullet);
+                }
             }
+        }
+        else{
+            throw new IllegalArgumentException();
         }
     }
 

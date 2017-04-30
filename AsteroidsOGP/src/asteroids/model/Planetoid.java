@@ -79,14 +79,16 @@ public class Planetoid extends MinorPlanet {
      *         | distanceTravelled <=0
      */
     public void decrementRadiusDistance(double distanceTravelled){
-        if (distanceTravelled <=0){
+        if (distanceTravelled <0){
             throw new IllegalArgumentException();
         }
         double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
         if (newRadius < 5){
             this.terminate();
         }
-        this.setRadius(newRadius);
+        else{
+            this.setRadius(newRadius);
+        }
     }
 
     /**

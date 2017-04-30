@@ -156,4 +156,14 @@ public class Bullet extends Entity {
         this.beenOutOfShip = bool;
     }
 
+    @Override
+    public void terminate(){
+        isTerminated = true;
+        if (getWorld() != null)
+            getWorld().removeEntity(this);
+        if (getSource() != null){
+            getSource().removeBullet(this);
+        }
+    }
+
 }

@@ -232,9 +232,9 @@ public class World {
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
-            if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
+            //if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
                 allEntities.add(entity);
-            }
+            //}
 //            if (entity instanceof Ship) {
 //                allShips.add((Ship) entity);
 //            } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {

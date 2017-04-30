@@ -819,7 +819,7 @@ public abstract class Entity {
      * Returns the volume of the entity based on its radius.
      */
     protected double getVolume(){
-        return 4.0/3 * Math.PI * Math.pow(this.getRadius(), 3);
+        return 4.0/3.0 * Math.PI * Math.pow(this.getRadius(), 3);
     }
 
 

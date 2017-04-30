@@ -61,7 +61,7 @@ public class Planetoid extends MinorPlanet {
 //        Vector travel = position2.sum(position1.negate());
 //        double distanceTravelled = travel.vectorLength();
 
-        double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
+        double newRadius = this.getRadius() - 0.000001 * distanceTravelled;
         if (newRadius <= 5){
             this.terminate();
         }
@@ -79,10 +79,10 @@ public class Planetoid extends MinorPlanet {
      *         | distanceTravelled <=0
      */
     public void decrementRadiusDistance(double distanceTravelled){
-        if (distanceTravelled <0){
+        if (distanceTravelled < 0){
             throw new IllegalArgumentException();
         }
-        double newRadius = this.getRadius() - 0.0001 * distanceTravelled;
+        double newRadius = this.getRadius() - 0.000001 * distanceTravelled;
         if (newRadius < 5){
             this.terminate();
         }

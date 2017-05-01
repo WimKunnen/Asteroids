@@ -325,6 +325,9 @@ public class Ship extends Entity{
      *        The bullet to remove from this ship.
      */
     public void removeBullet(Bullet bullet){
+        if (bullet.getSource() != this){
+            throw new IllegalArgumentException();
+        }
         bullets.remove(bullet);
         bullet.setWorld(null);
     }
@@ -378,7 +381,7 @@ public class Ship extends Entity{
      *          Throws an exception if the bullet wasn't fired by this ship.
      */
     public void reload(Bullet bullet) throws IllegalArgumentException{
-        if (bullet != null) {
+        if (bullet != null && bullet.liesWithinShip(this)) {
             if (bullet.getSource() == null)
                 bullet.setSource(this);
             if (bullet.getSource() != this)
@@ -386,7 +389,7 @@ public class Ship extends Entity{
             if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
                 this.bullets.add(bullet);
                 this.totalMass = this.totalMass + bullet.getMassOfEntity();
-                bullet.setPosition(this.getPosition());
+                //bullet.setPosition(this.getPosition());
                 bullet.setVelocity(this.velocity);
                 bullet.switchBeenOutOfShip(false);
                 if (bullet.getWorld() != null) {
@@ -398,7 +401,7 @@ public class Ship extends Entity{
             throw new IllegalArgumentException();
         }
     }
-
+    
     /**
      * A method which loads a collection of bullets on the ship based on the method to reload a single bullet on a ship.
      *
@@ -479,7 +482,7 @@ public class Ship extends Entity{
             if (!bullet.fitsInBoundaries(this.getWorld())){
                 bullet.terminate();
             }
-            
+
             this.getWorld().addEntity(bullet);
 
             Vector bulletVelocity = pointingVector.resizeVector(250);

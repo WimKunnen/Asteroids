@@ -166,4 +166,9 @@ public class Bullet extends Entity {
         }
     }
 
+    public boolean liesWithinShip(Ship ship){
+        double distanceBetweenCentres = getDistanceBetween(ship) + getRadius() + ship.getRadius();
+        return getRadius() < ship.getRadius() - distanceBetweenCentres;
+    }
+
 }

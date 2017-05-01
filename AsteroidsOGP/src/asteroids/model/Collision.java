@@ -152,6 +152,7 @@ public class Collision {
      */
     public void resolveBulletEntityCollision(Entity entity, Bullet bullet){
         if (bullet.getSource() == (Ship)entity && bullet.hasBeenOutOfShip()){
+            bullet.setPosition(entity.getPosition());
             ((Ship)entity).reload(bullet);
         }
 

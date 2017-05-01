@@ -434,7 +434,6 @@ public class Part3TestFull {
     score += 3;
   }
 
-  // TODO fix test
   @Test
   public void testAddOverlappingBulletShip() throws ModelException {
     try {
@@ -623,7 +622,6 @@ public class Part3TestFull {
     score += 8;
   }
 
-  //TODO fix test
   @Test
   public void testLoadBulletOnShipOutOfShip() throws ModelException {
     try {
@@ -648,7 +646,6 @@ public class Part3TestFull {
     score += 4;
   }
 
-  //TODO fix test
   @Test
   public void testLoadBulletOnShipBulletAlreadyInWorld() throws ModelException {
     try {
@@ -728,7 +725,6 @@ public class Part3TestFull {
     score += 8;
   }
 
-  // TODO fix test.
   @Test
   public void testRemoveBulletFromShipBulletOnOtherShip() throws ModelException {
     try {

@@ -445,7 +445,13 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Remove a given bullet from a given ship.
      */
     public void removeBulletFromShip(Ship ship, Bullet bullet) throws ModelException{
-        ship.getBullets().remove(bullet);
+        try {
+            ship.removeBullet(bullet);
+        }
+        catch (IllegalArgumentException e){
+            throw new ModelException("Bullet and ship don't match");
+        }
+
     }
 
     /**

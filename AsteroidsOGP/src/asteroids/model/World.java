@@ -231,6 +231,9 @@ public class World {
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
+        if (entity.getWorld() == this){
+            throw new IllegalArgumentException("Entity already in this world.");
+        }
         if (entity.getWorld() != null){
             entity.getWorld().removeEntity(entity);
         }
@@ -240,17 +243,9 @@ public class World {
             //if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
                 allEntities.add(entity);
             //}
-//            if (entity instanceof Ship) {
-//                allShips.add((Ship) entity);
-//            } else if (entity instanceof Bullet && !(((Bullet) entity).hasBeenOutOfShip())) {
-//                allBullets.add((Bullet) entity);
-//            }
-//            else if (entity instanceof MinorPlanet){
-//                allMinorPlanets.add((MinorPlanet)entity);
-//            }
         }
         else{
-            if(entity instanceof Bullet){
+            if(entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip()){
                 entity.terminate();
             }
             else

@@ -156,7 +156,8 @@ public class World {
      * @see implementation
      */
     public Set<Entity> getAllEntities() {
-        return this.allEntities;
+        Set<Entity> entitiesSet = new HashSet<>(this.allEntities);
+        return entitiesSet;
     }
     /**
      * Return a set of all ships in this world.
@@ -230,6 +231,9 @@ public class World {
     public void addEntity(Entity entity) throws IllegalArgumentException {
         if (entity == null)
             throw new IllegalArgumentException("Not an existing entity!");
+        if (entity.getWorld() != null){
+            entity.getWorld().removeEntity(entity);
+        }
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
@@ -339,13 +343,15 @@ public class World {
                         if (currentEntity.apparentlyCollidesWithEntity(otherEntity) && !currentEntity.fliesApartFrom(otherEntity)) {
                             collision.resolveEntityCollision(currentEntity, otherEntity);
 
-                            if ((currentEntity instanceof Ship && otherEntity instanceof Bullet
+                            if (((currentEntity instanceof Ship && otherEntity instanceof Bullet
                                     && ((Bullet) otherEntity).getSource() != currentEntity)||
                                     (currentEntity instanceof Bullet && otherEntity instanceof Ship
                                             && ((Bullet) currentEntity).getSource() != otherEntity)
                                     || (currentEntity instanceof Bullet && otherEntity instanceof  Bullet)
                                     ||(currentEntity instanceof MinorPlanet && otherEntity instanceof Bullet) ||
                                     (currentEntity instanceof Bullet && otherEntity instanceof MinorPlanet))
+
+                                    && collisionListener != null)
                             {
                                 Vector collisionPosition = currentEntity.getCollisionPosition(otherEntity);
                                 collisionListener.objectCollision(currentEntity, otherEntity, collisionPosition.getX(), collisionPosition.getY());
@@ -356,15 +362,15 @@ public class World {
                     if (currentEntity.apparentlyCollidesWithBoundary()) { //Boundary collision resolve
                         collision.resolveBoundaryCollision(currentEntity);
 
-                        if ( currentEntity instanceof Bullet && ((Bullet) currentEntity).getNbOfBounces() < 3 ) {
+                        if (( currentEntity instanceof Bullet && ((Bullet) currentEntity).getNbOfBounces() < 3) && collisionListener != null) {
                             Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
                             collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
                         }
-                        else if (currentEntity instanceof Ship){
+                        else if (currentEntity instanceof Ship && collisionListener != null){
                             Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
                             collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
                         }
-                        else if (currentEntity instanceof MinorPlanet){
+                        else if (currentEntity instanceof MinorPlanet && collisionListener != null){
                             Vector collisionPosition = currentEntity.getCollisionPositionWithBoundary();
                             collisionListener.boundaryCollision(currentEntity, collisionPosition.getX(), collisionPosition.getY());
                         }

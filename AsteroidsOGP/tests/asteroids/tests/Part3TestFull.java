@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import asteroids.model.*;
+import asteroids.part3.programs.internal.ProgramParser;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;

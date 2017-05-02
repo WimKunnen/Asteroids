@@ -11,6 +11,7 @@ import asteroids.part3.programs.IProgramFactory;
 import asteroids.part3.programs.SourceLocation;
 
 import javax.swing.plaf.nimbus.State;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -95,9 +96,9 @@ public abstract class ProgramFactory implements IProgramFactory{
      * @param statements
      *            The statements that must be executed in the given order.
      */
-//    public Statement createSequenceStatement(List<Statement> statements, SourceLocation sourceLocation){
-//        return new Sequence(statements);
-//    }
+    public Statement createSequenceStatement(ArrayList<Statement> statements, SourceLocation sourceLocation){
+        return new Sequence(statements);
+    }
 
     /**
      * Create an expression that evaluates to the given expression with changed
@@ -141,13 +142,51 @@ public abstract class ProgramFactory implements IProgramFactory{
         return new EntitySelfLiteral();
     }
 
-    //TODO: return correct ship
     /**
      * Creates an expression that evaluates to the ship that is closest to the
      * ship that is executing the program.
      */
     public Expression createShipExpression(SourceLocation location){
         return new ClosestShip();
+    }
+    /**
+     * Creates an expression that evaluates to the asteroid that is closest to
+     * the ship that is executing the program.
+     */
+    public Expression createAsteroidExpression(SourceLocation location){
+        return new ClosestAsteroid();
+    }
+
+    /**
+     * Creates an expression that evaluates to the planetoid that is closest to
+     * the ship that is executing the program.
+     */
+    public Expression createPlanetoidExpression(SourceLocation location){
+        return new ClosestPlanetoid();
+    }
+
+    /**
+     * Creates an expression that evaluates to one of the bullets fired by the
+     * ship that executes the program.
+     */
+    public Expression createBulletExpression(SourceLocation location){
+        return new BulletOfShip();
+    }
+
+    /**
+     * Creates an expression that evaluates to the minor planet that is closest
+     * to the ship that is executing the program.
+     */
+    public Expression createPlanetExpression(SourceLocation location){
+        return new ClosestPlanet();
+    }
+
+    /**
+     * Creates an expression that evaluates to an arbitrary entity in the world
+     * of the ship that is executing the program.
+     */
+    public Expression createAnyExpression(SourceLocation location){
+        return new AnyEntity();
     }
 
     /**
@@ -230,6 +269,14 @@ public abstract class ProgramFactory implements IProgramFactory{
      */
     public Expression createSqrtExpression(Expression e, SourceLocation location){
         return new SquareRoot((Expression< DoubleType>)e);
+    }
+
+    /**
+     * Returns an expression that evaluates to the direction (in radians) of the
+     * ship executing the program.
+     */
+    public Expression createGetDirectionExpression(SourceLocation location){
+        return new GetHeading();
     }
 
     /**

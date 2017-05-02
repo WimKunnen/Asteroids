@@ -1,7 +1,6 @@
 package asteroids.model;
 
 import asteroids.part2.CollisionListener;
-import asteroids.part2.internal.Sound;
 import be.kuleuven.cs.som.annotate.*;
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
@@ -18,7 +17,7 @@ import java.util.*;
  *
  * @version 1.0
  */
-public class World {
+public class World implements WorldInterface {
 
     /**
      * Initializer for the World.
@@ -419,5 +418,10 @@ public class World {
     public Vector getFirstCollisionPosition(){
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
     }
 }

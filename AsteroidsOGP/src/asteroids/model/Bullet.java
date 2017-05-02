@@ -3,6 +3,8 @@ package asteroids.model;
 import be.kuleuven.cs.som.annotate.*;
 import be.kuleuven.cs.som.taglet.*;
 
+import java.util.Iterator;
+
 /**
  * @author Wim Kunnen and Maarten Doclo.
  */
@@ -170,5 +172,4 @@ public class Bullet extends Entity {
         double distanceBetweenCentres = getDistanceBetween(ship) + getRadius() + ship.getRadius();
         return getRadius() < ship.getRadius() - distanceBetweenCentres;
     }
-
 }

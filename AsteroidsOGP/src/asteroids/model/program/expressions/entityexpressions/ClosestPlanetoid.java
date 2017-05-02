@@ -1,18 +1,15 @@
 package asteroids.model.program.expressions.entityexpressions;
 
-import asteroids.model.Entity;
-import asteroids.model.Program;
-import asteroids.model.Ship;
-import asteroids.model.World;
+import asteroids.model.*;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.EntityType;
 
 /**
- * Created by WimKunnen on 25/04/2017.
+ * Created by WimKunnen on 02/05/2017.
  */
-public class ClosestShip implements Expression<EntityType>{
+public class ClosestPlanetoid implements Expression<EntityType>{
 
-    public ClosestShip() {
+    public ClosestPlanetoid() {
     }
 
     @Override
@@ -21,11 +18,11 @@ public class ClosestShip implements Expression<EntityType>{
         Ship theExecutor = program.getShip();
         World alderaan = theExecutor.getWorld();
 
-        Ship closestShip = (Ship) alderaan.getAllEntities().stream()
-                .filter((Entity q) -> q instanceof Ship)
+        Planetoid closestPlanetoid = (Planetoid) alderaan.getAllEntities().stream()
+                .filter((Entity q) -> q instanceof Planetoid)
                 .min((Entity a, Entity b)
                         -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
 
-        return new EntityType(closestShip);
+        return new EntityType(closestPlanetoid);
     }
 }

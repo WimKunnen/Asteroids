@@ -11,19 +11,17 @@ import asteroids.model.program.types.EntityType;
 /**
  * Created by WimKunnen on 24/04/2017.
  */
-public class GetHeading extends OneArgumentExecutable<Expression<EntityType>>
+public class GetHeading
         implements Expression<DoubleType> {
 
-public GetHeading(Expression<EntityType> argument)
-        throws IllegalArgumentException {
-        super(argument);
+public GetHeading(){
         }
 
 @Override
 public DoubleType calculate(Program program) throws RuntimeException{
-        Entity e = this.getFirstArgument().calculate(program).getType();
-        if(e == null)
+        Ship theExecutor = program.getShip();
+        if(theExecutor == null)
             throw new RuntimeException();
-        return new DoubleType(((Ship) e).getHeading());
+        return new DoubleType(((Ship) theExecutor).getHeading());
         }
 }

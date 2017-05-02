@@ -1,31 +1,28 @@
 package asteroids.model.program.expressions.entityexpressions;
 
-import asteroids.model.Entity;
-import asteroids.model.Program;
-import asteroids.model.Ship;
-import asteroids.model.World;
+import asteroids.model.*;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.EntityType;
 
 /**
- * Created by WimKunnen on 25/04/2017.
+ * Created by WimKunnen on 02/05/2017.
  */
-public class ClosestShip implements Expression<EntityType>{
+public class ClosestPlanet implements Expression<EntityType>{
 
-    public ClosestShip() {
+    public ClosestPlanet(){
     }
 
     @Override
     public EntityType calculate(Program program) throws RuntimeException{
 
         Ship theExecutor = program.getShip();
-        World alderaan = theExecutor.getWorld();
+        World world = theExecutor.getWorld();
 
-        Ship closestShip = (Ship) alderaan.getAllEntities().stream()
-                .filter((Entity q) -> q instanceof Ship)
+        MinorPlanet closestPlanet = (MinorPlanet) world.getAllEntities().stream()
+                .filter((Entity q) -> q instanceof MinorPlanet)
                 .min((Entity a, Entity b)
                         -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
 
-        return new EntityType(closestShip);
+        return new EntityType(closestPlanet);
     }
 }

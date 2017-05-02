@@ -1,5 +1,6 @@
 package asteroids.model;
 
+import asteroids.model.program.statements.Print;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.Raw;
@@ -24,7 +25,7 @@ public class Program {
     @Raw
     public void scheduleStatement(Statement statement){
         if(statement != null)
-            executionStack.push(statement);
+            executionStack.addLast(statement);
     }
 
     @Raw
@@ -37,7 +38,7 @@ public class Program {
     }
     private Deque<Statement> executionStack = new ArrayDeque<Statement>();
 
-    private double executionTime;
+    private double timeLeft;
 
     private boolean onHold = false;
 
@@ -49,6 +50,8 @@ public class Program {
         this.onHold = false;
     }
 
+    public boolean isExecuted = false;
+
     private List<Type> printed = new ArrayList<>();
 
     public List<Type> getPrinted(){
@@ -57,10 +60,25 @@ public class Program {
 
     public List<Type> execute(double timeDifference){
 
+        double time = timeDifference + timeLeft;
+
         for(Statement statement : getExecutionStack()){
-            statement.execute(this);
+            if (time >= 0.2) {
+                continueProgram();
+                statement.execute(this);
+                time -= statement.getExecutionTime();
+                getExecutionStack().removeFirst();
+                if (getExecutionStack().size() == 0){
+                    isExecuted = true;
+                }
+            }
+            else{
+                hold();
+                timeLeft = time;
+                break;
+            }
         }
-        return this.printed;
+        return this.getPrinted();
     }
 
     private Map<String, Type<?>> globals;

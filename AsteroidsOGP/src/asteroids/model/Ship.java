@@ -1,10 +1,8 @@
 package asteroids.model;
+import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.*;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 
 /**
@@ -555,5 +553,16 @@ public class Ship extends Entity{
     public void setProgram(Program newProgram){
         this.program = newProgram;
         newProgram.setShip(this);
+    }
+
+    public List<Object> executeProgram(double dt){
+        List<Type> printedList = getProgram().execute(dt);
+        if (getProgram().isExecuted){
+            List<Object> printedObjectList = new ArrayList<>(printedList);
+            return printedObjectList;
+        }
+        else{
+            return null;
+        }
     }
 }

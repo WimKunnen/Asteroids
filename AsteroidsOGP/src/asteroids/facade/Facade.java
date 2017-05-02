@@ -766,11 +766,6 @@ public class Facade implements asteroids.part3.facade.IFacade  {
                                      double totalTraveledDistance) throws ModelException{
         try {
             Planetoid planetoid = new Planetoid(x, y, xVelocity, yVelocity, radius, totalTraveledDistance);
-            try {
-                planetoid.decrementRadiusDistance(totalTraveledDistance);
-            }catch (IllegalArgumentException e){
-                throw new ModelException(e);
-            }
             return planetoid;
         }catch (IllegalArgumentException e){
             throw new ModelException(e);
@@ -860,7 +855,7 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * printed.
      */
     public List<Object> executeProgram(Ship ship, double dt) throws ModelException{
-        return null;
+        return ship.executeProgram(dt);
     }
 
     /**

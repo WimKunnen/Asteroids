@@ -29,6 +29,7 @@ public class Planetoid extends MinorPlanet {
         super(x, y, velocityX, velocityY, radius);
         this.setDensity(0.917E12);
         this.setDistanceTravelled(distanceTravelled);
+        decrementRadiusDistance(distanceTravelled);
     }
 
     /**

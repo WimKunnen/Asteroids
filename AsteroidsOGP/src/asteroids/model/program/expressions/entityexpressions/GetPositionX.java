@@ -2,7 +2,6 @@ package asteroids.model.program.expressions.entityexpressions;
 
 import asteroids.model.Entity;
 import asteroids.model.Program;
-import asteroids.model.World;
 import asteroids.model.program.OneArgumentExecutable;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;

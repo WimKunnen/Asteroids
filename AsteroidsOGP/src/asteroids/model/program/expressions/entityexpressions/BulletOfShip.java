@@ -21,8 +21,9 @@ public class BulletOfShip implements Expression<EntityType>{
         Bullet bullet = (Bullet) alderaan.getAllEntities().stream()
                 .filter((Entity e)
                         -> e instanceof Bullet && ((Bullet)e).getSource() == theExecutor && e.getWorld() == alderaan)
-                .findAny().get();
+                .findAny()
+                .orElse(null);
 
-        return null;
+        return new EntityType(bullet);
     }
 }

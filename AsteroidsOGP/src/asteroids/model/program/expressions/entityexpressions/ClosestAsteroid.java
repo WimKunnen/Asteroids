@@ -21,7 +21,8 @@ public class ClosestAsteroid implements Expression<EntityType>{
         Asteroid closestAsteroid = (Asteroid) alderaan.getAllEntities().stream()
                 .filter((Entity q) -> q instanceof Asteroid)
                 .min((Entity a, Entity b)
-                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
+                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor)))
+                .orElse(null);
 
         return new EntityType(closestAsteroid);
     }

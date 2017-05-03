@@ -21,7 +21,8 @@ public class ClosestPlanet implements Expression<EntityType>{
         MinorPlanet closestPlanet = (MinorPlanet) world.getAllEntities().stream()
                 .filter((Entity q) -> q instanceof MinorPlanet)
                 .min((Entity a, Entity b)
-                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
+                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor)))
+                .orElse(null);
 
         return new EntityType(closestPlanet);
     }

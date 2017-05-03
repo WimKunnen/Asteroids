@@ -21,7 +21,8 @@ public class ClosestPlanetoid implements Expression<EntityType>{
         Planetoid closestPlanetoid = (Planetoid) alderaan.getAllEntities().stream()
                 .filter((Entity q) -> q instanceof Planetoid)
                 .min((Entity a, Entity b)
-                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
+                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor)))
+                .orElse(null);
 
         return new EntityType(closestPlanetoid);
     }

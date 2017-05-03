@@ -3,12 +3,12 @@ package asteroids.tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import asteroids.model.World;
 import org.junit.Before;
 import org.junit.Test;
 
 import asteroids.model.Bullet;
 import asteroids.model.Ship;
-import asteroids.model.World;
 import asteroids.facade.Facade;
 import asteroids.part2.facade.IFacade;
 import asteroids.util.ModelException;

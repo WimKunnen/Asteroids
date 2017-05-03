@@ -1,5 +1,6 @@
 package asteroids.model.program;
 
+import asteroids.model.Program;
 import asteroids.model.program.expressions.DoubleLiteral;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.expressions.entityexpressions.*;
@@ -18,7 +19,11 @@ import java.util.List;
  * Created by WimKunnen on 18/04/2017.
  */
 @SuppressWarnings("unchecked")
-public abstract class ProgramFactory implements IProgramFactory{
+public abstract class ProgramFactory implements IProgramFactory<Expression, Statement, FunctionDefinition, Program>{
+
+    public ProgramFactory(){
+
+    }
 
     /**
      * Create a statement that represents the assignment of a variable.
@@ -96,7 +101,7 @@ public abstract class ProgramFactory implements IProgramFactory{
      * @param statements
      *            The statements that must be executed in the given order.
      */
-    public Statement createSequenceStatement(ArrayList<Statement> statements, SourceLocation sourceLocation){
+    public Statement createSequenceStatement(List<Statement> statements, SourceLocation sourceLocation){
         return new Sequence(statements);
     }
 

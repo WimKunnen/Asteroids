@@ -17,7 +17,7 @@ import java.util.*;
  *
  * @version 1.0
  */
-public class World implements WorldInterface {
+public class World {
 
     /**
      * Initializer for the World.
@@ -240,7 +240,7 @@ public class World implements WorldInterface {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
             //if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
-                allEntities.add(entity);
+            allEntities.add(entity);
             //}
         }
         else{
@@ -381,7 +381,7 @@ public class World implements WorldInterface {
     /**
      * Move all entities in this world for a given timeDifference.
      *
-     * @param timeDifference How much time the entities need to move for. 
+     * @param timeDifference How much time the entities need to move for.
      */
     private void moveAllEntities(double timeDifference){
         Set<Entity> allEntities = new HashSet<>();
@@ -418,10 +418,5 @@ public class World implements WorldInterface {
     public Vector getFirstCollisionPosition(){
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();
-    }
-
-    @Override
-    public Iterator iterator() {
-        return null;
     }
 }

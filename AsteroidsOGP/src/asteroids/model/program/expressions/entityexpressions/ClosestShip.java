@@ -22,9 +22,10 @@ public class ClosestShip implements Expression<EntityType>{
         World alderaan = theExecutor.getWorld();
 
         Ship closestShip = (Ship) alderaan.getAllEntities().stream()
-                .filter((Entity q) -> q instanceof Ship)
+                .filter((Entity q) -> q instanceof Ship && q != theExecutor)
                 .min((Entity a, Entity b)
-                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor))).get();
+                        -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor)))
+                .orElse(null);
 
         return new EntityType(closestShip);
     }

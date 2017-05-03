@@ -3,9 +3,11 @@ package asteroids.model;
 import be.kuleuven.cs.som.annotate.Basic;
 
 /**
- * Created by WimKunnen on 18/04/2017.
+ * A class of minor planets for the Asteroid project.
  *
-r * A class of minor planets.
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 1.0
  */
 public abstract class MinorPlanet extends Entity {
     /**

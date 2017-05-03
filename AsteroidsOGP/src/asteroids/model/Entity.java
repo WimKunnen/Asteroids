@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * A class of entities for the game Asteroids.
- * Possible entities are currently ships and bullets.
+ * Possible entities are currently ships, bullets, MinorPlanets, Asteroids and Planetoids.
  *
  * @invar An entity located in a world will always fit in the boundaries of that world.
  *        | if (getWorld() != null)
@@ -24,7 +24,7 @@ import java.util.List;
  *
  * @author WimKunnen and Maarten Doclo
  *
- * @version 2.0
+ * @version 3.0
  */
 public abstract class Entity {
     /**

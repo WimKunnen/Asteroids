@@ -6,7 +6,11 @@ import be.kuleuven.cs.som.taglet.*;
 import java.util.Iterator;
 
 /**
- * @author Wim Kunnen and Maarten Doclo.
+ A class of bullets for the Asteroid project.
+ *
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 2.0
  */
 
 public class Bullet extends Entity {

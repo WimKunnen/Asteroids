@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * A class of spaceships for the game Asteroids.
- * The class involves a position, velocity, orientation, maximum velocity and a radius.
+ * The class involves a position, velocity, orientation, maximum velocity, a radius, bullets and their actions, and a program.
  * 
  * @invar   The heading of a ship will always be a number between zero and 2 * PI.
  * 		    | isValidAngle()

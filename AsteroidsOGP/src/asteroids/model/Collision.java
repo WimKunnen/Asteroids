@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by WimKunnen on 18/04/2017.
+ * A class of collisions for the Asteroid project.
  *
- * A class of collisions.
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 1.0
  */
 public class Collision {
     /**

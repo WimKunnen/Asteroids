@@ -15,7 +15,7 @@ import java.util.*;
  *
  * @author Maarten Doclo and Wim Kunnen
  *
- * @version 1.0
+ * @version 3.0
  */
 public class World {
 
@@ -103,24 +103,41 @@ public class World {
         }
     }
 
-//    /**
-//     * Variable registering all ships in the world as a set.
-//     */
-//    private HashSet<Ship> allShips = new HashSet<>();
-//    /**
-//     * Variable registering all bullets in the world as a set.
-//     */
-//    private HashSet<Bullet> allBullets = new HashSet<>();
-//
-//    /**
-//     * Variable registering all minor planets in the world as a set.
-//     */
-//    private HashSet<MinorPlanet> allMinorPlanets = new HashSet<>();
-
+    /**
+     * A HashSet containing all entities that are currently present in this world.
+     *
+     * * @invar   Each entity in the HashSet is part of this world.
+     *          | for each entity in allEntities:
+     *          |    entity.getWorld == this
+     *
+     * @invar   Each entity in the referenced set are effective and not yet terminated.
+     *          |for each entity in allEntities:
+     *          |   ( (entity != null) &&
+     *          |     (! entity.checkTermination()) )
+     *
+     * @invar   The referenced set is effective.
+     *          | allEntities != null
+     */
     private HashSet<Entity> allEntities = new HashSet<>();
 
     /**
-     * Variable registering all entities in the world as a hashmap, with the entity's position as a key.
+     * Variable registering all entities in the world as a HashMap, with the entity's position as a key.
+     *
+     * @invar   Each entity in the HashMap is part of this world.
+     *          | for each entity in entityPositionMap:
+     *          |    entity.getWorld == this
+     *
+     * @invar   The position of each entity in the world is also present in the HashMap as its key.
+     *          | for each entity in entityPositionMap:
+     *          |   entityPositionMap.containsKey(entity)
+     *
+     * @invar   Each entity in the referenced set are effective and not yet terminated.
+     *          |for each entity in entityPositionMap:
+     *          |   ( (entity != null) &&
+     *          |     (! entity.checkTermination()) )
+     *
+     * @invar   The referenced set is effective.
+     *          | allEntities != null
      */
     public HashMap<Vector, Entity> entityPositionMap = new HashMap<>();
 

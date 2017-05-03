@@ -1,11 +1,11 @@
 package asteroids.model;
 
-import java.util.Iterator;
-
 /**
- * Created by WimKunnen on 18/04/2017.
+ * A class of planetoids for the Asteroid project.
  *
- * A class of planetoids.
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 1.0
  */
 public class Planetoid extends MinorPlanet {
 

@@ -1,6 +1,5 @@
 package asteroids.model;
 
-import asteroids.model.program.statements.Print;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.Raw;
@@ -8,7 +7,11 @@ import be.kuleuven.cs.som.annotate.Raw;
 import java.util.*;
 
 /**
- * Created by WimKunnen on 18/04/2017.
+ A class of programs for the Asteroid project.
+ *
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 1.0
  */
 public class Program {
 

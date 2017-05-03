@@ -1,11 +1,12 @@
 package asteroids.model;
 
-import java.util.Iterator;
 
 /**
- * Created by WimKunnen on 18/04/2017.
+ * A class of asteroids for the Asteroid project.
  *
- * A class of asteroids.
+ * @author WimKunnen and Maarten Doclo
+ *
+ * @version 1.0
  */
 public class Asteroid extends MinorPlanet {
 

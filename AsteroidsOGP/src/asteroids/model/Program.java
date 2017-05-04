@@ -1,5 +1,6 @@
 package asteroids.model;
 
+import asteroids.model.program.FunctionDefinition;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.Raw;
@@ -14,6 +15,21 @@ import java.util.*;
  * @version 1.0
  */
 public class Program {
+
+    public Program(List<FunctionDefinition> functions, List<Statement> body) {
+        setFunctions(functions);
+        setExecutionStack(body);
+    }
+
+    private List<FunctionDefinition> functions;
+
+    public void setFunctions(List<FunctionDefinition> functions) {
+        this.functions = functions;
+    }
+
+    public List<FunctionDefinition> getFunctions() {
+        return functions;
+    }
 
     private Ship ship;
 
@@ -39,9 +55,22 @@ public class Program {
     public Deque<Statement> getExecutionStack(){
         return this.executionStack;
     }
-    private Deque<Statement> executionStack = new ArrayDeque<Statement>();
+
+    private Deque<Statement> executionStack;
+
+    public void setExecutionStack(List<Statement> body) {
+        this.executionStack = new ArrayDeque<Statement>(body);
+    }
 
     private double timeLeft;
+
+    private double getTimeLeft(){
+        return this.timeLeft;
+    }
+
+    public void setTimeLeft(double timeLeft) {
+        this.timeLeft = timeLeft;
+    }
 
     private boolean onHold = false;
 
@@ -63,7 +92,7 @@ public class Program {
 
     public List<Type> execute(double timeDifference){
 
-        double time = timeDifference + timeLeft;
+        double time = timeDifference + getTimeLeft();
 
         for(Statement statement : getExecutionStack()){
             if (time >= 0.2) {
@@ -77,7 +106,7 @@ public class Program {
             }
             else{
                 hold();
-                timeLeft = time;
+                setTimeLeft(time);
                 break;
             }
         }
@@ -85,6 +114,8 @@ public class Program {
     }
 
     private Map<String, Type<?>> globals;
+
+
 
     public Type<?> getVariableValue(String name) throws RuntimeException{
         Type<?> current = globals.get(name);

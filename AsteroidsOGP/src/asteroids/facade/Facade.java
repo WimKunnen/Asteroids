@@ -76,9 +76,10 @@ public class Facade implements asteroids.part3.facade.IFacade  {
                            double mass) throws ModelException {
        try{
            return new Ship(x, y, xVelocity, yVelocity, orientation, radius,mass);
-       }catch(IllegalArgumentException e) {
+       }catch(IllegalArgumentException | AssertionError e) {
            throw new ModelException(e);
        }
+
     }
 
     /**

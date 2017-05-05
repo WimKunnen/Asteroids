@@ -18,7 +18,9 @@ public class ClosestAsteroid implements Expression<EntityType>{
         Ship theExecutor = program.getShip();
         World alderaan = theExecutor.getWorld();
 
-        Asteroid closestAsteroid = (Asteroid) alderaan.getAllEntities().stream()
+        Asteroid closestAsteroid = (Asteroid) alderaan
+                .getAllEntities()
+                .stream()
                 .filter((Entity q) -> q instanceof Asteroid)
                 .min((Entity a, Entity b)
                         -> (int)Math.signum(a.getDistanceBetween(theExecutor) - b.getDistanceBetween(theExecutor)))

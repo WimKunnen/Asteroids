@@ -29,7 +29,7 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
     //TODO return statement.
     @Override
     public Type calculate(Program program) throws RuntimeException{
-        if(this.function.getArguments().size() > this.getNbArguments())
+        if(this.function.getArguments().size() > this.getNbArguments()) //TODO moet het bekje hier omgekeerd?
             throw new RuntimeException();
         for(Statement statement : this.function.getBody()){
             statement.execute(program);

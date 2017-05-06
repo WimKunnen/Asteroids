@@ -36,7 +36,7 @@ public class Part3TestFull {
 
   static int nbStudentsInTeam;
   IFacade facade;
-  //IProgramFactory<?, ?, ?, Program> programFactory = new ProgramFactory();
+  IProgramFactory<?, ?, ?, Program> programFactory = new ProgramFactory();
   World filledWorld;
   Ship ship1, ship2, ship3;
   Bullet bullet1;
@@ -216,16 +216,16 @@ public class Part3TestFull {
     score += 2;
   }
 
-//  @Test
-//  public void testLoadProgram() throws ModelException {
-//    max_score += 2;
-//    Ship ship = facade.createShip(100, 120, 10, 5, 50, 0, 1.0E20);
-//    String code = "print 4.0;";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship, program);
-//    assertEquals(program, facade.getShipProgram(ship));
-//    score += 2;
-//  }
+  @Test
+  public void testLoadProgram() throws ModelException {
+    max_score += 2;
+    Ship ship = facade.createShip(100, 120, 10, 5, 50, 0, 1.0E20);
+    String code = "print 4.0;";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship, program);
+    assertEquals(program, facade.getShipProgram(ship));
+    score += 2;
+  }
 
   @Test
   public void testCreateBullet() throws ModelException {
@@ -1328,17 +1328,17 @@ public class Part3TestFull {
 
   // Assignment Statement
 
-//  @Test
-//  public void testAssignmentStatement_NewGlobalVariable() throws ModelException {
-//    max_score += 4;
-//    String code = "varname := 7.0;" + "print varname; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 7.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 4;
-//  }
+  @Test
+  public void testAssignmentStatement_NewGlobalVariable() throws ModelException {
+    max_score += 4;
+    String code = "varname := 7.0;" + "print varname; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 7.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 4;
+  }
 //
 //  @Test
 //  public void testAssignmentStatement_LocalVariableSameNameGlobalVariable() throws ModelException {

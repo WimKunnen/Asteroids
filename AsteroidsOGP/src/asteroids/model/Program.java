@@ -1,6 +1,9 @@
 package asteroids.model;
 
 import asteroids.model.program.FunctionDefinition;
+import asteroids.model.program.expressions.Expression;
+import asteroids.model.program.expressions.FunctionInvocation;
+import asteroids.model.program.statements.Sequence;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.Raw;
@@ -16,12 +19,29 @@ import java.util.*;
  */
 public class Program {
 
-    public Program(List<FunctionDefinition> functions, List<Statement> body) {
+    public Program(List<FunctionDefinition> functions, Statement body) {
         setFunctions(functions);
-        setExecutionStack(body);
+        this.executionStack = new ArrayDeque<>();
+        scheduleStatement(body);
+        setFunctionMap();
     }
 
     private List<FunctionDefinition> functions;
+
+    private Map<String,FunctionDefinition> functionMap = new HashMap<>();
+
+    public Map<String, FunctionDefinition> getFunctionMap() {
+        return functionMap;
+    }
+
+    private void setFunctionMap(){
+        for (FunctionDefinition functionDefinition : functions){
+            getFunctionMap().put(functionDefinition.getName(),functionDefinition);
+        }
+    }
+    public FunctionDefinition getFunctionDefinition(String functionName){
+        return getFunctionMap().get(functionName);
+    }
 
     public void setFunctions(List<FunctionDefinition> functions) {
         this.functions = functions;
@@ -44,7 +64,7 @@ public class Program {
     @Raw
     public void scheduleStatement(Statement statement){
         if(statement != null)
-            executionStack.addLast(statement);
+            executionStack.push(statement);
     }
 
     @Raw
@@ -62,9 +82,9 @@ public class Program {
         this.executionStack = new ArrayDeque<Statement>(body);
     }
 
-    private double timeLeft;
+    private double timeLeft = 0;
 
-    private double getTimeLeft(){
+    public double getTimeLeft(){
         return this.timeLeft;
     }
 
@@ -74,11 +94,11 @@ public class Program {
 
     private boolean onHold = false;
 
-    private void hold(){
+    public void hold(){
         this.onHold = true;
     }
 
-    private void continueProgram(){
+    public void continueProgram(){
         this.onHold = false;
     }
 
@@ -90,12 +110,21 @@ public class Program {
         return this.printed;
     }
 
+    private double totalTime;
+    public double getTotalTime() {
+        return totalTime;
+    }
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
+    }
+
     public List<Type> execute(double timeDifference){
 
         double time = timeDifference + getTimeLeft();
+        setTotalTime(time);
 
-        for(Statement statement : getExecutionStack()){
-            if (time >= 0.2) {
+        for(Statement statement : getExecutionStack()){//TODO execution stack is being modified while being looped over
+            if (time >= statement.getExecutionTime()) {
                 continueProgram();
                 statement.execute(this);
                 time -= statement.getExecutionTime();
@@ -104,6 +133,7 @@ public class Program {
                     isExecuted = true;
                 }
             }
+
             else{
                 hold();
                 setTimeLeft(time);
@@ -113,9 +143,11 @@ public class Program {
         return this.getPrinted();
     }
 
-    private Map<String, Type<?>> globals;
+    private Map<String, Type<?>> globals = new HashMap<>();
 
-
+    public Map<String, Type<?>> getGlobals() {
+        return globals;
+    }
 
     public Type<?> getVariableValue(String name) throws RuntimeException{
         Type<?> current = globals.get(name);
@@ -130,5 +162,14 @@ public class Program {
             throw new RuntimeException();
 
         globals.put(name, value);
+    }
+
+    private FunctionInvocation currentFunctionInvocation;
+
+    public FunctionInvocation getCurrentFunctionInvocation() {
+        return currentFunctionInvocation;
+    }
+    public void setCurrentFunctionInvocation(FunctionInvocation invocation){
+        this.currentFunctionInvocation = invocation;
     }
 }

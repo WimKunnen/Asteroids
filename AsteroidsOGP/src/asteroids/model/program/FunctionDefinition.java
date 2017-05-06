@@ -9,33 +9,35 @@ import java.util.List;
  */
 public class FunctionDefinition {
 
-    public FunctionDefinition(String name, List<?> arguments, List<Statement> body){
+    public FunctionDefinition(String name, //List<?> arguments,
+            Statement body){
         this.setName(name);
-        this.setArguments(arguments);
+        //this.setArguments(arguments);
         this.setBody(body);
     }
 
     private String name;
-    private List<?> arguments;
-    private List<Statement> body;
+    //private List<?> arguments;
+
+    private Statement body;
 
     public String getName(){
         return this.name;
     }
-    public List<?> getArguments() {
-        return arguments;
-    }
-    public List<Statement> getBody() {
+//    public List<?> getArguments() {
+//        return arguments;
+//    }
+    public Statement getBody() {
         return body;
     }
 
     private void setName(String newName){
         this.name = newName;
     }
-    private void setArguments(List<?> newArguments){
-        this.arguments = newArguments;
-    }
-    private void setBody(List<Statement> newBody){
+//    private void setArguments(List<?> newArguments){
+//        this.arguments = newArguments;
+//    }
+    private void setBody(Statement newBody){
         this.body = newBody;
     }
 

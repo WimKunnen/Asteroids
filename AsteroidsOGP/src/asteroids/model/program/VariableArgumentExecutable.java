@@ -31,6 +31,10 @@ public abstract class VariableArgumentExecutable<T extends Executable> extends A
     }
     private final List<T> arguments;
 
+    public List<T> getArguments() {
+        return arguments;
+    }
+
     @Override @Raw
     public Executable[] getSubExecutables(){
         return arguments.<Executable>toArray(new Executable[0]);

@@ -9,7 +9,7 @@ public class Break implements Statement{
 
 	public Break() throws IllegalArgumentException {
             super();
-        }
+    }
 
     @Override
     public void execute(Program program) throws RuntimeException {

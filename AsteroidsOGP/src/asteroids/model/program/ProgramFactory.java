@@ -1,8 +1,7 @@
 package asteroids.model.program;
 
 import asteroids.model.Program;
-import asteroids.model.program.expressions.DoubleLiteral;
-import asteroids.model.program.expressions.Expression;
+import asteroids.model.program.expressions.*;
 import asteroids.model.program.expressions.entityexpressions.*;
 import asteroids.model.program.expressions.operations.*;
 import asteroids.model.program.statements.*;
@@ -14,15 +13,43 @@ import asteroids.part3.programs.SourceLocation;
 import javax.swing.plaf.nimbus.State;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * Created by WimKunnen on 18/04/2017.
  */
 @SuppressWarnings("unchecked")
-public abstract class ProgramFactory implements IProgramFactory<Expression, Statement, FunctionDefinition, Program>{
+public class ProgramFactory implements IProgramFactory<Expression, Statement, FunctionDefinition, Program>{
 
     public ProgramFactory(){
 
+    }
+
+    /**
+     * Create a program from the given arguments.
+     *
+     * @param functions
+     *            The function definitions for the program.
+     * @param main
+     *            The main statement of the program. Most likely this is a
+     *            sequence statement.
+     * @return A new program.
+     */
+    public Program createProgram(List<FunctionDefinition> functions, Statement main){
+        return new Program(functions,main);
+    }
+
+    /**
+     * Create a function definition involving the given function name,
+     * parameters and body.
+     *
+     * @param functionName
+     *            The name of the function
+     * @param body
+     *            The body of the function.
+     */
+    public FunctionDefinition createFunctionDefinition(String functionName, Statement body, SourceLocation sourceLocation){
+        return new FunctionDefinition(functionName, body);
     }
 
     /**
@@ -103,6 +130,42 @@ public abstract class ProgramFactory implements IProgramFactory<Expression, Stat
      */
     public Statement createSequenceStatement(List<Statement> statements, SourceLocation sourceLocation){
         return new Sequence(statements);
+    }
+
+    /**
+     * Create an expression that evaluates to the current value of the given
+     * variable.
+     *
+     * @param variableName
+     *            The name of the variable to read.
+     */
+    public Expression createReadVariableExpression(String variableName, SourceLocation sourceLocation){
+        return new ReadVariable(variableName);
+    }
+
+
+    /**
+     * Create an expression that evaluates to the current value of the given
+     * parameter.
+     *
+     * @param parameterName
+     *            The name of the parameter to read.
+     */
+    public Expression createReadParameterExpression(String parameterName, SourceLocation sourceLocation){
+        return new ReadParameter(parameterName);
+    }
+
+    /**
+     * Create an expression that evaluates to result of calling the given
+     * function with the given list of actual arguments.
+     *
+     * @param functionName
+     *            The name of the function to call.
+     * @param actualArgs
+     *            A list of expressions that act as actual arguments.
+     */
+    public Expression createFunctionCallExpression(String functionName, List<Expression> actualArgs, SourceLocation sourceLocation){
+        return new FunctionInvocation(actualArgs, functionName);
     }
 
     /**

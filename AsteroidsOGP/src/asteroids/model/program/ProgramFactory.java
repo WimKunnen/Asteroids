@@ -35,8 +35,13 @@ public class ProgramFactory implements IProgramFactory<Expression, Statement, Fu
      *            sequence statement.
      * @return A new program.
      */
+<<<<<<< Updated upstream
     public Program createProgram(List<FunctionDefinition> functions, Statement main){
         return new Program(functions,main);
+=======
+    public Program createProgram(List<FunctionDefinition> functions, Sequence main){
+        return new Program(functions, main);
+>>>>>>> Stashed changes
     }
 
     /**
@@ -48,7 +53,11 @@ public class ProgramFactory implements IProgramFactory<Expression, Statement, Fu
      * @param body
      *            The body of the function.
      */
+<<<<<<< Updated upstream
     public FunctionDefinition createFunctionDefinition(String functionName, Statement body, SourceLocation sourceLocation){
+=======
+    public FunctionDefinition createFunctionDefinition(String functionName, Sequence body, SourceLocation sourceLocation){
+>>>>>>> Stashed changes
         return new FunctionDefinition(functionName, body);
     }
 
@@ -143,7 +152,10 @@ public class ProgramFactory implements IProgramFactory<Expression, Statement, Fu
         return new ReadVariable(variableName);
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     /**
      * Create an expression that evaluates to the current value of the given
      * parameter.

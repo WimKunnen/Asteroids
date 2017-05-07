@@ -1,8 +1,11 @@
 package asteroids.model;
 
 import asteroids.model.program.FunctionDefinition;
+<<<<<<< Updated upstream
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.expressions.FunctionInvocation;
+=======
+>>>>>>> Stashed changes
 import asteroids.model.program.statements.Sequence;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
@@ -19,11 +22,21 @@ import java.util.*;
  */
 public class Program {
 
+<<<<<<< Updated upstream
     public Program(List<FunctionDefinition> functions, Statement body) {
+=======
+    //TODO change constructors
+    public Program(List<FunctionDefinition> functions, List<Statement> body) {
+>>>>>>> Stashed changes
         setFunctions(functions);
         this.executionStack = new ArrayDeque<>();
         scheduleStatement(body);
         setFunctionMap();
+    }
+
+    public Program(List<FunctionDefinition> functions, Sequence main){
+        this.setFunctions(functions);
+        this.setMain(main);
     }
 
     private List<FunctionDefinition> functions;
@@ -88,13 +101,21 @@ public class Program {
         return this.timeLeft;
     }
 
-    public void setTimeLeft(double timeLeft) {
+    private void setTimeLeft(double timeLeft) {
         this.timeLeft = timeLeft;
     }
 
     private boolean onHold = false;
 
+<<<<<<< Updated upstream
     public void hold(){
+=======
+    public boolean isOnHold() {
+        return this.onHold;
+    }
+
+    private void hold(){
+>>>>>>> Stashed changes
         this.onHold = true;
     }
 
@@ -102,7 +123,11 @@ public class Program {
         this.onHold = false;
     }
 
-    public boolean isExecuted = false;
+    private boolean executed = false;
+
+    public boolean isExecuted() {
+        return this.executed;
+    }
 
     private List<Type> printed = new ArrayList<>();
 
@@ -130,7 +155,7 @@ public class Program {
                 time -= statement.getExecutionTime();
                 getExecutionStack().removeFirst();
                 if (getExecutionStack().size() == 0){
-                    isExecuted = true;
+                    executed = true;
                 }
             }
 
@@ -143,10 +168,17 @@ public class Program {
         return this.getPrinted();
     }
 
+<<<<<<< Updated upstream
     private Map<String, Type<?>> globals = new HashMap<>();
 
     public Map<String, Type<?>> getGlobals() {
         return globals;
+=======
+    private Map<String, Type<?>> globals;
+
+    public Map<String, Type<?>> getGlobals() {
+        return this.globals;
+>>>>>>> Stashed changes
     }
 
     public Type<?> getVariableValue(String name) throws RuntimeException{
@@ -164,6 +196,7 @@ public class Program {
         globals.put(name, value);
     }
 
+<<<<<<< Updated upstream
     private FunctionInvocation currentFunctionInvocation;
 
     public FunctionInvocation getCurrentFunctionInvocation() {
@@ -171,5 +204,15 @@ public class Program {
     }
     public void setCurrentFunctionInvocation(FunctionInvocation invocation){
         this.currentFunctionInvocation = invocation;
+=======
+    private Sequence main;
+
+    public Sequence getMain() {
+        return this.main;
+    }
+
+    public void setMain(Sequence main) {
+        this.main = main;
+>>>>>>> Stashed changes
     }
 }

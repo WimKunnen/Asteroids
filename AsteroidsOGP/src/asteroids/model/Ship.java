@@ -557,7 +557,7 @@ public class Ship extends Entity{
 
     public List<Object> executeProgram(double dt){
         List<Type> printedList = getProgram().execute(dt);
-        if (getProgram().isExecuted){
+        if (getProgram().isExecuted()){
             List<Object> printedObjectList = new ArrayList<>(printedList);
             return printedObjectList;
         }

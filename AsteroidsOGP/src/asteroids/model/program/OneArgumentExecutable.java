@@ -6,7 +6,7 @@ import be.kuleuven.cs.som.annotate.Raw;
 /**
  * Created by WimKunnen on 24/04/2017.
  */
-public abstract class OneArgumentExecutable<F extends Executable> extends ArgumentExecutable {
+public abstract class OneArgumentExecutable<F extends Executable> extends Executable.ArgumentExecutable {
     public OneArgumentExecutable(F first) throws IllegalArgumentException{
         if(!canHaveAsSubExecutable(first))
             throw new IllegalArgumentException();

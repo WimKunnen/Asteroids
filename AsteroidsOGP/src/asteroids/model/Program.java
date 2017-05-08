@@ -142,6 +142,7 @@ public class Program {
                 break;
             }
         }
+        //System.out.println(getPrinted());
         return this.getPrinted();
     }
 

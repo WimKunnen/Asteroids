@@ -9,7 +9,7 @@ import java.util.*;
  * Created by WimKunnen on 24/04/2017.
  */
 
-public abstract class VariableArgumentExecutable<T extends Executable> extends ArgumentExecutable {
+public abstract class VariableArgumentExecutable<T extends Executable> extends Executable.ArgumentExecutable {
 
     public VariableArgumentExecutable(List<T> arguments) throws IllegalArgumentException{
         if(arguments == null)

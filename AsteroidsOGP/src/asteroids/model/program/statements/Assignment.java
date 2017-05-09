@@ -3,6 +3,7 @@ package asteroids.model.program.statements;
 import asteroids.model.Program;
 import asteroids.model.program.OneArgumentExecutable;
 import asteroids.model.program.expressions.Expression;
+import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
 
 /**

@@ -34,7 +34,7 @@ public class Program {
 
     private void setFunctionMap(){
         for (FunctionDefinition functionDefinition : functions){
-            getFunctionMap().put(functionDefinition.getName(),functionDefinition);
+            this.functionMap.put(functionDefinition.getName(),functionDefinition);
         }
     }
     public FunctionDefinition getFunctionDefinition(String functionName){
@@ -129,8 +129,9 @@ public class Program {
 
         while (getExecutionStack().size() > 0){
 
-            Statement nextStatement = getExecutionStack().pop();
-            if (time >= nextStatement.getExecutionTime()){
+            Statement checkStatement = getExecutionStack().getFirst();
+            if (time >= checkStatement.getExecutionTime()){
+                Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
                 nextStatement.execute(this);
                 time -= nextStatement.getExecutionTime();
@@ -145,7 +146,7 @@ public class Program {
             }
         }
 
-//        for(Statement statement : getExecutionStack()){//TODO execution stack is being modified while being looped over
+//        for(Statement statement : getExecutionStack()){
 //            if (time >= statement.getExecutionTime()) {
 //                continueProgram();
 //                statement.execute(this);
@@ -162,7 +163,7 @@ public class Program {
 //                break;
 //            }
 //        }
-        //System.out.println(getPrinted());
+
         return this.getPrinted();
     }
 

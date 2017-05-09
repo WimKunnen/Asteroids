@@ -30,7 +30,6 @@ public class Return implements Statement{
 
     @Override
     public void execute(Program program){
-        System.out.println("check");
         if (program.getCurrentFunctionInvocation().getToReturn() == null){
             program.getCurrentFunctionInvocation().setToReturn(getValue().calculate(program));
         }

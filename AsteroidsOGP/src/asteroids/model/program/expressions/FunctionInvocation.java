@@ -59,22 +59,15 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         this.toReturn = toReturn;
     }
 
-    //TODO return statement.
     @Override
     public Type calculate(Program program) throws RuntimeException{
         program.setCurrentFunctionInvocation(this);
         FunctionDefinition function = program.getFunctionDefinition(getFunctionName());
 
-//        if(this.function.getArguments().size() > this.getNbArguments())
-//            throw new RuntimeException();
-//        for(Statement statement : this.function.getBody()){
-//            statement.execute(program);
-//        }
-        //System.out.println(function.getBody());
-        function.getBody().execute(program);
-        program.setCurrentFunctionInvocation(null);
-        program.emptyLocals();
-        return toReturn;
+        function.getBody().execute(program); //TODO
+        //program.setCurrentFunctionInvocation(null);
+        //program.emptyLocals();
+        return toReturn; //TODO
     }
 
 }

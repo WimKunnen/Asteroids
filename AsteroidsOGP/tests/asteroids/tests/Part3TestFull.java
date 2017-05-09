@@ -2815,18 +2815,18 @@ public class Part3TestFull {
 //    score += 3;
 //  }
 //
-//  @Test
-//  public void testLessThan_FalseCase() throws ModelException {
-//    max_score += 3;
-//    String code = "print 6.0 < 4.0;";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { false };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 3;
-//  }
-//
+  @Test
+  public void testLessThan_FalseCase() throws ModelException {
+    max_score += 3;
+    String code = "print 6.0 < 4.0;";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { false };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 3;
+  }
+
 //  @Test
 //  public void testLessThan_IllegalCase() throws ModelException {
 //    try {

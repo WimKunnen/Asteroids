@@ -20,8 +20,12 @@ public class Assignment extends OneArgumentExecutable<Expression<? extends Type<
     public void execute(Program program) throws RuntimeException {
         if (program == null)
             throw new RuntimeException();
-
-        program.setVariableValue(variableName, getFirstArgument().calculate(program));
+        if (program.getCurrentFunctionInvocation() == null){
+            program.setVariableValue(variableName, getFirstArgument().calculate(program));
+        }
+        else{
+            program.setLocalVariableValue(variableName, getFirstArgument().calculate(program));
+        }
     }
 
     @Override

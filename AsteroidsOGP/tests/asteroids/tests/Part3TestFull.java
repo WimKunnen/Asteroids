@@ -1328,30 +1328,30 @@ public class Part3TestFull {
 
   // Assignment Statement
 
-//  @Test
-//  public void testAssignmentStatement_NewGlobalVariable() throws ModelException {
-//    max_score += 4;
-//    String code = "varname := 7.0;" + "print varname; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 7.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 4;
-//  }
-//
-//  @Test
-//  public void testAssignmentStatement_LocalVariableSameNameGlobalVariable() throws ModelException {
-//    max_score += 12;
-//    String code = "def f { " + "  a := 10.0; " + "  return a; " + "} " + "a := 20.0; " + "print a; " + "print f(); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 20.0, 10.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 12;
-//  }
-//
+  @Test
+  public void testAssignmentStatement_NewGlobalVariable() throws ModelException {
+    max_score += 4;
+    String code = "varname := 7.0;" + "print varname; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 7.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 4;
+  }
+
+  @Test
+  public void testAssignmentStatement_LocalVariableSameNameGlobalVariable() throws ModelException {
+    max_score += 12;
+    String code = "def f { " + "  a := 10.0; " + "  return a; " + "} " + "a := 20.0; " + "print a; " + "print f(); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 20.0, 10.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 12;
+  }
+
 //  @Test
 //  public void testAssignmentStatement_LocalVariableSameNameFunction() throws ModelException {
 //    max_score += 12;

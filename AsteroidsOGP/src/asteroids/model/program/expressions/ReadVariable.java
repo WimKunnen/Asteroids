@@ -24,7 +24,12 @@ public class ReadVariable implements Expression<Type<?>>{
 
     @Override
     public Type calculate(Program program){
-        return program.getVariableValue(getVariableName());
+        if (program.getCurrentFunctionInvocation() == null){
+            return program.getVariableValue(getVariableName());
+        }
+        else{
+            return program.getLocalVariableValue(getVariableName());
+        }
     }
 
 }

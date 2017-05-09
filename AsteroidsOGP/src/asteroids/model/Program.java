@@ -106,9 +106,11 @@ public class Program {
         return executed;
     }
 
-    private List<Type> printed = new ArrayList<>();
 
-    public List<Type> getPrinted(){
+
+    private List<Object> printed = new ArrayList<>();
+
+    public List<Object> getPrinted(){
         return this.printed;
     }
 
@@ -120,28 +122,46 @@ public class Program {
         this.totalTime = totalTime;
     }
 
-    public List<Type> execute(double timeDifference){
+    public List<Object> execute(double timeDifference){
 
         double time = timeDifference + getTimeLeft();
         setTotalTime(time);
 
-        for(Statement statement : getExecutionStack()){//TODO execution stack is being modified while being looped over
-            if (time >= statement.getExecutionTime()) {
+        while (getExecutionStack().size() > 0){
+
+            Statement nextStatement = getExecutionStack().pop();
+            if (time >= nextStatement.getExecutionTime()){
                 continueProgram();
-                statement.execute(this);
-                time -= statement.getExecutionTime();
-                getExecutionStack().removeFirst();
+                nextStatement.execute(this);
+                time -= nextStatement.getExecutionTime();
                 if (getExecutionStack().size() == 0){
                     executed = true;
                 }
             }
-
             else{
                 hold();
                 setTimeLeft(time);
                 break;
             }
         }
+
+//        for(Statement statement : getExecutionStack()){//TODO execution stack is being modified while being looped over
+//            if (time >= statement.getExecutionTime()) {
+//                continueProgram();
+//                statement.execute(this);
+//                time -= statement.getExecutionTime();
+//                getExecutionStack().removeFirst();
+//                if (getExecutionStack().size() == 0){
+//                    executed = true;
+//                }
+//            }
+//
+//            else{
+//                hold();
+//                setTimeLeft(time);
+//                break;
+//            }
+//        }
         //System.out.println(getPrinted());
         return this.getPrinted();
     }
@@ -165,6 +185,31 @@ public class Program {
             throw new RuntimeException();
 
         globals.put(name, value);
+    }
+
+    private Map<String, Type<?>> locals = new HashMap<>();
+
+    public Map<String, Type<?>> getLocals() {
+        return locals;
+    }
+
+    public void emptyLocals(){
+        locals.clear();
+    }
+
+    public Type<?> getLocalVariableValue(String name) throws RuntimeException{
+        Type<?> current = locals.get(name);
+        if(current == null)
+            throw new RuntimeException();
+
+        return current;
+    }
+    public void setLocalVariableValue(String name, Type<?> value) throws RuntimeException{
+        Type<?> current = locals.get(name);
+        if(current != null && current.getClass() != value.getClass())
+            throw new RuntimeException();
+
+        locals.put(name, value);
     }
 
     private FunctionInvocation currentFunctionInvocation;

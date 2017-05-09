@@ -2,6 +2,7 @@ package asteroids.model.program.statements;
 
 import asteroids.model.Program;
 import asteroids.model.program.expressions.Expression;
+import asteroids.model.program.types.Type;
 
 /**
  * Created by WimKunnen on 24/04/2017.
@@ -29,6 +30,9 @@ public class Return implements Statement{
 
     @Override
     public void execute(Program program){
-
+        System.out.println("check");
+        if (program.getCurrentFunctionInvocation().getToReturn() == null){
+            program.getCurrentFunctionInvocation().setToReturn(getValue().calculate(program));
+        }
     }
 }

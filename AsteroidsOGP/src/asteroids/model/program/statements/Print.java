@@ -19,10 +19,10 @@ public class Print extends OneArgumentExecutable<Expression<? extends Type<?>>>
     public void execute(Program program) throws RuntimeException {
         if (program == null)
             throw new RuntimeException();
-        Type toPrint = (Type) getFirstArgument().calculate(program).getType();
-        String message = toPrint.toString();
-        program.getPrinted().add(toPrint);
-        System.out.println(message);
+        //System.out.println(getFirstArgument().calculate(program));
+        String toPrint = getFirstArgument().calculate(program).getType().toString();
+        program.getPrinted().add(getFirstArgument().calculate(program).getType());
+        System.out.println(toPrint);
     }
     @Override
     public double getExecutionTime(){

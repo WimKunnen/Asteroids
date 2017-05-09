@@ -49,6 +49,16 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         return functionName;
     }
 
+    private Type toReturn = null;
+
+    public Type getToReturn() {
+        return toReturn;
+    }
+
+    public void setToReturn(Type toReturn) {
+        this.toReturn = toReturn;
+    }
+
     //TODO return statement.
     @Override
     public Type calculate(Program program) throws RuntimeException{
@@ -60,9 +70,11 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 //        for(Statement statement : this.function.getBody()){
 //            statement.execute(program);
 //        }
-
+        //System.out.println(function.getBody());
         function.getBody().execute(program);
-        return new DoubleType(0);
+        program.setCurrentFunctionInvocation(null);
+        program.emptyLocals();
+        return toReturn;
     }
 
 }

@@ -165,8 +165,9 @@ public class Program {
 //                break;
 //            }
 //        }
-
-        return this.getPrinted();
+        if (executed){
+            return this.getPrinted();}
+        return null;
     }
 
     private Map<String, Type<?>> globals = new HashMap<>();

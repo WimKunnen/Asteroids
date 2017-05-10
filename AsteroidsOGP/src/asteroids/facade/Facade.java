@@ -1,6 +1,7 @@
 package asteroids.facade;
 
 import asteroids.model.*;
+import asteroids.model.program.ProgramFactory;
 import asteroids.part2.CollisionListener;
 import asteroids.part3.programs.IProgramFactory;
 import asteroids.util.ModelException;
@@ -856,8 +857,9 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * printed.
      */
     public List<Object> executeProgram(Ship ship, double dt) throws ModelException{
-        try{return ship.executeProgram(dt);}
-        catch (RuntimeException e){
+        try {
+            return ship.executeProgram(dt);
+        }catch (RuntimeException e){
             throw new ModelException(e);
         }
     }
@@ -866,6 +868,6 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Creates a new program factory.
      */
     public IProgramFactory<?, ?, ?, ? extends Program> createProgramFactory() throws ModelException{
-        return null;
+        return new ProgramFactory();
     }
 }

@@ -19,7 +19,8 @@ public class If extends ThreeArgumentExecutable<Expression<BooleanType>, Stateme
     public void execute(Program program) throws RuntimeException {
         if (program == null)
             throw new RuntimeException();
-
+        if (getFirstArgument() == null)
+            throw new RuntimeException();
         if(getFirstArgument().calculate(program).getType())
             program.scheduleStatement(getSecondArgument());
         else

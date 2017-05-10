@@ -3,12 +3,12 @@ package asteroids.model.program.expressions;
 import asteroids.model.Program;
 import asteroids.model.program.FunctionDefinition;
 import asteroids.model.program.VariableArgumentExecutable;
+import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
+import be.kuleuven.cs.som.annotate.Raw;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by WimKunnen on 25/04/2017.
@@ -20,6 +20,7 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         setFunction(function);
         setParameterMap(arguments);
         setFunctionName(functionName);
+        this.executionStack = new ArrayDeque<>();
     }
 
     private Map<String, Expression> parameterMap = new HashMap<>();
@@ -59,15 +60,48 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         this.toReturn = toReturn;
     }
 
+    private Deque<Statement> executionStack;
+    public Deque<Statement> getExecutionStack(){
+        return this.executionStack;
+    }
+    public void setExecutionStack(List<Statement> body) {
+        this.executionStack = new ArrayDeque<Statement>(body);
+    }
+
+    @Raw
+    public void scheduleStatement(Statement statement){
+        if(statement != null)
+            executionStack.push(statement);
+    }
+
     @Override
     public Type calculate(Program program) throws RuntimeException{
         program.setCurrentFunctionInvocation(this);
         FunctionDefinition function = program.getFunctionDefinition(getFunctionName());
 
-        function.getBody().execute(program); //TODO
-        //program.setCurrentFunctionInvocation(null);
-        //program.emptyLocals();
-        return toReturn; //TODO
+        scheduleStatement(function.getBody()); //TODO
+
+        while (getExecutionStack().size() > 0){
+            Statement checkStatement = getExecutionStack().getFirst();
+            if (program.getTotalTime() >= checkStatement.getExecutionTime()){
+                Statement nextStatement = getExecutionStack().pop();
+                program.continueProgram();
+                nextStatement.execute(program);
+                program.setTotalTime(program.getTotalTime() - nextStatement.getExecutionTime());
+//                if (getExecutionStack().size() == 0){
+//                    executed = true;
+//                }
+            }
+            else{
+                program.hold();
+                break;
+            }
+        }
+
+
+        program.setCurrentFunctionInvocation(null);
+        program.emptyLocals();
+        return toReturn;
     }
 
 }

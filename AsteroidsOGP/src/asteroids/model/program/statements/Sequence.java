@@ -20,10 +20,16 @@ public class Sequence extends VariableArgumentExecutable<Statement>
         if (program == null)
             throw new RuntimeException();
 
-        for (int i = getNbArguments()-1; i >= 0 ; i--) {
-            program.scheduleStatement(getArgumentAt(i));
+        if (program.getCurrentFunctionInvocation() == null) {
+            for (int i = getNbArguments() - 1; i >= 0; i--) {
+                program.scheduleStatement(getArgumentAt(i));
+            }
         }
-
+        else {
+            for (int i = getNbArguments() - 1; i >= 0; i--) {
+                program.getCurrentFunctionInvocation().scheduleStatement(getArgumentAt(i));
+            }
+        }
     }
 
     @Override

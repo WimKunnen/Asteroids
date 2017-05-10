@@ -1352,46 +1352,46 @@ public class Part3TestFull {
     score += 12;
   }
 
-//  @Test
-//  public void testAssignmentStatement_LocalVariableSameNameFunction() throws ModelException {
-//    max_score += 12;
-//    String code = "def g { " + "   return 1.0; " + "} " + "def f { " + "  g := 10.0; " + "  return g; " + "} "
-//        + "print f(); " + "print g(); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 10.0, 1.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 12;
-//  }
+  @Test
+  public void testAssignmentStatement_LocalVariableSameNameFunction() throws ModelException {
+    max_score += 12;
+    String code = "def g { " + "   return 1.0; " + "} " + "def f { " + "  g := 10.0; " + "  return g; " + "} "
+        + "print f(); " + "print g(); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 10.0, 1.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 12;
+  }
+
+  @Test
+  public void testAssignment_ImproperType() throws ModelException {
+    try {
+      max_score += 4;
+      String code = "varname := 7.0; " + "varname := self; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 1.0);
+      fail();
+    } catch (ModelException exc) {
+      score += 4;
+    }
+  }
 //
-//  @Test
-//  public void testAssignment_ImproperType() throws ModelException {
-//    try {
-//      max_score += 4;
-//      String code = "varname := 7.0; " + "varname := self; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 1.0);
-//      fail();
-//    } catch (ModelException exc) {
-//      score += 4;
-//    }
-//  }
-//
-//  @Test
-//  public void testAssignment_NameAlreadyUsedForFunction() throws ModelException {
-//    try {
-//      max_score += 4;
-//      String code = "def f { " + "  return 1.0; " + "}" + "f := 10.0;";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 1.0);
-//      fail();
-//    } catch (ModelException exc) {
-//      score += 4;
-//    }
-//  }
+  @Test
+  public void testAssignment_NameAlreadyUsedForFunction() throws ModelException {
+    try {
+      max_score += 4;
+      String code = "def f { " + "  return 1.0; " + "}" + "f := 10.0;";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 1.0);
+      fail();
+    } catch (ModelException exc) {
+      score += 4;
+    }
+  }
 //
 //  // Print Statement
 //

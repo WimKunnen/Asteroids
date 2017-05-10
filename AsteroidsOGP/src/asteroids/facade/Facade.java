@@ -856,7 +856,10 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * printed.
      */
     public List<Object> executeProgram(Ship ship, double dt) throws ModelException{
-        return ship.executeProgram(dt);
+        try{return ship.executeProgram(dt);}
+        catch (RuntimeException e){
+            throw new ModelException(e);
+        }
     }
 
     /**

@@ -22,6 +22,7 @@ public class Assignment extends OneArgumentExecutable<Expression<? extends Type<
         if (program == null)
             throw new RuntimeException();
         if (program.getCurrentFunctionInvocation() == null){
+
             program.setVariableValue(variableName, getFirstArgument().calculate(program));
         }
         else{

@@ -3,6 +3,7 @@ package asteroids.part3.programs.internal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import asteroids.util.ModelException;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 
@@ -41,6 +42,7 @@ public class ParserVisitor<E, S, F, P> extends AsteroidsProgramBaseVisitor<Void>
     public S visitAssignmentStatement(AssignmentStatementContext ctx) {
       return getFactory().createAssignmentStatement(ctx.variableName.getText(), expressionVisitor.visit(ctx.value),
           toSourceLocation(ctx));
+
     }
 
     @Override

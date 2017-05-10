@@ -9,6 +9,7 @@ import asteroids.model.program.statements.actions.*;
 import asteroids.model.program.types.DoubleType;
 import asteroids.part3.programs.IProgramFactory;
 import asteroids.part3.programs.SourceLocation;
+import asteroids.util.ModelException;
 
 import javax.swing.plaf.nimbus.State;
 import java.util.ArrayList;
@@ -60,8 +61,9 @@ public class ProgramFactory implements IProgramFactory<Expression, Statement, Fu
      * @param value
      *            An expression that evaluates to the assigned value
      */
-    public Statement createAssignmentStatement(String variableName, Expression value, SourceLocation sourceLocation){
+    public Statement createAssignmentStatement (String variableName, Expression value, SourceLocation sourceLocation){
         return new Assignment(variableName, value);
+
     }
 
     /**

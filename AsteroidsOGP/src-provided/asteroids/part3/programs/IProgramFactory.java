@@ -1,5 +1,7 @@
 package asteroids.part3.programs;
 
+import asteroids.util.ModelException;
+
 import java.util.List;
 
 /**
@@ -87,7 +89,7 @@ public interface IProgramFactory<E, S, F, P> {
 	 * @param value
 	 *            An expression that evaluates to the assigned value
 	 */
-	public S createAssignmentStatement(String variableName, E value, SourceLocation sourceLocation);
+	public S createAssignmentStatement (String variableName, E value, SourceLocation sourceLocation);
 
 	/**
 	 * Create a statement that represents a while loop.

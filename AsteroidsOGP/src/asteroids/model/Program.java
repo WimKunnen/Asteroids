@@ -4,6 +4,7 @@ import asteroids.model.program.FunctionDefinition;
 import asteroids.model.program.expressions.FunctionInvocation;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.Type;
+import asteroids.util.ModelException;
 import be.kuleuven.cs.som.annotate.Raw;
 
 import java.util.*;
@@ -108,6 +109,7 @@ public class Program {
 
 
 
+
     private List<Object> printed = new ArrayList<>();
 
     public List<Object> getPrinted(){
@@ -130,7 +132,7 @@ public class Program {
         while (getExecutionStack().size() > 0){
 
             Statement checkStatement = getExecutionStack().getFirst();
-            if (time >= checkStatement.getExecutionTime()){
+            if (getTotalTime() >= checkStatement.getExecutionTime()){
                 Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
                 nextStatement.execute(this);

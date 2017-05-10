@@ -1395,43 +1395,43 @@ public class Part3TestFull {
 //
 //  // Print Statement
 //
-//  @Test
-//  public void testPrintStatement_LegalCase() throws ModelException {
-//    max_score += 2;
-//    String code = "print 4.0;";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 4.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 2;
-//  }
-//
-//  @Test
-//  public void testPrintStatement_DirectlyInFunctionBody() throws ModelException {
-//    try {
-//      max_score += 5;
-//      String code = "def f { " + "  print 5.0; " + "}" + "print f(); ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 0.3);
-//    } catch (ModelException exc) {
-//      score += 5;
-//    }
-//  }
-//
-//  @Test
-//  public void testPrintStatement_IndirectlyInFunctionBody() throws ModelException {
-//    try {
-//      max_score += 5;
-//      String code = "def f { " + "  if self == self { " + "    print 5.0; " + "  }" + "}" + "print f();";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 0.3);
-//    } catch (ModelException exc) {
-//      score += 5;
-//    }
-//  }
+  @Test
+  public void testPrintStatement_LegalCase() throws ModelException {
+    max_score += 2;
+    String code = "print 4.0;";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 4.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 2;
+  }
+
+  @Test
+  public void testPrintStatement_DirectlyInFunctionBody() throws ModelException {
+    try {
+      max_score += 5;
+      String code = "def f { " + "  print 5.0; " + "}" + "print f(); ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 0.3);
+    } catch (ModelException exc) {
+      score += 5;
+    }
+  }
+
+  @Test
+  public void testPrintStatement_IndirectlyInFunctionBody() throws ModelException {
+    try {
+      max_score += 5;
+      String code = "def f { " + "  if self == self { " + "    print 5.0; " + "  }" + "}" + "print f();";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 0.3);
+    } catch (ModelException exc) {
+      score += 5;
+    }
+  }
 //
 //  // Return Statement
 //

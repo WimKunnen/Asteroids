@@ -136,35 +136,18 @@ public class Program {
                 Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
                 nextStatement.execute(this);
-                time -= nextStatement.getExecutionTime();
+                setTotalTime( getTotalTime() - nextStatement.getExecutionTime());
                 if (getExecutionStack().size() == 0){
                     executed = true;
                 }
             }
             else{
                 hold();
-                setTimeLeft(time);
+                setTimeLeft(getTotalTime());
                 break;
             }
         }
 
-//        for(Statement statement : getExecutionStack()){
-//            if (time >= statement.getExecutionTime()) {
-//                continueProgram();
-//                statement.execute(this);
-//                time -= statement.getExecutionTime();
-//                getExecutionStack().removeFirst();
-//                if (getExecutionStack().size() == 0){
-//                    executed = true;
-//                }
-//            }
-//
-//            else{
-//                hold();
-//                setTimeLeft(time);
-//                break;
-//            }
-//        }
         if (executed){
             return this.getPrinted();}
         return null;

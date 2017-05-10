@@ -74,6 +74,14 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
             executionStack.push(statement);
     }
 
+    private boolean executed = false;
+    private boolean getExecuted(){
+        return executed;
+    }
+    private void setExecuted(boolean bool){
+        executed = bool;
+    }
+
     @Override
     public Type calculate(Program program) throws RuntimeException{
         program.setCurrentFunctionInvocation(this);
@@ -98,9 +106,10 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
             }
         }
 
-
-        program.setCurrentFunctionInvocation(null);
-        program.emptyLocals();
+        if (getExecuted()) {
+            program.setCurrentFunctionInvocation(null);
+            program.emptyLocals();
+        }
         return toReturn;
     }
 

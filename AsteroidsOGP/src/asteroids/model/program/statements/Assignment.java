@@ -21,11 +21,11 @@ public class Assignment extends OneArgumentExecutable<Expression<? extends Type<
     public void execute(Program program) throws RuntimeException {
         if (program == null)
             throw new RuntimeException();
-        if (program.getFunctionMap().containsKey(variableName)){
-            throw new RuntimeException();
-        }
-        if (program.getCurrentFunctionInvocation() == null){
 
+        if (program.getCurrentFunctionInvocation() == null){
+            if (program.getFunctionMap().containsKey(variableName)){
+                throw new RuntimeException();
+            }
             program.setVariableValue(variableName, getFirstArgument().calculate(program));
         }
         else{

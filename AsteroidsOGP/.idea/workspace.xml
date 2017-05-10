@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="2965b459-8015-45e7-a1aa-66cc0d620cfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/Program.java" afterPath="$PROJECT_DIR$/src/asteroids/model/Program.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/expressions/FunctionInvocation.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/expressions/FunctionInvocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" />
-=======
-    <list default="true" id="b1d64d98-c504-4fe1-8fbf-ce187eb22b96" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/facade/Facade.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/facade/Facade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/statements/If.class" afterPath="$PROJECT_DIR$/out/production/AsteroidsOGP/asteroids/model/program/statements/If.class" />
+    <list default="true" id="27b60d36-8427-4760-a5bc-311e556712a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part3TestFull.class" afterPath="$PROJECT_DIR$/out/test/AsteroidsOGP/asteroids/tests/Part3TestFull.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" afterPath="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/asteroids/model/program/statements/If.java" afterPath="$PROJECT_DIR$/src/asteroids/model/program/statements/If.java" />
->>>>>>> Stashed changes
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" afterPath="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,87 +19,87 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Collision.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Collision.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MinorPlanet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="68">
-              <caret line="1899" column="22" lean-forward="true" selection-start-line="1899" selection-start-column="22" selection-end-line="1899" selection-end-column="22" />
-=======
             <state relative-caret-position="165">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
->>>>>>> Stashed changes
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
-      <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java">
+      <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Program.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="145" column="42" lean-forward="false" selection-start-line="145" selection-start-column="42" selection-end-line="145" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FunctionInvocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/FunctionInvocation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            <state relative-caret-position="3075">
+              <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="84" />
               <folding>
-                <element signature="e#2240#2241#0" expanded="true" />
-                <element signature="e#2271#2272#0" expanded="true" />
-                <element signature="e#2315#2316#0" expanded="true" />
-                <element signature="e#2346#2347#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2058#2059#0" expanded="false" />
+                <element signature="e#2095#2096#0" expanded="false" />
+                <element signature="e#2355#2356#0" expanded="false" />
+                <element signature="e#2395#2396#0" expanded="false" />
+                <element signature="e#4587#4588#0" expanded="false" />
+                <element signature="e#4620#4621#0" expanded="false" />
+                <element signature="e#4905#4906#0" expanded="false" />
+                <element signature="e#4938#4939#0" expanded="false" />
               </folding>
-=======
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClosestShip.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/ClosestShip.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Part3TestFull.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20912">
-              <caret line="1422" column="38" lean-forward="false" selection-start-line="1422" selection-start-column="38" selection-end-line="1422" selection-end-column="38" />
-              <folding />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Action.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="214">
+              <caret line="2211" column="49" lean-forward="false" selection-start-line="2211" selection-start-column="49" selection-end-line="2211" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assignment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java">
+      <file leaf-file-name="IFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="175">
+              <caret line="305" column="33" lean-forward="false" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="413" column="32" lean-forward="false" selection-start-line="413" selection-start-column="32" selection-end-line="413" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>iter</find>
+      <find>tod</find>
+      <find>bulletson</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -124,20 +112,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src-provided/asteroids/part3/programs/IProgramFactory.java" />
-        <option value="$PROJECT_DIR$/src-provided/asteroids/part3/programs/internal/ParserVisitor.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/program/ProgramFactory.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/World.java" />
         <option value="$PROJECT_DIR$/src/asteroids/facade/Facade.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/program/statements/Sequence.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" />
+        <option value="$PROJECT_DIR$/src/asteroids/model/Ship.java" />
         <option value="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/program/expressions/FunctionInvocation.java" />
-        <option value="$PROJECT_DIR$/src/asteroids/model/Program.java" />
-=======
-        <option value="$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java" />
-        <option value="$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java" />
->>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -167,6 +145,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statements" />
+              <option name="myItemId" value="expressions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,6 +271,44 @@
               <option name="myItemId" value="asteroids" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="program" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expressions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entityexpressions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AsteroidsOGP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AsteroidsOGP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asteroids" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -309,14 +326,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
-<<<<<<< Updated upstream
-  <component name="RunManager" selected="JUnit.Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction">
-    <configuration default="false" name="Part3TestFull.testAssignment_NameAlreadyUsedForFunction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -324,10 +336,10 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asteroids/model" />
   </component>
-  <component name="RunManager" selected="JUnit.Part3TestFull.testIfStatement_ThenPartNonIterruptable">
-    <configuration default="false" name="Part3TestFull.testTurnStatement_InvalidAngle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
+  <component name="RunManager" selected="JUnit.Part3TestFull.testBullet_FiredBulletsInWorld">
+    <configuration default="false" name="Part3TestFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -339,12 +351,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
       <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
-<<<<<<< Updated upstream
-      <option name="METHOD_NAME" value="testAssignment_NameAlreadyUsedForFunction" />
-=======
-      <option name="METHOD_NAME" value="testTurnStatement_InvalidAngle" />
->>>>>>> Stashed changes
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -357,11 +365,7 @@
       <patterns />
       <method />
     </configuration>
-<<<<<<< Updated upstream
-    <configuration default="false" name="Part3TestFull.testPrintStatement_LegalCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration default="false" name="Part3TestFull.testTurnStatement_ValidAngleEnoughTimeLeft" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
+    <configuration default="false" name="Part3TestFull.testBullet_FiredBulletsInWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="asteroids.tests.*" />
@@ -373,113 +377,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="asteroids.tests" />
       <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
-<<<<<<< Updated upstream
-      <option name="METHOD_NAME" value="testPrintStatement_LegalCase" />
-=======
-      <option name="METHOD_NAME" value="testTurnStatement_ValidAngleEnoughTimeLeft" />
->>>>>>> Stashed changes
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-<<<<<<< Updated upstream
-    <configuration default="false" name="Part3TestFull.testPrintStatement_DirectlyInFunctionBody" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration default="false" name="Part3TestFull.testSequenceStatement_NonNestedIterruptable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="asteroids.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AsteroidsOGP" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
-<<<<<<< Updated upstream
-      <option name="METHOD_NAME" value="testPrintStatement_DirectlyInFunctionBody" />
-=======
-      <option name="METHOD_NAME" value="testSequenceStatement_NonNestedIterruptable" />
->>>>>>> Stashed changes
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-<<<<<<< Updated upstream
-    <configuration default="false" name="Part3TestFull.testPrintStatement_IndirectlyInFunctionBody" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration default="false" name="Part3TestFull.testIfStatement_ThenPartIterruptable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="asteroids.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AsteroidsOGP" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
-<<<<<<< Updated upstream
-      <option name="METHOD_NAME" value="testPrintStatement_IndirectlyInFunctionBody" />
-=======
-      <option name="METHOD_NAME" value="testIfStatement_ThenPartIterruptable" />
->>>>>>> Stashed changes
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-<<<<<<< Updated upstream
-    <configuration default="false" name="Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-=======
-    <configuration default="false" name="Part3TestFull.testIfStatement_ThenPartNonIterruptable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
->>>>>>> Stashed changes
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="asteroids.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="AsteroidsOGP" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="asteroids.tests" />
-      <option name="MAIN_CLASS_NAME" value="asteroids.tests.Part3TestFull" />
-<<<<<<< Updated upstream
-      <option name="METHOD_NAME" value="testAssignmentStatement_LocalVariableSameNameFunction" />
-=======
-      <option name="METHOD_NAME" value="testIfStatement_ThenPartNonIterruptable" />
->>>>>>> Stashed changes
+      <option name="METHOD_NAME" value="testBullet_FiredBulletsInWorld" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -730,6 +628,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -888,6 +787,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -933,36 +838,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
-<<<<<<< Updated upstream
-      <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testAssignment_NameAlreadyUsedForFunction" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_LegalCase" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_DirectlyInFunctionBody" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_IndirectlyInFunctionBody" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testBullet_FiredBulletsInWorld" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_IndirectlyInFunctionBody" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_DirectlyInFunctionBody" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testPrintStatement_LegalCase" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testAssignment_NameAlreadyUsedForFunction" />
-=======
-      <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testTurnStatement_InvalidAngle" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testTurnStatement_ValidAngleEnoughTimeLeft" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testSequenceStatement_NonNestedIterruptable" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testIfStatement_ThenPartIterruptable" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testIfStatement_ThenPartNonIterruptable" />
-    </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testIfStatement_ThenPartNonIterruptable" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testIfStatement_ThenPartIterruptable" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testSequenceStatement_NonNestedIterruptable" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testTurnStatement_ValidAngleEnoughTimeLeft" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testTurnStatement_InvalidAngle" />
->>>>>>> Stashed changes
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Part3TestFull.testBullet_FiredBulletsInWorld" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Part3TestFull" />
       </list>
     </recent_temporary>
   </component>
@@ -976,108 +859,71 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b1d64d98-c504-4fe1-8fbf-ce187eb22b96" name="Default" comment="" />
-      <created>1494410897085</created>
+      <changelist id="27b60d36-8427-4760-a5bc-311e556712a8" name="Default" comment="" />
+      <created>1494412178934</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1494410897085</updated>
-      <workItem from="1494410900492" duration="1018000" />
+      <updated>1494412178934</updated>
+      <workItem from="1494412182366" duration="74000" />
+      <workItem from="1494412599194" duration="212000" />
+      <workItem from="1494412835621" duration="199000" />
+      <workItem from="1494417175101" duration="155000" />
+      <workItem from="1494421297211" duration="516000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-<<<<<<< Updated upstream
-    <history-entry file="Part3TestFull_testAssignmentStatement_LocalVariableSameNameFunction - 2017.05.10 at 11h 45m 58s.xml">
-      <configuration name="Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" configurationId="JUnit" />
+    <history-entry file="Part3TestFull - 2017.05.10 at 12h 30m 42s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull_testAssignmentStatement_LocalVariableSameNameFunction - 2017.05.10 at 12h 10m 46s.xml">
-      <configuration name="Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" configurationId="JUnit" />
+    <history-entry file="Part3TestFull - 2017.05.10 at 13h 55m 06s.xml">
+      <configuration name="Part3TestFull" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull_testAssignmentStatement_LocalVariableSameNameFunction - 2017.05.10 at 12h 12m 23s.xml">
-      <configuration name="Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testBullet_FiredBulletsInWorld - 2017.05.10 at 15h 03m 14s.xml">
+      <configuration name="Part3TestFull.testBullet_FiredBulletsInWorld" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Part3TestFull_testAssignmentStatement_LocalVariableSameNameFunction - 2017.05.10 at 12h 24m 18s.xml">
-      <configuration name="Part3TestFull.testAssignmentStatement_LocalVariableSameNameFunction" configurationId="JUnit" />
-=======
-    <history-entry file="Part3TestFull_testBreakStatement_InFunctionBody - 2017.05.10 at 12h 17m 59s.xml">
-      <configuration name="Part3TestFull.testBreakStatement_InFunctionBody" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testIfStatement_ThenPartIterruptable - 2017.05.10 at 12h 23m 35s.xml">
-      <configuration name="Part3TestFull.testIfStatement_ThenPartIterruptable" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testIfStatement_ThenPartNonIterruptable - 2017.05.10 at 12h 24m 06s.xml">
-      <configuration name="Part3TestFull.testIfStatement_ThenPartNonIterruptable" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testSequenceStatement_NonNestedIterruptable - 2017.05.10 at 12h 22m 54s.xml">
-      <configuration name="Part3TestFull.testSequenceStatement_NonNestedIterruptable" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testThrusterOffStatement_EnoughTimeLeft - 2017.05.10 at 12h 19m 49s.xml">
-      <configuration name="Part3TestFull.testThrusterOffStatement_EnoughTimeLeft" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testThrusterOffStatement_NotEnoughTimeLeft - 2017.05.10 at 12h 21m 21s.xml">
-      <configuration name="Part3TestFull.testThrusterOffStatement_NotEnoughTimeLeft" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testTurnStatement_InvalidAngle - 2017.05.10 at 12h 21m 51s.xml">
-      <configuration name="Part3TestFull.testTurnStatement_InvalidAngle" configurationId="JUnit" />
->>>>>>> Stashed changes
-    </history-entry>
-    <history-entry file="Part3TestFull_testTurnStatement_ValidAngleEnoughTimeLeft - 2017.05.10 at 12h 22m 34s.xml">
-      <configuration name="Part3TestFull.testTurnStatement_ValidAngleEnoughTimeLeft" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testWhileStatement_InsideRecursiveFunction - 2017.05.10 at 12h 18m 37s.xml">
-      <configuration name="Part3TestFull.testWhileStatement_InsideRecursiveFunction" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testWhileStatement_Interruptable - 2017.05.10 at 12h 19m 10s.xml">
-      <configuration name="Part3TestFull.testWhileStatement_Interruptable" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testPrintStatement_DirectlyInFunctionBody - 2017.05.10 at 12h 07m 14s.xml">
-      <configuration name="Part3TestFull.testPrintStatement_DirectlyInFunctionBody" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testPrintStatement_IndirectlyInFunctionBody - 2017.05.10 at 12h 08m 17s.xml">
-      <configuration name="Part3TestFull.testPrintStatement_IndirectlyInFunctionBody" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Part3TestFull_testPrintStatement_LegalCase - 2017.05.10 at 12h 05m 44s.xml">
-      <configuration name="Part3TestFull.testPrintStatement_LegalCase" configurationId="JUnit" />
+    <history-entry file="Part3TestFull_testBullet_FiredBulletsInWorld - 2017.05.10 at 15h 06m 47s.xml">
+      <configuration name="Part3TestFull.testBullet_FiredBulletsInWorld" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1018000" />
+    <option name="totallyTimeSpent" value="1156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1087,9 +933,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1097,10 +941,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Collision.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2058#2059#0" expanded="false" />
+            <element signature="e#2095#2096#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2395#2396#0" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4620#4621#0" expanded="false" />
+            <element signature="e#4905#4906#0" expanded="false" />
+            <element signature="e#4938#4939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2058#2059#0" expanded="false" />
+            <element signature="e#2095#2096#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2395#2396#0" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4620#4621#0" expanded="false" />
+            <element signature="e#4905#4906#0" expanded="false" />
+            <element signature="e#4938#4939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/ClosestShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2058#2059#0" expanded="false" />
+            <element signature="e#2095#2096#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2395#2396#0" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4620#4621#0" expanded="false" />
+            <element signature="e#4905#4906#0" expanded="false" />
+            <element signature="e#4938#4939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/ClosestShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/MinorPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1109,68 +1059,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3075">
+          <caret line="217" column="8" lean-forward="false" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2058#2059#0" expanded="false" />
+            <element signature="e#2095#2096#0" expanded="false" />
+            <element signature="e#2355#2356#0" expanded="false" />
+            <element signature="e#2395#2396#0" expanded="false" />
+            <element signature="e#4587#4588#0" expanded="false" />
+            <element signature="e#4620#4621#0" expanded="false" />
+            <element signature="e#4905#4906#0" expanded="false" />
+            <element signature="e#4938#4939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Something.uml" />
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/ClosestShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src-provided/asteroids/part2/facade/IFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="305" column="33" lean-forward="false" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Sequence.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
->>>>>>> Stashed changes
+        <state relative-caret-position="263">
+          <caret line="307" column="54" lean-forward="true" selection-start-line="307" selection-start-column="54" selection-end-line="307" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/statements/Assignment.java">
+    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/entityexpressions/BulletOfShip.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="193">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-=======
-        <state relative-caret-position="270">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
->>>>>>> Stashed changes
+        <state relative-caret-position="105">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asteroids/facade/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="413" column="32" lean-forward="false" selection-start-line="413" selection-start-column="32" selection-end-line="413" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/asteroids/tests/Part3TestFull.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="68">
-          <caret line="1899" column="22" lean-forward="true" selection-start-line="1899" selection-start-column="22" selection-end-line="1899" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/program/expressions/FunctionInvocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="111" column="9" lean-forward="false" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-          <folding>
-            <element signature="e#2240#2241#0" expanded="true" />
-            <element signature="e#2271#2272#0" expanded="true" />
-            <element signature="e#2315#2316#0" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/asteroids/model/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="145" column="42" lean-forward="false" selection-start-line="145" selection-start-column="42" selection-end-line="145" selection-end-column="42" />
-=======
-        <state relative-caret-position="-20912">
-          <caret line="1422" column="38" lean-forward="false" selection-start-line="1422" selection-start-column="38" selection-end-line="1422" selection-end-column="38" />
->>>>>>> Stashed changes
+        <state relative-caret-position="214">
+          <caret line="2211" column="49" lean-forward="false" selection-start-line="2211" selection-start-column="49" selection-end-line="2211" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -2209,6 +2209,7 @@ public class Part3TestFull {
 
 //  // Bullet
 //
+  //todo copy getBulletsOnShip instead of actual.
 //  @Test
 //  public void testBullet_FiredBulletsInWorld() throws ModelException {
 //    max_score += 12;

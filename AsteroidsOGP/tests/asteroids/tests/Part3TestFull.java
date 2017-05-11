@@ -1420,19 +1420,18 @@ public class Part3TestFull {
     }
   }
 
-  //todo fix problem print in function
-//  @Test
-//  public void testPrintStatement_IndirectlyInFunctionBody() throws ModelException {
-//    try {
-//      max_score += 5;
-//      String code = "def f { " + "  if self == self { " + "    print 5.0; " + "  }" + "}" + "print f();";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 0.3);
-//    } catch (ModelException exc) {
-//      score += 5;
-//    }
-//  }
+  @Test
+  public void testPrintStatement_IndirectlyInFunctionBody() throws ModelException {
+    try {
+      max_score += 5;
+      String code = "def f { " + "  if self == self { " + "    print 5.0; " + "  }" + "}" + "print f();";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 0.3);
+    } catch (ModelException exc) {
+      score += 5;
+    }
+  }
 
   // Return Statement
 
@@ -1453,37 +1452,35 @@ public class Part3TestFull {
   }
 
   // If Statement
-  //todo fix nullpointer
-//  @Test
-//  public void testIfStatement_ThenPartNonIterruptable() throws ModelException {
-//    max_score += 3;
-//    String code = "if self == self {" + "  print 4.0; " + "}";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 4.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 3;
-//  }
+  @Test
+  public void testIfStatement_ThenPartNonIterruptable() throws ModelException {
+    max_score += 3;
+    String code = "if self == self {" + "  print 4.0; " + "}";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 4.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 3;
+  }
 
-  //todo fix nullpointer
-//  @Test
-//  public void testIfStatement_ThenPartIterruptable() throws ModelException {
-//    max_score += 12;
-//    String code = "print 2.0; " + "if self == self { " + "  print 4.0; " + "  skip; " + "  skip; " + "  print 8.0; "
-//        + "} " + "skip; " + "print 16.0;";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    assertNull(facade.executeProgram(ship1, 0.25));
-//    score += 2;
-//    assertNull(facade.executeProgram(ship1, 0.25));
-//    assertNull(facade.executeProgram(ship1, 0.10));
-//    score += 2;
-//    List<Object> results = facade.executeProgram(ship1, 0.25);
-//    Object[] expecteds = { 2.0, 4.0, 8.0, 16.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 8;
-//  }
+  @Test
+  public void testIfStatement_ThenPartIterruptable() throws ModelException {
+    max_score += 12;
+    String code = "print 2.0; " + "if self == self { " + "  print 4.0; " + "  skip; " + "  skip; " + "  print 8.0; "
+        + "} " + "skip; " + "print 16.0;";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    assertNull(facade.executeProgram(ship1, 0.25));
+    score += 2;
+    assertNull(facade.executeProgram(ship1, 0.25));
+    assertNull(facade.executeProgram(ship1, 0.10));
+    score += 2;
+    List<Object> results = facade.executeProgram(ship1, 0.25);
+    Object[] expecteds = { 2.0, 4.0, 8.0, 16.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 8;
+  }
 
   @Test
   public void testIfStatement_ElsePartNonIterruptable() throws ModelException {
@@ -1496,52 +1493,50 @@ public class Part3TestFull {
     assertArrayEquals(expecteds, results.toArray());
     score += 3;
   }
-//TODO return null if interrupted
-//  @Test
-//  public void testIfStatement_ElsePartIterruptable() throws ModelException {
-//    max_score += 12;
-//    String code = "print 2.0; " + "if self == 22.22  " + "  { print 33.33; } " + "else "
-//        + "  { print 4.0; skip; skip; print 8.0; } " + "skip; " + "print 16.0; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    assertNull(facade.executeProgram(ship1, 0.25));
-//    score += 2;
-//    assertNull(facade.executeProgram(ship1, 0.25));
-//    assertNull(facade.executeProgram(ship1, 0.10));
-//    score += 2;
-//    List<Object> results = facade.executeProgram(ship1, 0.25);
-//    assertEquals(4, results.size());
-//    score += 2;
-//    Object[] expecteds = { 2.0, 4.0, 8.0, 16.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 6;
-//  }
 
-  //TODO no else part
-//  @Test
-//  public void testIfStatement_NoElsePart() throws ModelException {
-//    max_score += 3;
-//    String code = "if self == 4.0 " + "  { print 4.0; } ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    assertEquals(0, results.size());
-//    score += 3;
-//  }
+  @Test
+  public void testIfStatement_ElsePartIterruptable() throws ModelException {
+    max_score += 12;
+    String code = "print 2.0; " + "if self == 22.22  " + "  { print 33.33; } " + "else "
+        + "  { print 4.0; skip; skip; print 8.0; } " + "skip; " + "print 16.0; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    assertNull(facade.executeProgram(ship1, 0.25));
+    score += 2;
+    assertNull(facade.executeProgram(ship1, 0.25));
+    assertNull(facade.executeProgram(ship1, 0.10));
+    score += 2;
+    List<Object> results = facade.executeProgram(ship1, 0.25);
+    assertEquals(4, results.size());
+    score += 2;
+    Object[] expecteds = { 2.0, 4.0, 8.0, 16.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 6;
+  }
 
-  //TODO no boolean
-//  @Test
-//  public void testIfStatement_NonBooleanControllingExpression() throws ModelException {
-//    try {
-//      max_score += 5;
-//      String code = "if self { " + "  print 4.0; " + "}";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 1.0);
-//    } catch (ModelException exc) {
-//      score += 5;
-//    }
-//  }
+  @Test
+  public void testIfStatement_NoElsePart() throws ModelException {
+    max_score += 3;
+    String code = "if self == 4.0 " + "  { print 4.0; } ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    assertEquals(0, results.size());
+    score += 3;
+  }
+
+  @Test
+  public void testIfStatement_NonBooleanControllingExpression() throws ModelException {
+    try {
+      max_score += 5;
+      String code = "if self { " + "  print 4.0; " + "}";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 1.0);
+    } catch (ModelException exc) {
+      score += 5;
+    }
+  }
 
   // Sequence Statement
 
@@ -1557,27 +1552,26 @@ public class Part3TestFull {
     score += 3;
   }
 
-  //todo check return null instead of printed values.
-//  @Test
-//  public void testSequenceStatement_NonNestedIterruptable() throws ModelException {
-//    max_score += 10;
-//    String code = "print 4.0; " + "skip; " + "skip; " + "print 3.0; " + "print 7.0; " + "skip; " + "print 5.0; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.05);
-//    assertNull(results);
-//    results = facade.executeProgram(ship1, 0.25);
-//    assertNull(results);
-//    score += 2;
-//    results = facade.executeProgram(ship1, 0.25);
-//    assertNull(results);
-//    results = facade.executeProgram(ship1, 0.03);
-//    assertNull(results);
-//    results = facade.executeProgram(ship1, 0.23);
-//    Object[] expecteds = { 4.0, 3.0, 7.0, 5.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 8;
-//  }
+  @Test
+  public void testSequenceStatement_NonNestedIterruptable() throws ModelException {
+    max_score += 10;
+    String code = "print 4.0; " + "skip; " + "skip; " + "print 3.0; " + "print 7.0; " + "skip; " + "print 5.0; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.05);
+    assertNull(results);
+    results = facade.executeProgram(ship1, 0.25);
+    assertNull(results);
+    score += 2;
+    results = facade.executeProgram(ship1, 0.25);
+    assertNull(results);
+    results = facade.executeProgram(ship1, 0.03);
+    assertNull(results);
+    results = facade.executeProgram(ship1, 0.23);
+    Object[] expecteds = { 4.0, 3.0, 7.0, 5.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 8;
+  }
 
  // Fire statement
 
@@ -1623,20 +1617,19 @@ public class Part3TestFull {
 
 //  // Turn statement
 
-  //todo check angle value slightly off.
-//  @Test
-//  public void testTurnStatement_ValidAngleEnoughTimeLeft() throws ModelException {
-//    max_score += 3;
-//    String code = "turn 1.0; " + "print 0.4; ";
-//    facade.turn(ship1, 1.5);
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.45);
-//    assertEquals(2.5, facade.getShipOrientation(ship1), EPSILON);
-//    Object[] expecteds = { 0.4 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 3;
-//  }
+  @Test
+  public void testTurnStatement_ValidAngleEnoughTimeLeft() throws ModelException {
+    max_score += 3;
+    String code = "turn 1.0; " + "print 0.4; ";
+    facade.turn(ship1, 1.5);
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.45);
+    assertEquals(2.5, facade.getShipOrientation(ship1), EPSILON);
+    Object[] expecteds = { 0.4 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 3;
+  }
 
   @Test
   public void testTurnStatement_NotEnoughTimeLeft() throws ModelException {
@@ -1651,26 +1644,25 @@ public class Part3TestFull {
     score += 3;
   }
 
-  //todo check angle value slightly off.
-//  @Test
-//  public void testTurnStatement_InvalidAngle() throws ModelException {
-//    max_score += 5;
-//    try {
-//      String code = "turn 10.0; " + "print 0.4; ";
-//      facade.turn(ship1, 1.5);
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 0.45);
-//      // It is allowed to do nothing in case of an illegal angle.
-//      assertEquals(1.5, facade.getShipOrientation(ship1), EPSILON);
-//      Object[] expecteds = { 0.4 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 3;
-//    } catch (ModelException exc) {
-//      assertEquals(1.5, facade.getShipOrientation(ship1), EPSILON);
-//      score += 5;
-//    }
-//  }
+  @Test
+  public void testTurnStatement_InvalidAngle() throws ModelException {
+    max_score += 5;
+    try {
+      String code = "turn 10.0; " + "print 0.4; ";
+      facade.turn(ship1, 1.5);
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 0.45);
+      // It is allowed to do nothing in case of an illegal angle.
+      assertEquals(1.5, facade.getShipOrientation(ship1), EPSILON);
+      Object[] expecteds = { 0.4 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 3;
+    } catch (ModelException exc) {
+      assertEquals(1.5, facade.getShipOrientation(ship1), EPSILON);
+      score += 5;
+    }
+  }
 
   @Test
   public void testTurnStatement_InFunctionBody() throws ModelException {
@@ -1733,40 +1725,38 @@ public class Part3TestFull {
 
   // Thruster OFF statement
 
-  //TODO check execution time
-//  @Test
-//  public void testThrusterOffStatement_EnoughTimeLeft() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 3;
-//      String code = "thrust; " + "print 0.4; " + "thrust_off; " + "print 0.8; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 0.3);
-//      assertTrue(facade.isShipThrusterActive(ship1));
-//      List<Object> results = facade.executeProgram(ship1, 0.35);
-//      assertFalse(facade.isShipThrusterActive(ship1));
-//      Object[] expecteds = { 0.4, 0.8 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 3;
-//    }
-//  }
+  @Test
+  public void testThrusterOffStatement_EnoughTimeLeft() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 3;
+      String code = "thrust; " + "print 0.4; " + "thrust_off; " + "print 0.8; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 0.3);
+      assertTrue(facade.isShipThrusterActive(ship1));
+      List<Object> results = facade.executeProgram(ship1, 0.35);
+      assertFalse(facade.isShipThrusterActive(ship1));
+      Object[] expecteds = { 0.4, 0.8 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 3;
+    }
+  }
 
-  //TODO check execution time
-//  @Test
-//  public void testThrusterOffStatement_NotEnoughTimeLeft() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 3;
-//      String code = "thrust; " + "print 0.4; " + "thrust_off; " + "print 0.8;";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 0.2);
-//      assertTrue(facade.isShipThrusterActive(ship1));
-//      List<Object> results = facade.executeProgram(ship1, 0.15);
-//      assertTrue(facade.isShipThrusterActive(ship1));
-//      assertNull(results);
-//      score += 3;
-//    }
-//  }
+  @Test
+  public void testThrusterOffStatement_NotEnoughTimeLeft() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 3;
+      String code = "thrust; " + "print 0.4; " + "thrust_off; " + "print 0.8;";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 0.2);
+      assertTrue(facade.isShipThrusterActive(ship1));
+      List<Object> results = facade.executeProgram(ship1, 0.15);
+      assertTrue(facade.isShipThrusterActive(ship1));
+      assertNull(results);
+      score += 3;
+    }
+  }
 
   @Test
   public void testThrusterOffStatement_InFunctionBody() throws ModelException {
@@ -1846,25 +1836,24 @@ public class Part3TestFull {
     score += 18;
   }
 
-  //TODO fix return null if interrupted
-//  @Test
-//  public void testWhileStatement_Interruptable() throws ModelException {
-//    max_score += 25;
-//    String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  skip; " + "  a := a + 2.0; " + "}"
-//        + "print 0.0; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.3);
-//    assertNull(results);
-//    score += 5;
-//    results = facade.executeProgram(ship1, 0.65);
-//    assertNull(results);
-//    score += 5;
-//    results = facade.executeProgram(ship1, 0.57);
-//    Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 0.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 15;
-//  }
+  @Test
+  public void testWhileStatement_Interruptable() throws ModelException {
+    max_score += 25;
+    String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  skip; " + "  a := a + 2.0; " + "}"
+        + "print 0.0; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.3);
+    assertNull(results);
+    score += 5;
+    results = facade.executeProgram(ship1, 0.65);
+    assertNull(results);
+    score += 5;
+    results = facade.executeProgram(ship1, 0.57);
+    Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 0.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 15;
+  }
 
   @Test
   public void testWhileStatement_NestedWhiles() throws ModelException {
@@ -1880,7 +1869,7 @@ public class Part3TestFull {
     score += 20;
   }
 
-  //TODO check DoubleLiteral vs Type
+  //TODO Fix infinite call
 //  @Test
 //  public void testWhileStatement_InsideRecursiveFunction() throws ModelException {
 //    max_score += 20;
@@ -1971,7 +1960,7 @@ public class Part3TestFull {
 //  }
 
   // Read Variable
-//TODO fix runtime
+//TODO fix runtimeExc
 //  @Test
 //  public void testReadVariable_GlobalVariable() throws ModelException {
 //    if (nbStudentsInTeam > 1) {
@@ -2014,6 +2003,7 @@ public class Part3TestFull {
     }
   }
 
+  //TODO fix test (No exception thrown)
   @Test
   public void testReadVariable_DefinedInInvoingFunction() throws ModelException {
     try {
@@ -2030,18 +2020,17 @@ public class Part3TestFull {
 
   // Read Parameter
 
-  //TODO check DoubleLiteral vs Type
-//  @Test
-//  public void testReadParameter_LegalCase() throws ModelException {
-//    max_score += 8;
-//    String code = "def f { " + "  return $1; " + "}" + "print f(22.0); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { 22.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 8;
-//  }
+  @Test
+  public void testReadParameter_LegalCase() throws ModelException {
+    max_score += 8;
+    String code = "def f { " + "  return $1; " + "}" + "print f(22.0); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { 22.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 8;
+  }
 
   @Test
   public void testReadParameter_OutsideFunctionBody() throws ModelException {
@@ -2059,18 +2048,17 @@ public class Part3TestFull {
 
   // Null
 
-  //TODO fix nullpointer
-//  @Test
-//  public void testNull() throws ModelException {
-//    max_score += 3;
-//    String code = "print null; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { null };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 3;
-//  }
+  @Test
+  public void testNull() throws ModelException {
+    max_score += 3;
+    String code = "print null; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { null };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 3;
+  }
 
   // Self
 
@@ -2109,23 +2097,22 @@ public class Part3TestFull {
     }
   }
 
-  //TODO should return null but doesn't
-//  @Test
-//  public void testShip_NoOtherShipsInWorld() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 8;
-//      String code = "print ship; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      World world = facade.createWorld(2000, 2000);
-//      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
-//      facade.addShipToWorld(world, ship1);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { null };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 8;
-//    }
-//  }
+  @Test
+  public void testShip_NoOtherShipsInWorld() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 8;
+      String code = "print ship; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      World world = facade.createWorld(2000, 2000);
+      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
+      facade.addShipToWorld(world, ship1);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { null };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 8;
+    }
+  }
 
   // Asteroid
 
@@ -2150,22 +2137,22 @@ public class Part3TestFull {
     }
   }
 
-//  @Test
-//  public void testAsteroid_NoAsteroidsInWorld() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 2;
-//      String code = "print asteroid; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      World world = facade.createWorld(2000, 2000);
-//      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
-//      facade.addShipToWorld(world, ship1);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { null };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 2;
-//    }
-//  }
+  @Test
+  public void testAsteroid_NoAsteroidsInWorld() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 2;
+      String code = "print asteroid; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      World world = facade.createWorld(2000, 2000);
+      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
+      facade.addShipToWorld(world, ship1);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { null };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 2;
+    }
+  }
 
   // Planetoid
 
@@ -2190,53 +2177,52 @@ public class Part3TestFull {
     }
   }
 
-//  @Test
-//  public void testAsteroid_NoPlanetoidsInWorld() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 2;
-//      String code = "print planetoid; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      World world = facade.createWorld(2000, 2000);
-//      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
-//      facade.addShipToWorld(world, ship1);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { null };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 2;
-//    }
-//  }
+  @Test
+  public void testAsteroid_NoPlanetoidsInWorld() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 2;
+      String code = "print planetoid; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      World world = facade.createWorld(2000, 2000);
+      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
+      facade.addShipToWorld(world, ship1);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { null };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 2;
+    }
+  }
 
-//  // Bullet
-//
-  //todo copy getBulletsOnShip instead of actual.
-//  @Test
-//  public void testBullet_FiredBulletsInWorld() throws ModelException {
-//    max_score += 12;
-//    String code = "print bullet; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    Set<? extends Bullet> bulletsOnShip1 = facade.getBulletsOnShip(ship1);
-//    facade.fireBullet(ship1);
-//    facade.fireBullet(ship1);
-//    facade.fireBullet(ship1);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    assertEquals(1, results.size());
-//    assertTrue(bulletsOnShip1.contains(results.get(0)));
-//    score += 12;
-//  }
+  // Bullet
 
-//  @Test
-//  public void testBullet_NoFiredBulletsInWorld() throws ModelException {
-//    max_score += 7;
-//    String code = "print bullet; ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 1.0);
-//    Object[] expecteds = { null };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 7;
-//  }
+  @Test
+  public void testBullet_FiredBulletsInWorld() throws ModelException {
+    max_score += 12;
+    String code = "print bullet; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    Set<? extends Bullet> bulletsOnShip1 = facade.getBulletsOnShip(ship1);
+    facade.fireBullet(ship1);
+    facade.fireBullet(ship1);
+    facade.fireBullet(ship1);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    assertEquals(1, results.size());
+    assertTrue(bulletsOnShip1.contains(results.get(0)));
+    score += 12;
+  }
+
+  @Test
+  public void testBullet_NoFiredBulletsInWorld() throws ModelException {
+    max_score += 7;
+    String code = "print bullet; ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 1.0);
+    Object[] expecteds = { null };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 7;
+  }
 
   // Planet
 
@@ -2261,22 +2247,22 @@ public class Part3TestFull {
     }
   }
 
-//  @Test
-//  public void testPlanet_NoPlanetsInWorld() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 2;
-//      String code = "print planet; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      World world = facade.createWorld(2000, 2000);
-//      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
-//      facade.addShipToWorld(world, ship1);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { null };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 2;
-//    }
-//  }
+  @Test
+  public void testPlanet_NoPlanetsInWorld() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 2;
+      String code = "print planet; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      World world = facade.createWorld(2000, 2000);
+      Ship ship1 = facade.createShip(100, 100, 0, 0, 20, 0, 1.0E20);
+      facade.addShipToWorld(world, ship1);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { null };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 2;
+    }
+  }
 
   // Any
 
@@ -2420,7 +2406,7 @@ public class Part3TestFull {
     score += 10;
   }
 
-  //TODO check usage of DoubleLiteral vs Type
+  //TODO Fix nullpointer
 //  @Test
 //  public void testFunctionCall_WithParameters() throws ModelException {
 //    max_score += 10;
@@ -2445,6 +2431,7 @@ public class Part3TestFull {
     score += 10;
   }
 
+  //TODO fix test (No exception thrown)
   @Test
   public void testFunctionCall_AccessLocalVariableOutsideBody() throws ModelException {
     try {

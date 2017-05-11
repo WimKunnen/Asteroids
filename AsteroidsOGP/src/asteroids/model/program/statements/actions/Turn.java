@@ -6,6 +6,8 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.statements.Action;
 import asteroids.model.program.types.DoubleType;
 
+import java.util.Map;
+
 /**
  * Created by WimKunnen on 23/04/2017.
  */
@@ -13,30 +15,19 @@ public class Turn implements Action {
 
     public Turn(Expression<DoubleType> angle){
         super();
+        this.angle = angle;
     }
 
+    Expression angle;
     @Override
     public void execute(Program program) throws RuntimeException{
         if (program == null || program.getShip() == null)
             throw new RuntimeException();
 
         Ship ship = program.getShip();
-
-        Ship other = new Ship();
-        for(Ship ship1 : ship.getWorld().getAllShips())
-            other = ship1;
-
-        double angle = ship.getPosition().angleBetween(other.getPosition());
-
-        ship.turn(angle);
-    }
-
-    public void execute(Program program, Double angle) throws RuntimeException{
-        if (program == null || program.getShip() == null)
+        double angle = (double) this.angle.calculate(program).getType();
+        if (angle >= 2 * Math.PI || angle < 0)
             throw new RuntimeException();
-
-        Ship ship = program.getShip();
-
         ship.turn(angle);
     }
 

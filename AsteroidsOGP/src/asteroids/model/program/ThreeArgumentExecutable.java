@@ -9,8 +9,9 @@ import be.kuleuven.cs.som.annotate.Raw;
 public abstract class ThreeArgumentExecutable<F extends Executable,S extends Executable,T extends Executable> extends Executable.ArgumentExecutable {
 
     public ThreeArgumentExecutable(F firstArgument, S secondArgument, T thirdArgument) throws IllegalArgumentException{
-        if(!canHaveAsSubExecutable(firstArgument) || ! canHaveAsSubExecutable(secondArgument) || !canHaveAsSubExecutable(thirdArgument))
-            throw new IllegalArgumentException();
+        //todo check to catch the exception
+//        if(!canHaveAsSubExecutable(firstArgument) || ! canHaveAsSubExecutable(secondArgument) || !canHaveAsSubExecutable(thirdArgument))
+//            throw new IllegalArgumentException();
         this.firstArgument = firstArgument;
         this.secondArgument = secondArgument;
         this.thirdArgument = thirdArgument;

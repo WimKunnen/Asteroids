@@ -3,6 +3,7 @@ package asteroids.model.program.expressions;
 import asteroids.model.Program;
 import asteroids.model.program.FunctionDefinition;
 import asteroids.model.program.VariableArgumentExecutable;
+import asteroids.model.program.statements.Action;
 import asteroids.model.program.statements.Statement;
 import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
@@ -93,6 +94,9 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
             Statement checkStatement = getExecutionStack().getFirst();
             if (program.getTotalTime() >= checkStatement.getExecutionTime()){
                 Statement nextStatement = getExecutionStack().pop();
+                if (nextStatement instanceof Action){
+                    throw new RuntimeException();
+                }
                 program.continueProgram();
                 nextStatement.execute(program);
                 program.setTotalTime(program.getTotalTime() - nextStatement.getExecutionTime());

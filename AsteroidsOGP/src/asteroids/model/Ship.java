@@ -310,7 +310,9 @@ public class Ship extends Entity{
      * @return  result == bullets
      */
     public HashSet<Bullet> getBullets(){
-        return this.bullets;
+        HashSet<Bullet> bullets = new HashSet<>();
+        bullets.addAll(this.bullets);
+        return bullets;
     }
 
     /**

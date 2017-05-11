@@ -1,6 +1,7 @@
 package asteroids.model.program.expressions;
 
 import asteroids.model.Program;
+import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
 
 /**
@@ -23,6 +24,6 @@ public class ReadParameter implements Expression{
 
     @Override
     public Type calculate(Program program){
-        return (Type)program.getCurrentFunctionInvocation().getParameterValue(getParameterName());
+        return program.getCurrentFunctionInvocation().getParameterValue(getParameterName()).calculate(program);
     }
 }

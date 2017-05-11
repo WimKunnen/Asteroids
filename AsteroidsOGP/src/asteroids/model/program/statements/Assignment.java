@@ -23,13 +23,15 @@ public class Assignment extends OneArgumentExecutable<Expression<? extends Type<
             throw new RuntimeException();
 
         if (program.getCurrentFunctionInvocation() == null){
+            System.out.println("false assignment");
             if (program.getFunctionMap().containsKey(variableName)){
                 throw new RuntimeException();
             }
             program.setVariableValue(variableName, getFirstArgument().calculate(program));
         }
         else{
-            program.setLocalVariableValue(variableName, getFirstArgument().calculate(program));
+            System.out.println("assignment " + variableName);
+            program.getCurrentFunctionInvocation().setLocalVariableValue(variableName, getFirstArgument().calculate(program));
         }
     }
 

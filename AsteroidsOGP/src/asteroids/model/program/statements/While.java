@@ -20,9 +20,22 @@ public class While extends TwoArgumentExecutable<Expression<BooleanType>, Statem
         if (program == null)
             throw new RuntimeException();
 
+        if (program.getCurrentWhile() != this){
+            program.setCurrentWhile(this);
+        }
+
         if(getFirstArgument().calculate(program).getType()) {
-            program.scheduleStatement(this);
-            program.scheduleStatement(getSecondArgument());
+            if (program.getCurrentFunctionInvocation() == null) {
+                program.scheduleStatement(this);
+                program.scheduleStatement(getSecondArgument());
+            }
+            else {
+                program.getCurrentFunctionInvocation().scheduleStatement(this);
+                program.getCurrentFunctionInvocation().scheduleStatement(getSecondArgument());
+            }
+        }
+        else {
+            program.stopCurrentWhile();
         }
     }
     @Override

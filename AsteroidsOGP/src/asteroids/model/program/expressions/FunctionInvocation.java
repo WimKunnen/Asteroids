@@ -18,23 +18,32 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 
     public FunctionInvocation(List<Expression> arguments, String functionName){
         super(arguments);
+        setArguments(arguments);
         setFunction(function);
-        setParameterMap(arguments);
+        //setParameterMap(arguments);
         setFunctionName(functionName);
         this.executionStack = new ArrayDeque<>();
     }
 
-    private Map<String, Expression> parameterMap = new HashMap<>();
-
-
-    public void setParameterMap(List<Expression> parameters) {
-        int i = 1;
-        for (Expression expression : parameters){
-            parameterMap.put("$" + Integer.toString(i),parameters.get(i-1));
-        }
+    private List<Expression> argumentsAsExpressions;
+    public List<Expression> getArgumentsAsExpressions(){
+        return this.argumentsAsExpressions;
+    }
+    public void setArguments(List<Expression> arguments){
+        this.argumentsAsExpressions = arguments;
     }
 
-    public Expression getParameterValue(String parameterName){
+    private Map<String, Type> parameterMap = new HashMap<>();
+
+
+//    public void setParameterMap(List<Expression> parameters) {
+//        int i = 1;
+//        for (Expression expression : parameters){
+//            parameterMap.put("$" + Integer.toString(i),parameters.get(i-1));
+//        }
+//    }
+
+    public Type getParameterValue(String parameterName){
         return parameterMap.get(parameterName);
     }
 
@@ -75,45 +84,57 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
             executionStack.push(statement);
     }
 
-    private boolean executed = false;
-    private boolean getExecuted(){
-        return executed;
+    private Map<String, Type<?>> locals = new HashMap<>();
+
+    public Map<String, Type<?>> getLocals() {
+        return locals;
     }
-    private void setExecuted(boolean bool){
-        executed = bool;
+
+    public void emptyLocals(){
+        locals.clear();
+    }
+
+    public Type<?> getLocalVariableValue(String name) throws RuntimeException{
+        Type<?> current = locals.get(name);
+        System.out.println("Read " + name);
+        if(current == null)
+            throw new RuntimeException();
+
+        return current;
+    }
+    public void setLocalVariableValue(String name, Type<?> value) throws RuntimeException{
+        Type<?> current = locals.get(name);
+        if(current != null && current.getClass() != value.getClass())
+            throw new RuntimeException();
+
+        locals.put(name, value);
     }
 
     @Override
     public Type calculate(Program program) throws RuntimeException{
+
+        int i = 1;
+        for (Expression expression : getArgumentsAsExpressions()){
+            parameterMap.put("$" + Integer.toString(i),getArgumentsAsExpressions().get(i-1).calculate(program));
+            i += 1;
+        }
+
+        System.out.println("functioninvocation");
         program.setCurrentFunctionInvocation(this);
         FunctionDefinition function = program.getFunctionDefinition(getFunctionName());
 
-        scheduleStatement(function.getBody()); //TODO
+        scheduleStatement(function.getBody());
 
         while (getExecutionStack().size() > 0){
-            Statement checkStatement = getExecutionStack().getFirst();
-            if (program.getTotalTime() >= checkStatement.getExecutionTime()){
-                Statement nextStatement = getExecutionStack().pop();
-                if (nextStatement instanceof Action){
-                    throw new RuntimeException();
-                }
-                program.continueProgram();
-                nextStatement.execute(program);
-                program.setTotalTime(program.getTotalTime() - nextStatement.getExecutionTime());
-//                if (getExecutionStack().size() == 0){
-//                    executed = true;
-//                }
+            Statement nextStatement = getExecutionStack().pop();
+            if (nextStatement instanceof Action){
+                throw new RuntimeException();
             }
-            else{
-                program.hold();
-                break;
-            }
+            nextStatement.execute(program);
         }
 
-        if (getExecuted()) {
-            program.setCurrentFunctionInvocation(null);
-            program.emptyLocals();
-        }
+        program.stopCurrentFunctionInvocation();
+
         return toReturn;
     }
 

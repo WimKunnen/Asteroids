@@ -21,10 +21,18 @@ public class If extends ThreeArgumentExecutable<Expression<BooleanType>, Stateme
             throw new RuntimeException();
         if (getFirstArgument().calculate(program) == null)
             throw new RuntimeException();
-        if(getFirstArgument().calculate(program).getType())
-            program.scheduleStatement(getSecondArgument());
-        else
-            program.scheduleStatement(getThirdArgument());
+        if (program.getCurrentFunctionInvocation() == null) {
+            if (getFirstArgument().calculate(program).getType())
+                program.scheduleStatement(getSecondArgument());
+            else
+                program.scheduleStatement(getThirdArgument());
+        }
+        else{
+            if (getFirstArgument().calculate(program).getType())
+                program.getCurrentFunctionInvocation().scheduleStatement(getSecondArgument());
+            else
+                program.getCurrentFunctionInvocation().scheduleStatement(getThirdArgument());
+        }
     }
     @Override
     public double getExecutionTime(){

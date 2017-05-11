@@ -18,6 +18,7 @@ public class Addition extends TwoArgumentExecutable<Expression<DoubleType>, Expr
 
     @Override
     public DoubleType calculate(Program program) {
+
         double left = this.getFirstArgument().calculate(program).getType();
         double right = this.getSecondArgument().calculate(program).getType();
 

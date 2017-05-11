@@ -24,6 +24,6 @@ public class ReadParameter implements Expression{
 
     @Override
     public Type calculate(Program program){
-        return program.getCurrentFunctionInvocation().getParameterValue(getParameterName()).calculate(program);
+        return program.getCurrentFunctionInvocation().getParameterValue(getParameterName());
     }
 }

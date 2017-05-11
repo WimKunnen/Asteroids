@@ -3,7 +3,9 @@ package asteroids.model;
 import asteroids.model.program.FunctionDefinition;
 import asteroids.model.program.expressions.FunctionInvocation;
 import asteroids.model.program.statements.Statement;
+import asteroids.model.program.statements.While;
 import asteroids.model.program.types.Type;
+import asteroids.part3.programs.internal.generated.AsteroidsProgramParser;
 import asteroids.util.ModelException;
 import be.kuleuven.cs.som.annotate.Raw;
 
@@ -174,37 +176,40 @@ public class Program {
         globals.put(name, value);
     }
 
-    private Map<String, Type<?>> locals = new HashMap<>();
 
-    public Map<String, Type<?>> getLocals() {
-        return locals;
-    }
-
-    public void emptyLocals(){
-        locals.clear();
-    }
-
-    public Type<?> getLocalVariableValue(String name) throws RuntimeException{
-        Type<?> current = locals.get(name);
-        if(current == null)
-            throw new RuntimeException();
-
-        return current;
-    }
-    public void setLocalVariableValue(String name, Type<?> value) throws RuntimeException{
-        Type<?> current = locals.get(name);
-        if(current != null && current.getClass() != value.getClass())
-            throw new RuntimeException();
-
-        locals.put(name, value);
-    }
-
-    private FunctionInvocation currentFunctionInvocation;
 
     public FunctionInvocation getCurrentFunctionInvocation() {
-        return currentFunctionInvocation;
+        if (currentFunctionInvocations.isEmpty()){
+            return null;
+        }
+        return currentFunctionInvocations.getFirst();
     }
     public void setCurrentFunctionInvocation(FunctionInvocation invocation){
-        this.currentFunctionInvocation = invocation;
+        this.currentFunctionInvocations.addFirst(invocation);
+        System.out.println(currentFunctionInvocations);
     }
+    public void stopCurrentFunctionInvocation(){
+        currentFunctionInvocations.removeFirst();
+        System.out.println("removing : " +currentFunctionInvocations);
+    }
+
+    private Deque<FunctionInvocation> currentFunctionInvocations = new ArrayDeque<>();
+
+
+
+    public While getCurrentWhile() {
+        if (currentWhiles.isEmpty()){
+            return null;
+        }
+        return currentWhiles.getFirst();
+    }
+    public void setCurrentWhile(While whileStatement){
+        this.currentWhiles.addFirst(whileStatement);
+    }
+    public void stopCurrentWhile(){
+        currentWhiles.removeFirst();
+    }
+
+    private Deque<While> currentWhiles = new ArrayDeque<>();
+
 }

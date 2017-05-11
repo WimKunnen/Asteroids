@@ -1870,19 +1870,19 @@ public class Part3TestFull {
   }
 
   //TODO Fix infinite call
-//  @Test
-//  public void testWhileStatement_InsideRecursiveFunction() throws ModelException {
-//    max_score += 20;
-//    String code = "def sumfac { " + "  a := $1; " + "  t := 1.0; " + "  while 1.5 < a { "
-//        + "    t := t + (a*sumfac(a + -1.0));" + "    a := a + -1.0; " + "  }" + "  return t; " + "} "
-//        + "print sumfac(4.0); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.3);
-//    Object[] expecteds = { 60.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 20;
-//  }
+  @Test
+  public void testWhileStatement_InsideRecursiveFunction() throws ModelException {
+    max_score += 20;
+    String code = "def sumfac { " + "  a := $1; " + "  t := 1.0; " + "  while 1.5 < a { "
+        + "    t := t + (a*sumfac(a + -1.0));" + "    a := a + -1.0; " + "  }" + "  return t; " + "} "
+        + "print sumfac(4.0); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.3);
+    Object[] expecteds = { 60.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 20;
+  }
 
   @Test
   public void testWhileStatement_NonBooleanControllingExpression() throws ModelException {
@@ -1897,83 +1897,81 @@ public class Part3TestFull {
     }
   }
 
-  //TODO fix Break.java
 //  // Break Statement
 //
-//  @Test
-//  public void testBreakStatement_NonNestedCase() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 16;
-//      String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  if 14.5 < a { " + "    break; " + "  }"
-//          + "  a := a + 2.0; " + "}" + "print 0.0; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 0.0 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 16;
-//    }
-//  }
+  @Test
+  public void testBreakStatement_NonNestedCase() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 16;
+      String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  if 14.5 < a { " + "    break; " + "  }"
+          + "  a := a + 2.0; " + "}" + "print 0.0; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 0.0 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 16;
+    }
+  }
 
-//  @Test
-//  public void testBreakStatement_NestedCase() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 21;
-//      String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  while a < 15.0 { " + "    a := a + 1.0;"
-//          + "    if 12.5 < a { " + "      break; " + "    }" + "  }" + "  a := a + 2.0; " + "}" + "print 0.0; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { 10.0, 15.0, 17.0, 19.0, 0.0 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 21;
-//    }
-//  }
+  @Test
+  public void testBreakStatement_NestedCase() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 21;
+      String code = "a := 10; " + "while a < 20.5 { " + "  print a; " + "  while a < 15.0 { " + "    a := a + 1.0;"
+          + "    if 12.5 < a { " + "      break; " + "    }" + "  }" + "  a := a + 2.0; " + "}" + "print 0.0; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { 10.0, 15.0, 17.0, 19.0, 0.0 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 21;
+    }
+  }
 //
-//  @Test
-//  public void testBreak_OutsideWhile() throws ModelException {
-//    try {
-//      max_score += 9;
-//      String code = "break; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      facade.executeProgram(ship1, 1.0);
-//      fail();
-//    } catch (ModelException exc) {
-//      score += 9;
-//    }
-//  }
+  @Test
+  public void testBreak_OutsideWhile() throws ModelException {
+    try {
+      max_score += 9;
+      String code = "break; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      facade.executeProgram(ship1, 1.0);
+      fail();
+    } catch (ModelException exc) {
+      score += 9;
+    }
+  }
 //
-//  @Test
-//  public void testBreakStatement_InFunctionBody() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 16;
-//      String code = "def f { " + "  break; " + "  return 0.0;" + "}" + "a := 10; " + "while a < 20.5 { " + "  print a; "
-//          + "  if 14.5 < a { " + "    b := f(); " + "  }" + "  a := a + 2.0; " + "}" + "print 0.0; ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 0.0 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 16;
-//    }
-//  }
+  @Test
+  public void testBreakStatement_InFunctionBody() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 16;
+      String code = "def f { " + "  break; " + "  return 0.0;" + "}" + "a := 10; " + "while a < 20.5 { " + "  print a; "
+          + "  if 14.5 < a { " + "    b := f(); " + "  }" + "  a := a + 2.0; " + "}" + "print 0.0; ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { 10.0, 12.0, 14.0, 16.0, 0.0 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 16;
+    }
+  }
 
   // Read Variable
-//TODO fix runtimeExc
-//  @Test
-//  public void testReadVariable_GlobalVariable() throws ModelException {
-//    if (nbStudentsInTeam > 1) {
-//      max_score += 10;
-//      String code = "def f { " + "  return a; " + "}" + "a := 10; " + "print f(); ";
-//      Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//      facade.loadProgramOnShip(ship1, program);
-//      List<Object> results = facade.executeProgram(ship1, 1.0);
-//      Object[] expecteds = { 10.0 };
-//      assertArrayEquals(expecteds, results.toArray());
-//      score += 10;
-//    }
-//  }
+  @Test
+  public void testReadVariable_GlobalVariable() throws ModelException {
+    if (nbStudentsInTeam > 1) {
+      max_score += 10;
+      String code = "def f { " + "  return a; " + "}" + "a := 10; " + "print f(); ";
+      Program program = ProgramParser.parseProgramFromString(code, programFactory);
+      facade.loadProgramOnShip(ship1, program);
+      List<Object> results = facade.executeProgram(ship1, 1.0);
+      Object[] expecteds = { 10.0 };
+      assertArrayEquals(expecteds, results.toArray());
+      score += 10;
+    }
+  }
 
   @Test
   public void testReadVariable_UndefinedVariable() throws ModelException {
@@ -2003,7 +2001,7 @@ public class Part3TestFull {
     }
   }
 
-  //TODO fix test (No exception thrown)
+
   @Test
   public void testReadVariable_DefinedInInvoingFunction() throws ModelException {
     try {
@@ -2406,18 +2404,18 @@ public class Part3TestFull {
     score += 10;
   }
 
-  //TODO Fix nullpointer
-//  @Test
-//  public void testFunctionCall_WithParameters() throws ModelException {
-//    max_score += 10;
-//    String code = "def f { " + "  return $1 + $2; " + "}" + "print f(3.0,7.0); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.3);
-//    Object[] expecteds = { 10.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 10;
-//  }
+
+  @Test
+  public void testFunctionCall_WithParameters() throws ModelException {
+    max_score += 10;
+    String code = "def f { " + "  return $1 + $2; " + "}" + "print f(3.0,7.0); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.3);
+    Object[] expecteds = { 10.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 10;
+  }
 
   @Test
   public void testFunctionCall_LocalVariable() throws ModelException {
@@ -2431,7 +2429,7 @@ public class Part3TestFull {
     score += 10;
   }
 
-  //TODO fix test (No exception thrown)
+
   @Test
   public void testFunctionCall_AccessLocalVariableOutsideBody() throws ModelException {
     try {
@@ -2444,20 +2442,20 @@ public class Part3TestFull {
       score += 9;
     }
   }
-  //TODO check usage of DoubleLiteral vs Type
 
-//  @Test
-//  public void testFunctionCall_RecursiveFunction() throws ModelException {
-//    max_score += 20;
-//    String code = "def fac { " + "  if $1 < 1.5 { " + "    return 1.0; " + "  }" + "  else { "
-//        + "    return $1 * fac($1+-1.0); " + "  }" + "}" + "print fac(4.0); ";
-//    Program program = ProgramParser.parseProgramFromString(code, programFactory);
-//    facade.loadProgramOnShip(ship1, program);
-//    List<Object> results = facade.executeProgram(ship1, 0.3);
-//    Object[] expecteds = { 1.0 * 2.0 * 3.0 * 4.0 };
-//    assertArrayEquals(expecteds, results.toArray());
-//    score += 20;
-//  }
+
+  @Test
+  public void testFunctionCall_RecursiveFunction() throws ModelException {
+    max_score += 20;
+    String code = "def fac { " + "  if $1 < 1.5 { " + "    return 1.0; " + "  }" + "  else { "
+        + "    return $1 * fac($1+-1.0); " + "  }" + "}" + "print fac(4.0); ";
+    Program program = ProgramParser.parseProgramFromString(code, programFactory);
+    facade.loadProgramOnShip(ship1, program);
+    List<Object> results = facade.executeProgram(ship1, 0.3);
+    Object[] expecteds = { 1.0 * 2.0 * 3.0 * 4.0 };
+    assertArrayEquals(expecteds, results.toArray());
+    score += 20;
+  }
 
   @Test
   public void testFunctionCall_UndefinedFunction() throws ModelException {

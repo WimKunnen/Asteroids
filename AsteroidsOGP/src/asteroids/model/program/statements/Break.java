@@ -16,7 +16,15 @@ public class Break implements Statement{
         if (program == null)
             throw new RuntimeException();
 
-        //program.getExecutionStack().removeLastOccurrence(Statement = While);
+        if (program.getCurrentWhile() == null){
+            throw new RuntimeException();
+        }
+
+        while (program.getExecutionStack().getFirst() != program.getCurrentWhile()){
+            program.getExecutionStack().removeFirst();
+        }
+        program.getExecutionStack().removeFirst();
+
     }
 
     @Override

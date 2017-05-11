@@ -28,7 +28,12 @@ public class ReadVariable implements Expression<Type<?>>{
             return program.getVariableValue(getVariableName());
         }
         else{
-            return program.getLocalVariableValue(getVariableName());
+            if (program.getCurrentFunctionInvocation().getLocals().containsKey(getVariableName())) {
+                return program.getCurrentFunctionInvocation().getLocalVariableValue(getVariableName());
+            }
+            else{
+                return program.getVariableValue(getVariableName());
+            }
         }
     }
 

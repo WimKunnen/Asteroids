@@ -93,7 +93,7 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 
     public Type<?> getLocalVariableValue(String name) throws RuntimeException{
         Type<?> current = locals.get(name);
-        System.out.println("Read " + name);
+        System.out.println("Read " + name + ' ' +  current.getType());
         if(current == null)
             throw new RuntimeException();
 

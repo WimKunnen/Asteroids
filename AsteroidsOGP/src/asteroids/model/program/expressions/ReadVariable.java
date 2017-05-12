@@ -1,7 +1,6 @@
 package asteroids.model.program.expressions;
 
 import asteroids.model.Program;
-import asteroids.model.program.OneArgumentExecutable;
 import asteroids.model.program.types.Type;
 
 /**

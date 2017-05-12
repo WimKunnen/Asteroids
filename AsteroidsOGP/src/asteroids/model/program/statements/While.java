@@ -25,7 +25,7 @@ public class While extends TwoArgumentExecutable<Expression<BooleanType>, Statem
         }
 
         if(getFirstArgument().calculate(program).getType()) {
-            if (program.getCurrentFunctionInvocation() == null) {
+            if (!program.functionInvocationBusy()) {
                 program.scheduleStatement(this);
                 program.scheduleStatement(getSecondArgument());
             }

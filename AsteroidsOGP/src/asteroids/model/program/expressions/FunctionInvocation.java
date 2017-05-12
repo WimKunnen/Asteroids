@@ -90,9 +90,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         return locals;
     }
 
-    public void emptyLocals(){
-        locals.clear();
-    }
 
     public Type<?> getLocalVariableValue(String name) throws RuntimeException{
         Type<?> current = locals.get(name);
@@ -135,6 +132,9 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 
         program.stopCurrentFunctionInvocation();
 
+        if (toReturn == null){
+            throw new RuntimeException();
+        }
         return toReturn;
     }
 

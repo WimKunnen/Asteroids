@@ -19,6 +19,9 @@ public class Print extends OneArgumentExecutable<Expression<? extends Type<?>>>
     public void execute(Program program) throws RuntimeException {
         if (program == null)
             throw new RuntimeException();
+        if (program.functionInvocationBusy()){
+            throw new RuntimeException();
+        }
         Object needsToBePrinted = getFirstArgument().calculate(program).getType();
         if(needsToBePrinted != null) {
             String toPrint = needsToBePrinted.toString();

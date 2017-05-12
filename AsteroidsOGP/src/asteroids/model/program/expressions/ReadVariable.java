@@ -24,7 +24,7 @@ public class ReadVariable implements Expression<Type<?>>{
 
     @Override
     public Type calculate(Program program){
-        if (program.getCurrentFunctionInvocation() == null){
+        if (!program.functionInvocationBusy()){
             return program.getVariableValue(getVariableName());
         }
         else{

@@ -133,8 +133,8 @@ public class Program {
 
         while (getExecutionStack().size() > 0){
 
-            Statement checkStatement = getExecutionStack().getFirst();
-            if (getTotalTime() >= checkStatement.getExecutionTime()){
+            //Statement checkStatement = getExecutionStack().getFirst();
+            if (getTotalTime() >= 0.2){
                 Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
                 nextStatement.execute(this);
@@ -194,6 +194,10 @@ public class Program {
     }
 
     private Deque<FunctionInvocation> currentFunctionInvocations = new ArrayDeque<>();
+
+    public boolean functionInvocationBusy(){
+        return (getCurrentFunctionInvocation() != null);
+    }
 
 
 

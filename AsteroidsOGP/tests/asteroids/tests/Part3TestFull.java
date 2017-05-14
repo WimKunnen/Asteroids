@@ -1870,7 +1870,6 @@ public class Part3TestFull {
     score += 20;
   }
 
-  //TODO Fix infinite call
   @Test
   public void testWhileStatement_InsideRecursiveFunction() throws ModelException {
     max_score += 20;

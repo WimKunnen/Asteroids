@@ -187,6 +187,7 @@ public class Program {
     public void setCurrentFunctionInvocation(FunctionInvocation invocation){
         this.currentFunctionInvocations.addFirst(invocation);
         System.out.println(currentFunctionInvocations);
+        this.allFunctionInvocationsEver.addFirst(invocation);
     }
     public void stopCurrentFunctionInvocation(){
         currentFunctionInvocations.removeFirst();
@@ -194,6 +195,16 @@ public class Program {
     }
 
     private Deque<FunctionInvocation> currentFunctionInvocations = new ArrayDeque<>();
+
+    public Deque<FunctionInvocation> getCurrentFunctionInvocations() {
+        return currentFunctionInvocations;
+    }
+    private Deque<FunctionInvocation> allFunctionInvocationsEver = new ArrayDeque<FunctionInvocation>();
+
+    public Deque<FunctionInvocation> getAllFunctionInvocationsEver() {
+        return allFunctionInvocationsEver;
+    }
+
 
     public boolean functionInvocationBusy(){
         return (getCurrentFunctionInvocation() != null);

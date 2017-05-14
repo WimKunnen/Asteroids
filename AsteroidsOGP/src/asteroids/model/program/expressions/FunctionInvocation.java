@@ -25,6 +25,10 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         this.executionStack = new ArrayDeque<>();
     }
 
+    private FunctionInvocation getCopy(){
+        return new FunctionInvocation(getArgumentsAsExpressions(),getFunctionName());
+    }
+
     private List<Expression> argumentsAsExpressions;
     public List<Expression> getArgumentsAsExpressions(){
         return this.argumentsAsExpressions;
@@ -109,6 +113,11 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 
     @Override
     public Type calculate(Program program) throws RuntimeException{
+
+        if (program.getAllFunctionInvocationsEver().contains(this)){
+            return this.getCopy().calculate(program);
+        }
+
 
         int i = 1;
         for (Expression expression : getArgumentsAsExpressions()){

@@ -401,12 +401,28 @@ public class World {
      * @param timeDifference How much time the entities need to move for.
      */
     private void moveAllEntities(double timeDifference){
-        Set<Entity> allEntities = new HashSet<>();
+        List<Entity> allEntities = new ArrayList<Entity>();
         allEntities.addAll(getAllEntities());
-        Iterator<Entity> iter = allEntities.iterator();
+        //Iterator<Entity> iter = allEntities.iterator();
 
-        while (iter.hasNext()) {
-            Entity entity = iter.next();
+        Iterator<Entity> iteratorAllEntities = new Iterator<Entity>() {
+            private List<Entity> list = allEntities;
+
+            @Override
+            public boolean hasNext() {
+                return list.size() != 0;
+            }
+
+            @Override
+            public Entity next() {
+                Entity nextEntity = list.get(0);
+                list.remove(0);
+                return nextEntity;
+            }
+        };
+
+        while (iteratorAllEntities.hasNext()) {
+            Entity entity = iteratorAllEntities.next();
             entity.move(timeDifference);
             updatePositionMap();
             if (entity instanceof Ship)

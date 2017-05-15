@@ -8,6 +8,22 @@ import java.util.Iterator;
 /**
  A class of bullets for the Asteroid project.
  *
+ * @invar A bullet located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar A bullet located in a world never overlaps with other entities in that world.
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     !(this.overlap(entity))
+ *
+ * @invar   The velocity of a bullet is always smaller than or equal to the speed of light.
+ * 		    | velocity.vectorLength() <= speedOfLight
+ *
+ * @invar   The radius will always be greater or equal to th minimum radius.
+ *          | isValidRadius()
+ *
+ * @invar   The maximum velocity of the ship shall always be smaller or equal to the speed of light.
+ *          | getMaximumVelocity() <= speedOfLight
+ *
  * @author WimKunnen and Maarten Doclo
  *
  * @version 2.0

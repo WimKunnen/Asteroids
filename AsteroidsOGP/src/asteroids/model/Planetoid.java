@@ -3,6 +3,22 @@ package asteroids.model;
 /**
  * A class of planetoids for the Asteroid project.
  *
+ * @invar A planetoid located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar A planetoid located in a world never overlaps with other entities in that world.
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     !(this.overlap(entity))
+ *
+ * @invar   The velocity of a planetoid is always smaller than or equal to the speed of light.
+ * 		    | velocity.vectorLength() <= speedOfLight
+ *
+ * @invar   The radius will always be greater or equal to th minimum radius.
+ *          | isValidRadius()
+ *
+ * @invar   The maximum velocity of the ship shall always be smaller or equal to the speed of light.
+ *          | getMaximumVelocity() <= speedOfLight
+ *
  * @author WimKunnen and Maarten Doclo
  *
  * @version 1.0

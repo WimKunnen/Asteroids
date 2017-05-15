@@ -15,12 +15,16 @@ import java.util.List;
  *        |     this.fitsInBoundaries(getWorld())
  * @invar An entity located in a world never overlaps with other entities in that world.
  *        | for (Entity entity : this.getWorld().getAllEntities()){
- *        |     if (this.overlap(entity)) {
- *        |         entity instanceof Ship && this instanceof Bullet && ((Ship) entity).getBullets().contains(this)
- *        |         || entity instanceof Bullet && this instanceof Ship && ((Ship) this).getBullets().contains(entity)
- *        |         || this == entity;
- *        |     }
- *        | }
+ *        |     !(this.overlap(entity))
+ *
+ * @invar   The velocity of a ship is always smaller than or equal to the speed of light.
+ * 		    | velocity.vectorLength() <= speedOfLight
+ *
+ * @invar   The radius will always be greater or equal to th minimum radius.
+ *          | isValidRadius()
+ *
+ * @invar   The maximum velocity of the ship shall always be smaller or equal to the speed of light.
+ *          | getMaximumVelocity() <= speedOfLight
  *
  * @author WimKunnen and Maarten Doclo
  *

@@ -5,6 +5,22 @@ import be.kuleuven.cs.som.annotate.Basic;
 /**
  * A class of minor planets for the Asteroid project.
  *
+ * @invar A minor planet located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar A minor planet located in a world never overlaps with other entities in that world.
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     !(this.overlap(entity))
+ *
+ * @invar   The velocity of a minor planet is always smaller than or equal to the speed of light.
+ * 		    | velocity.vectorLength() <= speedOfLight
+ *
+ * @invar   The radius will always be greater or equal to th minimum radius.
+ *          | isValidRadius()
+ *
+ * @invar   The maximum velocity of the minor planet shall always be smaller or equal to the speed of light.
+ *          | getMaximumVelocity() <= speedOfLight
+ *
  * @author WimKunnen and Maarten Doclo
  *
  * @version 1.0
@@ -43,12 +59,12 @@ public abstract class MinorPlanet extends Entity {
     }
 
     /**
-     * Variable registering the minimum radius of bullets.
+     * Variable registering the minimum radius of minor planets.
      */
     private final static double minimumRadius = 5;
 
     /**
-     * Return the minimum radius of all bullets.
+     * Return the minimum radius of all minor planets.
      * @see implementation
      */
     @Basic

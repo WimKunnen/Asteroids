@@ -1,5 +1,4 @@
 package asteroids.model;
-import asteroids.model.program.types.Type;
 import be.kuleuven.cs.som.annotate.*;
 
 import java.util.*;
@@ -8,7 +7,14 @@ import java.util.*;
 /**
  * A class of spaceships for the game Asteroids.
  * The class involves a position, velocity, orientation, maximum velocity, a radius, bullets and their actions, and a program.
- * 
+ *
+ * @invar A ship located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar A ship located in a world never overlaps with other entities in that world.
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     !(this.overlap(entity))
+ *
  * @invar   The heading of a ship will always be a number between zero and 2 * PI.
  * 		    | isValidAngle()
  *
@@ -158,8 +164,8 @@ public class Ship extends Entity{
      * A method which changes the mass of the ship if the new mass is greater than
      * the mass of an entity with the same radius and density.
      *
-     * @pre     The new mass must be greater than the mass of a similar entity.
-     *          | newMass > getMassOfEntity
+     * @pre     The new mass must be greater than or equal to the mass of a similar entity.
+     *          | newMass >= getMassOfEntity
      *
      * @post    The mass of the ship is equal to the new mass.
      *          | new.getMass == newMass
@@ -389,7 +395,7 @@ public class Ship extends Entity{
             if (bullet.hasBeenOutOfShip() && bullet.getSource() == this) {
                 this.bullets.add(bullet);
                 this.totalMass = this.totalMass + bullet.getMassOfEntity();
-                //bullet.setPosition(this.getPosition());
+                bullet.setPosition(this.getPosition());
                 bullet.setVelocity(this.velocity);
                 bullet.switchBeenOutOfShip(false);
                 if (bullet.getWorld() != null) {

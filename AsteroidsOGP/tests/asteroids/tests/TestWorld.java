@@ -39,7 +39,7 @@ public class TestWorld {
         ship4 = new Ship(150.0, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
 
 
-        bullet1 = new Bullet(150.0,150.0,0.0,0.0,10.0);
+        bullet1 = new Bullet(150.0,150.0,0.0,0.0,1.0);
         bullet2 = new Bullet(300.0,300.0,0.0,0.0,10.0);
         bullet2.switchBeenOutOfShip(false);
 

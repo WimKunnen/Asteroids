@@ -411,7 +411,6 @@ public class World {
     private void moveAllEntities(double timeDifference){
         List<Entity> allEntities = new ArrayList<Entity>();
         allEntities.addAll(getAllEntities());
-        //Iterator<Entity> iter = allEntities.iterator();
 
         Iterator<Entity> iteratorAllEntities = new Iterator<Entity>() {
             private List<Entity> list = allEntities;

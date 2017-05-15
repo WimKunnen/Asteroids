@@ -59,12 +59,6 @@ public class Planetoid extends MinorPlanet {
         double velocity = this.getVelocity().vectorLength();
         double distanceTravelled = velocity * timeDifference;
 
-//        Vector position1 = this.getPosition();
-//        this.move(timeDifference);
-//        Vector position2 = this.getPosition();
-//        Vector travel = position2.sum(position1.negate());
-//        double distanceTravelled = travel.vectorLength();
-
         double newRadius = this.getRadius() - 0.000001 * distanceTravelled;
         if (newRadius <= 5){
             this.terminate();

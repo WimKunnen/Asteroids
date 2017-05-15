@@ -9,10 +9,9 @@ import java.util.List;
  */
 public class FunctionDefinition {
 
-    public FunctionDefinition(String name, //List<?> arguments,
+    public FunctionDefinition(String name,
             Statement body){
         this.setName(name);
-        //this.setArguments(arguments);
         this.setBody(body);
     }
 
@@ -24,9 +23,7 @@ public class FunctionDefinition {
     public String getName(){
         return this.name;
     }
-//    public List<?> getArguments() {
-//        return arguments;
-//    }
+
     public Statement getBody() {
         return body;
     }
@@ -34,9 +31,7 @@ public class FunctionDefinition {
     private void setName(String newName){
         this.name = newName;
     }
-//    private void setArguments(List<?> newArguments){
-//        this.arguments = newArguments;
-//    }
+
     private void setBody(Statement newBody){
         this.body = newBody;
     }

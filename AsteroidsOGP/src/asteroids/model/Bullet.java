@@ -162,6 +162,13 @@ public class Bullet extends Entity {
         this.beenOutOfShip = bool;
     }
 
+    /**
+     * Terminates the bullet.
+     * If the bullet is located in a world, it is removed from that world.
+     * If the bullet has a source ship, the source no longer has this bullet as a bullet
+     *
+     * @see implementation
+     */
     @Override
     public void terminate(){
         isTerminated = true;
@@ -172,6 +179,10 @@ public class Bullet extends Entity {
         }
     }
 
+    /**
+     * Returns true if and only if the bullet is located in the ship.
+     * @see impementation
+     */
     public boolean liesWithinShip(Ship ship){
         double distanceBetweenCentres = getDistanceBetween(ship) + getRadius() + ship.getRadius();
         return getRadius() < ship.getRadius() - distanceBetweenCentres;

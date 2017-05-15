@@ -50,20 +50,28 @@ public class World {
      */
     private final double width;
     /**
+     * Returns the width of the world.
+     *
      * @see implementation
      */
     @Basic @Immutable
-    public double getWidth(){return this.width;}
+    public double getWidth(){
+        return this.width;
+    }
 
     /**
      * Variable registering the height of a world.
      */
     private final double height;
     /**
+     * Returns the width of the world.
+     *
      * @see implementation
      */
     @Basic @Immutable
-    public double getHeight() {return this.height;}
+    public double getHeight() {
+        return this.height;
+    }
 
     /**
      * Variable registering the worldsize as an array of doubles.

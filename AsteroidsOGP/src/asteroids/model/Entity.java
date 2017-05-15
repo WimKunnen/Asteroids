@@ -26,6 +26,7 @@ import java.util.List;
  *
  * @version 3.0
  */
+@SuppressWarnings("JavadocReference")
 public abstract class Entity {
     /**
      * Initializes a new Entity.
@@ -186,6 +187,9 @@ public abstract class Entity {
     /**
      * Method to set the current world the entity is placed in.
      *
+     * @post
+     *      | new.getWorld() == newWorld
+     *
      * @see implementation
      */
     protected void setWorld(World newWorld) {
@@ -255,17 +259,13 @@ public abstract class Entity {
      *
      * @post    If the given velocity is smaller or equal to speedOfLight and nonnegative, the new maximum velocity is set at the given velocity.
      *          |if(velocity <= speedOfLight && 0 <= velocity) then
-     *          |   this.maximumVelocity = velocity
-     *          |   this.maximumVelocitySquared = velocity * velocity
+     *          |   new.getMaximumVelocity == velocity
      *          If the given velocity is greater than speedOfLight, the new maximum velocity is set at the speedOfLight.
      *          |if(velocity > speedOfLight) then
-     *          |   this.maximumVelocity = speedOfLight
-     *          |   this.maximumVelocitySquared = speedOfLightSquared
+     *          |   new.getMaximumVelocity == speedOfLight
      *          Else, the new maximum velocity is set at 0.
      *          |Else
-     *          |   this.maximumVelocity = 0
-     *          |   this.maximumVelocitySquared = 0
-     *          Thus the square of the maximum velocity changes accordingly.
+     *          |   new.getMaximumVelocity == 0
      */
 
     public void setMaximumVelocity(double velocity){
@@ -289,11 +289,13 @@ public abstract class Entity {
      * @param   velocity
      *          The new velocity vector.
      *
-     * @post    If the square of the new total velocity does not exceed the square of the maximum velocity,
+     * @post    If the new total velocity does not exceed the maximum velocity,
      *          the new velocity is equal the the given velocity.
-     *          | new.getVelocityX() == velocity
-     *          If the square of the new total velocity does exceed the square of the maximum velocity,
+     *          | new.getVelocity() == velocity
+     *          If the new total velocity does exceed the maximum velocity,
      *          the new total velocity is set at the maximum velocity, but the new direction of the velocity remains unaltered.
+     *          | new.getVelocity.vectorLength() == this.getMaximumVelocity &&
+     *          |   new.getVelocity.angleBetween(this.getVelocity) == 0
      */
     @Model
     protected void setVelocity(Vector velocity){
@@ -312,6 +314,9 @@ public abstract class Entity {
     /**
      * Method to negate the X component of the velocity.
      *
+     * @post
+     *      | this.getVelocity.getX() == - new.getVelocity.getX()
+     *
      * @see implementation
      */
     public void negateVelocityX() {
@@ -320,6 +325,9 @@ public abstract class Entity {
 
     /**
      * Method to negate the Y component of the velocity.
+     *
+     * @post
+     *      | this.getVelocity.getY() == -new.getVelocity.getY()
      *
      * @see implementation
      */
@@ -330,8 +338,6 @@ public abstract class Entity {
     //radius:
     /**
      * Method to check the minimum radius of an entity.
-     *
-     * @see implementation
      */
     protected abstract double getMinimumRadius();
 
@@ -369,19 +375,11 @@ public abstract class Entity {
      *
      * @param   radius
      *          The radius which validity will be checked.
+     *
+     * @see implementation
      */
     public boolean isValidRadius(double radius) {
-        if (this instanceof Ship){
-            return (radius >= ((Ship) this).getMinimumRadius() && !Double.isNaN(radius));
-        }
-        else if (this instanceof Bullet){
-            return (radius >= ((Bullet) this).getMinimumRadius() && !Double.isNaN(radius));
-        }
-        else if (this instanceof MinorPlanet){
-            return (radius >= ((MinorPlanet) this).getMinimumRadius() && !Double.isNaN(radius));
-        }
-
-        throw new AssertionError();
+        return (radius >= (this).getMinimumRadius() && !Double.isNaN(radius));
     }
 
     // Collision detection
@@ -431,7 +429,7 @@ public abstract class Entity {
      * @param   other
      *          The second entity.
      *
-     *  @throws IllegalArgumentException
+     * @throws IllegalArgumentException
      *          The other entity does not exist.
      *          | other == null
      */
@@ -612,7 +610,6 @@ public abstract class Entity {
 
     /**
      * Returns the time before the entity will collide with one of the boundaries.
-     * If two collisions are possible with the current position and velocity, the time until the first collision is returned.
      *
      * @see implementation
      */
@@ -756,21 +753,21 @@ public abstract class Entity {
     /**
      * Returns the vectorial difference of the velocity vectors of two entities.
      */
-    public Vector deltaV(Entity other){
+    private Vector deltaV(Entity other){
         return other.getVelocity().sum(this.getVelocity().resizeVector(-1));
     }
 
     /**
      * Returns the vectorial difference of the centers of the two entities.
      */
-    public Vector deltaR(Entity other){
+    private Vector deltaR(Entity other){
         return other.getPosition().sum(this.getPosition().resizeVector(-1));
     }
 
     /**
      * Returns the sum of the radii of the entities.
      */
-    public double sigma(Entity other){
+    private double sigma(Entity other){
         return this.getRadius() + other.getRadius();
     }
 
@@ -836,6 +833,8 @@ public abstract class Entity {
 
     /**
      * Returns the volume of the entity based on its radius.
+     *
+     * @see implementation
      */
     protected double getVolume(){
         return 4.0/3.0 * Math.PI * Math.pow(this.getRadius(), 3);

@@ -488,8 +488,6 @@ public class Ship extends Entity{
             Vector bulletVelocity = pointingVector.resizeVector(250);
             bullet.setVelocity(bulletVelocity);
 
-//            Set<Entity> allEntities = this.getWorld().getAllEntities();
-
             Set<Entity> allEntities = new HashSet<>();
             allEntities.addAll(getWorld().getAllEntities());
             Iterator<Entity> iter = allEntities.iterator();
@@ -502,12 +500,6 @@ public class Ship extends Entity{
                 }
             }
 
-//            for(Entity entity : this.getWorld().getAllEntities()){
-//                if (bullet.overlap(entity)) {
-//                    Collision collision = new Collision(this.getWorld());
-//                    collision.resolveEntityCollision(bullet, entity);
-//                }
-//            }
         }
 
     }
@@ -557,6 +549,12 @@ public class Ship extends Entity{
         newProgram.setShip(this);
     }
 
+    /**
+     * Executes the program loaded on the ship with a runtime of dt.
+     *
+     * @param   dt
+     *          The amount of time the program is allowed to run.
+     */
     public List<Object> executeProgram(double dt){
         List<Object> printedList = getProgram().execute(dt);
         if (getProgram().isExecuted()){

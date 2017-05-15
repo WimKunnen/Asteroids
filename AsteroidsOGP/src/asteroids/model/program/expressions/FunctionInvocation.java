@@ -20,7 +20,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         super(arguments);
         setArguments(arguments);
         setFunction(function);
-        //setParameterMap(arguments);
         setFunctionName(functionName);
         this.executionStack = new ArrayDeque<>();
     }
@@ -38,14 +37,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
     }
 
     private Map<String, Type> parameterMap = new HashMap<>();
-
-
-//    public void setParameterMap(List<Expression> parameters) {
-//        int i = 1;
-//        for (Expression expression : parameters){
-//            parameterMap.put("$" + Integer.toString(i),parameters.get(i-1));
-//        }
-//    }
 
     public Type getParameterValue(String parameterName){
         return parameterMap.get(parameterName);
@@ -97,7 +88,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
 
     public Type<?> getLocalVariableValue(String name) throws RuntimeException{
         Type<?> current = locals.get(name);
-        System.out.println("Read " + name + ' ' +  current.getType());
         if(current == null)
             throw new RuntimeException();
 
@@ -124,8 +114,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
             parameterMap.put("$" + Integer.toString(i),getArgumentsAsExpressions().get(i-1).calculate(program));
             i += 1;
         }
-
-        System.out.println("functioninvocation");
         program.setCurrentFunctionInvocation(this);
         FunctionDefinition function = program.getFunctionDefinition(getFunctionName());
 

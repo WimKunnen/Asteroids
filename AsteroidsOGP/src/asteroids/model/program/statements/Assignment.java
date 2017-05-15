@@ -29,7 +29,6 @@ public class Assignment extends OneArgumentExecutable<Expression<? extends Type<
             program.setVariableValue(variableName, getFirstArgument().calculate(program));
         }
         else{
-            System.out.println("assignment " + variableName + ' ' + getFirstArgument().calculate(program).getType());
             program.getCurrentFunctionInvocation().setLocalVariableValue(variableName, getFirstArgument().calculate(program));
         }
     }

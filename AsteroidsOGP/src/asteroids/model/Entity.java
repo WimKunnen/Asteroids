@@ -352,9 +352,13 @@ public abstract class Entity {
      * @param newRadius
      *        The new radius of this entity.
      *
+     * @throws  IllegalArgumentException
+     *          The given radius is not a valid radius
+     *          | !isValidRadius(newRadius)
+     *
      * @see implementation
      */
-    protected void setRadius(double newRadius){
+    protected void setRadius(double newRadius) throws IllegalArgumentException{
         if (!isValidRadius(newRadius)) {
             throw new IllegalArgumentException("Not a valid radius!");
         }

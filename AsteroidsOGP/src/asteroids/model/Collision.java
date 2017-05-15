@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * A class of collisions for the Asteroid project.
+ * Collisions happen in a world and involve two entities or an entity and a border of the world.
  *
  * @author WimKunnen and Maarten Doclo
  *
@@ -70,7 +71,24 @@ public class Collision {
     }
 
     /**
-     * Resolve the collision between a two entity.
+     * Resolve the collision between two entities.
+     *
+     * If both entities are ships or minor planets, they bounce of each other.
+     * (New velocities: see implementation)
+     * | if((entity1 instanceof Ship && entity2 instanceof Ship) ||
+     * |        (entity1 instanceof MinorPlanet && entity2 instanceof MinorPlanet)) then
+     * |    entity1.setVelocity(velocity1)
+     * |    entity2.setVelocity(velocity2)
+     *
+     * If one of the entities is an enemy bullet which has been out of its ship and the other entity is a ship,
+     * both are terminated.
+     * |@see implementation
+     *
+     * If a ship collides with an asteroid, the ship is terminated.
+     * |@see implementation
+     *
+     * If a ship collides with a planetoid, the ship is teleported to a random location in its world.
+     * |@see implementation
      *
      * @param   entity1
      *          One colliding entity
@@ -128,10 +146,7 @@ public class Collision {
             resolveBulletEntityCollision((Ship) entity2,(Bullet) entity1);
         else if (entity1 instanceof Ship && entity2 instanceof Bullet)
             resolveBulletEntityCollision((Ship) entity1,(Bullet) entity2);
-        else if (entity1 instanceof Bullet && entity2 instanceof Bullet && ((Bullet) entity1).hasBeenOutOfShip() && ((Bullet) entity2).hasBeenOutOfShip()){
-            entity1.terminate();
-            entity2.terminate();
-        }
+        
         else if (entity1 instanceof Ship && entity2 instanceof Asteroid)
             entity1.terminate();
         else if (entity1 instanceof Asteroid && entity2 instanceof Ship)

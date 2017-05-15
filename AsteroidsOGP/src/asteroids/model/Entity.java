@@ -757,21 +757,21 @@ public abstract class Entity {
     /**
      * Returns the vectorial difference of the velocity vectors of two entities.
      */
-    private Vector deltaV(Entity other){
+    public Vector deltaV(Entity other){
         return other.getVelocity().sum(this.getVelocity().resizeVector(-1));
     }
 
     /**
      * Returns the vectorial difference of the centers of the two entities.
      */
-    private Vector deltaR(Entity other){
+    public Vector deltaR(Entity other){
         return other.getPosition().sum(this.getPosition().resizeVector(-1));
     }
 
     /**
      * Returns the sum of the radii of the entities.
      */
-    private double sigma(Entity other){
+    public double sigma(Entity other){
         return this.getRadius() + other.getRadius();
     }
 

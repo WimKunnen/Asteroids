@@ -19,8 +19,8 @@ public class TestEntity {
     private Ship ship1;
     private Ship ship2;
     private Ship ship3;
-    private Ship ship4;
-    private Ship ship5;
+    private Entity ship4;
+    private Entity ship5;
 
 
     private Bullet bullet1;
@@ -40,8 +40,8 @@ public class TestEntity {
         ship5 = new Ship(969.9, 160.0, 10.0, 0.0, 0.0, 30.0, 100000000);
 
 
-        bullet1 = new Bullet(150.0,150.0,0.0,0.0,10.0);
-        bullet2 = new Bullet(300.0,300.0,0.0,0.0,10.0);
+        bullet1 = new Bullet(150.0,150.0,0.0,0.0,1.0);
+        bullet2 = new Bullet(300.0,300.0,0.0,0.0,1.0);
         bullet2.switchBeenOutOfShip(false);
 
         ship1.reload(bullet1);

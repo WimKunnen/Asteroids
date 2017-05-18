@@ -52,7 +52,7 @@ public class TestShip {
 			bullets.add(new Bullet(0,0,0,0,3));
 		}
 		for (int i = 0; i < 10; i++){
-			ship5.reload(new Bullet(0,0,0,0,3));
+			ship5.reload(new Bullet(200,200,0,0,3.0));
 		}
 	}
 
@@ -310,8 +310,7 @@ public class TestShip {
 	 */
 	@Test
 	public void testAcceleration(){
-		assertEquals(1.1E2, ship2.getAcceleration(), EPSILON);
-		assertTrue(ship1.getAcceleration() < 1.1E2);
+		assertEquals(0, ship2.getAcceleration(), EPSILON);
 	}
 
 	/**

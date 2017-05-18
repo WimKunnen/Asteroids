@@ -50,20 +50,28 @@ public class World {
      */
     private final double width;
     /**
+     * Returns the width of the world.
+     *
      * @see implementation
      */
     @Basic @Immutable
-    public double getWidth(){return this.width;}
+    public double getWidth(){
+        return this.width;
+    }
 
     /**
      * Variable registering the height of a world.
      */
     private final double height;
     /**
+     * Returns the width of the world.
+     *
      * @see implementation
      */
     @Basic @Immutable
-    public double getHeight() {return this.height;}
+    public double getHeight() {
+        return this.height;
+    }
 
     /**
      * Variable registering the worldsize as an array of doubles.
@@ -401,12 +409,27 @@ public class World {
      * @param timeDifference How much time the entities need to move for.
      */
     private void moveAllEntities(double timeDifference){
-        Set<Entity> allEntities = new HashSet<>();
+        List<Entity> allEntities = new ArrayList<Entity>();
         allEntities.addAll(getAllEntities());
-        Iterator<Entity> iter = allEntities.iterator();
 
-        while (iter.hasNext()) {
-            Entity entity = iter.next();
+        Iterator<Entity> iteratorAllEntities = new Iterator<Entity>() {
+            private List<Entity> list = allEntities;
+
+            @Override
+            public boolean hasNext() {
+                return list.size() != 0;
+            }
+
+            @Override
+            public Entity next() {
+                Entity nextEntity = list.get(0);
+                list.remove(0);
+                return nextEntity;
+            }
+        };
+
+        while (iteratorAllEntities.hasNext()) {
+            Entity entity = iteratorAllEntities.next();
             entity.move(timeDifference);
             updatePositionMap();
             if (entity instanceof Ship)

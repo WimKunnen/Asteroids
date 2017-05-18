@@ -8,6 +8,22 @@ import java.util.Iterator;
 /**
  A class of bullets for the Asteroid project.
  *
+ * @invar A bullet located in a world will always fit in the boundaries of that world.
+ *        | if (getWorld() != null)
+ *        |     this.fitsInBoundaries(getWorld())
+ * @invar A bullet located in a world never overlaps with other entities in that world.
+ *        | for (Entity entity : this.getWorld().getAllEntities()){
+ *        |     !(this.overlap(entity))
+ *
+ * @invar   The velocity of a bullet is always smaller than or equal to the speed of light.
+ * 		    | velocity.vectorLength() <= speedOfLight
+ *
+ * @invar   The radius will always be greater or equal to th minimum radius.
+ *          | isValidRadius()
+ *
+ * @invar   The maximum velocity of the ship shall always be smaller or equal to the speed of light.
+ *          | getMaximumVelocity() <= speedOfLight
+ *
  * @author WimKunnen and Maarten Doclo
  *
  * @version 2.0
@@ -162,6 +178,13 @@ public class Bullet extends Entity {
         this.beenOutOfShip = bool;
     }
 
+    /**
+     * Terminates the bullet.
+     * If the bullet is located in a world, it is removed from that world.
+     * If the bullet has a source ship, the source no longer has this bullet as a bullet
+     *
+     * @see implementation
+     */
     @Override
     public void terminate(){
         isTerminated = true;
@@ -172,6 +195,10 @@ public class Bullet extends Entity {
         }
     }
 
+    /**
+     * Returns true if and only if the bullet is located in the ship.
+     * @see impementation
+     */
     public boolean liesWithinShip(Ship ship){
         double distanceBetweenCentres = getDistanceBetween(ship) + getRadius() + ship.getRadius();
         return getRadius() < ship.getRadius() - distanceBetweenCentres;

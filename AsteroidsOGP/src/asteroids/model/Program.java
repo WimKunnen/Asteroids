@@ -134,13 +134,6 @@ public class Program {
 
         while (getExecutionStack().size() > 0){
 
-//            Statement checkStatement = getExecutionStack().getFirst();
-//            if (checkStatement instanceof FunctionInvocation && getCurrentFunctionInvocation() == checkStatement){
-//                FunctionInvocation copyFunctionInvocation = ((FunctionInvocation) checkStatement).getCopy();
-//                getExecutionStack().removeFirst();
-//                scheduleStatement(copyFunctionInvocation);
-//            }
-
             if (getTotalTime() >= 0.2){
                 Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
@@ -190,14 +183,23 @@ public class Program {
     }
     public void setCurrentFunctionInvocation(FunctionInvocation invocation){
         this.currentFunctionInvocations.addFirst(invocation);
-        System.out.println(currentFunctionInvocations);
+        this.allFunctionInvocationsEver.addFirst(invocation);
     }
     public void stopCurrentFunctionInvocation(){
         currentFunctionInvocations.removeFirst();
-        System.out.println("removing : " +currentFunctionInvocations);
     }
 
     private Deque<FunctionInvocation> currentFunctionInvocations = new ArrayDeque<>();
+
+    public Deque<FunctionInvocation> getCurrentFunctionInvocations() {
+        return currentFunctionInvocations;
+    }
+    private Deque<FunctionInvocation> allFunctionInvocationsEver = new ArrayDeque<FunctionInvocation>();
+
+    public Deque<FunctionInvocation> getAllFunctionInvocationsEver() {
+        return allFunctionInvocationsEver;
+    }
+
 
     public boolean functionInvocationBusy(){
         return (getCurrentFunctionInvocation() != null);

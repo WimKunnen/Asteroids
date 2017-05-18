@@ -25,6 +25,10 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
         this.executionStack = new ArrayDeque<>();
     }
 
+    public FunctionInvocation getCopy(){
+        return new FunctionInvocation(this.argumentsAsExpressions, this.getFunctionName());
+    }
+
     private List<Expression> argumentsAsExpressions;
     public List<Expression> getArgumentsAsExpressions(){
         return this.argumentsAsExpressions;
@@ -82,6 +86,7 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
     public void scheduleStatement(Statement statement){
         if(statement != null)
             executionStack.push(statement);
+        System.out.println("Execution stack function invoctation: " + executionStack);
     }
 
     private Map<String, Type<?>> locals = new HashMap<>();

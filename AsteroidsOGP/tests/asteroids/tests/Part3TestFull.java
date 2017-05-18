@@ -1898,8 +1898,7 @@ public class Part3TestFull {
     }
   }
 
-//  // Break Statement
-//
+  // Break Statement
   @Test
   public void testBreakStatement_NonNestedCase() throws ModelException {
     if (nbStudentsInTeam > 1) {

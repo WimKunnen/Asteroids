@@ -409,6 +409,9 @@ public class Ship extends Entity{
      *          A collection of bullets to be loaded on the ship.
      */
     public void reload(Collection<Bullet> newBullets){
+        if (newBullets.contains(null)){
+            throw new IllegalArgumentException();
+        }
         for(Bullet bullet : newBullets){
             this.reload(bullet);
         }

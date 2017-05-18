@@ -66,6 +66,7 @@ public class Program {
     public void scheduleStatement(Statement statement){
         if(statement != null)
             executionStack.push(statement);
+        //System.out.println("Execution stack program: " + executionStack);
     }
 
     @Raw
@@ -133,7 +134,13 @@ public class Program {
 
         while (getExecutionStack().size() > 0){
 
-            //Statement checkStatement = getExecutionStack().getFirst();
+//            Statement checkStatement = getExecutionStack().getFirst();
+//            if (checkStatement instanceof FunctionInvocation && getCurrentFunctionInvocation() == checkStatement){
+//                FunctionInvocation copyFunctionInvocation = ((FunctionInvocation) checkStatement).getCopy();
+//                getExecutionStack().removeFirst();
+//                scheduleStatement(copyFunctionInvocation);
+//            }
+
             if (getTotalTime() >= 0.2){
                 Statement nextStatement = getExecutionStack().pop();
                 continueProgram();
@@ -179,10 +186,7 @@ public class Program {
 
 
     public FunctionInvocation getCurrentFunctionInvocation() {
-        if (currentFunctionInvocations.isEmpty()){
-            return null;
-        }
-        return currentFunctionInvocations.getFirst();
+        return currentFunctionInvocations.peekFirst();
     }
     public void setCurrentFunctionInvocation(FunctionInvocation invocation){
         this.currentFunctionInvocations.addFirst(invocation);
@@ -202,10 +206,7 @@ public class Program {
 
 
     public While getCurrentWhile() {
-        if (currentWhiles.isEmpty()){
-            return null;
-        }
-        return currentWhiles.getFirst();
+        return currentWhiles.peekFirst();
     }
     public void setCurrentWhile(While whileStatement){
         this.currentWhiles.addFirst(whileStatement);

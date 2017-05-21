@@ -8,7 +8,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 /**
- * Created by Maarten Doclo on 1/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class TestPlanetoid {
     private static final double EPSILON = 0.0001;

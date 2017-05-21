@@ -6,7 +6,7 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.BooleanType;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class While extends TwoArgumentExecutable<Expression<BooleanType>, Statement>
         implements Statement {

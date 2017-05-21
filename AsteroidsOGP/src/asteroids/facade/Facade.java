@@ -11,13 +11,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@SuppressWarnings("all")
+
 /**
  * A class implementing the IFacade class.
  * It connects the Ship class to the GUI (Graphical User Interface).
  *
  * @author  WimKunnen and Maarten Doclo.
  *
- * @version 2.0
+ * @version 3.0
  */
 
 
@@ -300,9 +302,6 @@ public class Facade implements asteroids.part3.facade.IFacade  {
      * Return the ship that fired the given bullet.
      */
     public Ship getBulletSource(Bullet bullet) throws ModelException{
-//        if (bullet.getWorld() == null)
-//            throw new ModelException("The bullet hasn't been fired");
-//        else
             return bullet.getSource();
     }
 

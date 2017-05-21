@@ -5,7 +5,7 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.Type;
 
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Return implements Statement{
 

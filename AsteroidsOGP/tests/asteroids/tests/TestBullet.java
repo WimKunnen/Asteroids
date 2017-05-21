@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 /**
  * A class containing test suits for the class of bullets.
  *
- * @version 2.0
+ * @version 3.0
  *
  * @author Maarten Doclo and Wim Kunnen
  */

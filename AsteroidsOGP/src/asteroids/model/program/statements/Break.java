@@ -3,7 +3,7 @@ package asteroids.model.program.statements;
 import asteroids.model.Program;
 
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Break implements Statement{
 

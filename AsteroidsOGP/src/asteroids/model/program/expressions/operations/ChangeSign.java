@@ -7,7 +7,7 @@ import asteroids.model.program.types.BooleanType;
 import asteroids.model.program.types.DoubleType;
 
 /**
- * Created by WimKunnen on 25/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class ChangeSign extends OneArgumentExecutable<Expression<DoubleType>>
         implements Expression<DoubleType> {

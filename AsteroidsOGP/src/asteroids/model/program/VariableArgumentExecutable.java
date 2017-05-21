@@ -5,8 +5,10 @@ import be.kuleuven.cs.som.annotate.Raw;
 
 import java.util.*;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 
 public abstract class VariableArgumentExecutable<T extends Executable> extends Executable.ArgumentExecutable {

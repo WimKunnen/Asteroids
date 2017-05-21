@@ -7,7 +7,7 @@ import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
 
 /**
- * Created by WimKunnen on 25/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Assignment extends OneArgumentExecutable<Expression<? extends Type<?>>>
         implements Statement {

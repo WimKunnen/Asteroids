@@ -5,6 +5,7 @@ import be.kuleuven.cs.som.annotate.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("all")
 
 /**
  * A class of entities for the game Asteroids.
@@ -30,7 +31,6 @@ import java.util.List;
  *
  * @version 3.0
  */
-@SuppressWarnings("JavadocReference")
 public abstract class Entity {
     /**
      * Initializes a new Entity.
@@ -321,8 +321,8 @@ public abstract class Entity {
     /**
      * Method to negate the X component of the velocity.
      *
-     * @post
-     *      | this.getVelocity.getX() == - new.getVelocity.getX()
+     * @post    The X component of the velocity is equal to the opposite of the old value
+     *          | this.getVelocity.getX() == - new.getVelocity.getX()
      *
      * @see implementation
      */
@@ -333,8 +333,8 @@ public abstract class Entity {
     /**
      * Method to negate the Y component of the velocity.
      *
-     * @post
-     *      | this.getVelocity.getY() == -new.getVelocity.getY()
+     * @post    The Y component of the velocity is equal to the opposite of the old value
+     *          | this.getVelocity.getY() == -new.getVelocity.getY()
      *
      * @see implementation
      */
@@ -879,11 +879,8 @@ public abstract class Entity {
     /**
      * The entity will be terminated and removed from its world.
      *
-     * @post
-     *      | new.isTerminated()
-     *
-     * @post
-     *      | new.getWorld() == null
+     * @post    The entity is no longer part of its (non null) world.
+     *          | !getWorld().getEntities().contains(this)
      *
      * @see implementation
      */

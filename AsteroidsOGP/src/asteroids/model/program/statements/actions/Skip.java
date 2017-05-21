@@ -4,7 +4,7 @@ import asteroids.model.Program;
 import asteroids.model.program.statements.Action;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Skip implements Action{
     @Override

@@ -3,6 +3,7 @@ import be.kuleuven.cs.som.annotate.*;
 
 import java.util.*;
 
+@SuppressWarnings("all")
 
 /**
  * A class of spaceships for the game Asteroids.
@@ -39,7 +40,7 @@ import java.util.*;
  *  Wim Kunnen:     Studies: Ingenieurswetenschappen: Elektrotechniek - Computer Wetenschappen.
  *  Maarten Doclo:  Studies: Ingenieurswetenschappen: Computer Wetenschappen - Elektrotechniek.
  *
- *  This Java class was created for the Asteroids Part 1 assignment for the course Objectoriented Programming
+ *  This Java class was created for the Asteroids Part 3 assignment for the course Objectoriented Programming
  *  given by Prof. dr. ir. E. Steegmans.
  *
  *  The code for this assignment can also be found at our private Github Repository:
@@ -70,6 +71,33 @@ public class Ship extends Entity{
      *
      * @param   mass
      *          The mass of this ship.
+     *
+     * @post    The new x coordinate is equal to x.
+     *          | new.getPosition().getX() == x
+     *
+     * @post    The new y coordinate is equal to y.
+     *          | new.getPosition().getY() == y
+     *
+     * @post    The new velocity along the x axis is equal to velocityX.
+     *          | new.getVelocity().getX() == velocityX
+     *
+     * @post    The new velocity along the y axis is equal to velocityY.
+     *          | new.getVelocity().getY() == velocityY
+     *
+     * @post    The new radius is equal to radius.
+     *          | new.getRadius() == radius
+     *
+     * @throws  IllegalArgumentException
+     *          The given radius is not a valid radius for any entity.
+     *          | (!isValidRadius(radius))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x or y is equal to NaN.
+     *           | (Double.isNaN(x) ||  Double.isNaN(y))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
+     *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
     public Ship(double x, double y, double velocityX, double velocityY, double heading, double radius, double mass)
             throws IllegalArgumentException{
@@ -85,8 +113,20 @@ public class Ship extends Entity{
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
      *
-     * @effect
-     *        | this(0,0,0,0,this.minimumRadius)
+     * @post    The new x coordinate is equal to 0.
+     *          | new.getPosition.getX() == 0
+     *
+     * @post    The new y coordinate is equal to 0.
+     *          | new.getPosition.getY() == 0
+     *
+     * @post    The new velocity along the x axis is equal to 0.
+     *          | new.getVelocity.getX() == 0
+     *
+     * @post    The new velocity along the y axis is equal to 0.
+     *          | new.getVelocity.getY() == 0
+     *
+     * @post    The new radius is equal to the minimum radius.
+     *          | new.getRadius() == this.minimumRadius
      */
     public Ship(){
         super();
@@ -329,12 +369,19 @@ public class Ship extends Entity{
 
     /**
      * Removes the given bullet from this ship.
+     *
      * @post The given bullet doesn't belong to this ships collection of bullets anymore.
      *      | !new.getBullets().contains(bullet)
+     *
      * @post The bullet doesn't belong to a world.
      *      | bullet.getWorld() == null
+     *
      * @param bullet
      *        The bullet to remove from this ship.
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the bullets source is not this ship.
+     *          | bullet.getSource() != this
      */
     public void removeBullet(Bullet bullet){
         if (bullet.getSource() != this){
@@ -391,6 +438,7 @@ public class Ship extends Entity{
      *
      * @throws  IllegalArgumentException
      *          Throws an exception if the bullet wasn't fired by this ship.
+     *          | bullet.getSource() != this || !(bullet != null && bullet.liesWithinShip(this))
      */
     public void reload(Bullet bullet) throws IllegalArgumentException{
         if (bullet != null && bullet.liesWithinShip(this)) {

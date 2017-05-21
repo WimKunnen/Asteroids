@@ -17,7 +17,7 @@ import java.util.HashSet;
 /**
  * A class containing test suits for the class of ships.
  *
- * @version 2.0
+ * @version 3.0
  *
  * @author Maarten Doclo and Wim Kunnen
  */
@@ -211,7 +211,7 @@ public class TestShip {
 	@Test
 	public void testThrust(){
 		ship2.thrust(1);
-		assertEquals(120.0,ship2.getVelocity().getX(),EPSILON);
+		assertEquals(10.0,ship2.getVelocity().getX(),EPSILON);
 		assertEquals(10.0,ship2.getVelocity().getY(),EPSILON);
 		ship2.thrust(-1);
 		assertEquals(10.0,ship2.getVelocity().getX(),EPSILON);

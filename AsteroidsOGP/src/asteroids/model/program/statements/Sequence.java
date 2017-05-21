@@ -6,7 +6,7 @@ import asteroids.model.program.VariableArgumentExecutable;
 import java.util.List;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Sequence extends VariableArgumentExecutable<Statement>
         implements Statement {

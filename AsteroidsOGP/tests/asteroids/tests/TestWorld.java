@@ -9,7 +9,7 @@ import org.junit.Test;
 import asteroids.model.Ship;
 
 /**
- * Created by maarten on 28/03/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class TestWorld {
 

@@ -3,8 +3,10 @@ package asteroids.model.program.expressions;
 import asteroids.model.Program;
 import asteroids.model.program.types.Type;
 
+@SuppressWarnings("all")
+
 /**
- * Created by Maarten Doclo on 6/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class ReadVariable implements Expression<Type<?>>{
 

@@ -1,9 +1,8 @@
 package asteroids.model;
 
 import be.kuleuven.cs.som.annotate.*;
-import be.kuleuven.cs.som.taglet.*;
 
-import java.util.Iterator;
+@SuppressWarnings("all")
 
 /**
  A class of bullets for the Asteroid project.
@@ -51,6 +50,32 @@ public class Bullet extends Entity {
      * @invar   A bullet cannot be held by a world and a ship at the same time.
      *          | getSource() == null || getWorld() == null || !getSource().getBullets.contains(this)
      *
+     * @post    The new x coordinate is equal to x.
+     *          | new.getPosition().getX() == x
+     *
+     * @post    The new y coordinate is equal to y.
+     *          | new.getPosition().getY() == y
+     *
+     * @post    The new velocity along the x axis is equal to velocityX.
+     *          | new.getVelocity().getX() == velocityX
+     *
+     * @post    The new velocity along the y axis is equal to velocityY.
+     *          | new.getVelocity().getY() == velocityY
+     *
+     * @post    The new radius is equal to radius.
+     *          | new.getRadius() == radius
+     *
+     * @throws  IllegalArgumentException
+     *          The given radius is not a valid radius for any entity.
+     *          | (!isValidRadius(radius))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x or y is equal to NaN.
+     *           | (Double.isNaN(x) ||  Double.isNaN(y))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
+     *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
     public Bullet(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
@@ -61,8 +86,20 @@ public class Bullet extends Entity {
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
      *
-     * @effect
-     *        | this(0,0,0,0,this.minimumRadius)
+     * @post    The new x coordinate is equal to 0.
+     *          | new.getPosition.getX() == 0
+     *
+     * @post    The new y coordinate is equal to 0.
+     *          | new.getPosition.getY() == 0
+     *
+     * @post    The new velocity along the x axis is equal to 0.
+     *          | new.getVelocity.getX() == 0
+     *
+     * @post    The new velocity along the y axis is equal to 0.
+     *          | new.getVelocity.getY() == 0
+     *
+     * @post    The new radius is equal to the minimum radius.
+     *          | new.getRadius() == this.minimumRadius
      */
     public Bullet(){
         super();
@@ -191,6 +228,12 @@ public class Bullet extends Entity {
      * Terminates the bullet.
      * If the bullet is located in a world, it is removed from that world.
      * If the bullet has a source ship, the source no longer has this bullet as a bullet
+     *
+     * @post    The entity is no longer part of its (non null) world.
+     *          | !getWorld().getEntities().contains(this)
+     *
+     * @post    The source ship no longer contains the bullet
+     *          | !getSource().getBullets.contains(this)
      *
      * @see implementation
      */

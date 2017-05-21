@@ -7,8 +7,10 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.EntityType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class GetVelocityY extends OneArgumentExecutable<Expression<EntityType>>
         implements Expression<DoubleType> {
@@ -23,9 +25,6 @@ public class GetVelocityY extends OneArgumentExecutable<Expression<EntityType>>
         Entity e = this.getFirstArgument().calculate(program).getType();
         if (e == null)
             throw new RuntimeException();
-        //DoubleType a = new DoubleType((Entity q) -> q.getVelocity().getX());
-        //(Entity q) -> new DoubleType(q.getVelocity().getY());
         return new DoubleType(e.getVelocity().getY());
-        //this.getFirstArgument().calculate(program).getType() -> new DoubleType(this.getFirstArgument().calculate(program).getType().getVelocity().getX());
     }
 }

@@ -5,7 +5,7 @@ import asteroids.model.Ship;
 import asteroids.model.program.statements.Action;
 
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Thrust_Off implements Action {
 

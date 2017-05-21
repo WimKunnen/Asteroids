@@ -4,7 +4,7 @@ import be.kuleuven.cs.som.annotate.Value;
 import jdk.internal.org.objectweb.asm.TypeReference;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 
 @Value

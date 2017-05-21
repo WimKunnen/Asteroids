@@ -5,8 +5,10 @@ import asteroids.model.Program;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.EntityType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class EntityLiteral implements Expression<EntityType> {
 

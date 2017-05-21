@@ -4,7 +4,7 @@ import be.kuleuven.cs.som.annotate.Basic;
 import be.kuleuven.cs.som.annotate.Raw;
 
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public abstract class OneArgumentExecutable<F extends Executable> extends Executable.ArgumentExecutable {
     public OneArgumentExecutable(F first) throws IllegalArgumentException{

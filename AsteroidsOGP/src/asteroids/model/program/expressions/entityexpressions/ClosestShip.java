@@ -7,8 +7,10 @@ import asteroids.model.World;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.EntityType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 25/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class ClosestShip implements Expression<EntityType>{
 

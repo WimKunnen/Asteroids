@@ -5,7 +5,7 @@ import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
 
 /**
- * Created by Maarten Doclo on 6/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class ReadParameter implements Expression{
 

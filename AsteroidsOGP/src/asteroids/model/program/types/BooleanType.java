@@ -3,7 +3,7 @@ package asteroids.model.program.types;
 import be.kuleuven.cs.som.annotate.Value;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 
 @Value

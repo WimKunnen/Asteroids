@@ -7,7 +7,7 @@ import asteroids.model.program.types.BooleanType;
 import asteroids.model.program.types.Type;
 
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Inequality extends TwoArgumentExecutable<Expression<? extends Type<?>>, Expression<? extends Type<?>>>
         implements Expression<BooleanType> {

@@ -5,7 +5,7 @@ import asteroids.model.program.statements.Statement;
 import java.util.List;
 
 /**
- * Created by WimKunnen on 25/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class FunctionDefinition {
 
@@ -16,7 +16,6 @@ public class FunctionDefinition {
     }
 
     private String name;
-    //private List<?> arguments;
 
     private Statement body;
 

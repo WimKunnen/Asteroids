@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.function.Function;
 
 /**
- * Created by WimKunnen on 18/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
-@SuppressWarnings("unchecked")
+@SuppressWarnings("all")
 public class ProgramFactory implements IProgramFactory<Expression, Statement, FunctionDefinition, Program>{
 
     public ProgramFactory(){

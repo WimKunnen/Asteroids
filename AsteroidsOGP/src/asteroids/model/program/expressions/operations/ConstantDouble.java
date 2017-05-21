@@ -6,7 +6,7 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;
 
 /**
- * Created by WimKunnen on 02/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class ConstantDouble extends OneArgumentExecutable<Expression<DoubleType>>
         implements Expression<DoubleType> {

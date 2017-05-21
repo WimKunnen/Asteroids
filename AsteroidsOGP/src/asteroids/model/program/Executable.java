@@ -5,8 +5,10 @@ import asteroids.model.program.statements.Action;
 import asteroids.model.program.statements.Statement;
 import be.kuleuven.cs.som.annotate.Raw;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public interface Executable {
 

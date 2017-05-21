@@ -7,7 +7,7 @@ import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.Type;
 
 /**
- * Created by WimKunnen on 02/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Parentesis extends OneArgumentExecutable<Expression<DoubleType>>
         implements Expression {

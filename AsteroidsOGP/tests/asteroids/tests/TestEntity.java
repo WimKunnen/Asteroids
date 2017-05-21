@@ -12,6 +12,8 @@ import static org.junit.Assert.assertTrue;
  * A class containing test suits for the class of entities.
  *
  * @author Maarten Doclo and Wim Kunnen
+ *
+ * @version 2.0
  */
 public class TestEntity {
     private static final double EPSILON = 0.0001;

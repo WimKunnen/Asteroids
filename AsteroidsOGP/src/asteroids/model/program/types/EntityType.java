@@ -4,7 +4,7 @@ import asteroids.model.Entity;
 import be.kuleuven.cs.som.annotate.Value;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 @Value
 public class EntityType extends Type<Entity> {

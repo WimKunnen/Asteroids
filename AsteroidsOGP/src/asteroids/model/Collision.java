@@ -3,6 +3,8 @@ package asteroids.model;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("all")
+
 /**
  * A class of collisions for the Asteroid project.
  * Collisions happen in a world and involve two entities or an entity and a border of the world.

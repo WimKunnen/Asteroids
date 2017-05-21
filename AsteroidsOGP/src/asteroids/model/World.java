@@ -6,6 +6,8 @@ import jdk.nashorn.internal.ir.annotations.Immutable;
 
 import java.util.*;
 
+@SuppressWarnings("all")
+
 /**
  *A class of two dimensional worlds.
  *
@@ -257,6 +259,20 @@ public class World {
      * @param entity
      *        The entity that needs to be added to this world.
      *
+     * @throws  IllegalArgumentException
+     *          Thrown if the entity is null.
+     *          | entity == null
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the entity is already in the world.
+     *          | entity.getWorld() == this
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the entity does not fit in the world or overlaps with an entity in this world
+     *          and is not a bullet or has been out of a ship.
+     *          | (!(entity.noOverlapsInNewWorld(this) || entity.fitsInBoundaries(this)))
+     *          | && (!( entity instanceof Bullet) || ((Bullet) entity).hasBeenOutOfShip())
+     *
      * @see implementation
      */
     public void addEntity(Entity entity) throws IllegalArgumentException {
@@ -271,9 +287,7 @@ public class World {
         if (entity.noOverlapsInNewWorld(this) && entity.fitsInBoundaries(this)) {
             entity.setWorld(this);
             entityPositionMap.put(entity.getPosition(),entity);
-            //if (!(entity instanceof Bullet) || !(((Bullet) entity).hasBeenOutOfShip())) {
             allEntities.add(entity);
-            //}
         }
         else{
             if(entity instanceof Bullet && !((Bullet) entity).hasBeenOutOfShip()){
@@ -290,6 +304,14 @@ public class World {
      *
      * @param entity
      *        The entity that needs to be removed from this world.
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the entity is null.
+     *          | entity == null
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the entity is not in this world.
+     *          | !entityPositionMap.containsValue(entity) || (getAllEntities().contains(entity))
      *
      * @see implementation
      */
@@ -342,7 +364,11 @@ public class World {
     }
 
     /**
-     * Evolve this world for a given timedifference.
+     * Evolve this world for a given time difference.
+     *
+     * @throws  IllegalArgumentException
+     *          Thrown if the timeDifference is invalid
+     *          | (timeDifference < 0 || (Double.isNaN(timeDifference)))
      *
      * @param timeDifference
      *        The amount of seconds the world should evolve.

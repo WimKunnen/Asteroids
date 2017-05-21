@@ -4,8 +4,10 @@ import asteroids.model.*;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.EntityType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 02/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class BulletOfShip implements Expression<EntityType>{
 

@@ -33,7 +33,7 @@ import asteroids.part3.programs.internal.ProgramParser;
 import asteroids.util.ModelException;
 
 /**
- * Created by Maarten Doclo on 12/05/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class TestProgram {
 

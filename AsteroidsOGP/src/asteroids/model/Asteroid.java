@@ -1,5 +1,6 @@
 package asteroids.model;
 
+@SuppressWarnings("all")
 
 /**
  * A class of asteroids for the Asteroid project.
@@ -42,6 +43,33 @@ public class Asteroid extends MinorPlanet {
      *
      * @param   radius
      *          The initial radius of the new asteroid.
+     *
+     * @post    The new x coordinate is equal to x.
+     *          | new.getPosition().getX() == x
+     *
+     * @post    The new y coordinate is equal to y.
+     *          | new.getPosition().getY() == y
+     *
+     * @post    The new velocity along the x axis is equal to velocityX.
+     *          | new.getVelocity().getX() == velocityX
+     *
+     * @post    The new velocity along the y axis is equal to velocityY.
+     *          | new.getVelocity().getY() == velocityY
+     *
+     * @post    The new radius is equal to radius.
+     *          | new.getRadius() == radius
+     *
+     * @throws  IllegalArgumentException
+     *          The given radius is not a valid radius for any entity.
+     *          | (!isValidRadius(radius))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x or y is equal to NaN.
+     *           | (Double.isNaN(x) ||  Double.isNaN(y))
+     *
+     * @throws   IllegalArgumentException
+     *           Throws an exception if either x + the radius or y+ the radius is out of the entities world.
+     *           | x + this.getRadius() > this.getWorld().getWidth() || y + this.getRadius() > this.getWorld().getHeight())
      */
     public Asteroid(double x, double y, double velocityX, double velocityY, double radius)
             throws IllegalArgumentException{
@@ -52,8 +80,20 @@ public class Asteroid extends MinorPlanet {
     /**
      * Default initializer which uses the initializer defined in the MinorPlanet super class.
      *
-     * @effect
-     *        | this(0,0,0,0,this.getMinimumRadius())
+     * @post    The new x coordinate is equal to 0.
+     *          | new.getPosition.getX() == 0
+     *
+     * @post    The new y coordinate is equal to 0.
+     *          | new.getPosition.getY() == 0
+     *
+     * @post    The new velocity along the x axis is equal to 0.
+     *          | new.getVelocity.getX() == 0
+     *
+     * @post    The new velocity along the y axis is equal to 0.
+     *          | new.getVelocity.getY() == 0
+     *
+     * @post    The new radius is equal to the minimum radius.
+     *          | new.getRadius() == this.minimumRadius
      */
     public Asteroid(){
         super();

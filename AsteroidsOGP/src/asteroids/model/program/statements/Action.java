@@ -1,7 +1,7 @@
 package asteroids.model.program.statements;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public interface Action extends Statement {
 

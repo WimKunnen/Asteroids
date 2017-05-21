@@ -7,8 +7,10 @@ import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;
 import asteroids.model.program.types.EntityType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class GetPositionX extends OneArgumentExecutable<Expression<EntityType>>
         implements Expression<DoubleType> {

@@ -5,8 +5,10 @@ import asteroids.model.program.TwoArgumentExecutable;
 import asteroids.model.program.expressions.Expression;
 import asteroids.model.program.types.DoubleType;
 
+@SuppressWarnings("all")
+
 /**
- * Created by WimKunnen on 24/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Addition extends TwoArgumentExecutable<Expression<DoubleType>, Expression<DoubleType>>
         implements Expression<DoubleType> {

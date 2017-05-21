@@ -9,7 +9,7 @@ import asteroids.model.program.types.DoubleType;
 import java.util.Map;
 
 /**
- * Created by WimKunnen on 23/04/2017.
+ * @author WimKunnen and Maarten Doclo
  */
 public class Turn implements Action {
 

@@ -9,7 +9,7 @@ import org.junit.Test;
  *
  * @author   WimKunnen and Maarten Doclo.
  *
- * @version  1.0
+ * @version  3.0
  */
 public class TestVector {
 

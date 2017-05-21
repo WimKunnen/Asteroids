@@ -39,6 +39,9 @@ public class Vector {
 
     /**
      * Default initializer for the Vector class.
+     *
+     * @effect
+     *        | this(0,0)
      */
     public Vector(){
         this.x = 0;

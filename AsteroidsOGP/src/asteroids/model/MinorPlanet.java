@@ -52,6 +52,9 @@ public abstract class MinorPlanet extends Entity {
 
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
+     *
+     * @effect
+     *        | this(0,0,0,0,this.minimumRadius)
      */
     public MinorPlanet(){
         super();

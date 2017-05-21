@@ -118,6 +118,9 @@ public abstract class Entity {
      *
      * @post    The new radius is equal to the minimum radius.
      *          | new.getRadius() == this.minimumRadius
+     *
+     * @effect
+     *        | this(0,0,0,0,this.minimumRadius)
      */
     public Entity(){
         this.setRadius(this.getMinimumRadius());
@@ -875,6 +878,12 @@ public abstract class Entity {
 
     /**
      * The entity will be terminated and removed from its world.
+     *
+     * @post
+     *      | new.isTerminated()
+     *
+     * @post
+     *      | new.getWorld() == null
      *
      * @see implementation
      */

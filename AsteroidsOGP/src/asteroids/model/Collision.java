@@ -36,6 +36,9 @@ public class Collision {
 
     /**
      * Set the world of this collision to a given world.
+     *
+     * @post
+     *      | new.getWorld() == world
      */
     private void setWorld(World world){
         this.world = world;

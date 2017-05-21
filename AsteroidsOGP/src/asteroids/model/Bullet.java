@@ -60,6 +60,9 @@ public class Bullet extends Entity {
 
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
+     *
+     * @effect
+     *        | this(0,0,0,0,this.minimumRadius)
      */
     public Bullet(){
         super();
@@ -101,6 +104,9 @@ public class Bullet extends Entity {
      *
      * @param newMaxNb
      *        The new maximum number of bounces of this bullet.
+     *
+     * @post
+     * | new.getMaxNbBounces() == newMaxNb
      *
      * @see implementation
      */
@@ -147,6 +153,9 @@ public class Bullet extends Entity {
      *
      * @param sourceShip
      *        The ship that needs to be the source of this bullet.
+     *
+     * @post
+     *      | new.getSource() == sourceShip
      *
      * @see implementation
      */

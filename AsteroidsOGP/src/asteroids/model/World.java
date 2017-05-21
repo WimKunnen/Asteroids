@@ -27,6 +27,8 @@ public class World {
      *
      * @param   height
      *          The new width of the newly created world.
+     *
+     * @see implementation
      */
     public World(double width, double height){
         if (width < getLowerBound())
@@ -100,6 +102,11 @@ public class World {
     }
     /**
      * Terminate the world.
+     *
+     * @post
+     *      | new.checkTermination() == true
+     * @post
+     *      | new.getAllEntities.isEmpty()
      * @see implementation
      */
     public void terminate(){
@@ -114,7 +121,7 @@ public class World {
     /**
      * A HashSet containing all entities that are currently present in this world.
      *
-     * * @invar   Each entity in the HashSet is part of this world.
+     * @invar   Each entity in the HashSet is part of this world.
      *          | for each entity in allEntities:
      *          |    entity.getWorld == this
      *

@@ -84,6 +84,9 @@ public class Ship extends Entity{
 
     /**
      * Default initializer which uses the initializer defined in the Entity super class.
+     *
+     * @effect
+     *        | this(0,0,0,0,this.minimumRadius)
      */
     public Ship(){
         super();
@@ -131,6 +134,9 @@ public class Ship extends Entity{
      *
      * @param   angle
      *          The angle at which the new heading will be set.
+     *
+     * @post
+     *      | new.getHeading == angle
      *
      * @pre     The angle must be a valid angle.
      *          | isValidAngle(angle)

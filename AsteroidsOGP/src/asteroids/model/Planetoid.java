@@ -52,6 +52,9 @@ public class Planetoid extends MinorPlanet {
 
     /**
      * Default initializer which uses the initializer defined in the MinorPlanet super class.
+     *
+     * @effect
+     *        | this(0,0,0,0,this.minimumRadius)
      */
     public Planetoid() {
         super();

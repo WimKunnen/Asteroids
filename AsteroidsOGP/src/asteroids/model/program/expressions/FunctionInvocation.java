@@ -77,7 +77,6 @@ public class FunctionInvocation extends VariableArgumentExecutable implements Ex
     public void scheduleStatement(Statement statement){
         if(statement != null)
             executionStack.push(statement);
-        System.out.println("Execution stack function invoctation: " + executionStack);
     }
 
     private Map<String, Type<?>> locals = new HashMap<>();

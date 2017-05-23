@@ -95,6 +95,9 @@ public abstract class MinorPlanet extends Entity {
      *
      * @post    The new radius is equal to the minimum radius.
      *          | new.getRadius() == this.minimumRadius
+     *
+     * @effect
+     *          | this(0,0,0,0,this.minimumRadius)
      */
     public MinorPlanet(){
         super();

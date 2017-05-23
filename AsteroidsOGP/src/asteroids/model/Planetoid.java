@@ -96,6 +96,9 @@ public class Planetoid extends MinorPlanet {
      *
      * @post    The new radius is equal to the minimum radius.
      *          | new.getRadius() == this.minimumRadius
+     *
+     * @effect
+     *          | this(0,0,0,0,this.minimumRadius)
      */
     public Planetoid() {
         super();

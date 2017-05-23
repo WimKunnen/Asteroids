@@ -66,7 +66,6 @@ public class Program {
     public void scheduleStatement(Statement statement){
         if(statement != null)
             executionStack.push(statement);
-        //System.out.println("Execution stack program: " + executionStack);
     }
 
     @Raw

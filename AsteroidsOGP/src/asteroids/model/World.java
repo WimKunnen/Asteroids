@@ -259,6 +259,12 @@ public class World {
      * @param entity
      *        The entity that needs to be added to this world.
      *
+     * @post    ...
+     *          | new.getAllEntities().contains(entity)
+     *
+     * @post    ...
+     *          | entity.getWorld() == this
+     *
      * @throws  IllegalArgumentException
      *          Thrown if the entity is null.
      *          | entity == null
@@ -304,6 +310,12 @@ public class World {
      *
      * @param entity
      *        The entity that needs to be removed from this world.
+     *
+     * @post    ...
+     *          | !new.getAllEntities().contains(entity)
+     *
+     * @post    ...
+     *          | entity.getWorld() == null
      *
      * @throws  IllegalArgumentException
      *          Thrown if the entity is null.

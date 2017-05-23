@@ -87,6 +87,9 @@ public class Ship extends Entity{
      * @post    The new radius is equal to radius.
      *          | new.getRadius() == radius
      *
+     * @post    The new heading is equal to heading
+     *          | new.getHeading() == heading
+     *
      * @throws  IllegalArgumentException
      *          The given radius is not a valid radius for any entity.
      *          | (!isValidRadius(radius))
@@ -127,6 +130,12 @@ public class Ship extends Entity{
      *
      * @post    The new radius is equal to the minimum radius.
      *          | new.getRadius() == this.minimumRadius
+     *
+     * @post    The new heading is equal to 0.
+     *          | new.getHeading() == 0
+     *
+     * @effect
+     *          | this(0,0,0,0,0,this.minimumRadius,0)
      */
     public Ship(){
         super();
@@ -175,8 +184,8 @@ public class Ship extends Entity{
      * @param   angle
      *          The angle at which the new heading will be set.
      *
-     * @post
-     *      | new.getHeading == angle
+     * @post    ...
+     *          | new.getHeading == angle
      *
      * @pre     The angle must be a valid angle.
      *          | isValidAngle(angle)

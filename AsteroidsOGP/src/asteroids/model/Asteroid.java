@@ -94,6 +94,9 @@ public class Asteroid extends MinorPlanet {
      *
      * @post    The new radius is equal to the minimum radius.
      *          | new.getRadius() == this.minimumRadius
+     *
+     * @effect
+     *          | this(0,0,0,0,this.getMinimumRadius())
      */
     public Asteroid(){
         super();

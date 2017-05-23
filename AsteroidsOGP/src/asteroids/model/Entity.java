@@ -882,6 +882,12 @@ public abstract class Entity {
      * @post    The entity is no longer part of its (non null) world.
      *          | !getWorld().getEntities().contains(this)
      *
+     * @post    ...
+     *          | new.isTerminated()
+     *
+     * @post    ...
+     *          | new.getWorld() == null
+     *
      * @see implementation
      */
     public void terminate(){

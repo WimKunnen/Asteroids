@@ -11,6 +11,7 @@ import be.kuleuven.cs.som.annotate.Raw;
 
 import java.util.*;
 
+@SuppressWarnings("all")
 /**
  A class of programs for the Asteroid project.
  *

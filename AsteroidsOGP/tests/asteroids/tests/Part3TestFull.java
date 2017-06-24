@@ -2894,5 +2894,4 @@ public class Part3TestFull {
       score += 5;
     }
   }
-
 }

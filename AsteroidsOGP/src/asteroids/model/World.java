@@ -401,6 +401,9 @@ public class World {
                 for (int i = 0; i < allEntities.size(); i++) {
 
                     Entity currentEntity = allEntities.get(i);
+                    if(currentEntity instanceof Ship){
+                        ((Ship) currentEntity).executeProgram(timeDifference);
+                    }
 
                     for (int k = i + 1; k < allEntities.size(); k++) { //Entity collision resolve
                         Entity otherEntity = allEntities.get(k);

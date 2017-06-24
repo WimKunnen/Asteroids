@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>asteroids.model.program.statements</OriginalElement>
+  <nodes>
+    <node x="414.0" y="132.5">asteroids.model.program.statements.Sequence</node>
+    <node x="828.0" y="121.5">asteroids.model.program.statements.Return</node>
+    <node x="721.75" y="0.0">asteroids.model.program.statements.Statement</node>
+    <node x="1231.0" y="121.0">asteroids.model.program.statements.Assignment</node>
+    <node x="621.0" y="132.5">asteroids.model.program.statements.If</node>
+    <node x="1024.0" y="132.5">asteroids.model.program.statements.Break</node>
+    <node x="1462.0" y="132.5">asteroids.model.program.statements.While</node>
+    <node x="0.0" y="132.5">asteroids.model.program.statements.Action</node>
+    <node x="27.5" y="245.0">asteroids.model.program.statements.actions</node>
+    <node x="207.0" y="132.5">asteroids.model.program.statements.Print</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="asteroids.model.program.statements.Break" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="1117.5" y="91.0" />
+      <point x="850.3125" y="91.0" />
+      <point x="35.0625" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.Sequence" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="507.5" y="91.0" />
+      <point x="780.1875" y="91.0" />
+      <point x="-35.0625" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.Print" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="300.5" y="81.0" />
+      <point x="756.8125" y="81.0" />
+      <point x="-58.4375" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.While" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="1555.5" y="71.0" />
+      <point x="897.0625" y="71.0" />
+      <point x="81.8125" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.actions" target="asteroids.model.program.statements.Action">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.Action" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="93.5" y="71.0" />
+      <point x="733.4375" y="71.0" />
+      <point x="-81.8125" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.Return" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-36.5" />
+      <point x="916.0" y="101.0" />
+      <point x="826.9375" y="101.0" />
+      <point x="11.6875" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.Assignment" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-37.0" />
+      <point x="1336.5" y="81.0" />
+      <point x="873.6875" y="81.0" />
+      <point x="58.4375" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.statements.If" target="asteroids.model.program.statements.Statement">
+      <point x="0.0" y="-25.5" />
+      <point x="714.5" y="101.0" />
+      <point x="803.5625" y="101.0" />
+      <point x="-11.6875" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6254855599248654" x="848.329283037111" y="208.5186984757047" />
+  <SelectedNodes>
+    <node>asteroids.model.program.statements.Print</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

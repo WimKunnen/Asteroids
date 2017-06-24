@@ -34,7 +34,7 @@ import java.util.*;
  *
  * @author  Wim Kunnen and Maarten Doclo
  *
- * @version 2.0
+ * @version 3.0
  *
  * About the authors and the software:
  *  Wim Kunnen:     Studies: Ingenieurswetenschappen: Elektrotechniek - Computer Wetenschappen.
@@ -628,6 +628,10 @@ public class Ship extends Entity{
      *          The amount of time the program is allowed to run.
      */
     public List<Object> executeProgram(double dt){
+        if(getProgram() == null){
+            return new ArrayList<>();
+        }
+        System.out.println("executing");
         List<Object> printedList = getProgram().execute(dt);
         if (getProgram().isExecuted()){
             List<Object> printedObjectList = new ArrayList<>(printedList);

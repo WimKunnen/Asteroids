@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>asteroids.model.program.types</OriginalElement>
+  <nodes>
+    <node x="251.5" y="0.0">asteroids.model.program.types.Type</node>
+    <node x="200.0" y="101.0">asteroids.model.program.types.BooleanType</node>
+    <node x="431.0" y="112.0">asteroids.model.program.types.EntityType</node>
+    <node x="0.0" y="112.0">asteroids.model.program.types.DoubleType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="asteroids.model.program.types.EntityType" target="asteroids.model.program.types.Type">
+      <point x="0.0" y="-25.5" />
+      <point x="557.0" y="76.0" />
+      <point x="341.5" y="76.0" />
+      <point x="36.0" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.types.DoubleType" target="asteroids.model.program.types.Type">
+      <point x="0.0" y="-25.5" />
+      <point x="90.0" y="76.0" />
+      <point x="269.5" y="76.0" />
+      <point x="-36.0" y="25.5" />
+    </edge>
+    <edge source="asteroids.model.program.types.BooleanType" target="asteroids.model.program.types.Type">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="201.5" y="54.0" />
+  <SelectedNodes>
+    <node>asteroids.model.program.types.DoubleType</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

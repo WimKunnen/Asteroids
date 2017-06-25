@@ -18,8 +18,9 @@ import asteroids.util.internal.ResourceUtils;
 @SuppressWarnings("serial")
 public class WorldView3 extends WorldView2<IFacade> {
 
-	public WorldView3(AsteroidsFrame3 game, World world, Ship player, Ship other) throws ModelException {
+	public WorldView3(AsteroidsFrame3 game, World world, Ship player, Ship other, int gameType) throws ModelException {
 		super(game, world, player, Collections.singleton(other));
+		this.setGameType(gameType);
 	}
 
 	@Override
@@ -108,4 +109,13 @@ public class WorldView3 extends WorldView2<IFacade> {
 		return new PlanetoidVisualization(planetoid, image);
 	}
 
+	private int gameType;
+
+	public int getGameType() {
+		return gameType;
+	}
+
+	public void setGameType(int gameType) {
+		this.gameType = gameType;
+	}
 }

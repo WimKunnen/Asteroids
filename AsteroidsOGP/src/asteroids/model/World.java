@@ -507,4 +507,14 @@ public class World {
         Collision collision = new Collision(this);
         return collision.getFirstCollisionPosition();
     }
+
+    private double score;
+
+    public void addScore(double score){
+        this.score += score;
+    }
+
+    public double getScore() {
+        return score;
+    }
 }

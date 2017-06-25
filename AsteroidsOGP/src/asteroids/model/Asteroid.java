@@ -75,6 +75,7 @@ public class Asteroid extends MinorPlanet {
             throws IllegalArgumentException{
         super(x, y, velocityX, velocityY, radius);
         this.setDensity(2.65E12);
+        this.setScore(200 + Math.ceil(this.getRadius() * 2));
     }
 
     /**
@@ -102,6 +103,7 @@ public class Asteroid extends MinorPlanet {
         super();
         this.setDensity(2.65E12);
         this.setRadius(this.getMinimumRadius());
+        this.setScore(200 + Math.ceil(this.getRadius() * 2));
     }
 
 }

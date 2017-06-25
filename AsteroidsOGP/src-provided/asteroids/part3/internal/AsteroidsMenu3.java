@@ -16,7 +16,7 @@ public class AsteroidsMenu3 extends AsteroidsMenu2 {
 
 	@Override
 	protected String[] createOptions() {
-		return new String[] { "Player vs Asteroids", "Player vs AI", "Exit" };
+		return new String[] { "Player vs Asteroids", "Player vs AI", "Player vs Player","Exit" };
 	}
 
 	@Override
@@ -29,6 +29,9 @@ public class AsteroidsMenu3 extends AsteroidsMenu2 {
 			getGame().startAIGame();
 			break;
 		case 2:
+			getGame().startPVP();
+			break;
+		case 3:
 			System.exit(0);
 		}
 	}

@@ -111,6 +111,7 @@ public class Ship extends Entity{
         this.setMass(mass);
         this.totalMass = this.getMass();
         this.setThrustForce(1.1E18);
+        this.setScore(500 + Math.ceil(this.getRadius() * 2));
     }
 
     /**
@@ -143,6 +144,7 @@ public class Ship extends Entity{
         this.setDensity(1.42E12);
         this.setThrustForce(1.1E18);
         this.setHeading(0);
+        this.setScore(500 + Math.ceil(this.getRadius() * 2));
     }
 
     // Heading
@@ -310,7 +312,7 @@ public class Ship extends Entity{
      * @param   newForce
      *          The new force the ship's thruster can exert.
      */
-    private void setThrustForce(double newForce){
+    public void setThrustForce(double newForce){
         this.thrustForce = newForce;
     }
 

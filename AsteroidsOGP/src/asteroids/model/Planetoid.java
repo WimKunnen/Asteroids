@@ -77,6 +77,7 @@ public class Planetoid extends MinorPlanet {
         this.setDensity(0.917E12);
         this.setDistanceTravelled(distanceTravelled);
         decrementRadiusDistance(distanceTravelled);
+        this.setScore(100 + Math.ceil(this.getRadius() * 2));
     }
 
     /**
@@ -104,6 +105,7 @@ public class Planetoid extends MinorPlanet {
         super();
         this.setDensity(0.917E12);
         this.setRadius(this.getMinimumRadius());
+        this.setScore(100 + Math.ceil(this.getRadius() * 2));
     }
 
     /**

@@ -30,7 +30,7 @@ import asteroids.util.ModelException;
 import asteroids.util.internal.InternalUtils;
 import asteroids.util.internal.ResourceUtils;
 
-@SuppressWarnings("serial")
+@SuppressWarnings("all")
 public class WorldView2<F extends IFacade> extends JPanel implements KeyListener, ActionListener, CollisionListener {
 
 	private static final int TIMER_DELAY = 1000 / 30;
@@ -39,9 +39,13 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 	private F facade;
 	private World world;
 	private Ship player;
+	private Ship player2;
 	private double deltaAngle = Double.NaN;
+	private double deltaAngle2 = Double.NaN;
 	private boolean thrusterChange = false;
+	private boolean thrusterChange2 = false;
 	private boolean fire;
+	private boolean fire2;
 	private Timer timer;
 	private long timeAfterLastEvolve;
 	private Image background;
@@ -66,12 +70,20 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		for (Ship enemy : enemies) {
 			if (enemy != null)
 				visualizations.put(enemy, createEnemyVisualization(enemy));
+			if (enemies.size() == 1){
+				player2 = enemy;
+			}
 		}
+
 		addKeyListener(this);
 	}
 	
 	public Ship getPlayer() {
 		return player;
+	}
+
+	public Ship getPlayer2(){
+		return player2;
 	}
 
 	protected Visualization<F, Ship> createEnemyVisualization(Ship enemy) {
@@ -118,6 +130,11 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		int width = getWidth();
 		Rectangle2D bounds = g2d.getFontMetrics().getStringBounds(txt, g2d);
 		g2d.drawString(txt, width / 2 - (int) bounds.getCenterX(), y);
+	}
+	private void drawString(Graphics2D g2d, String txt, int x, int y) {
+		int width = getWidth();
+		Rectangle2D bounds = g2d.getFontMetrics().getStringBounds(txt, g2d);
+		g2d.drawString(txt, x, y);
 	}
 
 	private void drawCenteredString(Graphics2D g2d, String txt) {
@@ -175,7 +192,21 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			g2d.setFont(g2d.getFont().deriveFont(40f));
 			drawCenteredString(g2d, msg);
 			g2d.setFont(g2d.getFont().deriveFont(20f));
-			drawCenteredString(g2d, "Press ESC to continue ...", getHeight() / 3 * 2);
+			drawCenteredString(g2d, "Press ESC to exit ...", getHeight() / 3 * 2);
+			drawCenteredString(g2d, "Score:  " + (int)world.getScore(), getHeight() / 5 * 3);
+		}
+		else if(this.getGameType() == 0){
+			g2d.setFont(g2d.getFont().deriveFont(20f));
+			g2d.setColor(Color.decode("#FFD750"));
+			drawCenteredString(g2d, "Score:  " + (int) world.getScore(), getHeight() / 30);
+		}
+		else if(this.getGameType() ==1){
+			g2d.setFont(g2d.getFont().deriveFont(20f));
+			g2d.setColor(Color.decode("#FFD750"));
+			drawString(g2d, "Player 1: " + (int) world.getScore(), getWidth() / 9, getHeight() / 30);
+			g2d.setFont(g2d.getFont().deriveFont(20f));
+			g2d.setColor(Color.RED);
+			drawString(g2d, "Player 2: " + (int) world.getScore(), getWidth() *7/ 9, getHeight() / 30);
 		}
 	}
 
@@ -257,6 +288,15 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		case KeyEvent.VK_SPACE:
 			fire = true;
 			break;
+		case KeyEvent.VK_S:
+			fire2 = true;
+			break;
+		case KeyEvent.VK_Q:
+			deltaAngle2 = Math.PI / 12.0;
+			break;
+		case KeyEvent.VK_D:
+			deltaAngle2 = -Math.PI / 12.0;
+			break;
 		}
 	}
 
@@ -272,6 +312,15 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		case KeyEvent.VK_UP:
 		case KeyEvent.VK_KP_UP:
 			thrusterChange = true;
+			break;
+		case KeyEvent.VK_W:
+			thrusterChange2 = true;
+			break;
+		case KeyEvent.VK_Q:
+			deltaAngle2 = Double.NaN;
+			break;
+		case KeyEvent.VK_D:
+			deltaAngle2 = Double.NaN;
 			break;
 		}
 	}
@@ -294,8 +343,11 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 
 	private void doActions() {
 		doTurn();
+		doTurn2();
 		doThrust();
+		doThrust2();
 		doFire();
+		doFire2();
 	}
 
 	protected void doFire() {
@@ -309,6 +361,20 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			handleError(exc);
 		} finally {
 			fire = false;
+		}
+	}
+
+	protected void doFire2() {
+		try {
+			if (fire2 && isPlayerActive(player2)) {
+				facade.fireBullet(player2);
+				doFireEnemy();
+				game.getSound().play("torpedo");
+			}
+		} catch (ModelException exc) {
+			handleError(exc);
+		} finally {
+			fire2 = false;
 		}
 	}
 
@@ -341,6 +407,19 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 		}
 	}
 
+	private void doThrust2() {
+		if (thrusterChange2) {
+			try {
+				boolean thrusterOn = !facade.isShipThrusterActive(player2);
+				facade.setThrusterActive(player2, thrusterOn);
+			} catch (ModelException exc) {
+				handleError(exc);
+			} finally {
+				thrusterChange2 = false;
+			}
+		}
+	}
+
 	private void doTurn() {
 		double deltaAngle = this.deltaAngle;
 		if (!Double.isNaN(deltaAngle)) {
@@ -348,6 +427,20 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 				if (deltaAngle != 0) {
 					facade.turn(player,
 							InternalUtils.toProperAngleDelta(facade.getShipOrientation(player), deltaAngle));
+				}
+			} catch (ModelException exc) {
+				handleError(exc);
+			}
+		}
+	}
+
+	private void doTurn2() {
+		double deltaAngle = this.deltaAngle2;
+		if (!Double.isNaN(deltaAngle)) {
+			try {
+				if (deltaAngle != 0) {
+					facade.turn(player2,
+							InternalUtils.toProperAngleDelta(facade.getShipOrientation(player2), deltaAngle2));
 				}
 			} catch (ModelException exc) {
 				handleError(exc);
@@ -434,5 +527,14 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			visualizations.put(object, creator.apply(object));
 		}
 		return (Visualization<F, T>) visualizations.get(object);
+	}
+	private int gameType;
+
+	public int getGameType() {
+		return gameType;
+	}
+
+	public void setGameType(int gameType) {
+		this.gameType = gameType;
 	}
 }

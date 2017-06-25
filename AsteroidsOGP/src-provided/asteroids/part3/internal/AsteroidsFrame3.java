@@ -19,7 +19,7 @@ import asteroids.part3.programs.internal.ParseOutcome;
 import asteroids.part3.programs.internal.ProgramParser;
 import asteroids.util.ModelException;
 
-@SuppressWarnings("serial")
+@SuppressWarnings("all")
 public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 
 	private URL aiProgramUrl;
@@ -49,6 +49,7 @@ public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 		try {
 			world = facade.createWorld(width, height);
 			player = facade.createShip(width / 2., height / 2., 1, 6, 40, 0, 3.9e15);
+			player.setThrustForce(0.6E20);
 			facade.addShipToWorld(world, player);
 		} catch (ModelException e) {
 			handleError(e);
@@ -102,7 +103,7 @@ public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 			}
 		}
 		try {
-			WorldView3 view = new WorldView3(this, world, player, null);
+			WorldView3 view = new WorldView3(this, world, player, null, 0);
 			switchContent(view);
 			view.startGame();
 		} catch (ModelException e) {
@@ -121,8 +122,10 @@ public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 			world = facade.createWorld(width, height);
 			playerHuman = facade.createShip(width / 5 * 4, height / 2., 0, 0, 40, Math.PI, 3.9e17);
 			facade.addShipToWorld(world, playerHuman);
+			playerHuman.setThrustForce(0.6E20);
 			playerAI = facade.createShip(width / 5, height / 2., 0, 0, 40, 0, 5E15);
 			facade.addShipToWorld(world, playerAI);
+			playerAI.setThrustForce(0.6E20);
 			
 			for (int i = 1; i < 50; i++) {
 				try {
@@ -183,12 +186,96 @@ public class AsteroidsFrame3 extends AsteroidsFrame2<IFacade> {
 			handleError(e);
 		}
 		try {
-			WorldView3 view = new WorldView3(this, world, playerHuman, playerAI);
+			WorldView3 view = new WorldView3(this, world, playerHuman, playerAI, 0);
 			switchContent(view);
 			view.startGame();
 		} catch (ModelException e) {
 			handleError(e);
 		}
+	}
+
+	public void startPVP(){
+		World world;
+		Ship player1, player2;
+		IFacade facade = getFacade();
+		int width = getWidth();
+		int height = getHeight();
+		try {
+			world = facade.createWorld(width, height);
+			player1 = facade.createShip(width / 5., height / 2., 1, 6, 40, 0, 3.9e15);
+			facade.addShipToWorld(world, player1);
+			player1.setThrustForce(0.6E20);
+			player2 = facade.createShip(width * 4 / 5., height / 2., 1, 6, 40, 0, 3.9e15);
+			facade.addShipToWorld(world, player2);
+			player2.setThrustForce(0.6E20);
+		} catch (ModelException e) {
+			handleError(e);
+			return;
+		}
+
+		for (int i = 1; i < 50; i++) {
+			try {
+				Bullet bullet = facade.createBullet(width / 5.0, height / 2.0, 0, 0, Math.random() + 2);
+				facade.loadBulletOnShip(player1, bullet);
+			} catch (ModelException e) {
+				handleError(e);
+			}
+		}
+		for (int i = 1; i < 50; i++) {
+			try {
+				Bullet bullet = facade.createBullet(width * 4 / 5.0, height / 2.0, 0, 0, Math.random() + 2);
+				facade.loadBulletOnShip(player2, bullet);
+			} catch (ModelException e) {
+				handleError(e);
+			}
+		}
+		int nbAsteroids = (int) (Math.random() * 4 + 1);
+		Set<Asteroid> asteroids = new HashSet<>();
+		for (int j = 0; j < nbAsteroids; j++) {
+			try {
+				Asteroid asteroid = facade.createAsteroid(Math.random() * width, Math.random() * height, 25, 50,
+						10 + Math.random() * 20);
+				if (asteroid != null) {
+					facade.addAsteroidToWorld(world, asteroid);
+					asteroids.add(asteroid);
+				}
+			} catch (ModelException exc) {
+				// so be it
+			}
+		}
+		int nbPlanetoids = (int) (Math.random() * 4 + 1);
+		Set<Planetoid> planetoids = new HashSet<>();
+		for (int j = 0; j < nbPlanetoids; j++) {
+			try {
+				Planetoid planetoid = facade.createPlanetoid(Math.random() * width, Math.random() * height, 25, 50,
+						10.0 + Math.random() * 30, Math.random() * 1000);
+				if (planetoid != null) {
+					facade.addPlanetoidToWorld(world, planetoid);
+					planetoids.add(planetoid);
+				}
+			} catch (ModelException exc) {
+				// so be it
+			}
+		}
+		int nbBullets = (int) (Math.random() * 3);
+		for (int j = 0; j < nbBullets; j++) {
+			try {
+				Bullet bullet = facade.createBullet(Math.random() * width, Math.random() * height, 10, 12,
+						Math.random() * 5 + 3);
+				facade.addBulletToWorld(world, bullet);
+			} catch (ModelException exc) {
+				// so be it
+			}
+		}
+		try {
+			WorldView3 view = new WorldView3(this, world, player1, player2, 1);
+			switchContent(view);
+			view.startGame();
+		} catch (ModelException e) {
+			handleError(e);
+			return;
+		}
+
 	}
 
 	public static void run(IFacade facade, boolean tryFullscreen, boolean enableSound, URL aiProgramUrl) {

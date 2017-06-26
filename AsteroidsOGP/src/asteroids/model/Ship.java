@@ -643,4 +643,14 @@ public class Ship extends Entity{
             return null;
         }
     }
+
+    private double points;
+
+    public void addPoints(double points){
+        this.points += points;
+    }
+
+    public double getPoints() {
+        return points;
+    }
 }

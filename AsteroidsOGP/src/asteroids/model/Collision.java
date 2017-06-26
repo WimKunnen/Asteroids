@@ -105,8 +105,13 @@ public class Collision {
 
         if ((entity1 instanceof Bullet && ((Bullet) entity1).getSource() != entity2 && ((Bullet) entity1).hasBeenOutOfShip())
                 || (entity2 instanceof Bullet && ((Bullet) entity2).getSource() != entity1 && ((Bullet) entity2).hasBeenOutOfShip())){
-            this.getWorld().addScore(entity1.getScore());
-            this.getWorld().addScore(entity2.getScore());
+//            this.getWorld().addScore(entity1.getScore());
+//            this.getWorld().addScore(entity2.getScore());
+            if (entity1 instanceof Bullet && ((Bullet) entity1).getSource() != null){
+                ((Bullet) entity1).getSource().addPoints(entity2.getScore());
+            }else if(entity2 instanceof Bullet && ((Bullet) entity2).getSource() != null){
+                ((Bullet) entity2).getSource().addPoints(entity1.getScore());
+            }
             entity1.terminate();
             entity2.terminate();
         }
@@ -181,7 +186,9 @@ public class Collision {
         }
 
         else if (bullet.getSource() != entity) {
-            this.getWorld().addScore(entity.getScore());
+            //this.getWorld().addScore(entity.getScore());
+            if(bullet.getSource() != null)
+                bullet.getSource().addPoints(entity.getScore());
             entity.terminate();
             bullet.terminate();
         }

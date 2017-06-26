@@ -193,20 +193,28 @@ public class WorldView2<F extends IFacade> extends JPanel implements KeyListener
 			drawCenteredString(g2d, msg);
 			g2d.setFont(g2d.getFont().deriveFont(20f));
 			drawCenteredString(g2d, "Press ESC to exit ...", getHeight() / 3 * 2);
-			drawCenteredString(g2d, "Score:  " + (int)world.getScore(), getHeight() / 5 * 3);
+			//System.out.print(gameType);
+			if(this.getGameType() == 0) {
+				drawCenteredString(g2d, "Score:  " + (int) player.getPoints(), getHeight() / 5 * 3);
+			}else if(this.getGameType() == 1){
+				g2d.setColor(Color.decode("#FFD750"));
+				drawCenteredString(g2d, "Score:  " + (int) player.getPoints(), getHeight() / 9 * 5);
+				g2d.setColor(Color.RED);
+				drawCenteredString(g2d, "Score:  " + (int) player2.getPoints(), getHeight() / 32 * 19);
+			}
 		}
 		else if(this.getGameType() == 0){
 			g2d.setFont(g2d.getFont().deriveFont(20f));
 			g2d.setColor(Color.decode("#FFD750"));
-			drawCenteredString(g2d, "Score:  " + (int) world.getScore(), getHeight() / 30);
+			drawCenteredString(g2d, "Score:  " + (int) player.getPoints(), getHeight() / 30);
 		}
 		else if(this.getGameType() ==1){
 			g2d.setFont(g2d.getFont().deriveFont(20f));
 			g2d.setColor(Color.decode("#FFD750"));
-			drawString(g2d, "Player 1: " + (int) world.getScore(), getWidth() / 9, getHeight() / 30);
+			drawString(g2d, "Player 1: " + (int) player.getPoints(), getWidth() / 9, getHeight() / 30);
 			g2d.setFont(g2d.getFont().deriveFont(20f));
 			g2d.setColor(Color.RED);
-			drawString(g2d, "Player 2: " + (int) world.getScore(), getWidth() *7/ 9, getHeight() / 30);
+			drawString(g2d, "Player 2: " + (int) player2.getPoints(), getWidth() *7/ 9, getHeight() / 30);
 		}
 	}
 

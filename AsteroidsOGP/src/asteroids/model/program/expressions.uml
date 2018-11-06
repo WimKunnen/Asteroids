@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>asteroids.model.program.expressions</OriginalElement>
+  <nodes>
+    <node x="1021.0" y="176.5">asteroids.model.program.expressions.DoubleLiteral</node>
+    <node x="747.75" y="0.0">asteroids.model.program.expressions.Expression</node>
+    <node x="437.0" y="176.5">asteroids.model.program.expressions.ReadVariable</node>
+    <node x="805.0" y="187.5">asteroids.model.program.expressions.entityexpressions</node>
+    <node x="1423.0" y="154.5">asteroids.model.program.expressions.BooleanLiteral</node>
+    <node x="632.0" y="187.5">asteroids.model.program.expressions.operations</node>
+    <node x="1213.0" y="176.5">asteroids.model.program.expressions.ReadParameter</node>
+    <node x="0.0" y="99.0">asteroids.model.program.expressions.FunctionInvocation</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="asteroids.model.program.expressions.ReadParameter" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-25.5" />
+      <point x="1308.0" y="59.0" />
+      <point x="842.0" y="59.0" />
+      <point x="36.25" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.DoubleLiteral" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-25.5" />
+      <point x="1107.0" y="69.0" />
+      <point x="827.5" y="69.0" />
+      <point x="21.75" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.ReadVariable" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-25.5" />
+      <point x="524.5" y="69.0" />
+      <point x="784.0" y="69.0" />
+      <point x="-21.75" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.operations" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-14.5" />
+      <point x="708.5" y="79.0" />
+      <point x="798.5" y="79.0" />
+      <point x="-7.25" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.FunctionInvocation" target="asteroids.model.program.expressions.Expression">
+      <point x="104.25" y="-103.0" />
+      <point x="312.75" y="59.0" />
+      <point x="769.5" y="59.0" />
+      <point x="-36.25" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.entityexpressions" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-14.5" />
+      <point x="903.0" y="79.0" />
+      <point x="813.0" y="79.0" />
+      <point x="7.25" y="14.5" />
+    </edge>
+    <edge source="asteroids.model.program.expressions.BooleanLiteral" target="asteroids.model.program.expressions.Expression">
+      <point x="0.0" y="-47.5" />
+      <point x="1567.5" y="49.0" />
+      <point x="856.5" y="49.0" />
+      <point x="50.75" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5658340783281052" x="905.0" y="177.0" />
+  <SelectedNodes>
+    <node>asteroids.model.program.expressions.FunctionInvocation</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

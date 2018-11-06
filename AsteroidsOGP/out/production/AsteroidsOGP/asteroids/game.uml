@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>asteroids.model</OriginalElement>
+  <nodes>
+    <node x="551.2748633312923" y="150.84465017553998">asteroids.model.Collision</node>
+    <node x="44.07270114942537" y="1263.0">asteroids.model.Ship</node>
+    <node x="622.1666666666667" y="0.0">asteroids.model.Vector</node>
+    <node x="792.4603448275864" y="1373.0">asteroids.model.MinorPlanet</node>
+    <node x="514.7936781609196" y="389.0">asteroids.model.World</node>
+    <node x="198.24281609195407" y="1607.0">asteroids.model.Bullet</node>
+    <node x="87.37701149425294" y="853.0">asteroids.model.Program</node>
+    <node x="853.0034482758621" y="1673.5">asteroids.model.Asteroid</node>
+    <node x="798.6644565214254" y="1873.0195477179805">asteroids.model.Planetoid</node>
+    <node x="553.377011494253" y="875.0">asteroids.model.Entity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="asteroids.model.Ship" target="asteroids.model.Entity">
+      <point x="172.0" y="-147.0" />
+      <point x="431.07270114942537" y="1243.0" />
+      <point x="626.2103448275864" y="1243.0" />
+      <point x="-145.66666666666663" y="158.0" />
+    </edge>
+    <edge source="asteroids.model.Asteroid" target="asteroids.model.MinorPlanet">
+      <point x="0.0" y="-14.5" />
+      <point x="903.0034482758621" y="1582.0" />
+      <point x="849.9603448275864" y="1582.0" />
+      <point x="-57.5" y="37.0" />
+    </edge>
+    <edge source="asteroids.model.Bullet" target="asteroids.model.Entity">
+      <point x="103.33333333333337" y="-81.0" />
+      <point x="456.57614942528744" y="1582.0" />
+      <point x="781.9603448275864" y="1582.0" />
+      <point x="781.9603448275864" y="1243.0" />
+      <point x="771.877011494253" y="1243.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="asteroids.model.MinorPlanet" target="asteroids.model.Entity">
+      <point x="0.0" y="-37.0" />
+      <point x="907.4603448275864" y="1243.0" />
+      <point x="917.5436781609196" y="1243.0" />
+      <point x="145.66666666666663" y="158.0" />
+    </edge>
+    <edge source="asteroids.model.Planetoid" target="asteroids.model.MinorPlanet">
+      <point x="68.33333333333331" y="-25.5" />
+      <point x="967.4201149425287" y="1794.0" />
+      <point x="963.5034482758621" y="1794.0" />
+      <point x="963.5034482758621" y="1582.0" />
+      <point x="964.9603448275864" y="1582.0" />
+      <point x="57.5" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7463049528927118" x="619.7430484713819" y="1004.2247465302655" />
+  <SelectedNodes>
+    <node>asteroids.model.Planetoid</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
